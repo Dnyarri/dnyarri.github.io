@@ -1,0 +1,6 @@
+backup/
+temp/
+testcases/
+*.7z
+*.zip
+*.bz2
