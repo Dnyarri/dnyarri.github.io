@@ -1,0 +1,113 @@
+body {
+    background-color: #9B9B9B;
+    background-image: url("bckg.png");
+    background-attachment: fixed;
+    margin: 0pt 24pt 0pt 24pt;
+    width: 90%;
+    max-width: 1600px;
+}
+
+p {
+    font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 14pt;
+    text-align: justify;
+    color: #333333;
+    line-height: 14pt;
+    margin: 4pt;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 32pt;
+    text-align: center;
+    border: thin solid #7c7c7c;
+    border-radius: 24px 24px 0px 0px;
+    margin: 0pt;
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24pt;
+    text-align: center;
+    border: thin solid #7c7c7c;
+    border-radius: 6px;
+    margin: 0pt;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+    text-align: left;
+    border: thin solid #7c7c7c;
+    border-radius: 6px;
+    margin: 12pt 0pt 6pt 0pt;
+    text-indent: 24pt;
+}
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+    text-align: left;
+    width: 50%;
+    border: thin solid #7c7c7c;
+    border-radius: 6px;
+    margin: 6pt 0pt 6pt 0pt;
+    text-indent: 12pt;
+}
+
+a {
+    color: #0000cc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0044ff;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #000088;
+}
+
+.dark {color: #333333;}
+
+.light {color: #cccccc;}
+
+.darkbg {
+    background-color: #333333;
+    background-image: url("bckgd.png");
+    color: #cccccc;
+}
+
+.lightbg {
+    background-color: #cccccc;
+    background-image: url("bckgl.png");
+    color: #333333;
+}
+
+.justborder {
+    border: thin solid #7c7c7c;
+    border-radius: 6px;
+    margin: 2pt 2pt 2pt 2pt;
+}
+
+.cols2 {
+    column-count: 2;
+    column-gap: 20px;
+    column-rule: 2px dotted #7c7c7c;
+}
+
+.floatleft {
+    float: left; 
+    margin: 2px 12pt 2px 2px;
+}
+
+.floatright {
+    float: right;
+    margin: 2px 2px 2px 12pt;
+}
+
+.center {
+    text-align: center;
+}

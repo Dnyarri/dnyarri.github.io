@@ -1,0 +1,55 @@
+body {
+    background-color: #9B9B9B;
+    background-image: url("bckg.png");
+    background-attachment: fixed;
+    margin: 0pt;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    text-align: left;
+    line-height: 14pt;
+    margin: 4pt;
+}
+
+.divtoc {
+    background-color: #808080;
+    margin: 0pt;
+    border: thick double #303030;
+    border-radius: 6px 36px 2px 10px;
+}
+
+.toc {
+    font-size: 14pt;
+    color: white;
+    line-height: 16pt;
+    text-indent: 0pt;
+}
+
+.toctoc {
+    color: #333333;
+    text-indent: 6pt;
+    background-color: #b6b6b6;
+    border: solid 1px;
+    border-radius: 6px 6px 12px 6px;
+    margin: 2pt 0pt 6pt 6pt;
+}
+
+.toctoc:hover {
+    font-weight: bold;
+    color: #000000;
+    background-color: #707070;
+    border: solid 2px #eeeeee;
+}
+
+.toca {
+    color: #333333;
+    text-decoration: none;
+}
+
+.toca:hover {
+    color: #000000;
+    background-color: #707070;
+    text-decoration: underline;
+}
