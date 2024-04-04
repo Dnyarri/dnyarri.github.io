@@ -5,7 +5,7 @@
     <link rev="made" HREF="mailto:ilyarazmanov@gmail.com">
     <meta name="author" content="Ilyich the Toad">
     <meta name="description" content="Scale2x and Scale3x in pure Python image rescaling">
-    <meta name="keywords" content="Python, Scale2x, Scale3x">
+    <meta name="keywords" content="Python, Scale2x, Scale3x, image, resize">
     <meta name="robots" content="all">
     <link rel="stylesheet" href="content.css" type="text/css">
     <title>Scale2x and Scale3x in pure Python</title>
@@ -19,8 +19,9 @@
     <p>Scale2x and Scale3x algorithms were initially developed by <a href="https://www.scale2x.it/" target="_top">Andrea Mazzoleni</a> for scaling up graphics like game sprites and icons without introducing new colors and blurring contrast edges. That's what it was invented for, and nothing else.</p>
     <p>However, I came up with idea that Scale2x and Scale3x may be successfully misused for absolutely different task: scaling up low-res text scans before OCR, and drawings before tracing them to vectors.</p>
     <p>So I created pure Python implementation of Scale2x and Scale3x, which can be <a href="https://github.com/Dnyarri/PixelArtScaling" target="_top">downloaded from GitHub</a>. By saying "pure Python" I mean it - it doesn't even use bytearrays, only lists of lists of lists. Consider it as spiritual practice or whatever. You can download it as "IncScaleNx.py" module for import into other software and/or laugh at it. Anyway, below is the illustration of Scale3x interpolation of small black and white text, twice. As you can see, Scale3x interpolation is quite unusual and absolutely different from nearest neighbour, bilinear and bicubic you know from Photoshop.</p>
-    <p>Downloadable pack at GitHub includes Python sources for Scale2x and Scale3x command line versions, GUI versions thereof, and batch-processing GUI programs for scaling up all PNG files in a directory (recursively) with either Scale2x or Scale3x. If you want Scale4x or even bigger X, just run Scale2x twice in a row, and so on.</p>
-    <p>For Windows users "Release" section at GitHub includes Windows 64-bit ready-to-use exe files.</p>
+    <p>Downloadable pack at GitHub includes Python sources for Scale2x and Scale3x command line versions, GUI versions thereof, and batch-processing GUI programs for scaling up all PNG files in a directory (recursively) with either Scale2x or Scale3x. If you want Scale4x or even bigger X, just run Scale2x twice in a row, and so on.</p></div>
+    <br>
+    <div class="lightbg justborder"><p><b>Good news everyone&trade;</b> - Finally, code was made significantly <a href="https://nuitka.net/" target="_top">Nuitka</a>-proof, so Windows 64-bit exe recompiled; preliminary test of Scale3x on some 50&nbsp;pages 200&nbsp;ppi documents show <i>ca.</i>&nbsp;20&nbsp;% speed increase. So it makes sense to download updated exe from <a href="https://github.com/Dnyarri/PixelArtScaling/releases/latest" target="_top">most recent release</a>.</p>
     </div>
     <br>
     <div class="center lightbg justborder"><img src="imgscalenx\x3x3.png" width="987" height="743" class="justborder center">
