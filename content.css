@@ -8,7 +8,7 @@ body {
 }
 
 p {
-    font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 14pt;
     text-align: justify;
     color: #333333;
@@ -70,9 +70,13 @@ a:visited {
     color: #000088;
 }
 
-.dark {color: #333333;}
+.dark {
+    color: #333333;
+}
 
-.light {color: #cccccc;}
+.light {
+    color: #cccccc;
+}
 
 .darkbg {
     background-color: #333333;
@@ -99,7 +103,7 @@ a:visited {
 }
 
 .floatleft {
-    float: left; 
+    float: left;
     margin: 2px 12pt 2px 2px;
 }
 
@@ -113,5 +117,5 @@ a:visited {
 }
 
 .right {
-    text-align:right;
+    text-align: right;
 }
