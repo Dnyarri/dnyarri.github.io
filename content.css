@@ -102,6 +102,12 @@ a:visited {
     column-rule: 2px dotted #7c7c7c;
 }
 
+.cols320 {
+    column-width: 320px;
+    column-gap: 20px;
+    column-rule: 2px dotted #7c7c7c;
+}
+
 .floatleft {
     float: left;
     margin: 2px 12pt 2px 2px;
