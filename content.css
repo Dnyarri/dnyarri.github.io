@@ -125,3 +125,13 @@ a:visited {
 .right {
     text-align: right;
 }
+
+.red {
+    border: thin solid #ff00008a;
+    background-color: rgba(255, 38, 0, 0.123);
+    border-radius: 6px;
+}
+
+.small {
+    font-size: 10pt;
+}
