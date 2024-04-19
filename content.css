@@ -16,6 +16,11 @@ p {
     margin: 4pt;
 }
 
+ul {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 12pt; 
+}
+
 h1 {
     font-family: 'Times New Roman', Times, serif;
     font-size: 32pt;
@@ -105,6 +110,12 @@ a:visited {
 .cols320 {
     column-width: 320px;
     column-gap: 20px;
+    column-rule: 2px dotted #7c7c7c;
+}
+
+.cols510 {
+    column-width: 510px;
+    column-gap: 10px;
     column-rule: 2px dotted #7c7c7c;
 }
 
