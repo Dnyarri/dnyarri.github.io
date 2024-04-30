@@ -139,6 +139,8 @@ a:visited {
 
 .red {
     border: thin solid #ff00008a;
+    margin: 0px 2pt;
+    padding: 0px 4pt;
     background-color: rgba(255, 38, 0, 0.123);
     border-radius: 6px;
 }
