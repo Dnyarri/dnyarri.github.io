@@ -13,7 +13,7 @@
 
 <body bgcolor='9B9B9B' background='bckg.png' topmargin='0' leftmargin='0' rightmargin='0' bottommargin='0' marginheight='0' marginwidth='0'>
     <h1 class='darkbg'>POVRay img2mesh</h1>
-    <div class='lightbg justborder cols510' style='min-height: 470px;'>
+    <div class='lightbg justborder cols512' style='min-height: 470px;'>
         <div class='center'><img src='imgmesh/640/img2mesh.png' width='464' height='464' class='center'></div>
         <p>Pretty simple (well, it was initially) program that reads PNG image, and writes 3D mesh in <a href='https://www.povray.org/' target='_top'>POVRay</a> format, using pixel X and Y coordinates for 'south' and 'east' position of 3D triangle mesh nodes, and, most important, pixel brightness as Z, that is, height of the node, thus converting image into sort of 3D landscape. After rendering POV scene thus obtained with POVRay (which is not just excellent, but also completely free 3D renderer) resulting image is obtained.</p>
         <p>E.&nbsp;g., example image above was started as simple black and white drawing, converted to PNG, then some Gaussian Blur and maps added, and PNG fed to <b>img2mesh</b>.</p>
