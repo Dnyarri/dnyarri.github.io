@@ -1,7 +1,8 @@
 backup/
 *.txt
+3z/*b.png
 #
-# whole bunch of images, to comment in and out as necessary
+# comment in and out as necessary
 # commented ARE available, not commented are NOT
 #
 # bckg.png

@@ -22,7 +22,7 @@ ul {
 }
 
 h1 {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 32pt;
     text-align: center;
     border: thin solid #7c7c7c;
@@ -31,7 +31,7 @@ h1 {
 }
 
 h2 {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 24pt;
     text-align: center;
     border: thin solid #7c7c7c;
@@ -94,6 +94,17 @@ a:visited {
     background-image: url('bckgl.png');
     color: #333333;
 }
+.chess {
+    background-image: url('c16.png');
+}
+
+.chessd {
+    background-image: url('cd16.png');
+}
+
+.chessdd {
+    background-image: url('cdd16.png');
+}
 
 .justborder {
     border: thin solid #7c7c7c;
@@ -138,13 +149,17 @@ a:visited {
 }
 
 .red {
-    border: thin solid #ff00008a;
+    border: thin solid rgba(255, 0, 0, 0.5);
     margin: 0px 2pt;
     padding: 0px 4pt;
-    background-color: rgba(255, 38, 0, 0.123);
+    background-color: rgba(255, 0, 0, 0.2);
     border-radius: 6px;
 }
 
 .small {
     font-size: 10pt;
+}
+
+.pre {
+    font-family: 'Courier New', Courier, monospace;
 }

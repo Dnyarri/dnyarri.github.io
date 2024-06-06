@@ -15,7 +15,28 @@
     <h1 class='darkbg'>POVRay mosaic: triangle pattern</h1>
     <h2 class='lightbg'>Converting 2D image into mosaic of 3D objects</h2>
     <div class='lightbg justborder cols512'>
-        <p></p>
+        <p>This whole story begun decades ago when I needed some way to simulate real world colored sphere packing.</p>
+        <div class='justborder center' style='break-inside: avoid;'><img src='3z/300.png' width='512'><p class='small center'>default output</p></div>
+        <p>Necessary program was created, used, and forgotten.</p>
+        <p>Until now.</p>
+        <p><b>3zaika program</b> is a part of POVMosaic project, intended for opening source image, and creating triangle-packed mosaics of 3D objects, colored after source image pixels.</p>
+        <p>Most important features of the program are:</p>
+        <p><b>Configurable output.</b> You may easily switch 3D objects and their properties, except for color, which comes from the source image. 3zaika output scene already equipped with several predefined objects (below is an intersection of four cylinders coming along tetrahedron axes, with some rough pearl finish):</p>
+        <div class='justborder center' style='break-inside: avoid;'><img src='3z/302.png' width='512'><p class='small center pre'>thingie_7; thingie_finish_4; rotate_rnd = <60, 60, 60>;</p></div>
+        <p>plus you can add external objects to the scene;</p>
+        <p><b>Mapping.</b> It means you can map (make dependant of) some 3D object property to some source image pixel property. For example, on sample image below hexagonal prism (one of predefined objects) height is mapped to source brightness:</p>
+        <div class='justborder center' style='break-inside: avoid;'><img src='3z/301.png' width='512'><p class='small center pre'>thingie_4; map_2(c); scale_map = <0, 0, 2>; move_rnd = <0, 0, 0.1></p></div>
+        <p>Object texture, beside color and finish, include normal modifier, which can be modified independently of object itself:</p>
+        <div class='justborder center' style='break-inside: avoid;'><img src='3z/303.png' width='512'><p class='small center pre'>thingie_normal_4; normal_rotate_rnd = <0, 0, 180>;</p></div>
+        <p>And finally, whole bunch of settings may be redefined by inserting external .inc file:</p>
+        <div class='justborder center' style='break-inside: avoid;'><img src='3z/304.png' width='512'><p class='small center pre lightbg'>#include "preset_01.inc"</p></div>
+        <p>"preset_01.inc" is included in distribution and defines icosahedron and some of its transforms.</p>
+        <h3 style='column-span: all;'>External resources</h3>
+        <p>Don't you know that there are priceless collections of jewels you can download for free?</p>
+        <p><a href='https://github.com/syanenko/povgems' target='_top'>POV-Ray gems</a> contain several gem examples in POVRay format. While their finishes are too cool for me understand, I still can borrow jewels geometry files provided there in POVRay .inc form.</p>
+        <div class='justborder center chess' style='column-span: all;'><img src='3z/305.png' width='1021'></div>
+        <p>Here's a example of importing one of these files into casual scene with object size mapped to brightness and some random rotation.</p>
+        <p>Beside gems collection, <a href='https://github.com/syanenko/povgems' target='_top'>POV-Ray gems</a> contain links to other gems-related sources.</p>
         
     </div>
 </body>
