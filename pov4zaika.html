@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rev='made' HREF='mailto:ilyarazmanov@gmail.com'>
+    <link rev='made' href='mailto:ilyarazmanov@gmail.com'>
     <meta name='author' content='Ilyich the Toad'>
     <meta name='description' content='POVRay mosaic'>
     <meta name='keywords' content='Python, POVRay, mosaic, painting'>
@@ -20,20 +20,20 @@
         <p>Since POV files are text files, containing 3D scene description, they can be easily edited; 4zaika output is as human-friendly as possible, reasonably commented internally, and, besides, there is a help file with more prolific descriptions. Next to the examples below there are short descriptions of changes introduced into scene file before rendering.</p>
         <div class='justborder center' style='break-inside: avoid;'><img src='4z/401.png' width='512'><p class='small center pre'>thingie = thingie_4</p></div>
         <p>The main idea behind 4zaika is <b>mapping</b>. Object properties (size, position, rotation) can be mapped to (that is, made functions of) source image pixel properties, currently brightness. Ok, let's map something:</p>
-        <div class='justborder center chess' style='break-inside: avoid;'><img src='4z/402.png' width='512'><p class='small center pre lightbg'>thingie = thingie_3 scale_all = <1, 1, 5>; scale_map = <1, 1, 0>;</p></div>
+        <div class='justborder center chess' style='break-inside: avoid;'><img src='4z/402.png' width='512'><p class='small center pre lightbg'>thingie = thingie_3 scale_all = &lt;1, 1, 5&gt;; scale_map = &lt;1, 1, 0&gt;;</p></div>
         <p>Not too bad for a simple example, may even go for a logo. By the way, you can change map functions, try changing <span class='pre'>map = function(c) {map_1(c)}</span> to <span class='pre'>map = function(c) {map_2(c)}</span> and so on to get the idea.</p>
         <p>Beside scaling, we can also map rotation and position:</p>
-        <div class='justborder center' style='break-inside: avoid;'><img src='4z/403.png' width='512'><p class='small center pre lightbg'>thingie_5 move_map = <0, 0, -2>; rotate_map = <60, 60, 180>; and rotate_all = <-10, -20, -20>; for baseline</p></div>
+        <div class='justborder center' style='break-inside: avoid;'><img src='4z/403.png' width='512'><p class='small center pre lightbg'>thingie_5 move_map = &lt;0, 0, -2&gt;; rotate_map = &lt;60, 60, 180&gt;; and rotate_all = &lt;-10, -20, -20&gt;; for baseline</p></div>
         <p>In general, I'd suggest gradually changing setting one by one, unless you are not afraid of total mess. And you will be. You will be.</p>
         <p>On the other hand, sometimes some randomization helps break monotonous pattern:</p>
-        <div class='justborder center' style='break-inside: avoid;'><img src='4z/404.png' width='512'><p class='small center pre lightbg'>thingie_5 evenodd_offset = <0.5, 0, 0> rotate_rnd = <10, 10, 10>;</p></div>
+        <div class='justborder center' style='break-inside: avoid;'><img src='4z/404.png' width='512'><p class='small center pre lightbg'>thingie_5 evenodd_offset = &lt;0.5, 0, 0&gt; rotate_rnd = &lt;10, 10, 10&gt;;</p></div>
         <p>Just several degrees here and there, and it's not so boring anymore.</p>
         <p>But let's get back to mapping and look at it's capabilities more closely:</p>
-        <div class='justborder center' style='break-inside: avoid;'><img src='4z/405.png' width='512'><p class='small center pre lightbg'>thingie_3 thingie_finish_3 scale_all = <0.6, 0.6, 2>; rotate_map = <160, 120, 0>;</p></div>
+        <div class='justborder center' style='break-inside: avoid;'><img src='4z/405.png' width='512'><p class='small center pre lightbg'>thingie_3 thingie_finish_3 scale_all = &lt;0.6, 0.6, 2&gt;; rotate_map = &lt;160, 120, 0&gt;;</p></div>
         <p>Well, not quite a painting, but may be considered art. After all, painter is mapping brushstrokes direction to image sigmal, and we are mapping virtual cylinders rotation, what's the difference?</p>
-        <p>Note, in the scene above I edited camera to <span class='pre'>look_at<0.005, 0.025, 0.0></span> to keep it centered since growing cylinders went off margins.</p>
+        <p>Note, in the scene above I edited camera to <span class='pre'>look_at&lt;0.005, 0.025, 0.0&gt;</span> to keep it centered since growing cylinders went off margins.</p>
         <p>Let's make it bolder:</p>
-        <div class='justborder center' style='break-inside: avoid;'><img src='4z/406.png' width='512'><p class='small center pre lightbg'>thingie_3 thingie_finish_4 scale_all = <1.5, 1.5, 2.5>; rotate_map = <160, 120, 0>;</p></div>
+        <div class='justborder center' style='break-inside: avoid;'><img src='4z/406.png' width='512'><p class='small center pre lightbg'>thingie_3 thingie_finish_4 scale_all = &lt;1.5, 1.5, 2.5&gt;; rotate_map = &lt;160, 120, 0&gt;;</p></div>
         <p>I may not know art but I know what I like! Surely, real world cylinders canot be packed that way, but who cares?</p>
         <p>One of the funny things about POVMosaic programs is, beside editing resulting files directly, you can plug a preset file in them, redefining everything. Preset files are regular POVRay .inc files and must be plugged after standard objects to overwrite them. Below is result of adding just one string <span class='pre'>#include "preset_02.inc"</span> (preset_02.inc is included into project distribution, so you can investigate how it works):</p>
         <div class='justborder center' style='column-span: all;'><img src='4z/407.png' width='1024'><p class='small center pre lightbg'>#include "preset_02.inc"</p></div>

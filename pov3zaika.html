@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rev='made' HREF='mailto:ilyarazmanov@gmail.com'>
+    <link rev='made' href='mailto:ilyarazmanov@gmail.com'>
     <meta name='author' content='Ilyich the Toad'>
     <meta name='description' content='POVRay mosaic'>
     <meta name='keywords' content='Python, POVRay, mosaic, painting'>
@@ -24,12 +24,12 @@
         <p>Most important features of the program are:</p>
         <p><b>Configurable output.</b> Since POV files are text files, containing 3D scene description, they can be easily edited; 3zaika output is as human-friendly as possible, reasonably commented internally, and, besides, there is a help file with more prolific descriptions. You may easily switch 3D objects and their properties, except for color, which comes from the source image. Examples below will be added with short notation of change introduced between 3zaika output and rendering.</p>
         <p>Any 3zaika output scene is already equipped with several predefined objects (below is an intersection of four cylinders coming along tetrahedron axes, with some rough pearl finish):</p>
-        <div class='justborder center' style='break-inside: avoid;'><img src='3z/302.png' width='512'><p class='small center pre'>thingie_7; thingie_finish_4; rotate_rnd = <60, 60, 60>;</p></div>
+        <div class='justborder center' style='break-inside: avoid;'><img src='3z/302.png' width='512'><p class='small center pre'>thingie_7; thingie_finish_4; rotate_rnd = &lt;60, 60, 60&gt;;</p></div>
         <p>plus you can add external objects to the scene;</p>
         <p><b>Mapping.</b> It means you can map (make dependant of) some 3D object property to some source image pixel property. For example, on sample image below hexagonal prism (one of predefined objects) height is mapped to source brightness:</p>
-        <div class='justborder center' style='break-inside: avoid;'><img src='3z/301.png' width='512'><p class='small center pre'>thingie_4; map_2(c); scale_map = <0, 0, 2>; move_rnd = <0, 0, 0.1></p></div>
+        <div class='justborder center' style='break-inside: avoid;'><img src='3z/301.png' width='512'><p class='small center pre'>thingie_4; map_2(c); scale_map = &lt;0, 0, 2&gt;; move_rnd = &lt;0, 0, 0.1&gt;</p></div>
         <p>Object texture, beside color and finish, include normal modifier, which can be modified independently of object itself:</p>
-        <div class='justborder center' style='break-inside: avoid;'><img src='3z/303.png' width='512'><p class='small center pre'>thingie_normal_4; normal_rotate_rnd = <0, 0, 180>;</p></div>
+        <div class='justborder center' style='break-inside: avoid;'><img src='3z/303.png' width='512'><p class='small center pre'>thingie_normal_4; normal_rotate_rnd = &lt;0, 0, 180&gt;;</p></div>
         <p>And finally, whole bunch of settings may be redefined by inserting external .inc file:</p>
         <div class='justborder center' style='break-inside: avoid;'><img src='3z/304.png' width='512'><p class='small center pre lightbg'>#include "preset_01.inc"</p></div>
         <p>"preset_01.inc" is included in distribution and defines icosahedron. Sorry for a small preview, surely you'll find a use for icosahedron in something bigger. Icosahedra don't grow on trees, after all.</p>

@@ -118,12 +118,6 @@ a:visited {
     column-rule: 2px dotted #7c7c7c;
 }
 
-.cols320 {
-    column-width: 320px;
-    column-gap: 20px;
-    column-rule: 2px dotted #7c7c7c;
-}
-
 .cols512 {
     column-width: 512px;
     column-gap: 10px;
