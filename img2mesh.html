@@ -4,7 +4,7 @@
 <head>
     <link rev='made' href='mailto:ilyarazmanov@gmail.com'>
     <meta name='author' content='Ilyich the Toad'>
-    <meta name='description' content='Image to POVRay 3D mesh conversion'>
+    <meta name='description' content='Image to POVRay, Wavefront, STL 3D mesh conversion'>
     <meta name='keywords' content='Python, POVRay, Wavefront, heightfield, mesh, 3D, png, pov, obj, stl'>
     <meta name='robots' content='all'>
     <link rel='stylesheet' href='content.css' type='text/css'>
@@ -20,17 +20,18 @@
         <p>Surely POVRay can import PNG and use them as 'heightfields' directly, but <b>img2mesh</b> uses rather unusual 'pyramid' conversion algorithm, providing extra quality for small heightfields.</p>
         <p><b>img2mesh</b> is equipped with easy to use GUI for selecting input and output files.</p>
         <p>Default export to POV file suggests camera autofocus on object, object scaling to fit 1,&nbsp;1,&nbsp;1&nbsp;cube, and suitable scene structuring for easy editing later.</p>
-        <p><span class='red'><b>Update:</b></span> In version 2.8, beside complete rewriting of POVRay output, Wavefront OBJ and stereolithography STL export added.</p>
-        <div class='center'>
+        <p><span class='red'><b>Update:</b></span> In version <span class='red'>2.8</span>, beside complete rewriting of POVRay output, Wavefront OBJ and stereolithography STL export added.</p>
+        <div class='center' style='break-inside: avoid;'>
             <p class='small center'>Screenshot of Windows Explorer window with test source PNG map and resulting output preview:</p>
             <img src='imgmesh/printscreen.png' width='507' height='360' alt='Preview' class='center'>
         </div>
         <p>There is a difference between POV, OBJ and STL output:</p>
         <ul>
-            <li>POVRay file is a scene, containing triangle mesh, CSG difference of it with box (yes, mesh doesn't have gaps and is tight enough to correctly produce CSG), textures (currently two overlaid textures with color gradient and equal height contour lines to simplify visual perception), light and camera;</li>
-            <li>STL file is an object of height field triangle mesh plus sides and bottom to close object;</li>
+            <li>POVRay file is a scene, containing triangle mesh, CSG difference of it with box (yes, mesh generated with img2mesh doesn't have gaps and is tight enough to correctly produce CSG), textures (currently two overlaid textures with color gradient and equal height contour lines to simplify visual perception), light and camera;</li>
+            <li>STL file is a single object, consisting of height field triangle mesh plus sides and bottom to close object;</li>
             <li>OBJ file is just an object of height field triangle mesh with no extras, since it's supposed to be imported into other software.</li>
         </ul>
+        <p><span class='red'><b>Update:</b></span> In version <span class='red'>2.8.2</span> mapping added. Maps are transfer functions z value is passed through. Result is similar to Photoshop or GIMP "Curves" applied to source heightfield PNG, except that with img2mesh map is nondestructively applied to mesh within POVRay, so you can change mesh rendering without changing the mesh itself. By default exported map is five points linear spline, corresponding to straight line describing "identical" transform, i.e. no map adjustment (input=output). You can both edit existing control points and add new ones.</p>
         <p>For Windows users, compiled <span class='red'>Windows 64-bit exe</span> file is <a href='https://github.com/Dnyarri/img2mesh/releases/latest' target='_top'>available for download in Release section of GitHub</a>. For other platforms, use Python sources - program is rather self-contained, you will find the only non-standard import (PyPNG) enclosed to download.</p><br>
         <p>Step forward to <a href='https://github.com/Dnyarri/img2mesh' target='_top'>img2mesh at GitHub</a> for downloads.</p>
         <br>
