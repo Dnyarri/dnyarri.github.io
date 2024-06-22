@@ -40,7 +40,7 @@
         }
     #declare map = function(c) {Curve(c).u}</pre>
         <p>This map is direct analog of Photoshop and GIMP "Curves", so general idea should be familiar: first column contain input values, second column contain corresponding output values (third column currently is not used for anything good, just leave it alone). By default, input=output, that is, map does not change anything. However, you can edit it.</p>
-        <p>Note that POVRay does not pay attention to the order of of control points appearance, so you can add midpoints after endpoints in no particular order. Just remember to have endpoints 0 and 1 defined, since POVRay cannot use undefined functions; everything between 0 and 1 is up to you to edit.</p>
+        <p>Note that POVRay does not pay attention to the order of control points appearance, so you can add midpoints after endpoints in no particular order. Just remember to have endpoints 0 and 1 defined, since POVRay cannot use undefined functions; everything between 0 and 1 is up to you to edit.</p>
         <p>Object texture, beside color and finish, include normal modifier, which can be modified independently of object itself:</p>
         <div class='justborder center' style='break-inside: avoid;'><img src='3z/303.png' width='512'><p class='small center pre'>thingie_normal_4; normal_rotate_rnd = &lt;0, 0, 180&gt;;</p></div>
         <p>And finally, whole bunch of settings may be redefined by inserting external .inc file:</p>
