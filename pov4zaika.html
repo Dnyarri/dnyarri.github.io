@@ -21,7 +21,20 @@
         <div class='justborder center' style='break-inside: avoid;'><img src='4z/401.png' width='512'><p class='small center pre'>thingie = thingie_4</p></div>
         <p>The main idea behind 4zaika is <b>mapping</b>. Object properties (size, position, rotation) can be mapped to (that is, made functions of) source image pixel properties, currently brightness. Ok, let's map something:</p>
         <div class='justborder center chess' style='break-inside: avoid;'><img src='4z/402.png' width='512'><p class='small center pre lightbg'>thingie = thingie_3 scale_all = &lt;1, 1, 5&gt;; scale_map = &lt;1, 1, 0&gt;;</p></div>
-        <p>Not too bad for a simple example, may even go for a logo. By the way, you can change map functions, try changing <span class='pre'>map = function(c) {map_1(c)}</span> to <span class='pre'>map = function(c) {map_2(c)}</span> and so on to get the idea.</p>
+        <p>Not too bad for a simple example, may even go for a logo.</p>
+        <p>Since version 1.6.21, all predefined maps were replaced by generalized linear spline interpolation. Descriptive part in the beginning of POV file generated look like this:</p>
+        <pre>
+    #declare Curve = function {
+        spline { linear_spline
+            0.0,   &lt;0.0,   0&gt;
+            0.25,  &lt;0.25,  0&gt;
+            0.5,   &lt;0.5,   0&gt;
+            0.75,  &lt;0.75,  0&gt;
+            1.0,   &lt;1.0,   0&gt;}
+        }
+    #declare map = function(c) {Curve(c).u}</pre>
+        <p>This map is direct analog of Photoshop and GIMP "Curves", so general idea should be familiar: first column contain input values, second column contain corresponding output values (third column currently is not used for anything good, just leave it alone). By default, input=output, that is, map does not change anything. However, you can edit it.</p>
+        <p>Note that POVRay does not pay attention to the order of of control points appearance, so you can add midpoints after endpoints in no particular order. Just remember to have endpoints 0 and 1 defined, since POVRay cannot use undefined functions; everything between 0 and 1 is up to you to edit.</p>
         <p>Beside scaling, we can also map rotation and position:</p>
         <div class='justborder center' style='break-inside: avoid;'><img src='4z/403.png' width='512'><p class='small center pre lightbg'>thingie_5 move_map = &lt;0, 0, -2&gt;; rotate_map = &lt;60, 60, 180&gt;; and rotate_all = &lt;-10, -20, -20&gt;; for baseline</p></div>
         <p>In general, I'd suggest gradually changing setting one by one, unless you are not afraid of total mess. And you will be. You will be.</p>
@@ -35,7 +48,8 @@
         <p>Let's make it bolder:</p>
         <div class='justborder center' style='break-inside: avoid;'><img src='4z/406.png' width='512'><p class='small center pre lightbg'>thingie_3 thingie_finish_4 scale_all = &lt;1.5, 1.5, 2.5&gt;; rotate_map = &lt;160, 120, 0&gt;;</p></div>
         <p>I may not know art but I know what I like! Surely, real world cylinders canot be packed that way, but who cares?</p>
-        <p>One of the funny things about POVMosaic programs is, beside editing resulting files directly, you can plug a preset file in them, redefining everything. Preset files are regular POVRay .inc files and must be plugged after standard objects to overwrite them. Below is result of adding just one string <span class='pre'>#include "preset_02.inc"</span> (preset_02.inc is included into project distribution, so you can investigate how it works):</p>
+        <p>One of the funny things about POVMosaic programs is, beside editing resulting files directly, you can plug a preset file in them, redefining everything. Preset files are regular POVRay .inc files and must be plugged after standard objects to overwrite them.</p>
+        <p>Below is result of adding just one string <span class='pre'>#include "preset_02.inc"</span> (preset_02.inc is included into project distribution, so you can investigate how it works):</p>
         <div class='justborder center' style='column-span: all;'><img src='4z/407.png' width='1024'><p class='small center pre lightbg'>#include "preset_02.inc"</p></div>
     </div>
     <p class='lightbg justborder'>Assuming you scrolled that far, I remind you that you can <a href='https://github.com/Dnyarri/POVmosaic' target='_top'>download POVRay mosaic from GitHub</a>.</p>

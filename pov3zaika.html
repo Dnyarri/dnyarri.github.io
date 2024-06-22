@@ -27,7 +27,20 @@
         <div class='justborder center' style='break-inside: avoid;'><img src='3z/302.png' width='512'><p class='small center pre'>thingie_7; thingie_finish_4; rotate_rnd = &lt;60, 60, 60&gt;;</p></div>
         <p>plus you can add external objects to the scene;</p>
         <p><b>Mapping.</b> It means you can map (make dependant of) some 3D object property to some source image pixel property. For example, on sample image below hexagonal prism (one of predefined objects) height is mapped to source brightness:</p>
-        <div class='justborder center' style='break-inside: avoid;'><img src='3z/301.png' width='512'><p class='small center pre'>thingie_4; map_2(c); scale_map = &lt;0, 0, 2&gt;; move_rnd = &lt;0, 0, 0.1&gt;</p></div>
+        <div class='justborder center' style='break-inside: avoid;'><img src='3z/301.png' width='512'><p class='small center pre'>thingie_4; '#declare map = function(c) {abs((2.0 * c) - 1.0)}; scale_map = &lt;0, 0, 2&gt;; move_rnd = &lt;0, 0, 0.1&gt;</p></div>
+        <p>Since version 1.6.21, all predefined maps were replaced by generalized linear spline interpolation. Descriptive part in the beginning of POV file generated look like this:</p>
+        <pre>
+    #declare Curve = function {
+        spline { linear_spline
+            0.0,   &lt;0.0,   0&gt;
+            0.25,  &lt;0.25,  0&gt;
+            0.5,   &lt;0.5,   0&gt;
+            0.75,  &lt;0.75,  0&gt;
+            1.0,   &lt;1.0,   0&gt;}
+        }
+    #declare map = function(c) {Curve(c).u}</pre>
+        <p>This map is direct analog of Photoshop and GIMP "Curves", so general idea should be familiar: first column contain input values, second column contain corresponding output values (third column currently is not used for anything good, just leave it alone). By default, input=output, that is, map does not change anything. However, you can edit it.</p>
+        <p>Note that POVRay does not pay attention to the order of of control points appearance, so you can add midpoints after endpoints in no particular order. Just remember to have endpoints 0 and 1 defined, since POVRay cannot use undefined functions; everything between 0 and 1 is up to you to edit.</p>
         <p>Object texture, beside color and finish, include normal modifier, which can be modified independently of object itself:</p>
         <div class='justborder center' style='break-inside: avoid;'><img src='3z/303.png' width='512'><p class='small center pre'>thingie_normal_4; normal_rotate_rnd = &lt;0, 0, 180&gt;;</p></div>
         <p>And finally, whole bunch of settings may be redefined by inserting external .inc file:</p>
