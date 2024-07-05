@@ -1,19 +1,97 @@
-<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Frameset//EN' 'http://www.w3.org/TR/html4/frameset.dtd'>
-<html>
+<!doctype html>
+<html lang='en-US'>
 
 <head>
     <link rel='icon' type='image/x-icon' href='favicon.ico'>
     <link rev='made' href='mailto:ilyarazmanov@gmail.com'>
+    <meta charset="utf-8" />
     <meta name='author' content='Ilyich the Toad'>
     <meta name='description' content='Python programs for POVRay, Scale2x, Scale3x, batch processing'>
     <meta name='keywords' content='Python, POVRay, Wavefront, Scale2x, Scale3x, AdvMAME2x, AdvMAME3x, batch, 3D, image, convert, freeware, 3D-print'>
     <meta name='robots' content='all'>
     <meta name='yandex-verification' content='54351d4014245630' />
+    <link rel='stylesheet' href='toc.css' type='text/css'>
+    <link rel='stylesheet' href='content.css' type='text/css'>
     <title>The Toad's Slimy Mudhole: Python programs for POVRay, Scale2x, Scale3x, batch processing</title>
 </head>
-<frameset cols='128,*' frameborder='0' framespacing='0' border='0'>
-    <frame src='toc.html' noresize scrolling='no' frameborder='0' topmargin='0' leftmargin='0' rightmargin='0' bottommargin='0' marginheight='0' marginwidth='0' name='toc'>
-    <frame src='content.html' noresize scrolling='auto' frameborder='0' topmargin='0' leftmargin='0' rightmargin='0' bottommargin='0' marginheight='0' marginwidth='0' name='content'>
-</frameset>
+<body bgcolor='9B9B9B' background='bckg.png' topmargin='0' leftmargin='0' rightmargin='0' bottommargin='0' marginheight='0' marginwidth='0'>
+<div class='leftbar'>
+    <!-- Nav block begin -->
+    <a href='https://dnyarri.github.io/' target='_top' class='toca'>
+        <div class='divtoc'>
+            <p class='toc'><img src='toad.png' width='24' height='24' style='float: left; margin: 0px 6pt 0px 0px'> <span class='toc'>Dnyarri</span></p>
+        </div></a>
+        <br>
+        <div class='divtoc'>
+            <p class='toc'>POVRay img2mesh</p>
+        </div>
+        <a href='img2mesh.html' target='content' class='toca'>
+            <p class='toctoc'>img2mesh</p>
+        </a>
+        <div class='divtoc'>
+            <p class='toc'>POVRay mosaic</p>
+        </div>
+        <a href='pov3zaika.html' target='content' class='toca'>
+            <p class='toctoc'>3Zaika</p>
+        </a>
+        <a href='pov4zaika.html' target='content' class='toca'>
+            <p class='toctoc'>4Zaika</p>
+        </a>
+        <div class='divtoc'>
+            <p class='toc'>Image</p>
+        </div>
+        <a href='scalenx.html' target='content' class='toca'>
+            <p class='toctoc'>ScaleNx</p>
+        </a>
+        <div class='divtoc'>
+            <p class='toc'>Batch</p>
+        </div>
+        <a href='batch.html' target='content' class='toca'>
+            <p class='toctoc'>Batchfiles</p>
+        </a>
+        
+    <!-- Nav block end -->
+</div>
+
+
+    <!-- Content block begin -->
+<h1 class='darkbg'>The Toad's Slimy Mudhole</h1>
+<h2 class='lightbg'>where The Toad intercourses Python</h2>
+<h3 class='darkbg'>Preamble</h3>
+<div class='lightbg justborder cols2'>
+    <p>After closing <b>AmphiSoft plugins</b> projest long ago in a universe far away The Toad of Great Mental Powers made a decision to implement some of spontaneous ideas, developed or implied, into something potentially easy to understand and hopefully simple to use by humans. As an 'easy to understand' mean of production Python was chosen (that was probably an unrecoverable mistake. Or may be not), as ideas regular ones like 'what happens if we map image signal to something else' were used. As a result, some Python projects described hereby were created and <a href='https://github.com/Dnyarri/' target='_top'>shared on GitHub</a>, free to download and use.</p>
+</div>
+<h3 class='darkbg'>Amble, i.e., the projects:</h3>
+<h4 class='darkbg'>POVRay img2mesh</h4>
+<div class='lightbg justborder' style='min-height: 236px;'><a href='img2mesh.html' target='content'><img src='imgmesh/320/img2mesh.png' width='232' height='232' class='floatleft'></a>
+    <p>Program for converting PNG image into <a href='https://www.povray.org/' target='_top'>POVRay</a> 3D&nbsp;mesh, so that bright pixels turns into high peaks on resulting 3D landscape - the brighter source image pixel, the higher 3D&nbsp;mesh node point is. Exported POVRay scene file contains everything necessary to be rendered right out of the box (camera, lights, texture), or may be edited later.</p>
+    <p><span class='red'><b>Update:</b></span> In version&nbsp;2.8, beside complete rewriting of POVRay output, Wavefront&nbsp;OBJ and stereolithography STL export added.</p>
+    <p>In version 2.8.2 mapping added to imp2pov, allowing non-destructive changes to be applied during POVRay rendering.</p>
+    <p class='right'><a href='img2mesh.html' target='content'><i>Read more...</i></a></p>
+    
+</div>
+<h4 class='darkbg'>POVRay mosaic</h4>
+<div class='lightbg justborder' style='min-height: 134px;'>
+    <a href='pov3zaika.html'><img src='3z/l.png' width='250' height='134' class='floatleft'></a>
+    <a href='pov4zaika.html'><img src='4z/r.png' width='246' height='134' class='floatright'></a>
+    <p>This project includes programs, converting PNG image into <a href='https://www.povray.org/' target='_top'>POVRay</a> mosaic, consisting of various objects - spheres, cylinders, boxes, prisms, etc.</p>
+    <p>With current update programs were rewritten to provide well structured easy to edit output.</p>
+    <p>Rendered images are suitable for scrapbooks, posters, and other creative ways to entertain and/or annoy people. <span><a href='povzaika.html' target='content'><i> Read more...</i></a></span></p>
+</div>
+<h4 class='darkbg'>Scale2x and Scale3x in pure Python</h4>
+<div class='lightbg justborder'>
+    <p>Pure Python implementation of <a href='https://www.scale2x.it/' target='_top'>Scale2x</a> and <a href='https://en.wikipedia.org/wiki/Pixel-art_scaling_algorithms' target='_top'>Scale3x</a> image rescaling algorithms. Command line, GUI and batch processing programs available, free and open source.
+    </p>
+    <p><span class='red'><b>Update:</b></span> Batch programs since versions 2024.04.26 turned to multiprocessing, halving processing time.</p>
+    <p class='right'><a href='scalenx.html' target='content'><i>Read more...</i></a></p>
+</div>
+<h4 class='darkbg'>Python batch files</h4>
+<div class='lightbg justborder'>
+    <p>Some batch processing scripts made for my personal regular use. May appear to be useful to others. <a href='batch.html' target='content'><i>Read more...</i></a>
+    </p>
+</div>
+    <!-- Content block end -->
+
+</body>
 
 </html>

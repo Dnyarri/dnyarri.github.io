@@ -2,8 +2,7 @@ body {
     background-color: #9B9B9B;
     background-image: url('bckg.png');
     background-attachment: fixed;
-    margin: 0pt 24pt 0pt 24pt;
-    width: 90%;
+    margin: 0pt;
     max-width: 1600px;
 }
 
