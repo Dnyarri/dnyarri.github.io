@@ -1,36 +1,38 @@
-<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>
-<html>
-
+<!doctype html>
+<html lang='en-US'>
 <head>
     <link rev='made' href='mailto:ilyarazmanov@gmail.com'>
     <meta name='author' content='Ilyich the Toad'>
     <meta name='description' content='Scale2x and Scale3x in pure Python image rescaling'>
     <meta name='keywords' content='Python, Scale2x, Scale3x, AdvMAME2x, AdvMAME3x, image, resize'>
-    <meta name='robots' content='all'>
+    <link rel='stylesheet' href='toc.css' type='text/css'>
     <link rel='stylesheet' href='content.css' type='text/css'>
     <title>Scale2x and Scale3x in pure Python</title>
 </head>
-
-<body bgcolor='9B9B9B' background='bckg.png' topmargin='0' leftmargin='0' rightmargin='0' bottommargin='0' marginheight='0' marginwidth='0'>
-    <h1 class='darkbg'>ScaleNx</h1>
-    <h2 class='lightbg'>Scale2x and Scale3x image scaling in Python</h2>
-    <div class='lightbg justborder'>
-        <p>Scale2x and Scale3x algorithms (sometimes referred to as AdvMAME2x and AdvMAME3x) were initially developed by <a href='https://www.scale2x.it/' target='_top'>Andrea Mazzoleni</a> for scaling up graphics like game sprites and icons without introducing new colors and blurring contrast edges. That's what it was invented for, and nothing else.</p>
-        <p>However, I came up with idea that Scale2x and Scale3x may be successfully misused for absolutely different task: scaling up low-res text scans before OCR, and drawings before tracing them to vectors.</p>
-        <p>So I created pure Python implementation of Scale2x and Scale3x, which can be <a href='https://github.com/Dnyarri/PixelArtScaling' target='_top'>downloaded from GitHub</a>. By saying 'pure Python' I mean it - it doesn't even use bytearrays, only lists of lists of lists. Consider it a spiritual practice or whatever. You can download it as 'IncScaleNx.py' module to import into other software and/or just to laugh at it. Anyway, below is the illustration of Scale3x interpolation of small black and white text, twice. As you can see, Scale3x interpolation is quite unusual and absolutely different from nearest neighbour, bilinear and bicubic you know from Photoshop - it tries to keep image sharp and pays attention to diagonals.</p>
-        <p>Downloadable pack at GitHub includes Python sources for Scale2x and Scale3x command line versions, GUI versions thereof, and batch-processing GUI programs for scaling up all PNG files in a directory (recursively) with either Scale2x or Scale3x. If you want Scale4x or even bigger X, just run Scale2x twice in a row, and so on.</p>
+<body>
+    <div class='leftarea'> <!-- Nav holder begin -->
+        <object data='toc.html' class='leftbar'></object>
     </div>
-    <br>
-    <div class='lightbg justborder'>
-        <p><span class='red'><b>Upd:</b></span> - Batch Scale2x and Scale3x programs turned to <span class='red'>multiprocessing</span>. On my 4&nbsp;logical, <i>i.&nbsp;e.</i> 2&nbsp;real CPU notebook it approximately halves total processing time. There is a price though - at 100&nbsp;% CPU load interface becomes somewhat unresponsive and program looks like hung up (not responding and eating all the power) - don't worry, it is not, it just tries to run as fast as possible and have no time to talk about it. So it makes sense to download updated exe from <a href='https://github.com/Dnyarri/PixelArtScaling/releases/latest' target='_top'>most recent release</a>.</p>
-    </div>
-    <br>
-    <div class='center lightbg justborder' style='min-width: 991px; max-width: 1000px;'>
-        <img src='imgscalenx\x3x3.png' width='987' height='743' class='justborder center'>
-        <p>Proceed to <a href='https://github.com/Dnyarri/PixelArtScaling' target='_top'>ScaleNx at GitHub</a> for downloads.</p>
+    <div class='content'> <!-- Content block begin -->
+        <h1 class='darkbg'>ScaleNx</h1>
+        <h2 class='lightbg'>Scale2x and Scale3x image scaling in Python</h2>
+        <div class='lightbg justborder'>
+            <p>Scale2x and Scale3x algorithms (sometimes referred to as AdvMAME2x and AdvMAME3x) were initially developed by <a href='https://www.scale2x.it/'>Andrea Mazzoleni</a> for scaling up graphics like game sprites and icons without introducing new colors and blurring contrast edges. That's what it was invented for, and nothing else.</p>
+            <p>However, I came up with idea that Scale2x and Scale3x may be successfully misused for absolutely different task: scaling up low-res text scans before OCR, and drawings before tracing them to vectors.</p>
+            <p>So I created pure Python implementation of Scale2x and Scale3x, which can be <a href='https://github.com/Dnyarri/PixelArtScaling'>downloaded from GitHub</a>. By saying 'pure Python' I mean it - it doesn't even use bytearrays, only lists of lists of lists. Consider it a spiritual practice or whatever. You can download it as 'IncScaleNx.py' module to import into other software and/or just to laugh at it. Anyway, below is the illustration of Scale3x interpolation of small black and white text, twice. As you can see, Scale3x interpolation is quite unusual and absolutely different from nearest neighbour, bilinear and bicubic you know from Photoshop - it tries to keep image sharp and pays attention to diagonals.</p>
+            <p>Downloadable pack at GitHub includes Python sources for Scale2x and Scale3x command line versions, GUI versions thereof, and batch-processing GUI programs for scaling up all PNG files in a directory (recursively) with either Scale2x or Scale3x. If you want Scale4x or even bigger X, just run Scale2x twice in a row, and so on.</p>
+        </div>
         <br>
-        <p class='right'>Move back to <a href='https://dnyarri.github.io' target='_top'>main page</a>.</p>
-    </div>
+        <div class='lightbg justborder'>
+            <p><span class='red'><b>Upd:</b></span> - Batch Scale2x and Scale3x programs turned to <span class='red'>multiprocessing</span>. On my 4&nbsp;logical, <i>i.&nbsp;e.</i> 2&nbsp;real CPU notebook it approximately halves total processing time. There is a price though - at 100&nbsp;% CPU load interface becomes somewhat unresponsive and program looks like hung up (not responding and eating all the power) - don't worry, it is not, it just tries to run as fast as possible and have no time to talk about it. So it makes sense to download updated exe from <a href='https://github.com/Dnyarri/PixelArtScaling/releases/latest'>most recent release</a>.</p>
+        </div>
+        <br>
+        <div class='center lightbg justborder' style='min-width: 991px; max-width: 1000px;'>
+            <img src='imgscalenx\x3x3.png' width='987' height='743' class='justborder center'>
+            <p>Proceed to <a href='https://github.com/Dnyarri/PixelArtScaling'>ScaleNx at GitHub</a> for downloads.</p>
+            <br>
+            <p class='right'>Move back to <a href='https://dnyarri.github.io'>main page</a>.</p>
+        </div>
+    </div> <!-- Content block end -->
 </body>
-
 </html>

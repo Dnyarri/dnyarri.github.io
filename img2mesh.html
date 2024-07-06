@@ -1,39 +1,41 @@
-<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>
-<html>
-
+<!doctype html>
+<html lang='en-US'>
 <head>
     <link rev='made' href='mailto:ilyarazmanov@gmail.com'>
     <meta name='author' content='Ilyich the Toad'>
     <meta name='description' content='Image to POVRay, Wavefront, STL 3D mesh conversion'>
     <meta name='keywords' content='Python, POVRay, Wavefront, heightfield, mesh, 3D, png, pov, obj, stl'>
-    <meta name='robots' content='all'>
+    <link rel='stylesheet' href='toc.css' type='text/css'>
     <link rel='stylesheet' href='content.css' type='text/css'>
     <title>Image to POVRay 3D mesh conversion</title>
 </head>
-
-<body bgcolor='9B9B9B' background='bckg.png' topmargin='0' leftmargin='0' rightmargin='0' bottommargin='0' marginheight='0' marginwidth='0'>
-    <h1 class='darkbg'>POVRay img2mesh</h1>
-    <div class='lightbg justborder cols512' style='min-height: 470px;'>
-        <div class='center'><img src='imgmesh/640/img2mesh.png' width='464' height='464' class='center'></div>
-        <p>Pretty simple (well, it was initially) program that reads PNG image, and writes 3D mesh in <a href='https://www.povray.org/' target='_top'>POVRay</a> format, using pixel X and Y coordinates for 'south' and 'east' position of 3D triangle mesh nodes, and, most important, pixel brightness as Z, that is, height of the node, thus converting image into sort of 3D landscape. After rendering POV scene thus obtained with POVRay (which is not just excellent, but also completely free 3D renderer) resulting image is obtained.</p>
-        <p>E.&nbsp;g., example image above was started as simple black and white drawing, converted to PNG, then some Gaussian Blur and maps added, and PNG fed to <b>img2mesh</b>.</p>
-        <p>Surely POVRay can import PNG and use them as 'heightfields' directly, but <b>img2mesh</b> uses rather unusual 'pyramid' conversion algorithm, providing extra quality for small heightfields.</p>
-        <p><b>img2mesh</b> is equipped with easy to use GUI for selecting input and output files.</p>
-        <p>Default export to POV file suggests camera autofocus on object, object scaling to fit 1,&nbsp;1,&nbsp;1&nbsp;cube, and suitable scene structuring for easy editing later.</p>
-        <p><span class='red'><b>Update:</b></span> In version <span class='red'>2.8</span>, beside complete rewriting of POVRay output, Wavefront OBJ and stereolithography STL export added.</p>
-        <div class='center' style='break-inside: avoid;'>
-            <img src='imgmesh/printscreen.png' width='507' height='360' alt='Preview' class='center'>
-            <p class='small center'>Screenshot of Windows Explorer window with test source PNG map and resulting output files preview side by side.</p>
-        </div>
-        <p>There is a difference between POV, OBJ and STL output:</p>
-        <ul>
-            <li>POVRay file is a scene, containing triangle mesh, CSG difference of it with box (yes, mesh generated with img2mesh doesn't have gaps and is tight enough to correctly produce CSG), textures (currently two overlaid textures with color gradient and equal height contour lines to simplify visual perception), light and camera;</li>
-            <li>STL file is a single object, consisting of height field triangle mesh plus sides and bottom to close object;</li>
-            <li>OBJ file is just an object of height field triangle mesh with no extras, since it's supposed to be imported into other software.</li>
-        </ul>
-        <p><span class='red'><b>Update:</b></span> In version <span class='red'>2.8.2</span> mapping added. Maps are transfer functions z value is passed through. Result is similar to Photoshop or GIMP "Curves" applied to source heightfield PNG, except for that with img2mesh map is nondestructively applied to mesh within POVRay, so you can change mesh rendering without changing the mesh itself.</p>
-        <p>Since version 2.8.2.5, all predefined maps were replaced by generalized linear spline interpolation. Descriptive part in the beginning of POV file generated look like this:</p>
-        <pre>
+<body>
+    <div class='leftarea'> <!-- Nav holder begin -->
+        <object data='toc.html' class='leftbar'></object>
+    </div>
+    <div class='content'> <!-- Content block begin -->
+        <h1 class='darkbg'>POVRay img2mesh</h1>
+        <div class='lightbg justborder cols512' style='min-height: 470px;'>
+            <div class='center'><img src='imgmesh/640/img2mesh.png' width='464' height='464' class='center'></div>
+            <p>Pretty simple (well, it was initially) program that reads PNG image, and writes 3D mesh in <a href='https://www.povray.org/'>POVRay</a> format, using pixel X and Y coordinates for 'south' and 'east' position of 3D triangle mesh nodes, and, most important, pixel brightness as Z, that is, height of the node, thus converting image into sort of 3D landscape. After rendering POV scene thus obtained with POVRay (which is not just excellent, but also completely free 3D renderer) resulting image is obtained.</p>
+            <p>E.&nbsp;g., example image above was started as simple black and white drawing, converted to PNG, then some Gaussian Blur and maps added, and PNG fed to <b>img2mesh</b>.</p>
+            <p>Surely POVRay can import PNG and use them as 'heightfields' directly, but <b>img2mesh</b> uses rather unusual 'pyramid' conversion algorithm, providing extra quality for small heightfields.</p>
+            <p><b>img2mesh</b> is equipped with easy to use GUI for selecting input and output files.</p>
+            <p>Default export to POV file suggests camera autofocus on object, object scaling to fit 1,&nbsp;1,&nbsp;1&nbsp;cube, and suitable scene structuring for easy editing later.</p>
+            <p><span class='red'><b>Update:</b></span> In version <span class='red'>2.8</span>, beside complete rewriting of POVRay output, Wavefront OBJ and stereolithography STL export added.</p>
+            <div class='center' style='break-inside: avoid;'>
+                <img src='imgmesh/printscreen.png' width='507' height='360' alt='Preview' class='center'>
+                <p class='small center'>Screenshot of Windows Explorer window with test source PNG map and resulting output files preview side by side.</p>
+            </div>
+            <p>There is a difference between POV, OBJ and STL output:</p>
+            <ul>
+                <li>POVRay file is a scene, containing triangle mesh, CSG difference of it with box (yes, mesh generated with img2mesh doesn't have gaps and is tight enough to correctly produce CSG), textures (currently two overlaid textures with color gradient and equal height contour lines to simplify visual perception), light and camera;</li>
+                <li>STL file is a single object, consisting of height field triangle mesh plus sides and bottom to close object;</li>
+                <li>OBJ file is just an object of height field triangle mesh with no extras, since it's supposed to be imported into other software.</li>
+            </ul>
+            <p><span class='red'><b>Update:</b></span> In version <span class='red'>2.8.2</span> mapping added. Maps are transfer functions z value is passed through. Result is similar to Photoshop or GIMP "Curves" applied to source heightfield PNG, except for that with img2mesh map is nondestructively applied to mesh within POVRay, so you can change mesh rendering without changing the mesh itself.</p>
+            <p>Since version 2.8.2.5, all predefined maps were replaced by generalized linear spline interpolation. Descriptive part in the beginning of POV file generated look like this:</p>
+            <pre>
     #declare Curve = function {
         spline { linear_spline
             0.0,   &lt;0.0,   0&gt;
@@ -43,13 +45,13 @@
             1.0,   &lt;1.0,   0&gt;}
         }
     #declare map = function(c) {Curve(c).u}</pre>
-        <p>First column contain input values, second column contain corresponding output values (third column currently is not used for anything good, just leave it alone). By default, input=output, that is, map does not change anything. However, you can edit it.</p>
-        <p>Note that POVRay does not pay attention to the order of control points appearance, so you can add midpoints after endpoints in no particular order. Just remember to have endpoints 0 and 1 defined, since POVRay cannot use undefined functions; everything between 0 and 1 is up to you to edit. Beside that, you can change linear spline to other splines supported by POVRay. Finally, nothing can stop you from writing your own non-spline maps. For example, <span class='pre'>#declare map = function(c) {int(4*c)/4}</span> will give you function similar to Photoshop "Posterize" with 4&nbsp;colors, while <span class='pre'>#declare map = function(c) {4*c-int(4*c)}</span> is 4-teeth saw function.</p>
-        <p>For Windows users, compiled <span class='red'>Windows 64-bit exe</span> file is <a href='https://github.com/Dnyarri/img2mesh/releases/latest' target='_top'>available for download in Release section of GitHub</a>. For other platforms, use Python sources - program is rather self-contained, you will find the only non-standard import (PyPNG) enclosed to download.</p><br>
-        <p>Step forward to <a href='https://github.com/Dnyarri/img2mesh' target='_top'>img2mesh at GitHub</a> for downloads.</p>
-        <br>
-        <p class='right'>or Move back to <a href='https://dnyarri.github.io' target='_top'>main page</a>.</p>
-    </div>
+            <p>First column contain input values, second column contain corresponding output values (third column currently is not used for anything good, just leave it alone). By default, input=output, that is, map does not change anything. However, you can edit it.</p>
+            <p>Note that POVRay does not pay attention to the order of control points appearance, so you can add midpoints after endpoints in no particular order. Just remember to have endpoints 0 and 1 defined, since POVRay cannot use undefined functions; everything between 0 and 1 is up to you to edit. Beside that, you can change linear spline to other splines supported by POVRay. Finally, nothing can stop you from writing your own non-spline maps. For example, <span class='pre'>#declare map = function(c) {int(4*c)/4}</span> will give you function similar to Photoshop "Posterize" with 4&nbsp;colors, while <span class='pre'>#declare map = function(c) {4*c-int(4*c)}</span> is 4-teeth saw function.</p>
+            <p>For Windows users, compiled <span class='red'>Windows 64-bit exe</span> file is <a href='https://github.com/Dnyarri/img2mesh/releases/latest'>available for download in Release section of GitHub</a>. For other platforms, use Python sources - program is rather self-contained, you will find the only non-standard import (PyPNG) enclosed to download.</p><br>
+            <p>Step forward to <a href='https://github.com/Dnyarri/img2mesh'>img2mesh at GitHub</a> for downloads.</p>
+            <br>
+            <p class='right'>or Move back to <a href='https://dnyarri.github.io'>main page</a>.</p>
+        </div>
+    </div> <!-- Content block end -->
 </body>
-
 </html>

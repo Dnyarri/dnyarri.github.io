@@ -1,19 +1,23 @@
-body {
-    background-color: #9B9B9B;
-    background-image: url('bckg.png');
-    background-attachment: fixed;
-    margin: 0pt;
+.leftarea {
+    float: left;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 128px;
+    min-height: 100vh;
+    height: 100vh;
+    margin: 0pt 0pt auto 0pt;
 }
 
 .leftbar {
-    /* position: fixed; */
-    position: sticky;
-    float: left;
+    position: fixed;
     top: 0px;
-    width: 130px;
-    height: 100%;
-    margin: 0pt 10pt auto 0pt;
-    border: solid 1px;
+    bottom: 0px;
+    left: 0px;
+    width: 128px;
+    min-height: 100vh;
+    height: 100vh;
+    margin: auto;
 }
 
 .ptoc {
@@ -36,8 +40,9 @@ body {
     text-align: left;
     margin: 4pt;
     font-size: 14pt;
+    font-weight: normal;
     color: white;
-    line-height: 16pt;
+    line-height: 24px;
     text-indent: 0pt;
 }
 
@@ -45,6 +50,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: left;
     font-size: 12pt;
+    font-weight: normal;
     color: #333333;
     text-indent: 6pt;
     background-color: #b6b6b6;
