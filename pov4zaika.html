@@ -47,11 +47,7 @@
                 <p class='small center pre lightbg'>thingie_5 move_map = &lt;0, 0, -2&gt;; rotate_map = &lt;60, 60, 180&gt;; and rotate_all = &lt;-10, -20, -20&gt;; for baseline</p>
             </div>
             <p>In general, I'd suggest gradually changing setting one by one, unless you are not afraid of total mess. And you will be. You will be.</p>
-            <div class='justborder center' style='break-inside: avoid;'><img src='4z/404.png' width='512'>
-                <p class='small center pre lightbg'>thingie_5 evenodd_offset = &lt;0.5, 0, 0&gt; rotate_rnd = &lt;10, 10, 10&gt;;</p>
-            </div>
-            <p>Just several degrees of randomization may help break monotonous pattern.</p>
-            <p>But let's get back to mapping and look at it's capabilities more closely:</p>
+            <p>Let's look at mapping capabilities more closely, to see why I call it "vast potential":</p>
             <div class='justborder center' style='break-inside: avoid;'><img src='4z/405.png' width='512'>
                 <p class='small center pre lightbg'>thingie_3 thingie_finish_3 scale_all = &lt;0.6, 0.6, 2&gt;; rotate_map = &lt;160, 120, 0&gt;;</p>
             </div>
@@ -64,8 +60,12 @@
             <p>Superellipsoids also make nice 3D-brush strokes.</p>
             <div class='justborder center' style='break-inside: avoid;'><img src='4z/408.png' width='512'></div>
             <p>One of the funny things about POVMosaic programs is, beside editing resulting files directly, you can plug a preset file in them, redefining everything. Preset files are regular POVRay .inc files and must be plugged after standard objects to overwrite them.</p>
-            <p>Below is result of adding just one string <span class='pre'>#include "preset_02.inc"</span> (preset_02.inc is included into project distribution, so you can investigate how it works):</p>
-            <div class='justborder center' style='column-span: all;'><img src='4z/407.png' width='1024'>
+            <div class='justborder center' style='break-inside: avoid;'><img src='4z/409.png' width='512'>
+            <p class='small center pre lightbg'>#include "44_puzzle.inc"</p></div>
+            <p>Above is a result of changing just one string to <span class='pre'>#include "44_puzzle.inc"</span> in POV file. It imports additional small POV file and plugs in whole new CSG object, corresponding to puzzle element, and its positioning. Yes, what you see above is not some simple bitmap tile - it's a whole lot of 3D objects, with easily editable geometry, perfectly aligned to form a puzzle-like picture.</p>
+            <div class='justborder center' style='column-span: all;'>
+                <p>Below is result of adding just one string <span class='pre'>#include "44_dice.inc"</span> (44_dice.inc is included into project distribution, so you can investigate how it works. You a supposed to be laughing once you understand the rotation trick. At least I was, albeit I invented it):</p>
+                <img src='4z/407.png' width='1024'>
                 <p class='small center pre lightbg'>#include "preset_02.inc"</p>
             </div>
         </div>

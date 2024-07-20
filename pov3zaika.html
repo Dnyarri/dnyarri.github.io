@@ -35,7 +35,7 @@
             <p>plus you can add external objects to the scene;</p>
             <p><b>Mapping.</b> It means you can map (make dependant of) some 3D object property to some source image pixel property. For example, on sample image below hexagonal prism (one of predefined objects) height is mapped to source brightness:</p>
             <div class='justborder center' style='break-inside: avoid;'><img src='3z/301.png' width='512'>
-                <p class='small center pre'>thingie_4; '#declare map = function(c) {abs((2.0 * c) - 1.0)}; scale_map = &lt;0, 0, 2&gt;; move_rnd = &lt;0, 0, 0.1&gt;</p>
+                <p class='small center pre'>thingie_4; '#declare map = function(c) {abs((2.0 * c) - 1.0)}; scale_map = &lt;0, 0, 1.5&gt;;</p>
             </div>
             <p>Since version 1.6.21, all predefined maps were replaced by generalized linear spline interpolation. Descriptive part in the beginning of POV file generated look like this:</p>
             <pre>
@@ -56,9 +56,9 @@
             </div>
             <p>And finally, whole bunch of settings may be redefined by inserting external .inc file:</p>
             <div class='justborder center' style='break-inside: avoid;'><img src='3z/304.png' width='512'>
-                <p class='small center pre lightbg'>#include "preset_01.inc"</p>
+                <p class='small center pre lightbg'>#include "63_icosa.inc"</p>
             </div>
-            <p>"preset_01.inc" is included in distribution and defines icosahedron. Sorry for a small preview, surely you'll find a use for icosahedron in something bigger. Icosahedra don't grow on trees, after all.</p>
+            <p>"63_icosa.inc" is included in distribution and defines icosahedron. Sorry for a small preview, surely you'll find a use for icosahedron in something bigger. Icosahedra don't grow on trees, after all, they can't be left unused.</p>
             <div class='justborder center' style='break-inside: avoid;'><img src='3z/306.png' width='512'>
                 <p class='small center pre lightbg'>thingie_5 conic_sweep</p>
             </div>
