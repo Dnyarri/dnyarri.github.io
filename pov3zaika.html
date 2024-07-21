@@ -35,7 +35,7 @@
             <p>plus you can add external objects to the scene;</p>
             <p><b>Mapping.</b> It means you can map (make dependant of) some 3D object property to some source image pixel property. For example, on sample image below hexagonal prism (one of predefined objects) height is mapped to source brightness:</p>
             <div class='justborder center' style='break-inside: avoid;'><img src='3z/301.png' width='512'>
-                <p class='small center pre'>thingie_4; '#declare map = function(c) {abs((2.0 * c) - 1.0)}; scale_map = &lt;0, 0, 1.5&gt;;</p>
+                <p class='small center pre'>thingie_4; #declare map = function(c) {abs((2.0 * c) - 1.0)}; scale_map = &lt;0, 0, 1.5&gt;;</p>
             </div>
             <p>Since version 1.6.21, all predefined maps were replaced by generalized linear spline interpolation. Descriptive part in the beginning of POV file generated look like this:</p>
             <pre>
