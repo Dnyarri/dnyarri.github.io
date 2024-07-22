@@ -8,23 +8,23 @@
     <meta name='keywords' content='Python, POVRay, mosaic, painting'>
     <link rel='stylesheet' href='toc.css' type='text/css'>
     <link rel='stylesheet' href='content.css' type='text/css'>
-    <title>POVRay mosaic: 4zaika</title>
+    <title>POVRay mosaic: 44zaika</title>
 </head>
 <body>
     <div class='leftarea'> <!-- Nav holder begin -->
         <object data='toc.html' class='leftbar'></object>
     </div>
     <div class='content'> <!-- Content block begin -->
-        <h1 class='darkbg'>POVRay mosaic: square pattern</h1>
+        <h1 class='darkbg'>POVRay mosaic: square pattern, Regular plane partition 4<sup>4</sup></h1>
         <h2 class='lightbg'>Converting 2D image into mosaic of 3D objects</h2>
-        <p class='lightbg justborder'><a href='povzaika.html'>POVRay mosaic</a> is a set of programs, which read every pixel of source image and convert it into a virtual 3D object, packed side by side with objects created from other pixels, thus creating something like 3D-mosaic in <a href='https://www.povray.org/'>POVRay</a> format. You can <a href='https://github.com/Dnyarri/POVmosaic'>download POVRay mosaic from GitHub</a> and use it for free.</p>
+        <p class='lightbg justborder'><a href='povzaika.html'>POVRay mosaic</a> is a set of programs, which read every pixel of source image and convert it into a virtual 3D object, packed side by side with objects created from other pixels, thus creating something like 3D-mosaic in <a href='https://www.povray.org/'>POVRay</a> format. You can <a href='https://github.com/Dnyarri/POVmosaic'>download POVRay mosaic from GitHub</a> and use it for free. <b>44Zaika</b> is a part of this package, covering 4<sup>4</sup> <a href='https://en.wikipedia.org/wiki/List_of_regular_polytopes#Euclidean_tilings'>Euclidean tiling</a>.</p>
         <div class='lightbg justborder cols512'>
-            <p><b>4zaika</b> is a small program, opening a PNG image, and converting it into a mosaic of 3D objects, packed in <b>square</b> pack. Each source pixel is turned into a 3D cube, colored like this pixel. Surely, instead of cubes, other 3D shapes may be used; at the moment of writing 4zaika provides seven prebuilt object types, and new ones may be easily inserted.</p>
-            <p>Since POV files are text files, containing 3D scene description, they can be easily edited; 4zaika output is as human-friendly as possible, reasonably commented internally, and, besides, there is a help file with more prolific descriptions. Next to the examples below there are short descriptions of changes introduced into scene file before rendering.</p>
+            <p><b>44zaika</b> is a small program, opening a PNG image, and converting it into a mosaic of 3D objects, packed in <b>square</b> pack. Each source pixel is turned into a 3D cube, colored like this pixel. Surely, instead of cubes, other 3D shapes may be used; at the moment of writing 44zaika provides seven prebuilt object types, and new ones may be easily inserted.</p>
+            <p>Since POV files are text files, containing 3D scene description, they can be easily edited; 44zaika output is as human-friendly as possible, reasonably commented internally, and, besides, there is a help file with more prolific descriptions. Next to the examples below there are short descriptions of changes introduced into scene file before rendering.</p>
             <div class='justborder center' style='break-inside: avoid;'><img src='4z/401.png' width='512'>
                 <p class='small center pre'>thingie = thingie_4</p>
             </div>
-            <p>The main idea behind 4zaika is <b>mapping</b>. Object properties (size, position, rotation) can be mapped to (that is, made functions of) source image pixel properties, currently brightness. Ok, let's map something:</p>
+            <p>The main idea behind 44zaika is <b>mapping</b>. Object properties (size, position, rotation) can be mapped to (that is, made functions of) source image pixel properties, currently brightness. Ok, let's map something:</p>
             <div class='justborder center chess' style='break-inside: avoid;'><img src='4z/402.png' width='512'>
                 <p class='small center pre lightbg'>thingie = thingie_3 scale_all = &lt;1, 1, 5&gt;; scale_map = &lt;1, 1, 0&gt;;</p>
             </div>
@@ -52,7 +52,7 @@
                 <p class='small center pre lightbg'>thingie_3 thingie_finish_3 scale_all = &lt;0.6, 0.6, 2&gt;; rotate_map = &lt;160, 120, 0&gt;;</p>
             </div>
             <p>Well, not quite a painting, but may be considered art. After all, painter is mapping brushstrokes direction to image sigmal, and we are mapping virtual cylinders rotation, what's the difference?</p>
-            <p>Note, in the scene above I edited camera to <span class='pre'>look_at&lt;0.005, 0.025, 0.0&gt;</span> to keep it centered since growing cylinders went off margins.</p>
+            <p class='small'>Note, in the scene above I edited camera to <span class='pre'>look_at&lt;0.005, 0.025, 0.0&gt;</span> to keep it centered since growing cylinders went off margins.</p>
             <p>Let's make it bolder:</p>
             <div class='justborder center' style='break-inside: avoid;'><img src='4z/406.png' width='512'>
                 <p class='small center pre lightbg'>thingie_3 thingie_finish_4 scale_all = &lt;1.5, 1.5, 2.5&gt;; rotate_map = &lt;160, 120, 0&gt;;</p>
@@ -66,7 +66,7 @@
             <div class='justborder center' style='column-span: all;'>
                 <p>Below is result of adding just one string <span class='pre'>#include "44_dice.inc"</span> (44_dice.inc is included into project distribution, so you can investigate how it works. You a supposed to be laughing once you understand the rotation trick. At least I was, albeit I invented it):</p>
                 <img src='4z/407.png' width='1024'>
-                <p class='small center pre lightbg'>#include "preset_02.inc"</p>
+                <p class='small center pre lightbg'>#include "44_puzzle.inc"</p>
             </div>
         </div>
         <p class='lightbg justborder'>Assuming you scrolled that far, I remind you that you can <a href='https://github.com/Dnyarri/POVmosaic'>download POVRay mosaic from GitHub</a>.</p>
