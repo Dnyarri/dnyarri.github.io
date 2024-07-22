@@ -71,13 +71,13 @@ a {
     text-decoration: none;
 }
 
+a:visited {
+    color: #000088;
+}
+
 a:hover {
     color: #0044ff;
     text-decoration: underline;
-}
-
-a:visited {
-    color: #000088;
 }
 
 .dark {
