@@ -148,6 +148,14 @@ a:hover {
     text-align: right;
 }
 
+.small {
+    font-size: 10pt;
+}
+
+.pre {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .red {
     border: thin solid rgba(255, 0, 0, 0.5);
     margin: 0px 2pt;
@@ -156,10 +164,10 @@ a:hover {
     border-radius: 6px;
 }
 
-.small {
-    font-size: 10pt;
-}
-
-.pre {
-    font-family: 'Courier New', Courier, monospace;
+.git {
+    border: thin solid rgba(0, 0, 255, 0.2);
+    margin: 0px 0pt;
+    padding: 0px 6pt;
+    background-color: rgba(0, 0, 255, 0.1);
+    border-radius: 6px;
 }
