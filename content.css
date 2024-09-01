@@ -18,8 +18,10 @@ p {
 }
 
 ul {
+    list-style-type: circle;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 12pt;
+    margin: 8pt 32pt 8pt 24pt;
 }
 
 .content {
