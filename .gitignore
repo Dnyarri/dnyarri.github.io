@@ -1,14 +1,8 @@
 backup/
 *.txt
-3z/*b.png
+!sitemap.txt
 #
 # comment in and out as necessary
 # commented ARE available, not commented are NOT
 #
-# bckg.png
-# bckgd.png
-# bckgl.png
 # toad.png
-# imgmesh/printscreen.png
-# imgmesh/320/img2mesh.png
-# imgmesh/640/img2mesh.png
