@@ -29,10 +29,10 @@
 }
 
 .divtoc {
-    background-color: #808080;
+    background: linear-gradient(135deg, rgba(64, 64, 64, 0.75), rgba(255, 255, 255, 0.25));
     margin: 0pt;
-    border: thick double #303030;
-    border-radius: 6px 36px 2px 10px;
+    border: 4px double #000000;
+    border-radius: 8px 32px 4px 16px;
 }
 
 .toc {
@@ -53,8 +53,8 @@
     font-weight: normal;
     color: #333333;
     text-indent: 6pt;
-    background-color: #b6b6b6;
-    border: solid 1px;
+    background: linear-gradient(135deg, rgba(160, 160, 160, 0.75), rgba(255, 255, 255, 0.5));
+    border: solid 1px #00000070;
     border-radius: 6px 6px 12px 6px;
     margin: 2pt 0pt 6pt 6pt;
 }
@@ -62,8 +62,8 @@
 .toctoc:hover {
     font-weight: bold;
     color: #ffffff;
-    background-color: #707070;
-    border: solid 2px #eeeeee;
+    background: linear-gradient(225deg, rgba(100, 100, 100, 0.75), rgba(255, 255, 255, 0.25));
+    border: solid 2px #ffffff70;
 }
 
 .toca {
@@ -72,7 +72,5 @@
 }
 
 .toca:hover {
-    color: #000000;
-    background-color: #707070;
-    text-decoration: underline;
+    text-decoration: underline white;
 }
