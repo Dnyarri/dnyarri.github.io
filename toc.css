@@ -29,7 +29,8 @@
 }
 
 .divtoc {
-    background: linear-gradient(135deg, rgba(64, 64, 64, 0.75), rgba(255, 255, 255, 0.25));
+    background: linear-gradient(90deg, rgba(64, 64, 64, 0.75), rgba(255, 255, 255, 0.25)), linear-gradient(180deg, rgba(64, 64, 64, 0.75), rgba(255, 255, 255, 0.25));
+    background-blend-mode: multiply, multiply;
     margin: 0pt;
     border: 4px double #000000;
     border-radius: 8px 32px 4px 16px;
@@ -53,7 +54,8 @@
     font-weight: normal;
     color: #333333;
     text-indent: 6pt;
-    background: linear-gradient(135deg, rgba(160, 160, 160, 0.75), rgba(255, 255, 255, 0.5));
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), white), linear-gradient(90deg, rgba(0, 0, 0, 0.1), white), linear-gradient(-45deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.2)), linear-gradient(45deg, rgba(0, 0, 0, 0.1), white);
+    background-blend-mode: multiply, multiply, screen;
     border: solid 1px #00000070;
     border-radius: 6px 6px 12px 6px;
     margin: 2pt 0pt 6pt 6pt;
@@ -62,8 +64,9 @@
 .toctoc:hover {
     font-weight: bold;
     color: #ffffff;
-    background: linear-gradient(225deg, rgba(100, 100, 100, 0.75), rgba(255, 255, 255, 0.25));
-    border: solid 2px #ffffff70;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), white), linear-gradient(-90deg, rgba(0, 0, 0, 0.1), white), linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.2)), linear-gradient(45deg, rgba(0, 0, 0, 0.1), white);
+    background-blend-mode: multiply, multiply, screen;
+    border: solid 1px #ffffff70;
 }
 
 .toca {
