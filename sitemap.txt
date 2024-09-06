@@ -1,9 +1,8 @@
-batch.html
-img2mesh.html
-index.html
-pov36zaika.html
-pov3zaika.html
-pov4zaika.html
-povzaika.html
-scalenx.html
-toc.html
+https://dnyarri.github.io/batch.html
+https://dnyarri.github.io/img2mesh.html
+https://dnyarri.github.io/index.html
+https://dnyarri.github.io/pov36zaika.html
+https://dnyarri.github.io/pov3zaika.html
+https://dnyarri.github.io/pov4zaika.html
+https://dnyarri.github.io/povzaika.html
+https://dnyarri.github.io/scalenx.html
