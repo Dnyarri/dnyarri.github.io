@@ -1,8 +1,1 @@
 backup/
-*.txt
-!sitemap.txt
-#
-# comment in and out as necessary
-# commented ARE available, not commented are NOT
-#
-# toad.png
