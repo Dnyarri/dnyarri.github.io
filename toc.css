@@ -53,7 +53,8 @@
     font-size: 12pt;
     font-weight: normal;
     color: #333333;
-    text-indent: 6pt;
+    text-indent: 0pt;
+    padding: 0pt 4pt;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), white), linear-gradient(90deg, rgba(0, 0, 0, 0.1), white), linear-gradient(-45deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.2)), linear-gradient(45deg, rgba(0, 0, 0, 0.1), white);
     background-blend-mode: multiply, multiply, screen;
     border: solid 1px #00000070;
