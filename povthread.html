@@ -20,25 +20,25 @@
         <h1 class='darkbg'>POVRay Thread: Linen and Stitch</h1>
         <h2 class='lightbg'>Converting 2D image into canvas and cross-stitch 3D simulation</h2>
         <div class='lightbg justborder'>
-            <p>POVRay Thread, a bastardly offspring of <a href='povzaika.html'>POVRay Mosaic</a> project is a set of programs, which read pixels of source image and convert them into a complex 3D structure, simulating something textile and thread-related, in <a href='https://www.povray.org/'>POVRay</a> format.</p>
+            <p>POVRay Thread, a bastardly offspring of <a href='povzaika.html'>POVRay Mosaic</a> project is a set of programs, which read pixels of source image and convert them into a complex 3D structure, simulating something textile and thread related, in <a href='https://www.povray.org/'>POVRay</a> format.</p>
         </div>
         <div class='lightbg justborder cols512'>
             <div class='center' style='break-inside: avoid;'>
                 <h3>Linen...</h3>
-                <img src='thread/li01.png' width='512'>
+                <img src='thread/linen24x512.png' width='512' height='384'>
                 <p class='small center'>linen default output example</p>
             </div>
-            <p>&laquo;Linen&raquo; is a program for simulating most common weaving pattern, seen in many cotton, wool, and practically all linen fabrics. Elemental nodes of linen output are colored after source image pixels. Output POVRay files are easy to edit, changing thread finish (dull/shiny) and texture (normal vectors) to simulate wide range of threads, from single strand plastic to multistrand natural fibers.</p>
+            <p>&laquo;Linen&raquo; is a program for simulating most common <a href='https://en.m.wikipedia.org/wiki/Plain_weave'>plain weave</a>, seen in many cotton, wool, and practically all linen fabrics. Elemental nodes of linen output are colored after source image pixels, producing colored taffeta or print on canvas look. Output POVRay files are easy to edit, changing thread finish (dull/shiny) and texture (normal vectors) to simulate wide range of threads, from single strand plastic to multistrand natural fibers.</p>
             <div class='center' style='break-inside: avoid;'>
                 <h3>...and Stitch</h3>
-                <img src='thread/st01.png' width='512'>
+                <img src='thread/stitch24x512.png' width='512' height='384'>
                 <p class='small center'>linen default output example</p>
             </div>
-            <p>&laquo;Stitch&raquo; is a program for simulating most common stitch type, i.e. a cross stitch. Surely each of these 3D stitches are colored after source image pixels.</p>
+            <p>&laquo;Stitch&raquo; is a program for simulating most common stitch type, i.e. a cross stitch. Each of 3D stitches produced by program is colored after source image pixel. Stitch pattern may be distorted during rendering, turning too regular artificial appearance into something more natural. Distortion is based on structured Perlin noise pattern.</p>
         </div>
         <div class='lightbg justborder'>
-            <p>Surely you can not only switch between predefined stuff and edit parameters like rotation and size(although this alone will give you numerous combinations), but also insert your own objects, functions and values. The easiest way to do so is using external "preset.inc" patch files which, upon importing into main scene file, will override all previous settings. For example, preset file <span class='pre'>"44_dice.inc"</span> (included in distribution) for rendering image below is about only 2,51&nbsp;kb, yet contains both dice 3D object and all necessary "flip" instructions, and may be plugged into your scene with editing just one line.</p>
-            <div class='center'><img src='thread/stiso.png' width='1024'></div>
+            <p>Surely you can not only switch between predefined stuff and edit parameters like rotation and size (although this alone will give you numerous combinations), but also insert your own objects, functions and values. The easiest way to do so is using external "preset.inc" patch files which, upon importing into main scene file, will override all previous settings.</p>
+            <div class='center'><img src='thread/stitch16x1024.png' width='1024'></div>
             <p>Now it's time to <a href='https://github.com/Dnyarri/POVmosaic' class='git'>download POVRay mosaic from GitHub</a> and start building your own mosaic scenes. And, surely, once you manage to build something interesting, don't forget to show it to other humans and lesser species.</p>
         </div>
         <br>
