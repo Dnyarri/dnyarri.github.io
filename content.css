@@ -34,7 +34,7 @@ h1 {
     text-align: center;
     border: thin solid #7c7c7c;
     border-radius: 24px 24px 0px 0px;
-    margin: 0px 0px 0px 0px;
+    margin: 0px;
 }
 
 h2 {
@@ -43,7 +43,7 @@ h2 {
     text-align: center;
     border: thin solid #7c7c7c;
     border-radius: 6px;
-    margin: 0pt;
+    margin: 0px;
 }
 
 h3 {
