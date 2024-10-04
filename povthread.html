@@ -3,11 +3,11 @@
 <head>
     <link rel='icon' type='image/x-icon' href='favicon.ico'>
     <link rev='made' href='mailto:ilyarazmanov@gmail.com'>
-    <link rel='canonical' href='https://dnyarri.github.io/povzaika.html'/>
+    <link rel='canonical' href='https://dnyarri.github.io/povthread.html'/>
     <meta charset='utf-8' />
     <meta name='author' content='Ilyich the Toad'>
     <meta name='description' content='POVRay thread: Linen and Stitch'>
-    <meta name='keywords' content='Python, POVRay, mosaic, thread, textile, cross-stitch, canvas, linen, tabby, weave, gros-de-Naples, taffeta'>
+    <meta name='keywords' content='Python, POVRay, mosaic, thread, textile, cross-stitch, canvas, linen, tabby, weave, gros-de-Naples, taffeta, embroidery'>
     <link rel='stylesheet' href='toc.css' type='text/css'>
     <link rel='stylesheet' href='content.css' type='text/css'>
     <title>POVRay mosaic</title>
@@ -21,6 +21,7 @@
         <h2 class='lightbg'>Converting 2D image into canvas and cross-stitch 3D simulation</h2>
         <div class='lightbg justborder'>
             <p>POVRay Thread, a bastardly offspring of <a href='povzaika.html'>POVRay Mosaic</a> project is a set of programs, which read pixels of source image and convert them into a complex 3D structure, simulating something textile and thread related, in <a href='https://www.povray.org/'>POVRay</a> format.</p>
+            <p>POVRay Thread programs are <a href='https://github.com/Dnyarri/POVthread' class='git'>freely available at GitHub</a>.</p>
         </div>
         <div class='lightbg justborder cols512'>
             <div class='center' style='break-inside: avoid;'>
@@ -34,12 +35,12 @@
                 <img src='thread/stitch24x512.png' width='512' height='384'>
                 <p class='small center'>linen default output example</p>
             </div>
-            <p>&laquo;Stitch&raquo; is a program for simulating most common stitch type, i.e. a cross stitch. Each of 3D stitches produced by program is colored after source image pixel. Stitch pattern may be distorted during rendering, turning too regular artificial appearance into something more natural. Distortion is based on structured Perlin noise pattern.</p>
+            <p>&laquo;Stitch&raquo; is a program for simulating most common <a href='https://en.wikipedia.org/wiki/Cross-stitch'>cross-stitching</a> embroidery type, i.e. a cross stitch. Each of 3D stitches produced by program is colored after source image pixel. Stitch pattern may be distorted during rendering, turning too regular artificial appearance into something more natural. Distortion is based on structured Perlin noise pattern.</p>
         </div>
         <div class='lightbg justborder'>
-            <p>Surely you can not only switch between predefined stuff and edit parameters like rotation and size (although this alone will give you numerous combinations), but also insert your own objects, functions and values. The easiest way to do so is using external "preset.inc" patch files which, upon importing into main scene file, will override all previous settings.</p>
-            <div class='center'><img src='thread/stitch16x1024.png' width='1024'></div>
-            <p>Now it's time to <a href='https://github.com/Dnyarri/POVmosaic' class='git'>download POVRay mosaic from GitHub</a> and start building your own mosaic scenes. And, surely, once you manage to build something interesting, don't forget to show it to other humans and lesser species.</p>
+            <p>Currently both POVRay Thread programs use one primitive to simulate main object, but this, as any other export settings, may be overwritten. The easiest way to do so is using external "preset.inc" patch files which, upon importing into main scene file, will override all previous settings.</p>
+            <div class='center'><img src='thread/linen24x1024_1_strand_turns_14.png' width='1024'></div>
+            <p>Now it's time to <a href='https://github.com/Dnyarri/POVthread' class='git'>download POVRay Thread from GitHub</a> and start building your own mosaic scenes.</p>
         </div>
         <br>
         <p class='right'><span class='lightbg justborder'>...or Move back to <a href='https://dnyarri.github.io'>main page</a>.</span></p>
