@@ -1,4 +1,3 @@
 User-agent: *
 Disallow: */sporadic/
-Allow: /sporadic/astillero.html
 Sitemap: https://dnyarri.github.io/sitemap.xml
