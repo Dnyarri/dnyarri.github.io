@@ -30,6 +30,14 @@
             <p>Surely POVRay can import PNG and use them as &laquo;heightfields&raquo; directly, but <b>img2mesh</b> uses rather unusual &laquo;pyramid&raquo; conversion algorithm, providing extra quality for small heightfields.</p>
             <p><b>img2mesh</b> is equipped with easy to use GUI for selecting input and output files.</p>
             <p>Default export to POV file suggests camera autofocus on object, object scaling to fit 1,&nbsp;1,&nbsp;1&nbsp;cube, and suitable scene structuring for easy editing later.</p>
+            <p><span class='red'><b>Update:</b></span> In version <span class='red'>2.13.13.2</span> PPM and PGM import added to previous PNG one. Exported .POV file may be used intact as .INC, by setting a flag in the main file:</p>
+            <p>
+                <pre>
+  <b>#declare Main = 1;</b>
+  #include "generated.pov"
+  object {thething}
+                </pre>
+            <p>&laquo;Main&raquo; variable in master file turns off camera, light and texture in include file, allowing master file to take over.</p>
             <p><span class='red'><b>Update:</b></span> In version <span class='red'>2.9</span>, beside improvement of POVRay output, Autodesk DXF export added to previously provided Wavefront OBJ and stereolithography STL export.</p>
             <div class='center' style='break-inside: avoid;'>
                 <img src='imgmesh/printscreen.png' width='507' height='360' alt='Preview' class='center'>
