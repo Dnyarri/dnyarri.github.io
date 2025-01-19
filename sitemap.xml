@@ -6,8 +6,8 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://dnyarri.github.io/</loc>
-  <lastmod>2025-01-14</lastmod>
+  <loc>https://dnyarri.github.io/index.html</loc>
+  <lastmod>2025-01-19</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
@@ -42,7 +42,7 @@
 </url>
 <url>
   <loc>https://dnyarri.github.io/scalenx.html</loc>
-  <lastmod>2025-01-01</lastmod>
+  <lastmod>2025-01-19</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
