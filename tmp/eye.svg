@@ -73,7 +73,7 @@
        fy="76.912613"
        r="1.6729397"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-0.51432479,-0.1285812)" /><linearGradient
+       gradientTransform="matrix(0.8087208,0,0,1.1955004,8.8605312,-14.804646)" /><linearGradient
        xlink:href="#linearGradient4"
        id="linearGradient8"
        x1="40.8311"
@@ -115,7 +115,7 @@
        id="path1" /><ellipse
        style="fill:url(#radialGradient6);stroke:#000000;stroke-width:0;stroke-opacity:1;paint-order:markers stroke fill"
        id="path2"
-       cx="46.47403"
-       cy="77.01548"
-       rx="1.2365206"
-       ry="1.6729397" /></g></svg>
+       cx="46.860992"
+       cy="77.421104"
+       rx="1"
+       ry="2" /></g></svg>
