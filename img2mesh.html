@@ -6,11 +6,11 @@
     <link rel='canonical' href='https://dnyarri.github.io/img2mesh.html'/>
     <meta charset='utf-8' />
     <meta name='author' content='Ilyich the Toad'>
-    <meta name='description' content='Image to POVRay, Wavefront OBJ, Autodesk DXF, STL 3D mesh conversion'>
-    <meta name='keywords' content='Python, POVRay, Wavefront, Autodesk, stereolithography, heightfield, mesh, 3D-print, png, pov, obj, dxf, stl'>
+    <meta name='description' content='Image to POV-Ray, Wavefront OBJ, Autodesk DXF, STL 3D mesh conversion'>
+    <meta name='keywords' content='Python, POVRay, Wavefront, Autodesk, stereolithography, heightfield, mesh, 3D-print, png, ppm, pgm pov, obj, dxf, stl'>
     <link rel='stylesheet' href='toc.css' type='text/css'>
     <link rel='stylesheet' href='content.css' type='text/css'>
-    <title>Image to 3D mesh conversion (POVRay, OBJ, STL, DXF)</title>
+    <title>Image to 3D mesh conversion (POV-Ray, OBJ, STL, DXF)</title>
 </head>
 <body>
     <div class='leftarea'> <!-- Nav holder begin -->
@@ -18,13 +18,13 @@
     </div>
     <div class='content'> <!-- Content block begin -->
         <h1 class='darkbg'>POVRay img2mesh</h1>
-        <h2 class='lightbg'>Converting greyscale PNG into POV, OBJ and STL 3D mesh</h2>
+        <h2 class='lightbg'>Converting greyscale PNG and PNM into POV, OBJ, DXF and STL 3D mesh</h2>
         <div class='lightbg justborder cols512' style='min-height: 470px;'>
-            <p>Pretty simple (well, it was initially) program that reads PNG image, and writes 3D mesh in <a href='https://www.povray.org/'>POV-Ray</a> format, using pixel X and Y coordinates for &laquo;east&raquo; and &laquo;south&raquo; position of 3D triangle mesh nodes, and, most important, pixel brightness as Z, that is, height of the node, thus converting image into sort of 3D landscape. After rendering POV scene thus obtained with POVRay (which is not just excellent, but also completely free 3D renderer) resulting image is obtained.</p>
+            <p>Pretty simple (well, it was initially) program that reads PNG or PNM (PGM or PPM) image, and writes 3D triangle mesh in <a href='https://www.povray.org/'>POV-Ray</a> format, using pixel X and Y coordinates for &laquo;east&raquo; and &laquo;south&raquo; position of 3D triangle mesh nodes, and, most important, pixel brightness as Z, that is, height of the node, thus converting image into sort of 3D landscape. After rendering POV scene thus obtained with POVRay (which is not just excellent, but also completely free 3D renderer) resulting image is obtained.</p>
             <div class='justborder center' style='break-inside: avoid;'>
                 <img src='imgmesh/02.png' width='64' height='64'>
                 <img src='imgmesh/02b.png' width='340' height='357'>
-                <p class='small center'>Source image (actual size) and resultng 3D object rendering (default texture). Due to unusual mesh building algorithm img2mesh provides smooth fine surface from just 64x64&nbsp;px image.</p></div>
+                <p class='small center'>Source image (actual size) and resulting 3D object rendering (default texture). Due to unusual mesh building algorithm img2mesh provides smooth fine surface from just 64x64&nbsp;px image.</p></div>
             <p>E.&nbsp;g., example image below was started as simple black and white drawing, converted to PNG, then some Gaussian Blur and maps added, and PNG fed to <b>img2mesh</b>.</p>
             <div class='center'><img src='imgmesh/640/img2mesh.png' width='464' height='464' class='center'></div>
             <p>Surely POVRay can import PNG and use them as &laquo;heightfields&raquo; directly, but <b>img2mesh</b> uses rather unusual &laquo;pyramid&raquo; conversion algorithm, providing extra quality for small heightfields.</p>
