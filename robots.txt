@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: */sporadic/
 Sitemap: https://dnyarri.github.io/sitemap.xml

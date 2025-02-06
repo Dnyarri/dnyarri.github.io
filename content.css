@@ -14,7 +14,8 @@ p {
     text-align: justify;
     color: #333333;
     line-height: 14pt;
-    margin: 4pt;
+    margin: 3pt 10pt 10pt;
+    break-inside: avoid-column;
 }
 
 ul {
@@ -43,7 +44,7 @@ h2 {
     text-align: center;
     border: thin solid #7c7c7c;
     border-radius: 6px;
-    margin: 0px;
+    margin: 6px 0px 0px;
 }
 
 h3 {
@@ -160,16 +161,14 @@ a:hover {
 
 .red {
     border: thin solid rgba(255, 0, 0, 0.5);
-    margin: 0px 2pt;
-    padding: 0px 4pt;
+    padding: 1px 4pt;
     background-color: rgba(255, 0, 0, 0.2);
     border-radius: 6px;
 }
 
 .git {
     border: thin solid rgba(0, 0, 255, 0.2);
-    margin: 0px 0pt;
-    padding: 0px 6pt;
+    padding: auto 2pt;
     background-color: rgba(0, 0, 255, 0.1);
     border-radius: 6px;
 }
