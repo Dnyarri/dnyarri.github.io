@@ -6,7 +6,7 @@
     <link rel='canonical' href='https://dnyarri.github.io/img2mesh.html'/>
     <meta charset='utf-8' />
     <meta name='author' content='Ilyich the Toad'>
-    <meta name='description' content='Image to POV-Ray, Wavefront OBJ, Autodesk DXF, STL 3D mesh conversion'>
+    <meta name='description' content='Image elevation map to POV-Ray, Wavefront OBJ, Autodesk DXF, STL 3D triangle mesh conversion'>
     <meta name='keywords' content='Python, POVRay, Wavefront, Autodesk, stereolithography, heightfield, mesh, 3D-print, png, ppm, pgm pov, obj, dxf, stl'>
     <link rel='stylesheet' href='toc.css' type='text/css'>
     <link rel='stylesheet' href='content.css' type='text/css'>
@@ -27,18 +27,30 @@
                 <p class='small center'>Source image (actual size) and resulting 3D object rendering (default texture). Due to unusual mesh building algorithm img2mesh provides smooth fine surface from just 64x64&nbsp;px image.</p></div>
             <p>E.&nbsp;g., example image below was started as simple black and white drawing, converted to PNG, then some Gaussian Blur and maps added, and PNG fed to <b>img2mesh</b>.</p>
             <div class='center'><img src='imgmesh/640/img2mesh.png' width='464' height='464' class='center'></div>
-            <p>Surely POV&#8209;Ray can import PNG and use them as &laquo;heightfields&raquo; directly, but <b>img2mesh</b> uses rather unusual &laquo;pyramid&raquo; conversion algorithm, providing extra quality for small heightfields.</p>
+            <p>Surely POV&#8209;Ray can import PNG and use them as &laquo;heightfields&raquo; directly, but <b>img2mesh</b> uses rather unusual &laquo;pyramid&raquo; conversion algorithm, providing extra quality for small elevation maps.</p>
             <p><b>img2mesh</b> is equipped with easy to use GUI for selecting input and output files.</p>
             <p>Default export to POV file suggests camera autofocus on object, object scaling to fit 1,&nbsp;1,&nbsp;1&nbsp;cube, and suitable scene structuring for easy editing later.</p>
-            <p><span class='red'><b>Update:</b></span> In version <span class='red'>2.13.13.2</span> PPM and PGM import added to previous PNG one. Exported .POV file may be used intact as .INC, by setting a flag in the main file:</p>
+            <p><span class='red'><b>Update:</b></span> In version <span class='red'>2.13.13.2</span> PPM and PGM import added to previous PNG one, so resulting format compatibility may be briefly summarized as follows:</p>
+            <table cols='2' class='justborder' style='margin: 12pt 24pt 24pt;'>
+                <thead style='display: table-header-group'>
+                <tr style='vertical-align: top;'><th scope='col'><p>Input format</p></th><th scope='col'><p>Output format</p></th></tr>
+                </thead>
+                <tbody>
+                <tr style='vertical-align: top;'>
+                    <td><p style='text-align: left;'>8&nbsp;bpc and 16&nbsp;bpc PNG, binary&nbsp;PGM, ascii&nbsp;PGM, binary&nbsp;PPM, ascii&nbsp;PPM</p></td>
+                    <td><p style='text-align: left;'>POV-Ray, Wavefront&nbsp;OBJ, ascii&nbsp;STL, ascii Autodesk&nbsp;DXF</p></td>
+                </tr>
+                </tbody>
+            </table>
+            <p>Exported .POV file may be used intact as .INC, by setting a flag in the main file:</p>
             <p>
                 <pre>
   <b>#declare Main = 1;</b>
-  #include "generated.pov"
+  #include "<i>generated.pov</i>"
   object {thething}
                 </pre>
-            <p>&laquo;Main&raquo; variable in master file turns off camera, light and texture in include file, allowing master file to take over.</p>
-            <p>For developers: 3D export functions now implemented as <span class='pre'>list2mesh</span> package, which may be freely reused for your own Python projects requiring high quality 3D visualization of rectangular data sets.</p>
+            <p>&laquo;Main&raquo; variable in master file turns off camera, light and texture in "<i>generated.pov</i>" file, allowing master file to take over.</p>
+            <p>For developers: 3D export functions now implemented as <span class='pre'>list2mesh</span> module, which may be freely reused for your own Python projects requiring high quality 3D visualization of rectangular data sets.</p>
             <p><span class='red'><b>Update:</b></span> In version <span class='red'>2.9</span>, beside improvement of POV&#8209;Ray output, Autodesk DXF export added to previously provided Wavefront OBJ and stereolithography STL export.</p>
             <div class='center' style='break-inside: avoid;'>
                 <img src='imgmesh/printscreen.png' width='507' height='360' alt='Preview' class='center'>
