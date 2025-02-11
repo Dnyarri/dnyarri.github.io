@@ -69,12 +69,12 @@
             <p>Module <b>pnmlpnm.py</b> contains 100% pure Python implementation of everything one may need to read/write from/to a variety of PGM and PPM files. I/O functions are written as functions/procedures, as simple as possible, and listed below:</p>
             <ul>
                 <li><b>pnm2list</b> - reading binary or ascii RGB PPM or L PGM file and returning image data as ints and nested list;</li>
-                <li><b>list2bin</b> - getting image data as ints and nested list and creating binary PPM (P6) or PGM (P5) data structure in memory. Suitable for generating data to display with Tkinter;</li>
-                <li><b>list2pnm</b> - writing data created with list2bin to file;</li>
+                <li><b>list2bin</b> - getting image data as nested list of ints and creating binary PPM (P6) or PGM (P5) data structure in memory. Suitable for generating data to display with Tkinter;</li>
+                <li><b>list2pnm</b> - getting image data as nested list of ints and writing binary PPM (P6) or PGM (P5) to file;</li>
                 <li><b>list2pnmascii</b> - alternative function to write ASCII PPM (P3) or PGM (P2) files;</li>
                 <li><b>create_image</b> - creating empty nested 3D list for image representation. Not used within this particular module but often needed by programs this module is supposed to be used with.</li>
             </ul>
-            <p>Detailed functions arguments description is provided in docstrings, but in general looks simple like that - you feed the function with your image data list and a filename, and get PNM file with that name written.</p>
+            <p>Detailed functions arguments description is provided in docstrings, but in general looks as simple as that - you feed the function with your image data list and a filename, and get PNM file written.</p>
         </div>
         
         <h3 class='lightbg' style='max-width: 300pt;'>viewer.py</h3>
