@@ -34,15 +34,15 @@
                 <tbody>
                 <tr style='vertical-align: top;'>
                     <td><p style='text-align: left;'>8&nbsp;bpc and 16&nbsp;bpc PNG, binary&nbsp;PGM, ascii&nbsp;PGM, binary&nbsp;PPM, ascii&nbsp;PPM</p></td>
-                    <td><p style='text-align: left;'>POV-Ray, Wavefront&nbsp;OBJ, ascii&nbsp;STL, ascii Autodesk&nbsp;DXF</p></td>
+                    <td><p style='text-align: left;'>POV-Ray, Wavefront&nbsp;OBJ, stereolithography ascii&nbsp;STL, ascii Autodesk&nbsp;DXF</p></td>
                 </tr>
                 </tbody>
             </table>
             <p>There is a substantial difference between POV, OBJ, DXF and STL output:</p>
             <ul>
-                <li>POV&#8209;Ray file is a scene file, containing triangle mesh, CSG difference of it with box (yes, mesh generated with img2mesh doesn't have gaps and is tight enough to correctly produce CSG), textures (currently two overlaid textures with color gradient and equal height contour lines to simplify visual perception), lights and camera;</li>
-                <li>STL file is a single object, consisting of height field triangle mesh plus sides and bottom to close object;</li>
-                <li>OBJ and DXF files contain just an object of height field triangle mesh with no extras, since they are intended to be imported into other software where all the bells and whistles are supposed to be added.</li>
+                <li>POV&#8209;Ray file is a scene file, containing triangle mesh, CSG difference of it with box (yes, mesh generated with img2mesh doesn't have gaps and is tight enough to correctly produce CSG), example textures (currently two overlaid textures with color gradient and equal height contour lines to simplify visual perception), light and camera;</li>
+                <li>STL contains a single object, consisting of height field triangle mesh plus sides and bottom meshes to close the object as required by 3D&nbsp;printer;</li>
+                <li>OBJ and DXF files contain just an object of height field triangle mesh with no extras, since these formats are intended to be imported into other software where all the bells and whistles are supposed to be added.</li>
             </ul>
             <div class='center' style='break-inside: avoid;'>
                 <img src='imgmesh/printscreen.png' width='507' height='360' alt='Preview' class='center'>
