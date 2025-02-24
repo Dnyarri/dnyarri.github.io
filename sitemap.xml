@@ -2,27 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>https://dnyarri.github.io/</loc>
-  <lastmod>2025-02-19</lastmod>
+  <lastmod>2025-02-24</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://dnyarri.github.io/index.html</loc>
-  <lastmod>2025-02-21</lastmod>
+  <lastmod>2025-02-24</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://dnyarri.github.io/img2mesh.html</loc>
-  <lastmod>2025-02-19</lastmod>
+  <lastmod>2025-02-24</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://dnyarri.github.io/scalenx.html</loc>
-  <lastmod>2025-02-19</lastmod>
+  <lastmod>2025-02-24</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://dnyarri.github.io/pypnm.html</loc>
   <lastmod>2025-02-11</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://dnyarri.github.io/povzaika.html</loc>
+  <lastmod>2025-02-19</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -41,11 +46,6 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://dnyarri.github.io/povzaika.html</loc>
-  <lastmod>2025-02-19</lastmod>
-  <priority>0.60</priority>
-</url>
-<url>
   <loc>https://dnyarri.github.io/povthread.html</loc>
   <lastmod>2025-02-06</lastmod>
   <priority>0.80</priority>
@@ -53,11 +53,11 @@
 <url>
   <loc>https://dnyarri.github.io/batch.html</loc>
   <lastmod>2025-02-06</lastmod>
-  <priority>0.80</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://dnyarri.github.io/tmp/astillero.html</loc>
   <lastmod>2025-02-02</lastmod>
-  <priority>0.80</priority>
+  <priority>0.40</priority>
 </url>
 </urlset>
