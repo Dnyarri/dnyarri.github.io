@@ -6,7 +6,7 @@
     <link rel='canonical' href='https://dnyarri.github.io/index.html'/>
     <meta charset='utf-8' />
     <meta name='author' content='Ilyich the Toad'>
-    <meta name='description' content='Python programs for POV-Ray and other 3D, ScaleNx and ScaleNxSFX, PPM and PGM image support and batch processing'>
+    <meta name='description' content='Python freeware for POV-Ray and other 3D, ScaleNx and ScaleNxSFX, PPM and PGM image support and batch processing'>
     <meta name='keywords' content='Python, POVRay, Wavefront, Autodesk, stereolithography, Scale2x, Scale3x, Scale2xSFX, Scale3xSFX, AdvMAME2x, AdvMAME3x, batch, 3D, image, convert, freeware, 3D-print, conversion, LibreOffice, optivorbis'>
     <meta name='robots' content='all'>
     <meta name="google-site-verification" content="QktvPQafCXPocfm38M5eBb3bniwuaJJh6Bx7YDE4AgU" />
@@ -57,7 +57,10 @@
         </div>
         <h4 class='darkbg'>PGM and PPM image files handling in pure Python</h4>
         <div class='lightbg justborder'>
-            <p><a href='pypnm.html'>PyPNM</a> is a pure Python implementation of read/write functions for Portable Gray Map (<a href='https://netpbm.sourceforge.net/doc/pgm.html'>.pgm</a>) and Portable Pixel Map (<a href='https://netpbm.sourceforge.net/doc/ppm.html'>.ppm</a>) image formats. Well, due to format specifications <i>fluid</i> nature it's hard to say that PyPNM is fully compliant, but it was tested side by side with different software, and it even understands 16-bit per channel PGM and PPM produced by Adobe Photoshop (which uses somewhat, err, unique separators).</p><p><span class='red'><b>Update:</b></span> in ver.&nbsp;1.14.8.19 memory usage for writing PPM and PGM files greatly reduced. <a href='pypnm.html'><i>Read more...</i></a></p>
+            <a href='pypnm.html'><img src='pypnm/alphasmall.png' width='184' height='119' class='floatright'></a>
+            <p><a href='pypnm.html'>PyPNM</a> is a pure Python implementation of read/write functions for Portable Gray Map (<a href='https://netpbm.sourceforge.net/doc/pgm.html'>.pgm</a>) and Portable Pixel Map (<a href='https://netpbm.sourceforge.net/doc/ppm.html'>.ppm</a>) image formats. Well, due to format specifications <i>fluid</i> nature it's hard to say that PyPNM is fully compliant, but it was tested side by side with different software, and it even understands 16-bit per channel PGM and PPM produced by Adobe Photoshop (which uses somewhat, err, unique separators).</p>
+            <p>Beside reading and writing PNM files, PyPNM provides a suitable facility for viewing image-like data by converting it on the fly to in-memory PNM bytes and serving it to Tkinter (see usage example on the right). For image data with transparency, PyPNM simulates a preview over chessboard pattern (like Photoshop and GIMP).</p>
+            <p><span class='red'><b>Update:</b></span> in ver.&nbsp;1.14.8.19 memory usage for writing PPM and PGM files greatly reduced. <a href='pypnm.html'><i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>Python batch files</h4>
         <div class='lightbg justborder'>

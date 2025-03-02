@@ -6,7 +6,7 @@
     <link rel='canonical' href='https://dnyarri.github.io/pypnm.html'/>
     <meta charset='utf-8' />
     <meta name='author' content='Ilyich the Toad'>
-    <meta name='description' content='PGM and PPM image files reading and writing in pure Python'>
+    <meta name='description' content='PGM and PPM image files (8 and 16-bit) reading, viewing and writing in pure Python'>
     <meta name='keywords' content='Python, PPM, PGM, PNM, image, Photoshop, GIMP'>
     <link rel='stylesheet' href='toc.css' type='text/css'>
     <link rel='stylesheet' href='content.css' type='text/css'>
@@ -26,6 +26,13 @@
                 <li>unwillingness of many software developers to provide any good support for simple and open format. It took years for almighty Adobe Photoshop developers to include PNM module in distribution rather than count on third-party developers, and surely (see above) they used this chance to implement their own unusual separator scheme nobody else uses. What as to PNM support in Python, say, Pillow... sorry, I promised not to discuss Pillow anywhere ladies and children are allowed to read it.</li>
             </ul>
             <p>As a result, novice Python user (like me) may find it difficult to get reliable input/output modules for PPM and PGM image formats; therefore current PyPNM package was developed, combining input/output functions for 8-bits and 16-bits per channel binary and ascii PGM and PPM files, i.e. P2, P5, P3 and P6 PNM file types. P1 and P4 (1&nbsp;bit) PBM formats are supported only for reading.</p>
+            <p>PyPNM key functionality comprise:</p>
+            <ul>
+                <li>conversion of in-memory image representation as 3D nested list into PNM-like byte structure for easy <b>preview</b> with Tkinter PhotoImage(data=...) method;</li>
+                <li><b>reading</b> PPM, PGM and PBM files from disk into image representation as 3D nested list;</li>
+                <li><b>writing</b> image representation as 3D nested list to PPM or PGM file on disk.</li>
+            </ul>
+            <p style='font-size: 10pt; margin: 6pt 24pt;'><i>(Interlude start)</i> Actually what I needed was small and simple facility for displaying image-like data for image editing/filtering applications like &laquo;Averager&raquo; from <a href='povthread.html'>POVThread</a>. Yes, I want to be able to write image filter in Python and view result without huge extra packages. Using Tkinter with PPM/PGM looked like simplest solution, so I created some module for turning nested 3D lists to PPM-like bytes structures in memory. Since it required learning PNM specs anyway, I decided to add PPM/PGM files reading and writing on top of that. <i>Etc.</i>, as Kurt Vonnegut kept saying. <i>(Interlude end)</i></p>
             <p>You may easily acquire PyPNM module either <a href='https://github.com/Dnyarri/PyPNM' class='git'>from Github</a> or <a href='https://pypi.org/project/PyPNM/' class='git'>from PyPI</a> and use it absolutely free.</p>
             <table cols='2' class='justborder' style='margin: 12pt 24pt 24pt;'>
                 <thead style='display: table-header-group'>
@@ -36,7 +43,8 @@
                 <tr style='vertical-align: top;'><td><p><a href='https://pypi.org/project/PyPNM/' class='git'>PyPI</a></p></td><td><p>PyPNM module only.</p></td></tr>
                 </tbody>
             </table>
-            <p><span class='red'><b>Update:</b></span> in ver.&nbsp;1.14.8.19 memory usage for writing PPM and PGM files greatly reduced. Binary files (P6 and P5 correspondingly) are written per image row (which is considered as reasonable tradeoff between memory usage and disk thrashing), ASCII files (P3 and P2) are written per sample (which is minimal memory using scenario).</p>
+            <p><span class='red'><b>Update:</b></span> in ver.&nbsp;1.15.1.1 image viewing function updated to show LA and RGBA images over chessboard background (like Photoshop and GIMP). This mode requires enabling newly added option, which, in turn, requires RTFM.</p>
+            <p><span class='red'><b>Previously on PyPNM:</b></span> in ver.&nbsp;1.14.8.19 memory usage for writing PPM and PGM files greatly reduced. Binary files (P6 and P5 correspondingly) are written per image row (which is considered as reasonable tradeoff between memory usage and disk thrashing), ASCII files (P3 and P2) are written per sample (which is minimal memory using scenario).</p>
         </div>
         <h3 class='lightbg' style='max-width: 300pt;'>Format compatibility</h3>
         <div class='lightbg justborder' style='max-width: 420pt;'>
@@ -74,7 +82,7 @@
                 <li><b>list2pnmascii</b> - alternative function to write ASCII PPM (P3) or PGM (P2) files;</li>
                 <li><b>create_image</b> - creating empty nested 3D list for image representation. Not used within this particular module but often needed by programs this module is supposed to be used with.</li>
             </ul>
-            <p>Detailed functions arguments description is provided in docstrings, but in general looks as simple as that - you feed the function with your image data list and a filename, and get PNM file written.</p>
+            <p>Detailed functions arguments description is provided in docstrings, but in general looks as simple as that - you feed the function with your image data list and a filename, and get PNM file written; or you feed it to another function and get your image displayed.</p>
         </div>
         
         <h3 class='lightbg' style='max-width: 300pt;'>viewer.py</h3>
@@ -87,7 +95,7 @@
         </div>
         <br>
         <div class='lightbg justborder'>
-            <p>Now when you have initial understanding of what <i>pnmlpnm</i> module is and how it may be used to work with PGM and PPM files, it's time to <a href='https://github.com/Dnyarri/PyPNM' class='git'>pull it from Github</a> and start working with images yourself.</p>
+            <p>Now when you have initial understanding of what <i>pnmlpnm</i> module is and how it may be used to work with images in general and PGM and PPM files in particular, it's time to <a href='https://github.com/Dnyarri/PyPNM' class='git'>pull it from Github</a> and start working with images yourself.</p>
         </div>
             <br>
             <p class='right'><span class='lightbg justborder'>...or move back to <a href='https://dnyarri.github.io'>main page</a>.</span></p>

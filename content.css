@@ -36,6 +36,8 @@ h1 {
     border: thin solid #7c7c7c;
     border-radius: 24px 24px 0px 0px;
     margin: 0px;
+    break-inside: avoid;
+    break-after: avoid;
 }
 
 h2 {
@@ -45,6 +47,8 @@ h2 {
     border: thin solid #7c7c7c;
     border-radius: 6px;
     margin: 6px 0px 0px;
+    break-inside: avoid;
+    break-after: avoid;
 }
 
 h3 {
@@ -55,6 +59,8 @@ h3 {
     border-radius: 6px;
     margin: 12pt 0pt 6pt 0pt;
     text-indent: 24pt;
+    break-inside: avoid;
+    break-after: avoid;
 }
 
 h4 {
@@ -66,6 +72,19 @@ h4 {
     border-radius: 6px;
     margin: 6pt 0pt 6pt 0pt;
     text-indent: 12pt;
+    break-inside: avoid;
+    break-after: avoid;
+}
+
+h5 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16pt;
+    font-style: italic;
+    text-align: left;
+    margin: 12pt 18pt 6pt;
+    text-indent: 0pt;
+    break-inside: avoid;
+    break-after: avoid;
 }
 
 a {
