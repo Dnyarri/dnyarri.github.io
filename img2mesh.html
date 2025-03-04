@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang='en-US'>
 <head>
     <link rel='icon' href='vaba.svg' type='image/svg+xml'>
@@ -20,12 +20,11 @@
         <h1 class='darkbg'>POV&#8209;Ray img2mesh</h1>
         <h2 class='lightbg'>Converting greyscale PNG and PNM into POV, OBJ, DXF and STL 3D mesh</h2>
         <div class='lightbg justborder cols512' style='min-height: 470px;'>
-            <p><b>Img2mesh</b> is a pretty simple (well, it was initially) program that reads regular bitmap image, and writes 3D triangle mesh, using pixel X and Y coordinates for &laquo;east&raquo; and &laquo;south&raquo; position of 3D triangle mesh nodes, and, most important, pixel brightness as Z, that is, height of the node, thus converting image into sort of 3D landscape. Program is <a href='https://github.com/Dnyarri/img2mesh' class='git'>available at GitHub for download</a>.
+            <p><b>Img2mesh</b> is a pretty simple (well, it was initially) program that reads regular bitmap image, and writes 3D triangle mesh, using pixel X and Y coordinates for &laquo;east&raquo; and &laquo;south&raquo; position of 3D triangle mesh nodes, and, most important, pixel brightness as Z, that is, height of the node, thus converting image into sort of 3D landscape. Program is <a href='https://github.com/Dnyarri/img2mesh' class='git'>available at GitHub for download</a>.</p>
             <div class='justborder center' style='break-inside: avoid;'>
                 <img src='imgmesh/02.png' width='64' height='64'>
                 <img src='imgmesh/02b.png' width='359' height='376'>
                 <p class='small center'>Source image (actual size) and resulting 3D object rendering (default texture). Due to unusual mesh building algorithm img2mesh provides smooth fine surface from just 64x64&nbsp;px image.</p></div>
-            </p>
             <p>Currently <b>img2mesh</b> support a variety of common input and output formats, briefly summarized below:</p>
             <table cols='2' class='justborder' style='margin: 12pt 24pt 24pt;'>
                 <thead style='display: table-header-group'>
@@ -74,7 +73,6 @@
             <p>Surely POV&#8209;Ray can import PNG and use them as &laquo;heightfields&raquo; directly, but <b>img2mesh</b> uses rather unusual &laquo;pyramid&raquo; conversion algorithm, providing extra quality for small elevation maps (you can see it by smooth shiny surface without defect reflections in example above).</p>
             <p>Default export to POV file suggests camera autofocus on object, object scaling to fit 1,&nbsp;1,&nbsp;1&nbsp;cube, and suitable scene structuring for easy editing later.</p>
             <p>Exported .POV file may be included intact as .INC into another scene, by setting a flag in the main scene file:</p>
-            <p>
                 <pre>
   <b>#declare Main = 1;</b>
   #include "<i>generated.pov</i>"
