@@ -34,13 +34,33 @@
             </ul>
             <p style='font-size: 10pt; margin: 6pt 24pt;'><i>(Interlude start)</i> Actually what I needed was small and simple facility for displaying image-like data for image editing/filtering applications like &laquo;Averager&raquo; from <a href='povthread.html'>POVThread</a>. Yes, I want to be able to write image filter in Python and view result without huge extra packages. Using Tkinter with PPM/PGM looked like simplest solution, so I created some module for turning nested 3D lists to PPM-like bytes structures in memory. Since it required learning PNM specs anyway, I decided to add PPM/PGM files reading and writing on top of that. <i>Etc.</i>, as Kurt Vonnegut kept saying. <i>(Interlude end)</i></p>
             <p>You may easily acquire PyPNM module either <a href='https://github.com/Dnyarri/PyPNM' class='git'>from Github</a> or <a href='https://pypi.org/project/PyPNM/' class='git'>from PyPI</a> and use it absolutely free.</p>
-            <table cols='2' class='justborder' style='margin: 12pt 24pt 24pt;'>
+            <table cols='3' class='justborder' style='margin: 12pt 24pt 24pt;'>
                 <thead style='display: table-header-group'>
-                <tr style='vertical-align: top;'><th scope='col'><p>Download site</p></th><th scope='col'><p>Download content</p></th></tr>
+                <tr style='vertical-align: top;'>
+                    <th scope='col'><p>PyPNM version</p></th>
+                    <th scope='col'><p>Download site</p></th>
+                    <th scope='col'><p>Download content</p></th>
+                </tr>
                 </thead>
                 <tbody>
-                <tr style='vertical-align: top;'><td><p><a href='https://github.com/Dnyarri/PyPNM' class='git'>Github</a></p></td><td><p>PyPNM module and sample viewer application, <br>illustrating all reading, displaying and writing functions in action.</p></td></tr>
-                <tr style='vertical-align: top;'><td><p><a href='https://pypi.org/project/PyPNM/' class='git'>PyPI</a></p></td><td><p>PyPNM module only.</p></td></tr>
+                <tr style='vertical-align: top;'>
+                    <td rowspan='2' style='border-top: 4px double #00000080;'><p>Current version<br>(Python 3.10 and above)</p></td>
+                    <td style='border-top: 4px double #00000080;'><p><a href='https://github.com/Dnyarri/PyPNM' class='git'>Github main</a></p></td>
+                    <td style='border-top: 4px double #00000080;'><p>PyPNM module and sample viewer application, <br>illustrating all reading, displaying and writing functions in action.</p></td>
+                </tr>
+                <tr style='vertical-align: top;'>
+                    <td><p><a href='https://pypi.org/project/PyPNM/' class='git'>PyPI main</a></p></td>
+                    <td><p>PyPNM module only.</p></td>
+                </tr>
+                <tr style='vertical-align: top;'>
+                    <td rowspan='2' style='border-top: 4px double #00000080;'><p>Python 3.4 compatible<br>(tested under Windows XP)</p></td>
+                    <td style='border-top: 4px double #00000080;'><p><a href='https://github.com/Dnyarri/PyPNM/tree/py34/' class='git'>Github py34</a></p></td>
+                    <td style='border-top: 4px double #00000080;'><p>PyPNM module and sample viewer application, <br>illustrating all reading, displaying and writing functions in action.</p></td>
+                </tr>
+                <tr style='vertical-align: top;'>
+                    <td><p><a href='https://pypi.org/project/PyPNM/1.15.1.34/' class='git'>PyPI v.&nbsp;1.15.1.34</a></p></td>
+                    <td><p>PyPNM module only.</p></td>
+                </tr>
                 </tbody>
             </table>
             <p><span class='red'><b>Update:</b></span> in ver.&nbsp;1.15.1.1 image viewing function updated to show LA and RGBA images over chessboard background (like Photoshop and GIMP). This mode requires enabling newly added option, which, in turn, requires RTFM.</p>
