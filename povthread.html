@@ -20,28 +20,29 @@
         <h1 class='darkbg'>POV-Ray Thread: Linen and Stitch</h1>
         <h2 class='lightbg'>Converting 2D image into canvas and cross-stitch 3D simulation</h2>
         <div class='lightbg justborder'>
-            <p>POV&#8209;Ray&nbsp;Thread, a bastardly offspring of <a href='povzaika.html'>POV&#8209;Ray&nbsp;Mosaic</a> project is a set of programs, which read pixels of source image and convert them into a complex 3D structure, simulating something textile and thread related, in <a href='https://www.povray.org/'>POV-Ray</a> format.</p>
-            <p>POV&#8209;Ray&nbsp;Thread programs are <a href='https://github.com/Dnyarri/POVthread' class='git'>freely available at GitHub</a>.</p>
+            <p>POV&#8209;Ray&nbsp;Thread, a bastardly offspring of <a href='povzaika.html'>POV&#8209;Ray&nbsp;Mosaic</a> project is a program, which read pixels of source image and convert them into a complex 3D structure, simulating something textile and thread related, in <a href='https://www.povray.org/'>POV-Ray</a> format.</p>
+            <p>POV&#8209;Ray&nbsp;Thread program is <a href='https://github.com/Dnyarri/POVthread' class='git'>freely available at GitHub</a>.</p>
+            <p>Currently POV&#8209;Ray&nbsp;Thread contain two export functions: <b>Linen</b> and <b>Stitch</b>.</p>
         </div>
         <div class='lightbg justborder cols512'>
             <div class='center' style='break-inside: avoid; margin: 0pt; padding: 0pt;'>
                 <h3 style='max-width: 300pt;'>Linen...</h3>
-                <img src='thread/linen24x512.png' width='512' height='384'>
+                <img src='thread/linen24x512.png' width='512' height='384' alt='POV-Ray Thread rendering example'>
                 <p class='small center'>linen output rendering example</p>
             </div>
             <p>&laquo;Linen&raquo; is a program for simulating most common <a href='https://en.m.wikipedia.org/wiki/Plain_weave'>plain weave</a>, seen in many cotton, wool, and practically all linen fabrics. Elemental nodes of linen output are colored after source image pixels, producing colored taffeta or print on canvas look.</p>
             <p>Resulting POV&#8209;Ray files are easy to edit, globally changing thread finish (dull/shiny) and texture (normal vectors) to simulate wide range of threads, from single strand plastic to multistrand natural fibers.</p>
             <div class='center' style='break-inside: avoid; margin: 0pt; padding: 0pt'>
                 <h3 style='max-width: 300pt;'>...and Stitch</h3>
-                <img src='thread/stitch24x512.png' width='512' height='384'>
+                <img src='thread/stitch24x512.png' width='512' height='384' alt='POV-Ray Thread rendering example'>
                 <p class='small center'>stitch output rendering example</p>
             </div>
             <p>&laquo;Stitch&raquo; is a program for simulating most common <a href='https://en.wikipedia.org/wiki/Cross-stitch'>cross-stitching</a> embroidery type, i.e. a cross stitch. Each of 3D stitches produced by program is colored after source image pixel. Stitch pattern may be distorted during rendering, turning too regular artificial appearance into something more natural. Distortion is based on structured Perlin noise pattern.</p>
         </div>
         <div class='lightbg justborder'>
-            <p>Currently both POV&#8209;Ray&nbsp;Thread programs use one primitive to simulate main object, but this, as any other export settings, may be overwritten. The easiest way to do so is using external "preset.inc" patch files which, upon importing into main scene file, will override all previous settings.</p>
+            <p>Currently both POV&#8209;Ray&nbsp;Thread programs use one primitive to simulate main object, but this, as almost any other setting, may be overridden. The easiest way to do so is using external "preset.inc" patch files which, upon importing into main scene file, will override all previous settings. Currently POV&#8209;Ray&nbsp;Thread distribution contain several isosurface-based presets, providing extremely fine details on large-scale renderings.</p>
             <div class='center'>
-                <img src='thread/linen24x1024_1_strand.png' width='1024'>
+                <img src='thread/linen24x1024_1_strand.png' width='1024' alt='POV-Ray Thread rendering example'>
                 <p class='small center'>example of rendering using include file with isosurface main object</p>
             </div>
         </div>
@@ -52,8 +53,13 @@
             <p>&laquo;Averager&raquo; is an accessory since it does not produce POV files - it loads PNG file, filters image, and saves filtered image as PNG.</p>
             <p>To simplify visual filtering adjustments, &laquo;Averager&raquo; is equipped with minimal yet suitable GUI.</p>
             <p><span class='red'><b>Update:</b></span> Since ver.&nbsp;1.16.6.18 POV&#8209;Ray&nbsp;Thread, beside easy to use GUI, got adaptive averaging filter linked, so now it is capable to perform image filtering on its own; therefore additional utility became obsolete. However, updated version of &laquo;Averager&raquo; remains included into this package as a good example of writing fully functional image filtering application using pure Python only.</p>
-            <p>Funfact: both of these programs (along with some others from this site) support zooming in/out with left/right clicks on preview.</p>
-            <p><img src='thread/ave.png' width='488' height='454'></p>
+            <p><span class='red'><b>Update:</b></span> since ver.&nbsp;1.16.9.16 both POVRayThread.py and Averager.py support zooming in/out with mouse clicks on preview. In general, click reaction is as follows:</p>
+            <ul style='break-before: avoid; break-inside: avoid;'>
+                <li>After starting program any click on preview area is equal to "Open&nbsp;image";</li>
+                <li>After opening an image left&nbsp;click changes to "zoom&nbsp;in", right&nbsp;click becomes "zoom&nbsp;out";</li>
+                <li>After filtering an image left&nbsp;click becomes source\result preview switch, Ctrl&nbsp;+&nbsp;Left&nbsp;click is "zoom&nbsp;in", Alt&nbsp;+&nbsp;Left&nbsp;click is "zoom&nbsp;out", similar to Photoshop.</li>
+            </ul>
+            <p><img src='thread/ave.png' width='488' height='454' alt='Averager GUI'></p>
         </div>
         <p class='lightbg justborder'>Now it's time to <a href='https://github.com/Dnyarri/POVthread' class='git'>download POV&#8209;Ray&nbsp;Thread from GitHub</a> and start building your own textile scenes.</p>
         <br>
