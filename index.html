@@ -29,15 +29,15 @@
         </div>
         <h3 class='darkbg'>Amble, i.e., the projects:</h3>
         <h4 class='darkbg'>POV&#8209;Ray img2mesh</h4>
-        <div class='lightbg justborder' style='min-height: 254px;'><a href='img2mesh.html'><img src='imgmesh/320/img2mesh.png' width='250' height='250' class='floatleft'></a>
+        <div class='lightbg justborder' style='min-height: 254px;'><a href='img2mesh.html'><img src='imgmesh/320/img2mesh.png' width='250' height='250' class='floatleft' alt='img2mesh'></a>
             <p>Python program <a href='img2mesh.html'>img2mesh</a> developed for converting images into 3D&nbsp;mesh, primarily in <a href='https://www.povray.org/'>POV-Ray</a> format (although OBJ, STL and DXF are supported as well), so that bright pixels turns into high peaks on resulting 3D landscape - the brighter source image pixel, the higher 3D&nbsp;mesh node point is. Exported POV&#8209;Ray scene file contains everything necessary to be rendered right out of the box (camera, lights, texture), or may be edited later.</p>
             <p><span class='red'><b>Update:</b></span> 3D mesh structure changed completely, providing significant rendering quality improvement; therefore version&nbsp;2 was cancelled, and program promoted to version&nbsp;3.</p>
             <p>For developers: 3D export functions now separated as list2mesh package, and may be freely reused for your own Python projects. <a href='img2mesh.html'><i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>POV&#8209;Ray Mosaic</h4>
         <div class='lightbg justborder' style='min-height: 134px;'>
-            <a href='pov3zaika.html'><img src='3z/l.png' width='250' height='134' class='floatleft'></a>
-            <a href='pov4zaika.html'><img src='4z/r.png' width='246' height='134' class='floatright'></a>
+            <a href='pov3zaika.html'><img src='3z/l.png' width='250' height='134' class='floatleft' alt='POV-Ray Mosaic'></a>
+            <a href='pov4zaika.html'><img src='4z/r.png' width='246' height='134' class='floatright' alt='POV-Ray Mosaic'></a>
             <p>Currently project <a href='povzaika.html'>POV&#8209;Ray Mosaic</a> includes Python programs converting PNG or PPM image into <a href='https://www.povray.org/'>POV-Ray</a> mosaic scene, consisting of various objects - spheres, cylinders, boxes, prisms, etc. - colored after source image pixels.</p>
             <p>POV&#8209;Ray Mosaic provide well structured output to simplify bulk object and attributes change.</p>
             <p>Rendered images are suitable for scrapbooks, posters, and other creative ways to entertain and/or annoy people.</p>
@@ -45,8 +45,8 @@
         </div>
         <h4 class='darkbg'>POV&#8209;Ray Thread</h4>
         <div class='lightbg justborder' style='min-height: 134px;'>
-            <a href='povthread.html'><img src='thread/l.png' width='246' height='130' class='floatleft'></a>
-            <a href='povthread.html'><img src='thread/r.png' width='247' height='130' class='floatright'></a>
+            <a href='povthread.html'><img src='thread/l.png' width='246' height='130' class='floatleft' alt='POV-Ray Thread'></a>
+            <a href='povthread.html'><img src='thread/r.png' width='247' height='130' class='floatright' alt='POV-Ray Thread'></a>
             <p><a href='povthread.html'>Linen and Stitch</a> are programs, which read pixels of source image and convert them into a complex 3D structure, simulating something textile and thread related, in <a href='https://www.povray.org/'>POV-Ray</a> format. Currently tabby/linen plain weave, and cross-stitching simulations are provided. Exported 3D structures are configurable regarding thread appearance and pattern distortions.</p>
             <p><span class='red'><b>Update:</b></span> Color simplification utility &laquo;Averager&raquo; now merged with main POV&#8209;Ray Thread application, allowing to perform image reading, 2D preprocessing, and 3D exporting using single application. <a href='povthread.html'><i> Read more...</i></a></p>
         </div>
@@ -57,7 +57,7 @@
         </div>
         <h4 class='darkbg'>PGM and PPM image files handling in pure Python</h4>
         <div class='lightbg justborder'>
-            <a href='pypnm.html'><img src='pypnm/alphasmall.png' width='184' height='119' class='floatright'></a>
+            <a href='pypnm.html'><img src='pypnm/alphasmall.png' width='184' height='119' class='floatright' alt='PyPNM'></a>
             <p><a href='pypnm.html'>PyPNM</a> is a pure Python implementation of read/write functions for Portable Gray Map (<a href='https://netpbm.sourceforge.net/doc/pgm.html'>.pgm</a>) and Portable Pixel Map (<a href='https://netpbm.sourceforge.net/doc/ppm.html'>.ppm</a>) image formats. Well, due to format specifications <i>fluid</i> nature it's hard to say that PyPNM is fully compliant, but it was tested side by side with different software, and it even understands 16-bit per channel PGM and PPM produced by Adobe Photoshop (which uses somewhat, err, unique separators).</p>
             <p>Beside reading and writing PNM files, PyPNM provides a suitable facility for viewing image-like data by converting it on the fly to in-memory PNM bytes and serving it to Tkinter (see usage example on the right). For image data with transparency, PyPNM simulates a preview over chessboard pattern (like Photoshop and GIMP).</p>
             <p><span class='red'><b>Update:</b></span> in ver.&nbsp;1.14.8.19 memory usage for writing PPM and PGM files greatly reduced. <a href='pypnm.html'><i>Read more...</i></a></p>

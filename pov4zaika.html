@@ -27,11 +27,11 @@
         <div class='lightbg justborder cols512'>
             <p><b>44zaika</b> is a small program, opening a PNG image, and converting it into a mosaic of 3D objects, packed in <b>square</b> pack. Each source pixel is turned into a 3D cube, colored like this pixel. Surely, instead of cubes, other 3D shapes may be used; at the moment of writing 44zaika provides seven prebuilt object types, and new ones may be easily inserted.</p>
             <p>Since POV files are text files, containing 3D scene description, they can be easily edited; 44zaika output is as human-friendly as possible, reasonably commented internally, and, besides, there is a help file with more prolific descriptions. Next to the examples below there are short descriptions of changes introduced into scene file before rendering.</p>
-            <div class='justborder center' style='break-inside: avoid;'><img src='4z/401.png' width='512'>
+            <div class='justborder center' style='break-inside: avoid;'><img src='4z/401.png' width='512' alt='POV-Ray Mosaic rendering'>
                 <p class='small center pre'>thingie = thingie_4</p>
             </div>
             <p>The main idea behind 44zaika is <b>mapping</b>. Object properties (size, position, rotation) can be mapped to (that is, made functions of) source image pixel properties, currently brightness. Ok, let's map something:</p>
-            <div class='justborder center chess' style='break-inside: avoid;'><img src='4z/402.png' width='512'>
+            <div class='justborder center chess' style='break-inside: avoid;'><img src='4z/402.png' width='512' alt='POV-Ray Mosaic rendering'>
                 <p class='small center pre lightbg'>thingie = thingie_3 scale_all = &lt;1, 1, 5&gt;; scale_map = &lt;1, 1, 0&gt;;</p>
             </div>
             <p>Not too bad for a simple example, may even go for a logo.</p>
@@ -49,29 +49,29 @@
             <p>This map is direct analog of Photoshop and GIMP "Curves", so general idea should be familiar: first column contain input values, second column contain corresponding output values (third column currently is not used for anything good, just leave it alone). By default, input=output, that is, map does not change anything. However, you can edit it.</p>
             <p>Note that POVRay does not pay attention to the order of control points appearance, so you can add midpoints after endpoints in no particular order. Just remember to have endpoints 0 and 1 defined, since POVRay cannot use undefined functions; everything between 0 and 1 is up to you to edit.</p>
             <p>Beside scaling, we can also map rotation and position:</p>
-            <div class='justborder center' style='break-inside: avoid;'><img src='4z/403.png' width='512'>
+            <div class='justborder center' style='break-inside: avoid;'><img src='4z/403.png' width='512' alt='POV-Ray Mosaic rendering'>
                 <p class='small center pre lightbg'>thingie_5 move_map = &lt;0, 0, -2&gt;; rotate_map = &lt;60, 60, 180&gt;; and rotate_all = &lt;-10, -20, -20&gt;; for baseline</p>
             </div>
             <p>In general, I'd suggest gradually changing setting one by one, unless you are not afraid of total mess. And you will be. You will be.</p>
             <p>Let's look at mapping capabilities more closely, to see why I call it "vast potential":</p>
-            <div class='justborder center chess' style='break-inside: avoid;'><img src='4z/405.png' width='512'>
+            <div class='justborder center chess' style='break-inside: avoid;'><img src='4z/405.png' width='512' alt='POV-Ray Mosaic rendering'>
                 <p class='small center pre lightbg'>thingie_3 thingie_finish_3 scale_all = &lt;0.6, 0.6, 2&gt;; rotate_map = &lt;160, 120, 0&gt;;</p>
             </div>
             <p>Well, not quite a painting, but may be considered art. After all, painter is mapping brushstrokes direction to image signal, and we are mapping virtual cylinders rotation, what's the difference?</p>
             <p class='small'>Note, in the scene above I edited camera to <span class='pre'>look_at&lt;0.005, 0.025, 0.0&gt;</span> to keep it centered since growing cylinders went off margins.</p>
             <p>Let's make it bolder:</p>
-            <div class='justborder center' style='break-inside: avoid;'><img src='4z/406.png' width='512'>
+            <div class='justborder center' style='break-inside: avoid;'><img src='4z/406.png' width='512' alt='POV-Ray Mosaic rendering'>
                 <p class='small center pre lightbg'>thingie_3 thingie_finish_4 scale_all = &lt;1.5, 1.5, 2.5&gt;; rotate_map = &lt;160, 120, 0&gt;;</p>
             </div>
             <p>Superellipsoids also make nice 3D-brush strokes.</p>
-            <div class='justborder center' style='break-inside: avoid;'><img src='4z/408.png' width='512'></div>
+            <div class='justborder center' style='break-inside: avoid;'><img src='4z/408.png' width='512' alt='POV-Ray Mosaic rendering'></div>
             <p>One of the funny things about POVMosaic programs is, beside editing resulting files directly, you can plug a preset file in them, redefining everything. Preset files are regular POVRay .inc files and must be plugged after standard objects to overwrite them.</p>
-            <div class='justborder center' style='break-inside: avoid;'><img src='4z/409.png' width='512'>
+            <div class='justborder center' style='break-inside: avoid;'><img src='4z/409.png' width='512' alt='POV-Ray Mosaic rendering'>
             <p class='small center pre lightbg'>#include "44_puzzle.inc"</p></div>
             <p>Above is a result of changing just one string to <span class='pre'>#include "44_puzzle.inc"</span> in POV file. It imports additional small POV file and plugs in whole new CSG object, corresponding to puzzle element, and its positioning. Yes, what you see above is not some simple bitmap tile - it's a whole lot of 3D objects, with easily editable geometry, perfectly aligned to form a puzzle-like picture.</p>
             <div class='justborder center' style='column-span: all;'>
                 <p>Below is result of adding just one string <span class='pre'>#include "44_dice.inc"</span> (44_dice.inc is included into project distribution, so you can investigate how it works. You a supposed to be laughing once you understand the rotation trick. At least I was, albeit I invented it):</p>
-                <img src='4z/407.png' width='1024'>
+                <img src='4z/407.png' width='1024' alt='POV-Ray Mosaic rendering'>
                 <p class='small center pre lightbg'>#include "44_puzzle.inc"</p>
             </div>
         </div>
