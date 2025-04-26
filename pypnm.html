@@ -98,7 +98,29 @@
                 <li><b>list2pnmascii</b> - alternative function to write ASCII PPM (P3) or PGM (P2) files;</li>
                 <li><b>create_image</b> - creating empty nested 3D list for image representation. Not used within this particular module but often needed by programs this module is supposed to be used with.</li>
             </ul>
-            <p>Detailed functions arguments description is provided in docstrings, but in general looks as simple as that - you feed the function with your image data list and a filename, and get PNM file written; or you feed it to another function and get your image displayed.</p>
+            <p>Functions arguments description is provided in docstrings, but in general looks as simple as that - you feed the function with your image data list and a filename, and get PNM file written; or you feed it to another function and get your image displayed.</p>
+            <p>More prolific description is available in <a href='pypnm/pypnm.pdf' target='_blank'>documentation (PDF, 7&nbsp;pages)</a>; or, if you hate well-orchestrated well-illustrated docs, just explore simple sample below:</p>
+            <pre class='lighter' style='margin: 0pt 36pt;'>
+#!/usr/bin/env python3
+
+from tkinter import Button, PhotoImage, Tk
+
+from pypnm import pnmlpnm
+
+X, Y, Z, maxcolors, image3D = pnmlpnm.pnm2list('example.ppm')  # Open
+pnmlpnm.list2pnm('binary.ppm', image3D, maxcolors)  # Save as binary
+pnmlpnm.list2pnmascii('ascii.ppm', image3D, maxcolors)  # Save as ascii
+
+main_window = Tk()
+main_window.title('PyPNM demo')
+preview_data = pnmlpnm.list2bin(image3D, maxcolors)  # Generating preview bytes from list
+preview = PhotoImage(data=preview_data)  # Generating preview object from bytes
+preview_button = Button(main_window, text='Example\n(click to exit)', 
+                image=preview, compound='top', command=lambda: main_window.destroy())
+preview_button.pack()
+main_window.mainloop()
+            </pre>
+            <p>Yes, above is an illustration of all functions of PyPNM in action: opening file as image list, saving image list as binary file, saving image list as text file, showing image list as image with Tkinter. With addition of just some 10-12&nbsp;kb of widgets and event handling it turns into a good-looking fully functional viewer and converter below.</p>
         </div>
         <h3 class='lightbg' style='max-width: 300pt;'>viewer.py</h3>
         <div class='lightbg justborder'>
