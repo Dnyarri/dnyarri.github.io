@@ -56,6 +56,11 @@
   <priority>0.60</priority>
 </url>
 <url>
+  <loc>https://dnyarri.github.io/pypnm/pypnm.pdf</loc>
+  <lastmod>2025-04-26</lastmod>
+  <priority>0.60</priority>
+</url>
+<url>
   <loc>https://dnyarri.github.io/tmp/astillero.html</loc>
   <lastmod>2025-02-02</lastmod>
   <priority>0.40</priority>
