@@ -74,6 +74,4 @@
     text-decoration: none;
 }
 
-.toca:hover {
-    text-decoration: underline white;
-}
+.toca:hover {text-decoration: underline white;}

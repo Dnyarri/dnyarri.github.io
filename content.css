@@ -25,9 +25,7 @@ ul {
     margin: 8pt 32pt 8pt 24pt;
 }
 
-.content {
-    margin: 0px 0px 0px 146px;
-}
+.content {margin: 0px 0px 0px 146px;}
 
 h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -93,22 +91,16 @@ a {
     text-decoration: none;
 }
 
-a:visited {
-    color: #000088;
-}
+a:visited {color: #000088;}
 
 a:hover {
     color: #0044ff;
     text-decoration: underline wavy;
 }
 
-.dark {
-    color: #333333;
-}
+.dark {color: #333333;}
 
-.light {
-    color: #cccccc;
-}
+.light {color: #cccccc;}
 
 .darkbg {
     background-color: #333333;
@@ -122,17 +114,13 @@ a:hover {
     color: #333333;
 }
 
-.chess {
-    background-image: url('c16.png');
-}
+.lighter {background-color: rgba(255, 255, 255, 0.5);}
 
-.chessd {
-    background-image: url('cd16.png');
-}
+.chess {background-image: url('c16.png');}
 
-.chessdd {
-    background-image: url('cdd16.png');
-}
+.chessd {background-image: url('cd16.png');}
+
+.chessdd {background-image: url('cdd16.png');}
 
 .justborder {
     border: thin solid #7c7c7c;
@@ -162,21 +150,13 @@ a:hover {
     margin: 2px 2px 2px 12pt;
 }
 
-.center {
-    text-align: center;
-}
+.center {text-align: center;}
 
-.right {
-    text-align: right;
-}
+.right {text-align: right;}
 
-.small {
-    font-size: 10pt;
-}
+.small {font-size: 10pt;}
 
-.pre {
-    font-family: 'Courier New', Courier, monospace;
-}
+.pre {font-family: 'Courier New', Courier, monospace;}
 
 .red {
     border: thin solid rgba(255, 0, 0, 0.5);

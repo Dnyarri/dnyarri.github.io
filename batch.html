@@ -20,7 +20,7 @@
     <h1 class='darkbg'>Batch processing</h1>
     <h2 class='lightbg'>Useful Python scripts for every day</h2>
     <div class='lightbg justborder'>
-        <p>Repository includes various Python scripts for batch processing. Total number of files varies over time. Most suitable seem to be:</p>
+        <p><a href='https://github.com/Dnyarri/batchfiles'>Repository</a> includes various Python scripts for batch processing. Total number of files varies over time. Most suitable seem to be:</p>
         <ul class='dark'>
             <li><b>dir LibreOffice rtf2docx</b> - batch convertion of .rtf, .doc, .odt and .fb2 files to .docx using <a href='https://www.libreoffice.org/'>LibreOffice</a>. Overcomes clumsy LibreOffice ideas like starting several instances, or exporting all files into one dir, or something. Surely may be modified for batch conversion of not only rtf to docx (that was it's initial purpose) but also anything LibreOffice can read into anything it can write, like doc to PDF etc.</li>
             <li><b>dir ffmpeg flac2ogg 48</b> - converts all .flac within dir and subdirs to .ogg 48&nbsp;kHz, using <a href='https://github.com/BtbN/FFmpeg-Builds/'>FFMPEG</a>; removes junk like preview and &laquo;Zdes' byl Vasya&raquo; comments.</li>
@@ -32,7 +32,7 @@
             <li><b>dir RENAME unflibusta</b> - batch renaming of files according to patterns, like replacing underscores with spaces, removing digits, and so on. Edit rules pattern to your need.</li>
         </ul>
         <p>Note that programs <i>dir&nbsp;COMPACT LZX</i>, <i>dir&nbsp;OPTIVORBIS&nbsp;ogg</i>, <i>dir&nbsp;ffmpeg&nbsp;flac2ogg&nbsp;48</i> and <i>dir&nbsp;ffmpeg&nbsp;flac2ogg&nbsp;44</i> accept command line arguments at start time. Argument is supposed to be a name of folder; in this case program GUI opens right in this folder. If argument happen to be a file, GUI will be opened in folder containing it. You may use it for creating shortcuts like:</p>
-        <pre>    pythonw.exe "dir COMPACT LZX.py.py" "%1"</pre>
+        <p class='pre'>   <span class='lighter'> <b> pythonw.exe "dir COMPACT LZX.py" "%1"</b></span></p>
         <p>(using actual addresses of Python and script on your system, of course) and then simply drag-and-drop folders onto shortcut to open program right where you need it. If argument is absent (e.g., you just double-click program), program simply opens in default directory and wait for you to browse and point to required location.</p>
         <p><img src='batch/guiopen.png' alt='COMPACT LZX Starting GUI'> <img src='batch/guibusy.png' alt='COMPACT LZX Busy GUI'></p>
         <p>Proceed to <a href='https://github.com/Dnyarri/batchfiles' class='git'>Batchfiles at GitHub</a> for
