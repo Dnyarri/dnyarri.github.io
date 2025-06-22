@@ -47,12 +47,12 @@
             </div>
         </div>
         <div class='lightbg justborder'>
-            <h3>Accessory: Adaptive color averager</h3>
+            <h3 id='averager'>Accessory: Adaptive color averager</h3>
             <a href='https://github.com/Dnyarri/POVthread' target='_blank'><img src='thread/ave.png' width='308' height='488' alt='Averager GUI' class='floatright'></a>
             <p>In cross stitching, single thread is often used to produce several stitches in a row, producing flat single color areas. To help with color reduction for this, a small color reduction utility &laquo;Averager&raquo; is included into the package.</p>
             <p>Unlike regular color reduction utilities, like ones used to create GIF files, &laquo;Averager&raquo; does not build common palette for the whole image but rather tries to find, isolate, and flatten smooth areas based on local contrast, that is closer to idea of using single thread for the area.</p>
-            <p>&laquo;Averager&raquo; is an accessory since it does not produce POV files - it loads PNG file, filters image, and saves filtered image as PNG.</p>
-            <p>To simplify visual filtering adjustments, &laquo;Averager&raquo; is equipped with minimal yet suitable GUI.</p>
+            <p>&laquo;Averager&raquo; is an accessory since it does not produce POV files - it loads PNG or PPM file, filters image, and saves filtered image as PNG or PPM.</p>
+            <p>To simplify visual filtering adjustments, &laquo;Averager&raquo; is equipped with minimal yet suitable Tkinter-based GUI.</p>
             <p><span class='red'><b>Update:</b></span> since ver.&nbsp;1.16.20.20 both POVRayThread.py and Averager.py support zooming in/out with mouse clicks on preview. In general, click reaction is as follows:</p>
             <ul style='break-before: avoid; break-inside: avoid;'>
                 <li>After starting program double click on preview area (or Ctrl+O) is equal to "Open&nbsp;image", right click (or Alt+F) brings general "File..." menu;</li>
@@ -61,7 +61,7 @@
                 <li>"Enter" runs filter, after that filter result is shown;</li>
                 <li>After filtering, left click switches before/after images. Be patient though, since double click still works as "Open...".</li>
             </ul>
-            <p><span class='red'><b>Update:</b></span> Since ver.&nbsp;1.16.6.18 POV&#8209;Ray&nbsp;Thread, beside easy to use GUI, got adaptive averaging filter linked, so now it is capable to perform image filtering on its own; therefore additional &laquo;Averager&raquo; utility became obsolete. However, updated version of &laquo;Averager&raquo; remains included into this package as a good example, illustrating a possibility of writing fully functional image filtering application using pure Python only.</p>
+            <p><span class='red'><b>Update:</b></span> Since ver.&nbsp;1.16.6.18 POV&#8209;Ray&nbsp;Thread, beside easy to use GUI, got adaptive averaging filter linked, so now it is capable to perform image filtering on its own; therefore additional &laquo;Averager&raquo; utility became obsolete. However, updated version of &laquo;Averager&raquo; remains included into this package as a good example, illustrating a possibility of writing fully functional image filtering application using pure Python - filtering module itself is written in Python; image files reading and writing is based on <a href='https://gitlab.com/drj11/pypng'>PyPNG</a> and <a href='https://dnyarri.github.io/pypnm.html'>PyPNM</a>, both of them being pure Python modules; filter preview is based on PyPNM and Tkinter, and, surprisingly, all this works with reasonable speed.</p>
         </div>
         <p class='lightbg justborder'>Now it's time to <a href='https://github.com/Dnyarri/POVthread' class='git'>download POV&#8209;Ray&nbsp;Thread from GitHub</a> and start building your own textile scenes.</p>
         <br>
