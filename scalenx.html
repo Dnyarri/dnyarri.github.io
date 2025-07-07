@@ -22,6 +22,10 @@
         <div class='lightbg justborder'>
             <p>Scale2x and Scale3x algorithms (sometimes referred to as AdvMAME2x and AdvMAME3x) were initially developed by <a href='https://www.scale2x.it/'>Andrea Mazzoleni</a> for scaling up small pixel graphics like game sprites and icons without introducing new colors and blurring contrast edges. That's what it was invented for, and nothing else.</p>
             <p>Later on, <a href='https://web.archive.org/web/20160527015550/https://libretro.com/forums/archive/index.php?t-1655.html'>Scale2xSFX and Scale3xSFX</a> were introduced for the same goal, providing different diagonals rendering and eliminating artifacts initial ScaleNx produce on some patterns.</p>
+            <div class='center'><img src='imgscalenx\diag3sfx.png' width='500' height='270' class='justborder center' style='padding: 1px;'
+                alt='Scale3xSFX example' title='Example of Scale3xSFX run three times'>
+                <p class='center'>Example of consecutive upscaling with Scale3xSFX.<br>As can be seen above, Scale3xSFX keeps image sharp<br>and tries to keep lines straight and accurate.<br>Keep in mind that image was increased 3*3*3 = 27&nbsp;times,<br>meaning number of pixels increased 729&nbsp;times,<br>that is, almost all the resulting pixels are artificial.</p>
+            </div>
             <p>However, it appears that ScaleNx may be successfully misused for absolutely different task: scaling up low-res text scans before OCR, and drawings before tracing them to vectors.</p>
             <a href='https://github.com/Dnyarri/PixelArtScaling'><img src='imgscalenx/guismall.png' height='214' width='271' alt='ScaleNx module and program at GitHub' title='Main ScaleNx application' class='floatright'></a>
             <p>With that in mind I created pure Python implementation of ScaleNx algorithms, which can be <a href='https://github.com/Dnyarri/PixelArtScaling' class='git'>downloaded from GitHub</a>. By saying &laquo;pure Python&raquo; I mean it - it doesn't even use bytearrays, only lists of lists of lists. Consider it a spiritual practice or whatever. You can download it as fully functional application, as well as &laquo;ScaleNx&raquo; module to import into your software and/or just to laugh at it.</p>
@@ -57,14 +61,19 @@
             <p><span class='red'><b>For Windows users</b></span>, compiled <a href='https://github.com/Dnyarri/PixelArtScaling/releases/latest' class='git'>ScaleNxGUI.exe is available for download at newest release page</a>, what as to other platforms, since the program is pure Python and quite self-contained, release source is supposed to work with any current canonic Python installation right out of the box.</p>
         </div>
         <div class='lightbg justborder'>
-            <p>Below is the illustration of Scale3x interpolation of small black and white text, twice. As you can see, Scale3x interpolation is quite unusual and absolutely different from ones you know from Photoshop or GIMP - unlike bilinear and bicubic it keeps image sharp, and unlike nearest neighbour it pays attention to diagonals.</p>
-        </div>
-        <br>
-        <div class='center lightbg justborder' style='min-width: 991px; max-width: 1000px;'>
-            <img src='imgscalenx\x3x3.png' width='987' height='743' class='justborder center' alt='Scale3x example' title='Example of Scale3x run three times'>
-            <p>Proceed to <a href='https://github.com/Dnyarri/PixelArtScaling' class='git'>ScaleNx at GitHub</a> for downloads. For developers: <a href='https://pypi.org/project/ScaleNx/' class='git'>ScaleNx at PyPI</a>.</p>
+            <p>Below is the illustration of Scale3xSFX interpolation of small black and white text, twice.</p><div class='center'>
+                <img src='imgscalenx\scale3x3x3.png' width='603' height='237' class='justborder center' style='padding: 1px;'
+                    alt='Scale3xSFX example' title='Example of Scale3xSFX run two times'>
+            </div>
+            <p>As you can see, Scale3xSFX interpolation is quite unusual and absolutely different from ones you know from Photoshop or GIMP - unlike bilinear and bicubic it keeps image sharp, and unlike nearest neighbour it pays attention to diagonals.</p>
+            <div class='center'><img src='imgscalenx\mu3sfx.png' width='468' height='411' class='justborder center' style='padding: 1px;'
+                alt='Scale3xSFX example' title='Example of Scale3xSFX run one time'>
+                <p class='center'>Example of "M.U." image upscaling from screen to printable size</p>
+            </div>
+            <p>As a side note, it's worth mentioning that, when working with PNG, ScaleNxGUI.py changes PNG resolution (if present) so that image print size remains unchanged. You consider using this fact for batch increasing resolution for documents with linked images (or, with some manual intervention, for container documents).</p>
+            <p>Now it's time to proceed to <a href='https://github.com/Dnyarri/PixelArtScaling' class='git'>ScaleNx at GitHub</a> for downloads. For developers: <a href='https://pypi.org/project/ScaleNx/' class='git'>ScaleNx at PyPI</a>.</p>
             <br>
-            <p class='right'>Move back to <a href='https://dnyarri.github.io'>main page</a>.</p>
+            <p class='right'>...or Move back to <a href='https://dnyarri.github.io'>main page</a>.</p>
         </div>
     </div> <!-- Content block end -->
 </body>
