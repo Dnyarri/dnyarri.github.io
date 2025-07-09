@@ -22,9 +22,9 @@
         <div class='lightbg justborder'>
             <p>Scale2x and Scale3x algorithms (sometimes referred to as AdvMAME2x and AdvMAME3x) were initially developed by <a href='https://www.scale2x.it/'>Andrea Mazzoleni</a> for scaling up small pixel graphics like game sprites and icons without introducing new colors and blurring contrast edges. That's what it was invented for, and nothing else.</p>
             <p>Later on, <a href='https://web.archive.org/web/20160527015550/https://libretro.com/forums/archive/index.php?t-1655.html'>Scale2xSFX and Scale3xSFX</a> were introduced for the same goal, providing different diagonals rendering and eliminating artifacts initial ScaleNx produce on some patterns.</p>
-            <div class='center'><img src='imgscalenx\diag3sfx.png' width='500' height='270' class='justborder center' style='padding: 1px;'
+            <div class='center'><img src='imgscalenx\diag3sfx.png' width='512' height='270' class='justborder center' style='padding: 1px;'
                 alt='Scale3xSFX example' title='Example of Scale3xSFX run three times'>
-                <p class='center'>Example of consecutive upscaling with Scale3xSFX.<br>As can be seen above, Scale3xSFX keeps image sharp<br>and tries to keep lines straight and accurate.<br>Keep in mind that image was increased 3*3*3 = 27&nbsp;times,<br>meaning number of pixels increased 729&nbsp;times,<br>that is, almost all the resulting pixels are artificial.</p>
+                <p class='center'>Example of consecutive upscaling with Scale3xSFX trice.</p><p class='center small'>As can be seen above, Scale3xSFX keeps image sharp and tries to keep lines straight and accurate.<br>Keep in mind that image was increased 3*3*3 = 27&nbsp;times, meaning number of pixels increased 729&nbsp;times,<br>that is, almost all the resulting pixels are artificial.</p>
             </div>
             <p>However, it appears that ScaleNx may be successfully misused for absolutely different task: scaling up low-res text scans before OCR, and drawings before tracing them to vectors.</p>
             <a href='https://github.com/Dnyarri/PixelArtScaling'><img src='imgscalenx/guismall.png' height='214' width='271' alt='ScaleNx module and program at GitHub' title='Main ScaleNx application' class='floatright'></a>
