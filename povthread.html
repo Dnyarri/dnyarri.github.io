@@ -48,12 +48,12 @@
         </div>
         <div class='lightbg justborder'>
             <h3 id='averager'>Accessory: Adaptive color averager</h3>
-            <a href='https://github.com/Dnyarri/POVthread' target='_blank'><img src='thread/ave.png' width='308' height='488' alt='Averager GUI' title='Averager before and after filtering preview' class='floatright'></a>
+            <a href='https://github.com/Dnyarri/POVthread' target='_blank'><img src='thread/ave.png' width='382' height='436' alt='Averager GUI' title='Averager before and after filtering preview' class='floatright'></a>
             <p>In cross stitching, single thread is often used to produce several stitches in a row, producing flat single color areas. To help with color reduction for this, a small color reduction utility &laquo;Averager&raquo; is included into the package.</p>
             <p>Unlike regular color reduction utilities, like ones used to create GIF files, &laquo;Averager&raquo; does not build common palette for the whole image but rather tries to find, isolate, and flatten smooth areas based on local contrast, that is closer to idea of using single thread for the area.</p>
             <p>&laquo;Averager&raquo; is an accessory since it does not produce POV files - it loads PNG or PPM file, filters image, and saves filtered image as PNG or PPM.</p>
             <p>To simplify visual filtering adjustments, &laquo;Averager&raquo; is equipped with minimal yet suitable Tkinter-based GUI.</p>
-            <p><span class='red'><b>Update:</b></span> in ver.&nbsp;1.20.1.1, filter module was substantially rewritten to correctly support different color modes. Wrap around processing of seamless patterns added to &laquo;Averager&raquo;.</p>
+            <p><span class='red'><b>Update:</b></span> in release ver.&nbsp;1.20.7.14, filter module was substantially rewritten (module version&nbsp;3.20.7.14) to correctly support all color modes from L to RGBA. Wrap around processing of seamless patterns added to &laquo;Averager&raquo;; default behaviour for &laquo;Averager&raquo; is filtering alpha channel, for &laquo;POV&#8209;Ray&nbsp;Thread&raquo; - keeping source alpha.</p>
             <p><span class='red'><b>Previously on POV-Ray Thread:</b></span> since ver.&nbsp;1.16.20.20 both POVRayThread.py and Averager.py support zooming in/out with mouse clicks on preview. In general, click reaction is as follows:</p>
             <ul style='break-before: avoid; break-inside: avoid;'>
                 <li>After starting program double click on preview area (or Ctrl+O) is equal to "Open&nbsp;image", right click (or Alt+F) brings general "File..." menu;</li>
