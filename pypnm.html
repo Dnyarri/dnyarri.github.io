@@ -59,10 +59,10 @@
                 </tr>
                 </tbody>
             </table>
-            <p><span class='red'><b>Update:</b></span> Command line support added to viewer&nbsp;ver 2.20.4.20 for opening files:</p>
-            <p class='pre'><b>python viewer.py filename.ppm</b></p>
-            <p>Now you may even associate it with PPM and PGM files ang get first Python-based system image viewer ever! 😂</p>
-            <p><span class='red'><b>Previously on PyPNM:</b></span> In <b>ver.&nbsp;1.17.9.34 &laquo;Victory&raquo;</b> (maximum compatibility) forced 8&nbsp;bit preview for 16&nbsp;bit images implemented when running under old Python versions (prior 3.11).</p>
+            <p><span class='red'><b>Good news everyone!</b></span> <a href='https://github.com/Dnyarri/PyPNM'><b>PyPNM updated to version&nbsp;2</b></a>.</p>
+            <p>This major update includes numerous measures aimed toward resource saving: using <span class='pre'>mmap</span> instead of direct file reading and generators instead of intermediate lists.</p>
+            <p>While module was completely rewritten, input and output types and data structure remain the same, so versions 2.21.2.* "Victory II" are completely interchangeable with 1.17.9.* "Victory"./</p>
+            <p>In <b>ver.&nbsp;1.17.9.34 &laquo;Victory&raquo;</b> (maximum compatibility) forced 8&nbsp;bit preview for 16&nbsp;bit images implemented when running under old Python versions (prior 3.11).</p>
             <p>In ver.&nbsp;1.17.1.1 PNM export functions restructured to provide easy format switch. Backward compatibility maintained.</p>
             <p>In ver.&nbsp;1.15.1.1 image viewing function updated to show LA and RGBA images over chessboard background (like Photoshop and GIMP). This mode requires enabling newly added option, which, in turn, requires RTFM. In ver.&nbsp;1.14.8.19 memory usage for writing PPM and PGM files greatly reduced. Binary files (P6 and P5 correspondingly) are written per image row (which is considered as reasonable tradeoff between memory usage and disk thrashing), ASCII files (P3 and P2) are written per sample (which is minimal memory using scenario).</p>
         </div>
