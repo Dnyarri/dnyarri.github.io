@@ -6,7 +6,7 @@
     <link rel='canonical' href='https://dnyarri.github.io/povzaika.html'/>
     <meta charset='utf-8' />
     <meta name='author' content='Ilyich the Toad'>
-    <meta name='description' content='POV-Ray mosaic: converting bitmaps into mosaic of solid 3D objects in POV-Ray format'>
+    <meta name='description' content='POV-Ray mosaic: converting bitmaps into mosaic of solid 3D objects in POV&#8209;Ray format'>
     <meta name='keywords' content='Python, POVRay, mosaic, painting, sphere, box, prism, cylinder, superellipsoid'>
     <link rel='stylesheet' href='toc.css' type='text/css'>
     <link rel='stylesheet' href='content.css' type='text/css'>
@@ -21,42 +21,43 @@
         <h2 class='lightbg'>Converting 2D image into mosaic of 3D objects</h2>
         <div class='lightbg justborder'>
             <a href='https://github.com/Dnyarri/POVmosaic' target='_blank'>
-                <img src='36z/gui.png' width='404' height='211' alt='Proceed to POV-Ray Mosaic at Github' title='POV-Ray Mosaic main program' class='floatright'>
+                <img src='36z/gui.png' width='404' height='211' alt='Proceed to POV&#8209;Ray Mosaic at Github' title='POV&#8209;Ray Mosaic main program' class='floatright'>
             </a>
-            <p>POV&#8209;Ray&nbsp;Mosaic project is a set of programs, which read every pixel of source image and convert it into a virtual 3D object, packed side by side with objects created from other pixels, thus forming a grid of 3D-mosaic in <a href='https://www.povray.org/'>POV-Ray</a> format.</p>
+            <p>POV&#8209;Ray&nbsp;Mosaic project is a program which read every pixel of source image and convert it into a virtual 3D object, packed side by side with objects created from other pixels, thus forming a grid of 3D-mosaic in <a href='https://www.povray.org/'>POV&#8209;Ray</a> format.</p>
             <p>Currently POV&#8209;Ray&nbsp;Mosaic spans all three regular plane partitions for <a href='https://en.wikipedia.org/wiki/List_of_regular_polytopes#Euclidean_tilings'>Euclidean tilings</a>, namely <a href='pov36zaika.html'>3<sup>6</sup></a>, <a href='pov4zaika.html'>4<sup>4</sup></a>, and <a href='pov3zaika.html'>6<sup>3</sup></a>.</p>
-            <p>POV&#8209;Ray&nbsp;Mosaic are free open source Python programs, so you can <a href='https://github.com/Dnyarri/POVmosaic' class='git'>download POV&#8209;Ray&nbsp;Mosaic from GitHub</a> together with detailed help file and numerous presets/extensions.</p>
+            <p>POV&#8209;Ray&nbsp;Mosaic is free open source Python program, so you can <a href='https://github.com/Dnyarri/POVmosaic' class='git'>download POV&#8209;Ray&nbsp;Mosaic from GitHub</a> together with detailed help file and numerous presets/extensions.</p>
             <p>POV&#8209;Ray&nbsp;Mosaic is a sort of lab for exploration: while default exported scenes show primitive objects like spheres packed into planar grid, they contain numerous options, grouped into human-editable form, to easily redefine almost anything.</p>
-            <img src='4z/44rnd.png' class='floatleft' title='Time-dependent random POV-Ray mosaic rendering' alt='Time-dependent random POV-Ray mosaic rendering'>
+            <img src='4z/44rnd.png' class='floatleft' title='Time-dependent random POV&#8209;Ray mosaic rendering' alt='Time-dependent random POV&#8209;Ray mosaic rendering'>
             <p><span class='red'><b>Update:</b></span> Well, I guess a lot can happen to a species in three Drahn, like turning green and evil. And this page was not updated for a long time. But POV&#8209;Ray&nbsp;Mosaic was.</p>
-            <p>In version&nbsp;1.19.5.19 mosaic element transparency (both filter and transmit) are changed from global constants to functions of source pixel brightness and alpha, thus enabling more interesting handling of glass and similar materials.</p>
+            <p>In version&nbsp;1.19.5.19 mosaic element transparency (both filter and transmit) are changed from global constants to functions of source pixel brightness and alpha, thus enabling more interesting handling of glass and similar materials. Surely, since constant is just a particular case of a function, old capabilities haven't gone.</p>
             <p>In a long way to version&nbsp;1.19.1.7 output scene syntaxis was improved, adding more options (like fully blown textures instead of initial simple finish plus normal), improving auto focus and viewing angle fit with more legible internal math, and so on.</p>
-            <p>Standalone programs converted to POV-Ray export modules, joined with PNG and PPM reading modules under single GUI.</p>
-            <p>Numerous preset includes added, including (sorry for a tautology) a couple of concept-illustrating yet funny ones. For example, on the right you are supposed to see a sequence of renderings of a single preset. In this preset, prism object geometry is time-dependent and changes every time you press "Render" button, thus making every rendering unique (isn't is an artist dream - make all masterpieces unique and follow the time flux?).</p>
-            <p>Note that while prisms often become star-like, they still form a seamless pattern without gaps and overlaps. All preset .inc files are made self-rendering, that is, you may simply add them all to POV&#8209;Ray batch and render some preview of the object defined within this include, thus adding a visual reference to your preset collection. Take into account that object color and finish in such a rendering will be dummy grey and dull, since normally the are overridden by main scene file.</p>
+            <p>Standalone programs converted to POV&#8209;Ray export modules, joined with PNG and PPM reading modules under single GUI.</p>
+            <p>Numerous preset includes added, including (sorry for a tautology) a couple of concept-illustrating yet funny ones. For example, on the right you are supposed to see a sequence of renderings of a single preset. In this preset, prism object geometry is time-dependent and changes every time you press "Render" in POV&#8209;Ray, thus making every rendering unique (isn't it an artist's dream - make all masterpieces unique and follow the time flux?).</p>
+            <p>It's noteworthy that while prisms with such a presets often become star-like, they still form a seamless pattern without gaps and overlaps.</p>
+            <p>All preset .inc files are made self-rendering, that is, you may simply add them all to POV&#8209;Ray batch and render some preview of the object defined within this include, thus adding a visual reference to your preset collection. Take into account that object color and finish in such a rendering will be dummy grey and dull, since normally the are overridden by main scene file.</p>
         </div>
         <div class='lightbg justborder cols512'>
-            <div class='center' style='break-inside: avoid;'><a href='pov3zaika.html'><img src='3z/300.png' width='512' alt='POV-Ray Mosaic rendering' title='63Zaika example rendering'></a>
+            <div class='center' style='break-inside: avoid;'><a href='pov3zaika.html'><img src='3z/300.png' width='512' alt='POV&#8209;Ray Mosaic rendering' title='63Zaika example rendering'></a>
                 <p class='small center'>63zaika default output example</p>
             </div>
-            <div class='center' style='break-inside: avoid;'><a href='pov4zaika.html'><img src='4z/401.png' width='512' alt='POV-Ray Mosaic rendering' title='44Zaika example rendering'></a>
+            <div class='center' style='break-inside: avoid;'><a href='pov4zaika.html'><img src='4z/401.png' width='512' alt='POV&#8209;Ray Mosaic rendering' title='44Zaika example rendering'></a>
                 <p class='small center'>44zaika output example, object switched from cube to superellipsoid</p>
             </div>
         </div>
         <div class='lightbg justborder'>
-            <p>POV&#8209;Ray&nbsp;Mosaic output scene files contain several predefined 3D objects description, along with finishes and normal modifiers for them. Object properties may be mapped (i.e. linked to) source image pixel brightness via any of predefined transfer functons.</p>
+            <p>POV&#8209;Ray&nbsp;Mosaic output scene files contain several predefined 3D objects description, along with finishes and normal modifiers for them. Object properties may be easily mapped to source image pixel brightness via any of predefined transfer functions, or functions you write yourself.</p>
         </div>
         <div class='lightbg justborder cols512'>
-            <div class='center' style='break-inside: avoid;'><a href='pov3zaika.html'><img src='3z/301.png' width='512' alt='POV-Ray Mosaic rendering' title='63Zaika example rendering'></a>
+            <div class='center' style='break-inside: avoid;'><a href='pov3zaika.html'><img src='3z/301.png' width='512' alt='POV&#8209;Ray Mosaic rendering' title='63Zaika example rendering'></a>
                 <p class='small center'>63zaika output with predefined hexagonal prisms, height mapped to brightness via predefined function.</p>
             </div>
-            <div class='center' style='break-inside: avoid;'><a href='pov4zaika.html'><img src='4z/406.png' width='512' alt='POV-Ray Mosaic rendering' title='44Zaika example rendering'></a>
+            <div class='center' style='break-inside: avoid;'><a href='pov4zaika.html'><img src='4z/406.png' width='512' alt='POV&#8209;Ray Mosaic rendering' title='44Zaika example rendering'></a>
                 <p class='small center'>44zaika output with cylinders and predefined iridescent finish, rotation mapped to brightness.</p>
             </div>
         </div>
         <div class='lightbg justborder'>
             <p>Surely you can not only switch between predefined stuff and edit parameters like rotation and size (although this alone will give you numerous combinations), but also insert your own objects, functions and values. The easiest way to do so is using external "preset.inc" patch files which, upon importing into main scene file, will override all previous settings. For example, preset file <span class='pre'>"44_dice.inc"</span> (included in distribution) for rendering image below is about only 2,51&nbsp;kb, yet contains both dice 3D object and all necessary "flip" instructions, and may be plugged into your scene with editing just one line.</p>
-            <div class='center'><img src='4z/407.png' width='1024' alt='POV-Ray Mosaic rendering'  title='44Zaika example rendering, dice CSG preset'></div>
+            <div class='center'><img src='4z/407.png' width='1024' alt='POV&#8209;Ray Mosaic rendering'  title='44Zaika example rendering, dice CSG preset'></div>
             <p>Now it's time to <a href='https://github.com/Dnyarri/POVmosaic' class='git'>download POV&#8209;Ray&nbsp;Mosaic from GitHub</a> and start building your own mosaic scenes. And, surely, once you manage to build something interesting, don't forget to show it to other humans and lesser species.</p>
         </div>
         <br>

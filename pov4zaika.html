@@ -7,7 +7,7 @@
     <meta charset='utf-8' />
     <meta name='author' content='Ilyich the Toad'>
     <meta name='description' content='POV-Ray mosaic: square pack, 4/4 Euclidean tiling of solid objects in flexible POV-Ray scene'>
-    <meta name='keywords' content='Python, POVRay, mosaic, pattern, painting'>
+    <meta name='keywords' content='Python, POV-Ray, mosaic, pattern, painting'>
     <link rel='stylesheet' href='toc.css' type='text/css'>
     <link rel='stylesheet' href='content.css' type='text/css'>
     <title>POV-Ray Mosaic: 44zaika (4/4 Euclidean tiling)</title>
@@ -20,8 +20,8 @@
         <h1 class='darkbg'>POV&#8209;Ray&nbsp;Mosaic: square pattern, Regular plane partition 4<sup>4</sup></h1>
         <h2 class='lightbg'>Converting 2D image into mosaic of 3D objects</h2>
         <div class='lightbg justborder'>
-            <p><a href='povzaika.html'>POV&#8209;Ray&nbsp;Mosaic</a> is a set of programs, which read every pixel of source image and convert it into a virtual 3D object, packed side by side with objects created from other pixels, thus creating something like 3D-mosaic in <a href='https://www.povray.org/'>POV-Ray</a> format. You can <a href='https://github.com/Dnyarri/POVmosaic' class='git'>download POV&#8209;Ray&nbsp;Mosaic from GitHub</a> and use it for free.</p>
-            <p><b>44Zaika</b> is a part of this package, covering 4<sup>4</sup> <a href='https://en.wikipedia.org/wiki/List_of_regular_polytopes#Euclidean_tilings'>Euclidean tiling</a>.</p>
+            <p><a href='povzaika.html'>POV&#8209;Ray&nbsp;Mosaic</a> is a set of programs, which read every pixel of source image and convert it into a virtual 3D object, packed side by side with objects created from other pixels, thus creating something like 3D-mosaic in <a href='https://www.povray.org/'>POV&#8209;Ray</a> format. You can <a href='https://github.com/Dnyarri/POVmosaic' class='git'>download POV&#8209;Ray&nbsp;Mosaic from GitHub</a> and use it for free.</p>
+            <p><b>44Zaika</b> is a part of POV&#8209;Ray&nbsp;Mosaic package, covering 4<sup>4</sup> <a href='https://en.wikipedia.org/wiki/List_of_regular_polytopes#Euclidean_tilings'>Euclidean tiling</a>.</p>
             <p><span class='red'><b>Update:</b></span> In version&nbsp;1.19.5.19 mosaic element transparency (both filter and transmit) are changed from global constants to functions of source pixel brightness and alpha, thus enabling more interesting handling of glass and similar materials.</p>
             <p><span class='red'><b>Previously on POV&#8209;Ray&nbsp;Mosaic:</b></span> In version&nbsp;1.19.1.7 rendering autofocus and scene legibility were improved. In version&nbsp;1.11.1.1 texture syntax changed to fully blown texture, thus providing a capability to build layered textures.</p>
         </div>
@@ -48,7 +48,7 @@
         }
     #declare map = function(c) {Curve(c).u}</pre>
             <p>This map is direct analog of Photoshop and GIMP "Curves", so general idea should be familiar: first column contain input values, second column contain corresponding output values (third column currently is not used for anything good, just leave it alone). By default, input=output, that is, map does not change anything. However, you can edit it.</p>
-            <p>Note that POVRay does not pay attention to the order of control points appearance, so you can add midpoints after endpoints in no particular order. Just remember to have endpoints 0 and 1 defined, since POVRay cannot use undefined functions; everything between 0 and 1 is up to you to edit.</p>
+            <p>Note that POV&#8209;Ray does not pay attention to the order of control points appearance, so you can add midpoints after endpoints in no particular order. Just remember to have endpoints 0 and 1 defined, since POV&#8209;Ray cannot use undefined functions; everything between 0 and 1 is up to you to edit.</p>
             <p>Beside scaling, we can also map rotation and position:</p>
             <div class='justborder center' style='break-inside: avoid;'><img src='4z/403.png' width='512' alt='POV-Ray Mosaic rendering'>
                 <p class='small center pre lightbg'>thingie_5 move_map = &lt;0, 0, -2&gt;; rotate_map = &lt;60, 60, 180&gt;; and rotate_all = &lt;-10, -20, -20&gt;; for baseline</p>
@@ -66,7 +66,7 @@
             </div>
             <p>Superellipsoids also make nice 3D-brush strokes.</p>
             <div class='justborder center' style='break-inside: avoid;'><img src='4z/408.png' width='512' alt='POV-Ray Mosaic rendering'></div>
-            <p>One of the funny things about POVMosaic programs is, beside editing resulting files directly, you can plug a preset file in them, redefining everything. Preset files are regular POVRay .inc files and must be plugged after standard objects to overwrite them.</p>
+            <p>One of the funny things about POV&#8209;Ray&nbsp;Mosaic programs is, beside editing resulting files directly, you can plug a preset file in them, redefining everything. Preset files are regular POV&#8209;Ray .inc files and must be plugged after standard objects to overwrite them.</p>
             <div class='justborder center' style='break-inside: avoid;'><img src='4z/409.png' width='512' alt='POV-Ray Mosaic rendering'>
             <p class='small center pre lightbg'>#include "44_puzzle.inc"</p></div>
             <p>Above is a result of changing just one string to <span class='pre'>#include "44_puzzle.inc"</span> in POV file. It imports additional small POV file and plugs in whole new CSG object, corresponding to puzzle element, and its positioning. Yes, what you see above is not some simple bitmap tile - it's a whole lot of 3D objects, with easily editable geometry, perfectly aligned to form a puzzle-like picture.</p>
