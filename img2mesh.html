@@ -24,8 +24,8 @@
             <p><span class='red'><b>Update:</b></span> Version 3.21.2.16. relinked with newest modules. Export modules now include clipping of transparent and zero source areas, normals for STL and some speedup.</p>
             <p>Main UI was also improved.</p>
             <div class='justborder center lighter' style='break-inside: avoid;'>
-                <img src='imgmesh/02.png' width='64' height='64' alt='Source mage'>
-                <img src='imgmesh/02b.png' width='359' height='376' alt='img2mesh rendering'>
+                <img src='imgmesh/02.png' width='64' height='64' alt='Source gradient mage'>
+                <img src='imgmesh/02b2.png' width='364' height='382' alt='img2mesh rendering of source gradient'>
                 <p class='small center'>Source image (actual size) and resulting 3D object rendering (default texture). Due to unusual mesh building algorithm img2mesh provides smooth fine surface from just 64x64&nbsp;px image.</p></div>
             <p>Currently <b>img2mesh</b> support a variety of common input and output formats, briefly summarized below:</p>
             <table cols='2' class='justborder lighter' style='margin: 12pt 24pt 24pt;'>
@@ -46,7 +46,7 @@
                 <li>OBJ and DXF files contain just an object of height field triangle mesh with no extras, since these formats are intended to be imported into other software where all the bells and whistles are supposed to be added.</li>
             </ul>
             <div class='center' style='break-inside: avoid;'>
-                <img src='imgmesh/printscreen.png' width='507' height='360' alt='Preview' class='center'>
+                <img src='imgmesh/printscreen.png' width='504' height='360' alt='Preview of img2mesh output in Windows Explorer' class='center'>
                 <p class='small center'>Screenshot of Windows Explorer window with test source PNG map and resulting output files preview side by side.</p>
             </div>
             <p><a href='https://www.povray.org/'>POV&#8209;Ray</a> export provides most flexibility. One of the features of POV export is mapping. Maps are transfer functions z value is passed through. Result is similar to Photoshop or GIMP "Curves" applied to source heightfield image, except for that with img2mesh map is nondestructively applied to mesh within POV&#8209;Ray, so you can change map and affect mesh rendering without changing the mesh itself.</p>
