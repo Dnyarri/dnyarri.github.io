@@ -30,9 +30,25 @@
         <h3 class='darkbg'>Amble, i.e., the projects:</h3>
         <h4 class='darkbg'>POV&#8209;Ray img2mesh</h4>
         <div class='lightbg justborder' style='min-height: 254px;'><a href='img2mesh.html'><img src='imgmesh/320/img2mesh.png' width='250' height='250' class='floatleft' alt='img2mesh' title='Example of img2mesh output rendering'></a>
-            <p>Python program <a href='img2mesh.html'>img2mesh</a> developed for converting images into 3D&nbsp;mesh, primarily in <a href='https://www.povray.org/'>POV&#8209;Ray</a> format (although OBJ, STL and DXF are supported as well), so that bright pixels turns into high peaks on resulting 3D landscape - the brighter source image pixel, the higher 3D&nbsp;mesh node point is. Exported POV&#8209;Ray scene file contains everything necessary to be rendered right out of the box (camera, lights, texture), or may be edited later.</p>
-            <p><span class='red'><b>Update:</b></span> In version 3.21.2.16 normal for STL fixed, clipping of zero or transparent source pixels introduced, source reading modules updated to newest versions.</p>
-            <p>In version 3.14.15.1 3D mesh structure changed completely, providing significant rendering quality improvement; therefore version&nbsp;2 was cancelled, and program promoted to version&nbsp;3.</p>
+            <p>Python program <a href='img2mesh.html'>img2mesh</a> developed for converting images into 3D&nbsp;mesh, primarily in <a href='https://www.povray.org/'>POV&#8209;Ray</a> format (although OBJ, STL and DXF are supported as well), so that bright pixels turns into high peaks on resulting 3D landscape - the brighter source image pixel, the higher 3D&nbsp;mesh node point is.</p>
+            <table cols='3' class='justborder lighter nobreak center floatright'>
+                <caption style='caption-side: bottom; font-size: 10pt;'>Comparison of different geometry rendering</caption>
+                <thead style='display: table-header-group'>
+                <tr style='vertical-align: top;'>
+                    <th scope='col'><p class='small center'>Source map</p></th>
+                    <th scope='col'><p class='small center'>Geometry №3</p></th>
+                    <th scope='col'><p class='small center'>Geometry №3+</p></th></tr>
+                </thead>
+                <tbody>
+                <tr style='vertical-align: center;'>
+                    <td><img src='imgmesh/3.png' width='64' height='64' alt='Source height map'></td>
+                    <td><img src='imgmesh/30.png' width='85' height='103' alt='Example of old 3.0 geometry'></td>
+                    <td><img src='imgmesh/31.png' width='85' height='103' alt='Example of new 3.+ geometry'></td>
+                </tr>
+                </tbody>
+            </table>
+            <p>Exported POV&#8209;Ray scene file contains everything necessary to be rendered right out of the box (camera, lights, texture), or may be edited later.</p>
+            <p><span class='red'><b>Update:</b></span> In version 3.21.21.21 mesh geometry upgraded to version 3+, providing improved sharp diagonals rendering.</p>
             <p>For developers: 3D export functions now separated as a module, and may be freely reused for your own Python projects. <a href='img2mesh.html'><i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>POV&#8209;Ray Mosaic</h4>

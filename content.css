@@ -98,6 +98,8 @@ a:hover {
     text-decoration: underline wavy;
 }
 
+.nobreak {break-inside: avoid-column;}
+
 .dark {color: #333333;}
 
 .light {color: #cccccc;}
@@ -150,7 +152,7 @@ a:hover {
     margin: 2px 2px 2px 12pt;
 }
 
-.center {text-align: center;}
+.center {text-align: center; justify-content: center;}
 
 .right {text-align: right;}
 
