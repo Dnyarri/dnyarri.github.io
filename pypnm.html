@@ -6,33 +6,34 @@
     <link rel='canonical' href='https://dnyarri.github.io/pypnm.html'/>
     <meta charset='utf-8' />
     <meta name='author' content='Ilyich the Toad'>
-    <meta name='description' content='PGM and PPM image files (8 and 16-bit) reading, viewing and writing in pure Python'>
+    <meta name='description' content='PNM (PGM and PPM) image files (8 and 16-bit) reading, viewing and writing in pure Python'>
     <meta name='keywords' content='Python, PPM, PGM, PNM, image, Photoshop, GIMP'>
     <link rel='stylesheet' href='toc.css' type='text/css'>
     <link rel='stylesheet' href='content.css' type='text/css'>
-    <title>PGM and PPM image files reading and writing in pure Python</title>
+    <title>PGM and PPM image files reading, displaying and writing in pure Python</title>
 </head>
 <body>
     <div class='leftarea'> <!-- Nav holder begin -->
         <object data='toc.html' class='leftbar'></object>
     </div>
     <div class='content'> <!-- Content block begin -->
-        <h1 class='darkbg'>PyPNM - Pythonic Portable Any Map reading and writing</h1>
+        <h1 class='darkbg'>PyPNM - Pythonic Portable Any Map reading, displaying and writing</h1>
         <h3 class='lightbg' style='max-width: 300pt;'>Introduction</h3>
         <div class='lightbg justborder'>
-            <p><a href='https://netpbm.sourceforge.net/doc/ppm.html'>Portable Pixel Map (PPM)</a> and <a href='https://netpbm.sourceforge.net/doc/pgm.html'>Portable Gray Map (PGM)</a> (particular cases on <a href='https://netpbm.sourceforge.net/doc/pnm.html'>PNM format</a> group) are simplest file formats for RGB and L images, correspondingly. In theory, you may import ASCII PGM even in Excel, turning Excel into image editor. Unfortunately, this simplicity lead to adverse consequences:</p>
+            <p><b>PyPNM</b> is a Python module for reading PPM and PGM image files (both 8 and 16 bits per channel color depth) to image 3D integer lists for further editing, displaying 3D lists obtained by converting to Tkinter-compatible data in memory, and subsequent writing edited image 3D lists to disk as PPM or PGM files, either binary or ASCII.</p>
+            <p><a href='https://netpbm.sourceforge.net/doc/ppm.html' target='_blank'>Portable Pixel Map (PPM)</a> and <a href='https://netpbm.sourceforge.net/doc/pgm.html' target='_blank'>Portable Gray Map (PGM)</a> (particular cases on <a href='https://netpbm.sourceforge.net/doc/pnm.html' target='_blank'>PNM format</a> group) are simplest file formats for RGB and L images, correspondingly. In theory, you may import ASCII PGM even in Excel, turning Excel into image editor. Unfortunately, this simplicity lead to adverse consequences:</p>
             <ul>
                 <li>lack of strict official specification. Instead, you may find words like "usual" in format description. Surely, there is always someone who implement this part of image format in unprohibited, yet a totally unusual way;</li>
                 <li>unwillingness of many software developers to provide any good support for simple and open format. It took years for almighty Adobe Photoshop developers to include PNM module in distribution rather than count on third-party developers, and surely (see above) they took their chance to implement their own header scheme nobody else uses. What as to PNM support in Python, say, Pillow... sorry, I promised not to discuss Pillow anywhere ladies and children are allowed to read it.</li>
             </ul>
             <p>As a result, novice Python user (like me) may find it difficult to get reliable input/output modules for PPM and PGM image formats; therefore current PyPNM package was developed, combining input/output functions for 8-bits and 16-bits per channel binary and ascii PGM and PPM files, <i>i.e.</i> P2, P5, P3 and P6 PNM file types. P1 and P4 (1&nbsp;bit) PBM formats are supported only for reading.</p>
-            <p><span class='red'><b>PyPNM key functionality</span></b> comprise:</p>
+            <p><span class='red'><b>PyPNM key functionality</b></span> comprise:</p>
             <ul>
                 <li><span class='red'><b>previewing</b></span> image being edited by converting it into PNM-like byte structure to be displayed using Tkinter <span class='pre'>PhotoImage(data=...)</span> method;</li>
                 <li><span class='red'><b>reading</b></span> PPM, PGM and PBM files from disk into image representation as 3D nested list;</li>
                 <li><span class='red'><b>writing</b></span> image representation as 3D nested list to PPM or PGM file on disk.</li>
             </ul>
-            <p style='font-size: 10pt; margin: 6pt 24pt;'><i>(Interlude start)</i> Actually what I needed was small and simple facility for displaying image-like data for image editing/filtering applications like <a href='povthread.html#averager'>&laquo;Averager&raquo;</a>. Yes, I want to be able to write image filter in Python and view result without huge extra packages. Using Tkinter with PPM/PGM looked like simplest solution, so I created some module for turning nested 3D lists to PPM-like bytes structures in memory. Since it required learning PNM specs anyway, I decided to add PPM/PGM files reading and writing on top of that. <i>Etc.</i>, as Kurt Vonnegut kept saying. <i>(Interlude end)</i></p>
+            <p style='font-size: 10pt; margin: 6pt 24pt;'><i>(Interlude start)</i> Actually what I needed was small and simple facility for displaying image-like data for image editing/filtering applications like <a href='povthread.html#averager'>&laquo;Averager&raquo;</a>. Yes, I want to be able to write image filter in Python and view result without huge extra packages, full of useless features for a price of lack of needed ones. Using Tkinter with PPM/PGM looked like simplest solution, so I created some module for turning nested 3D lists to PPM-like bytes structures in memory. Since it required learning PNM specs anyway, I decided to add PPM/PGM files reading and writing on top of that. <i>Etc.</i>, as Kurt Vonnegut kept saying. <i>(Interlude end)</i></p>
             <p>You may easily acquire PyPNM module either from Github or from PyPI and use it absolutely free.</p>
             <table cols='3' class='justborder lighter' style='margin: 12pt 24pt 24pt;'>
                 <thead style='display: table-header-group'>
@@ -61,16 +62,16 @@
             </table>
             <div class='cols512 justborder lighter'>
             <h3>Recent updates</h3>
-            <p><span class='red'><b>Good news everyone!</b></span> <span class='git'><a href='https://github.com/Dnyarri/PyPNM'><b>PyPNM updated to version&nbsp;2</b></a>.</span></p>
+            <p><span class='red'><b>Good news everyone!</b></span> <span class='git'><a href='https://github.com/Dnyarri/PyPNM'><b>PyPNM updated to version&nbsp;2 (3&nbsp;Sep&nbsp;2025 &laquo;Victory&nbsp;II&raquo;)</b></a>.</span></p>
             <p>This major update includes numerous measures focused on reducing resource usage:</p>
             <ul>
                 <li>using <span class='pre'>mmap</span> instead of direct file reading;</li>
                 <li>using generators instead of intermediate lists wherever possible.</li>
             </ul>
-            <p>Note that although module was completely rewritten, input and output types and data structure remain the same, so versions 2.21.2.* &laquo;Victory&nbsp;II&raquo; are completely interchangeable with 1.17.9.* &laquo;Victory&raquo;.</p>
+            <p>Note that although module was completely rewritten, input and output types and data structure remain the same, so versions 2.21.3.* &laquo;Victory&nbsp;II&raquo; are completely interchangeable with 1.17.9.* &laquo;Victory&raquo;.</p>
             <p><span class='red'><b>Previously on PyPNM:</b></span> In <b>ver.&nbsp;1.17.9.34 &laquo;Victory&raquo;</b> (maximum compatibility) forced 8&nbsp;bit preview for 16&nbsp;bit images implemented when running under old Python versions (prior 3.11).</p>
-            <p>In ver.&nbsp;1.17.1.1 PNM export functions restructured to provide easy format switch. Backward compatibility maintained.</p>
-            <p>In ver.&nbsp;1.15.1.1 image viewing function updated to show LA and RGBA images over chessboard background (like Photoshop and GIMP). This mode requires enabling newly added option, which, in turn, requires <a href='https://dnyarri.github.io/pypnm/pypnm.pdf'>RTFM</a>. In ver.&nbsp;1.14.8.19 memory usage for writing PPM and PGM files greatly reduced. Binary files (P6 and P5 correspondingly) are written per image row (which is considered as reasonable tradeoff between memory usage and disk thrashing), ASCII files (P3 and P2) are written per sample (which is minimal memory using scenario).</p>
+            <p>In ver.&nbsp;1.17.1.1 PNM export functions restructured to provide easy format switch (binary⇄ASCII). Backward compatibility maintained.</p>
+            <p>In ver.&nbsp;1.15.1.1 image viewing function updated to show LA and RGBA images over chessboard background (like Photoshop and GIMP). This mode requires enabling newly added option, which, in turn, requires you to <a href='https://dnyarri.github.io/pypnm/pypnm.pdf'>RTFM</a>. In ver.&nbsp;1.14.8.19 memory usage for writing PPM and PGM files greatly reduced. Binary files (P6 and P5 correspondingly) are written per image row (which is considered as reasonable tradeoff between memory usage and disk thrashing), ASCII files (P3 and P2) are written per sample (which is minimal memory using scenario).</p>
             </div>
         </div>
         <h3 class='lightbg' style='max-width: 300pt;'>Format compatibility</h3>
@@ -96,7 +97,7 @@
         <h3 class='lightbg' style='max-width: 300pt;'>Image representation</h3>
         <div class='lightbg justborder'>
             <p>Is seems logical to represent an RGB image as nested 3D structure - X, Y-sized matrix of three-component RGB vectors. Since in Python list seem to be about the only variant for mutable structures like that, it is suitable to represent image as <span class='pre'>(list(list(list(int))))</span> structure (for example, this structure was used for <a href='scalenx.html'>ScaleNx image resizer</a> and <a href='povthread.html#averager'>Adaptive Average image filtering</a>, and worked well). Therefore, it would be convenient to have module read/write image data from/to such a common structure.</p>
-            <div class='floatleft lighter justborder'><p class='center small'><img src='pypnm/rgb.svg' width='237' height='140' alt='RGB image coordinate system'><br>Coordinate system of RGB image.</p></div>
+            <div class='floatleft lighter justborder'><p class='center small'><img src='pypnm/rgb.svg' width='237' height='140' alt='RGB image coordinate system' title='RGB image coordinate system'><br>Coordinate system of RGB image.</p></div>
             <p>List index structure correspond to typical image coordinate system assumed for image editing software like Photoshop, GIMP, Paint Shop Pro <i>etc</i>, with [0, 0] origin at top left corner.</p>
             <p>Note that for L images memory structure is still <span class='pre'>(list(list(list(int))))</span>, with innermost list having only one component, thus enabling further image editing with the same nested Y, X, Z loop regardless of color mode. I understand that this may sound surprising for professional image I/O programmers, but for normal people writing a loop once and for all is a sort of expected behaviour.</p>
             <p>Also, since this module is supposed to be used for image editing rather than just reading, when reading 1&nbsp;bit PBM files into image this module promotes data to 8&nbsp;bit L, inverting values and multiplying by 255, so that source 1 (ink on) is changed to 0 (black), and source 0 (ink off) is changed to 255 (white). For the same reason writing 1&nbsp;bit PBM files is not planned - 1&nbsp;bit images are next to useless for editing.</p>

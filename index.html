@@ -30,7 +30,7 @@
         <h3 class='darkbg'>Amble, i.e., the projects:</h3>
         <h4 class='darkbg'>POV&#8209;Ray img2mesh</h4>
         <div class='lightbg justborder' style='min-height: 254px;'><a href='img2mesh.html'><img src='imgmesh/320/img2mesh.png' width='250' height='250' class='floatleft' alt='img2mesh' title='Example of img2mesh output rendering'></a>
-            <p>Python program <a href='img2mesh.html'>img2mesh</a> developed for converting images into 3D&nbsp;mesh, primarily in <a href='https://www.povray.org/'>POV&#8209;Ray</a> format (although OBJ, STL and DXF are supported as well), so that bright pixels turns into high peaks on resulting 3D landscape - the brighter source image pixel, the higher 3D&nbsp;mesh node point is.</p>
+            <p>Python program <a href='img2mesh.html'>img2mesh</a> developed for converting images into 3D&nbsp;mesh, primarily in <a href='https://www.povray.org/' target='_blank'>POV&#8209;Ray</a> format (although OBJ, STL and DXF are supported as well), so that bright pixels turns into high peaks on resulting 3D landscape - the brighter source image pixel, the higher 3D&nbsp;mesh node point is.</p>
             <table cols='3' class='justborder lighter nobreak center floatright'>
                 <caption style='caption-side: bottom; font-size: 10pt;'>Comparison of different geometry rendering</caption>
                 <thead style='display: table-header-group'>
@@ -41,9 +41,9 @@
                 </thead>
                 <tbody>
                 <tr style='vertical-align: center;'>
-                    <td><img src='imgmesh/3.png' width='64' height='64' alt='Source height map'></td>
-                    <td><img src='imgmesh/30.png' width='85' height='103' alt='Example of old 3.0 geometry'></td>
-                    <td><img src='imgmesh/31.png' width='85' height='103' alt='Example of new 3.+ geometry'></td>
+                    <td><img src='imgmesh/3.png' width='64' height='64' alt='Source height map' title='Source height map'></td>
+                    <td><img src='imgmesh/30.png' width='85' height='103' alt='Example of old 3.0 geometry' title='Example of 3.0 geometry'></td>
+                    <td><img src='imgmesh/31.png' width='85' height='103' alt='Example of new 3.+ geometry' title='Example of new 3.+ geometry'></td>
                 </tr>
                 </tbody>
             </table>
@@ -54,8 +54,8 @@
         <h4 class='darkbg'>POV&#8209;Ray Mosaic</h4>
         <div class='lightbg justborder' style='min-height: 134px;'>
             <a href='pov3zaika.html'><img src='3z/l.png' width='250' height='134' class='floatleft' alt='POV-Ray Mosaic' title='Example of 6/3-Mosaic output rendering'></a>
-            <a href='pov4zaika.html'><img src='4z/r.png' width='246' height='134' class='floatright' alt='POV-Ray Mosaic' title='Example of 44Zaika output rendering'></a>
-            <p>Currently project <a href='povzaika.html'>POV&#8209;Ray&nbsp;Mosaic</a> includes Python programs converting PNG or PPM image into <a href='https://www.povray.org/'>POV&#8209;Ray</a> mosaic scene, consisting of various objects - spheres, cylinders, boxes, prisms, etc. - colored after source image pixels.</p>
+            <a href='pov4zaika.html'><img src='4z/r.png' width='246' height='134' class='floatright' alt='POV-Ray Mosaic' title='Example of 4/4-Mosaic output rendering'></a>
+            <p>Currently project <a href='povzaika.html'>POV&#8209;Ray&nbsp;Mosaic</a> includes Python programs converting PNG or PPM image into <a href='https://www.povray.org/' target='_blank'>POV&#8209;Ray</a> mosaic scene, consisting of various objects - spheres, cylinders, boxes, prisms, etc. - colored after source image pixels.</p>
             <p>POV&#8209;Ray Mosaic provide well structured output to simplify bulk object and attributes change.</p>
             <p>Rendered images are suitable for scrapbooks, posters, and other creative ways to entertain and/or annoy people.</p>
             <p><span class='red'><b>Update:</b></span> In version&nbsp;1.19.5.19 <span class='pre'>filter</span> and <span class='pre'>transmit</span> turned from constants to functions, enabling more interesting transparency tricks. <a href='povzaika.html'><i> Read more...</i></a></p>
@@ -64,19 +64,19 @@
         <div class='lightbg justborder' style='min-height: 134px;'>
             <a href='povthread.html'><img src='thread/l.png' width='246' height='130' class='floatleft' alt='POV-Ray Thread' title='Example of Linen output rendering'></a>
             <a href='povthread.html'><img src='thread/r.png' width='247' height='130' class='floatright' alt='POV-Ray Thread' title='Example of Linen output rendering'></a>
-            <p><a href='povthread.html'>&laquo;Linen&raquo; and &laquo;Stitch&raquo;</a> are programs, which read pixels of source image and convert them into a complex 3D structure, simulating something textile and thread related, in <a href='https://www.povray.org/'>POV&#8209;Ray</a> format.</p>
+            <p><a href='povthread.html'>&laquo;Linen&raquo; and &laquo;Stitch&raquo;</a> are programs, which read pixels of source image and convert them into a complex 3D structure, simulating something textile and thread related, in <a href='https://www.povray.org/' target='_blank'>POV&#8209;Ray</a> format.</p>
             <p>Currently tabby/linen plain weave, and cross-stitching simulations are provided. Exported 3D structures are configurable regarding thread appearance and pattern distortions.</p>
             <p><span class='red'><b>Update:</b></span> in ver.&nbsp;1.20.7.14 filter module substantially rewritten to support different color modes and process alpha. <a href='povthread.html'><i> Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>Scale2x, Scale3x, Scale2xSFX and Scale3xSFX in pure Python</h4>
         <div class='lightbg justborder'>
-            <p><a href='scalenx.html'>ScaleNx</a> is a pure Python implementation of several <a href='https://en.wikipedia.org/wiki/Pixel-art_scaling_algorithms'>pixel art image scaling</a> algorithms, <i>viz.</i> <b>Scale2x</b>, <b>Scale3x</b>, <b>Scale2xSFX</b> and <b>Scale3xSFX</b>. Main program for both single file and batch folder processing with suitable GUI is available, free and open source.</p>
-            <p><span class='red'><b>Update:</b></span> In version 25.09.09.09 of main program file format options (PNG compression level and PNM type) handling added to GUI; PyPNM updated to version&nbsp;2, consuming less memory. <a href='scalenx.html'><i>Read more...</i></a></p>
+            <p><a href='scalenx.html'>ScaleNx</a> is a pure Python implementation of several <a href='https://en.wikipedia.org/wiki/Pixel-art_scaling_algorithms' target='_blank'>pixel art image scaling</a> algorithms, <i>viz.</i> <b>Scale2x</b>, <b>Scale3x</b>, <b>Scale2xSFX</b> and <b>Scale3xSFX</b>. Main program for both single file and batch folder processing with suitable GUI is available, free and open source.</p>
+            <p><span class='red'><b>Update:</b></span> ScaleNx version&nbsp;25.09.25.09 involves further GUI legibility improvements and minor main module speed-up. <a href='scalenx.html'><i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>PGM and PPM image files handling in pure Python</h4>
         <div class='lightbg justborder'>
             <a href='pypnm.html'><img src='pypnm/alpha.png' width='137' height='192' class='floatright' alt='PyPNM' title='Example of simulating transparency display with PyPNM'></a>
-            <p><a href='pypnm.html'>PyPNM</a> is a pure Python implementation of read/write functions for <b>Portable Gray Map</b> (<a href='https://netpbm.sourceforge.net/doc/pgm.html'>.pgm</a>) and <b>Portable Pixel Map</b> (<a href='https://netpbm.sourceforge.net/doc/ppm.html'>.ppm</a>) image formats. Well, due to format specifications <i>fluid</i> nature it's hard to say that PyPNM is fully compliant, but it was tested side by side with different software, and found to understand even 16-bit per channel PGM and PPM produced by Adobe&nbsp;Photoshop (which uses somewhat, err, unique header).</p>
+            <p><a href='pypnm.html'>PyPNM</a> is a pure Python implementation of read/write functions for <b>Portable Gray Map</b> (<a href='https://netpbm.sourceforge.net/doc/pgm.html' target='_blank'>.pgm</a>) and <b>Portable Pixel Map</b> (<a href='https://netpbm.sourceforge.net/doc/ppm.html' target='_blank'>.ppm</a>) image formats. Well, due to format specifications <i>fluid</i> nature it's hard to say that PyPNM is fully compliant, but it was tested side by side with different software, and found to understand even 16-bit per channel PGM and PPM produced by Adobe&nbsp;Photoshop (which uses somewhat, err, unique header).</p>
             <p>Beside reading and writing PNM files, PyPNM provides a suitable facility for viewing image-like data by converting it on the fly to in-memory PNM bytes and serving it to Tkinter (see usage example on the right). For image data with transparency, PyPNM simulates a preview over chessboard pattern (like Photoshop and GIMP).</p>
             <p><span class='red'><b>Update:</b></span> Major update to version&nbsp;2 for saving resources. <a href='pypnm.html'><i>Read more...</i></a></p>
         </div>
