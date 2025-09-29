@@ -27,15 +27,15 @@
                 <caption style='caption-side: bottom; font-size: 10pt;'>Comparison of different geometry rendering</caption>
                 <thead style='display: table-header-group'>
                 <tr style='vertical-align: top;'>
-                    <th scope='col'><p class='small center'>Source map</p></th>
-                    <th scope='col'><p class='small center'>Geometry №3</p></th>
-                    <th scope='col'><p class='small center'>Geometry №3+</p></th></tr>
+                    <th scope='col'><p class='small center' style='min-width: 100px;'>Source</p></th>
+                    <th scope='col'><p class='small center' style='min-width: 100px;'>Geometry №3</p></th>
+                    <th scope='col'><p class='small center' style='min-width: 100px;'>Geometry №3+</p></th></tr>
                 </thead>
                 <tbody>
                 <tr style='vertical-align: center;'>
                     <td><img src='imgmesh/3.png' width='64' height='64' alt='Source height map' title='Source height map'></td>
-                    <td><img src='imgmesh/30.png' width='85' height='103' alt='Example of old 3.0 geometry' title='Example of 3.0 geometry'></td>
-                    <td><img src='imgmesh/31.png' width='85' height='103' alt='Example of new 3.+ geometry' title='Example of new 3.+ geometry'></td>
+                    <td><img src='imgmesh/30big.png' width='168' height='204' alt='Example of old 3.0 geometry' title='Example of 3.0 geometry'></td>
+                    <td><img src='imgmesh/31big.png' width='168' height='204' alt='Example of new 3.+ geometry' title='Example of new 3.+ geometry'></td>
                 </tr>
                 </tbody>
             </table>
@@ -84,12 +84,22 @@
         }
     #declare map = function(c) {Curve(c).u}</pre>
             <p>First column contain input values, second column contain corresponding output values (third column currently is not used for anything good, just leave it alone). By default, input=output, that is, map does not change anything. However, you can edit it.</p>
-            <div class='justborder center lighter nobreak' style='column-width: 130px; column-gap: 10px; column-rule: 2px dotted #7c7c7c; margin: 12pt auto; width: 80%;'>
-                <div><img src='imgmesh/02.png' width='128' height='128' alt='source elevation map' title='Source elevation map'></div>
-                <div><img src='imgmesh/02def.png' width='128' height='122' alt='img2mesh rendering' title='Rendering of img2mesh output'></div>
-                <div><img src='imgmesh/02map.png' width='128' height='122' alt='img2mesh rendering' title='Rendering of img2mesh output'></div>
-                <p class='small' style='column-span: all;'>Left to right: source image, rendered result (default map), rendered result (map changed from <span class='pre'>0.25,  &lt;0.25,  0&gt; 0.75,  &lt;0.75,  0&gt;</span> to <span class='pre'>0.75,  &lt;0.25,  0&gt; 0.75,  &lt;0.25,  0&gt;</span>, i.e. the area between 1/4 and 3/4 of range was inverted (negative)).</p>
-            </div>
+            <table cols='3' class='justborder lighter nobreak center' style='margin: auto'>
+                <caption style='caption-side: bottom; font-size: 10pt;'>Left to right: source image, rendered result (default map), rendered result (map changed from <span class='pre'>0.25,  &lt;0.25,  0&gt; 0.75,  &lt;0.75,  0&gt;</span> to <span class='pre'>0.75,  &lt;0.25,  0&gt; 0.75,  &lt;0.25,  0&gt;</span>, i.e. the area between 1/4 and 3/4 of range was inverted (negative)).</caption>
+                <thead style='display: table-header-group'>
+                <tr style='vertical-align: top;'>
+                    <th scope='col' style='min-width: 150px;'><p class='small center'>Source</p></th>
+                    <th scope='col' style='min-width: 150px;'><p class='small center'>Default curve</p></th>
+                    <th scope='col' style='min-width: 150px;'><p class='small center'>Edited curve</p></th></tr>
+                </thead>
+                <tbody>
+                <tr style='vertical-align: center;'>
+                    <td><img src='imgmesh/02.png' width='64' height='64' alt='source elevation map' title='Source elevation map'></td>
+                    <td><img src='imgmesh/02def.png' width='128' height='122' alt='img2mesh rendering' title='Rendering of img2mesh output'></td>
+                    <td><img src='imgmesh/02map.png' width='128' height='122' alt='img2mesh rendering' title='Rendering of img2mesh output'></td>
+                </tr>
+                </tbody>
+            </table>
             <p>Note that POV&#8209;Ray does not pay attention to the order of control points appearance, so you can add midpoints after endpoints in no particular order. Just remember to have endpoints 0 and 1 defined, since POV&#8209;Ray cannot use undefined functions; everything between 0 and 1 is up to you to edit. Beside that, you can change linear spline to other splines supported by POV&#8209;Ray. Finally, nothing can stop you from writing your own non-spline maps. For example, <span class='pre'>#declare map = function(c) {int(4*c)/4}</span> will give you function similar to Photoshop "Posterize" with 4&nbsp;colors, while <span class='pre'>#declare map = function(c) {4*c-int(4*c)}</span> is 4-teeth saw function.</p>
             <p><b>Img2mesh</b> may be used both for visualizing some actual elevation map and for rendering 3D appearance variant of a logo or other drawing.</p>
             <p style='break-after: avoid;'>Example image below was started as simple black and white drawing, converted to PNG, then some Gaussian&nbsp;Blur was applied in GIMP, resulting PNG fed to <b>img2mesh</b>, then exported POV file rendered with POV&#8209;Ray.</p>
@@ -104,8 +114,9 @@
                 </pre>
             <p>&laquo;Main&raquo; variable in master file turns off camera, light and texture in "<i>generated.pov</i>" file, allowing master file to take over.</p>
             <div class='justborder'>
-            <a href='https://github.com/Dnyarri/img2mesh/releases/latest' target='_blank'><img src='imgmesh/gui.png' width='362' height='226' alt='Proceed to Github' title='img2mesh in action' class='floatright'></a>
-            <p>For Windows users, compiled <a href='https://github.com/Dnyarri/img2mesh/releases/latest' class='git'><span class='red'>Windows 64&#8209;bit img2mesh.exe</span> file is available for download in Release section of GitHub</a>. For other platforms, use Python sources - program is rather self-contained, all non-standard modules like <a href='https://dnyarri.github.io/pypnm.html'>PyPNM</a> and <a href='https://gitlab.com/drj11/pypng'>PyPNG</a> are omnicompatible pure Python and enclosed to download; in case downloaded program does not work right out of the box, you will be provided with replacement copy at no extra charge.</p>
+            <p>For Windows users, compiled <a href='https://github.com/Dnyarri/img2mesh/releases/latest' class='git'><span class='red'>Windows 64&#8209;bit img2mesh.exe</span> file is available for download in Release section of GitHub</a>.</p>
+            <a href='https://github.com/Dnyarri/img2mesh/releases/latest' target='_blank'><img src='imgmesh/gui.png' width='384' height='288' alt='Proceed to Github' title='img2mesh in action' class='floatright'></a>
+            <p>For other platforms, use Python sources - program is rather self-contained, all non-standard modules like <a href='https://dnyarri.github.io/pypnm.html'>PyPNM</a> and <a href='https://gitlab.com/drj11/pypng'>PyPNG</a> are omnicompatible pure Python and enclosed to download; in case downloaded program does not work right out of the box, you will be provided with replacement copy at no extra charge.</p>
             <p>For developers: <b>img2mesh</b> currently restructured as image import modules and 3D export module; the latter may be freely used by other software developers.</p>
             <br>
             <p>Step forward to <a href='https://github.com/Dnyarri/img2mesh' class='git'>img2mesh at GitHub</a> for downloads.</p>
