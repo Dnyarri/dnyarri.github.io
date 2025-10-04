@@ -22,7 +22,8 @@
         <div class='lightbg justborder cols512'>
             <p><b>Img2mesh</b> is a pretty simple (well, it was initially) program that reads regular bitmap image, and writes 3D triangle mesh, using pixel X and Y coordinates for &laquo;east&raquo; and &laquo;south&raquo; position of 3D triangle mesh nodes, and, most important, pixel brightness as Z, that is, height of the node, thus converting image into sort of 3D landscape.</p>
             <p><a href='https://github.com/Dnyarri/img2mesh' class='git'>Img2mesh is available at GitHub for download</a>.</p>
-            <p><span class='red'><b>Update:</b></span> in version 3.21.21.21. mesh geometry upgraded from ver. 3 to 3+. While geometry №3 was better in general case as compared to older №1 and №2, new "plus" upgrade adds improved support for sharp diagonal transitions (sharp vertical and horizontal transitions were ok from the very beginning).</p>
+            <p><span class='red'><b>Update:</b></span> in version 3.21.21.21. mesh geometry upgraded from ver. 3 to 3+. While geometry №3 was better in general case as compared to older №1 and №2, new "plus" upgrade adds improved support for a specific cases like sharp diagonal transitions (sharp vertical and horizontal transitions were fine from the very beginning).</p>
+            <p>Later on, in version 3.22.3.7 output for new geometry №3+ was accelerated <i>ca.</i>&nbsp;20% due to more reasonable buffering control.</p>
             <table cols='3' class='justborder lighter nobreak center' style='margin: auto'>
                 <caption style='caption-side: bottom; font-size: 10pt;'>Comparison of different geometry rendering</caption>
                 <thead style='display: table-header-group'>

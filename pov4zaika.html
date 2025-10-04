@@ -21,9 +21,11 @@
         <h2 class='lightbg'>Converting 2D image into mosaic of 3D objects</h2>
         <div class='lightbg justborder'>
             <p><a href='povzaika.html'>POV&#8209;Ray&nbsp;Mosaic</a> is a set of programs, which read every pixel of source image and convert it into a virtual 3D object, packed side by side with objects created from other pixels, thus creating something like 3D-mosaic in <a href='https://www.povray.org/' target='_blank'>POV&#8209;Ray</a> format. You can <a href='https://github.com/Dnyarri/POVmosaic' class='git'>download POV&#8209;Ray&nbsp;Mosaic from GitHub</a> and use it for free.</p>
-            <p><b>44Zaika</b> is a part of POV&#8209;Ray&nbsp;Mosaic package, covering 4<sup>4</sup> <a href='https://en.wikipedia.org/wiki/List_of_regular_polytopes#Euclidean_tilings'>Euclidean tiling</a>.</p>
-            <p><span class='red'><b>Update:</b></span> In version&nbsp;1.19.5.19 mosaic element transparency (both filter and transmit) are changed from global constants to functions of source pixel brightness and alpha, thus enabling more interesting handling of glass and similar materials.</p>
-            <p><span class='red'><b>Previously on POV&#8209;Ray&nbsp;Mosaic:</b></span> In version&nbsp;1.19.1.7 rendering autofocus and scene legibility were improved. In version&nbsp;1.11.1.1 texture syntax changed to fully blown texture, thus providing a capability to build layered textures.</p>
+            <p><b>44Zaika</b> is a part of POV&#8209;Ray&nbsp;Mosaic package, covering 4<sup>4</sup> <a href='https://en.wikipedia.org/wiki/List_of_regular_polytopes#Euclidean_tilings' target='_blank'>Euclidean tiling</a>.</p>
+            <p><span class='red'><b>Update:</b></span> In version&nbsp;1.22.01.09 scene output was accelerated due to more reasonable buffering control.</p>
+            <p><span class='red'><b>Previously on POV&#8209;Ray&nbsp;Mosaic:</b></span> In version&nbsp;1.19.5.19 mosaic element transparency (both filter and transmit) are changed from global constants to functions of source pixel brightness and alpha, thus enabling more interesting handling of glass and similar materials.</p>
+            <p>In version&nbsp;1.19.1.7 rendering autofocus and scene legibility were improved.</p>
+            <p> In version&nbsp;1.11.1.1 texture syntaxis changed to fully blown texture, thus providing a capability to build layered textures.</p>
         </div>
         <div class='lightbg justborder cols512'>
             <p><b>44zaika</b> program is a part of POVMosaic project, converting PNG or PPM image into a mosaic of 3D objects, packed in <b>square</b> pack. Each source pixel is turned into a 3D cube, colored like this pixel. Surely, instead of cubes, other 3D shapes may be used; at the moment of writing 44zaika provides seven prebuilt object types, and new ones may be easily inserted.</p>
