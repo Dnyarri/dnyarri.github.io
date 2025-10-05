@@ -20,9 +20,9 @@
         <h1 class='darkbg'>POV&#8209;Ray Thread: Linen and Stitch</h1>
         <h2 class='lightbg'>Converting 2D image into canvas and cross-stitch 3D simulation</h2>
         <div class='lightbg justborder'>
-            <p><b>POV&#8209;Ray&nbsp;Thread</b>, a bastardly offspring of <a href='povzaika.html'>POV&#8209;Ray&nbsp;Mosaic</a> project, is a program which read pixels of source image and convert them into a complex 3D structure, simulating something textile and thread related, in <a href='https://www.povray.org/' target='_blank'>POV&#8209;Ray</a> format.</p>
-            <p>You can <a href='https://github.com/Dnyarri/POVthread' class='git'>download POV&#8209;Ray&nbsp;Thread from GitHub</a> and use it for free.</p>
-            <p>Currently POV&#8209;Ray&nbsp;Thread contain two export functions: <b>&laquo;Linen&raquo;</b> and <b>&laquo;Stitch&raquo;</b>.</p>
+            <p><b>POV&#8209;Ray&nbsp;Thread</b>, a bastardly offspring of <a href='povzaika.html' title='Program converting 2D image into mosaic of 3D objects in POV-Ray format'>POV&#8209;Ray&nbsp;Mosaic</a> project, is a program which read pixels of source image and convert them into a complex 3D structure, simulating something textile and thread related, in <a href='https://www.povray.org/' title='POV-Ray high quality free 3D renderer' target='_blank'>POV&#8209;Ray</a> format.</p>
+            <p>You can <a href='https://github.com/Dnyarri/POVthread' class='git' title='PV-Ray Thread repository at GitHub'>download &laquo;POV&#8209;Ray&nbsp;Thread&raquo; from GitHub</a> and use it for free.</p>
+            <p>Currently &laquo;POV&#8209;Ray&nbsp;Thread&raquo; contain two export functions: <b>&laquo;Linen&raquo;</b> and <b>&laquo;Stitch&raquo;</b>.</p>
         </div>
         <div class='lightbg justborder cols512'>
             <div class='center' style='break-inside: avoid; margin: 0pt; padding: 0pt;'>
@@ -30,17 +30,17 @@
                 <img src='thread/linen24x512.png' width='512' height='384' alt='POV-Ray Thread rendering example' title='POV-Ray Thread Linen canvas output rendering example'>
                 <p class='small center'>linen output rendering example</p>
             </div>
-            <p>&laquo;Linen&raquo; is a program for simulating most common <a href='https://en.m.wikipedia.org/wiki/Plain_weave' target='_blank'>plain weave</a>, seen in many cotton, wool, and practically all linen fabrics. Elemental nodes of linen output are colored after source image pixels, producing colored taffeta or print on canvas look.</p>
+            <p>&laquo;Linen&raquo; is a program for simulating most common <a href='https://en.m.wikipedia.org/wiki/Plain_weave' title='Textile threading on Wiki' target='_blank'>plain weave</a>, seen in many cotton, wool, and practically all linen fabrics. Elemental nodes of linen output are colored after source image pixels, producing colored taffeta or print on canvas look.</p>
             <p>Resulting POV&#8209;Ray files are easy to edit, globally changing thread finish (dull/shiny) and texture (normal vectors) to simulate wide range of threads, from single strand plastic to multistrand natural fibers.</p>
             <div class='center' style='break-inside: avoid; margin: 0pt; padding: 0pt'>
                 <h3 style='max-width: 300pt;'>...and Stitch</h3>
                 <img src='thread/stitch24x512.png' width='512' height='384' alt='POV-Ray Thread rendering example' title='POV-Ray Thread cross-stitch rendering example'>
                 <p class='small center'>stitch output rendering example</p>
             </div>
-            <p>&laquo;Stitch&raquo; is a program for simulating most common <a href='https://en.wikipedia.org/wiki/Cross-stitch' target='_blank'>cross-stitching</a> embroidery type, i.e. a cross stitch. Each of 3D stitches produced by program is colored after source image pixel. Stitch pattern may be distorted during rendering, turning too regular artificial appearance into something more natural. Distortion is based on structured Perlin noise pattern.</p>
+            <p>&laquo;Stitch&raquo; is a program for simulating most common <a href='https://en.wikipedia.org/wiki/Cross-stitch' title='Cross-stitching explained at Wiki' target='_blank'>cross-stitching</a> embroidery type, i.e. a cross stitch. Each of 3D stitches produced by program is colored after source image pixel. Stitch pattern may be distorted during rendering, turning too regular artificial appearance into something more natural. Distortion is based on structured Perlin noise pattern, suitable to simulate textile deformation.</p>
         </div>
         <div class='lightbg justborder'>
-            <p>Currently both POV&#8209;Ray&nbsp;Thread programs use one primitive to simulate main object, but this, as almost any other setting, may be overridden. The easiest way to do so is using external "preset.inc" patch files which, upon importing into main scene file, will override all previous settings. Currently POV&#8209;Ray&nbsp;Thread distribution contain several isosurface-based presets, providing extremely fine details on large-scale renderings.</p>
+            <p>Currently both &laquo;POV&#8209;Ray&nbsp;Thread&raquo; programs use one primitive to simulate main object, but this, as almost any other setting, may be overridden. The easiest way to do so is using external "preset.inc" patch files which, upon importing into main scene file, will override all previous settings. Currently &laquo;POV&#8209;Ray&nbsp;Thread&raquo; distribution contain several isosurface-based presets, providing extremely fine details on large-scale renderings.</p>
             <div class='center'>
                 <img src='thread/linen24x1024_1_strand.png' width='1024' alt='POV-Ray Thread rendering example' title='POV-Ray Thread Linen using isosurface for thread simulation'>
                 <p class='small center'>example of rendering using include file with isosurface main object</p>
@@ -48,14 +48,15 @@
         </div>
         <div class='lightbg justborder'>
             <h3 id='averager'>Accessory: Adaptive color averager</h3>
-            <a href='https://github.com/Dnyarri/POVthread' target='_blank'><img src='thread/ave.png' width='382' height='436' alt='Averager GUI' title='Averager before and after filtering preview' class='floatright'></a>
-            <p>In cross stitching, single thread is often used to produce several stitches in a row, producing flat single color areas. To help with color reduction for this, a small color reduction utility &laquo;Averager&raquo; is included into the package.</p>
-            <p>Unlike regular color reduction utilities, like ones used to create GIF files, &laquo;Averager&raquo; does not build common palette for the whole image but rather tries to find, isolate, and flatten smooth areas based on local contrast, that is closer to idea of using single thread for the area.</p>
-            <p>&laquo;Averager&raquo; is an accessory since it does not produce POV files - it loads PNG or PPM file, filters image, and saves filtered image as PNG or PPM.</p>
+            <a href='https://github.com/Dnyarri/POVthread' target='_blank' title='Adaptive color averager - image filtering in pure Python'><img src='thread/ave.png' width='382' height='436' alt='Adaptive Averager GUI' title='Averager before and after filtering preview' class='floatright'></a>
+            <p>In cross stitching, single thread is often used to produce several stitches in a row, producing flat single color areas. To help with color reduction for this, a small color reduction utility <b>&laquo;Averager&raquo;</b> is included into the package.</p>
+            <p>Unlike regular color reduction utilities, like ones used to create GIF files, &laquo;Averager&raquo; does not build common palette for the whole image but rather tries to find, isolate, and flatten smooth areas based on local contrast, which is much closer to idea of using single thread for the area.</p>
+            <p>&laquo;Averager&raquo; is considered an accessory since it does not produce POV files - it loads PNG or PPM file, filters image, and saves filtered image as PNG or PPM.</p>
+            <p>Initially &laquo;Averager&raquo; was a small utility, and became redundant once main POV-Ray&nbsp;Thread program got image filter included; however it appeared to be very interesting illustration of image filter made in pure Python from scratch without using any third-party image editors, and therefore was maintained and became quite mature program.</p>
             <p>To simplify visual filtering adjustments, &laquo;Averager&raquo; is equipped with minimal yet suitable Tkinter-based GUI.</p>
             <p>Currently both programs are relinked with PyPNM version&nbsp;2, which is of special interest for &laquo;Averager&raquo; since new module provides more resource saving way of working with large images.</p>
-            <p><span class='red'><b>Update:</b></span> in release ver.&nbsp;1.20.7.14, filter module was substantially rewritten (module version&nbsp;3.20.7.14) to correctly support all color modes from L to RGBA. Wrap around processing of seamless patterns added to &laquo;Averager&raquo;; default behaviour for &laquo;Averager&raquo; is filtering alpha channel, for &laquo;POV&#8209;Ray&nbsp;Thread&raquo; - keeping source alpha.</p>
-            <p><span class='red'><b>Previously on POV&#8209;Ray Thread:</b></span> since ver.&nbsp;1.16.20.20 both POVRayThread.py and Averager.py support zooming in/out with mouse clicks on preview. In general, click reaction is as follows:</p>
+            <p><span class='red'><b>Update:</b></span> version 1.22.18.8 linked with update filter module 3.22.18.8 which, beside some acceleration, includes major result quality improvements.</p>
+            <p><span class='red'><b>Previously on POV&#8209;Ray Thread:</b></span> in release ver.&nbsp;1.20.7.14, filter module was substantially rewritten (module version&nbsp;3.20.7.14) to correctly support all color modes from L to RGBA. Wrap around processing of seamless patterns added to &laquo;Averager&raquo;; default behaviour for &laquo;Averager&raquo; is filtering alpha channel, for &laquo;POV&#8209;Ray&nbsp;Thread&raquo; - keeping source alpha. Since ver.&nbsp;1.16.20.20 both POVRayThread.py and Averager.py support zooming in/out with mouse clicks on preview. In general, click reaction is as follows:</p>
             <ul style='break-before: avoid; break-inside: avoid;'>
                 <li>After starting program double click on preview area (or Ctrl+O) is equal to "Open&nbsp;image", right click (or Alt+F) brings general "File..." menu;</li>
                 <li>After opening an image Ctrl+click is "zoom&nbsp;in", Alt+click is "zoom&nbsp;out", similar to Photoshop;</li>
@@ -63,11 +64,11 @@
                 <li>"Enter" runs filter, after that filter result is shown;</li>
                 <li>After filtering, left click switches before/after images. Be patient though, since double click still works as "Open...".</li>
             </ul>
-            <p>Since ver.&nbsp;1.16.6.18 POV&#8209;Ray&nbsp;Thread, beside easy to use GUI, got adaptive averaging filter linked, so now it is capable to perform image filtering on its own; therefore additional &laquo;Averager&raquo; utility became obsolete. However, updated version of &laquo;Averager&raquo; remains included into this package as a good example, illustrating a possibility of writing fully functional image filtering application using pure Python - filtering module itself is written in Python; image files reading and writing is based on <a href='https://gitlab.com/drj11/pypng'>PyPNG</a> and <a href='https://dnyarri.github.io/pypnm.html'>PyPNM</a>, both of them being pure Python modules; filter preview is based on PyPNM and Tkinter, and, surprisingly, all this works with reasonable speed.</p>
+            <p>Since ver.&nbsp;1.16.6.18 POV&#8209;Ray&nbsp;Thread, beside easy to use GUI, got adaptive averaging filter linked, so now it is capable to perform image filtering on its own; therefore additional &laquo;Averager&raquo; utility became obsolete. However, updated version of &laquo;Averager&raquo; remains included into this package as a good example, illustrating a possibility of writing fully functional image filtering application using pure Python - filtering module itself is written in Python; image files reading and writing is based on <a href='https://gitlab.com/drj11/pypng' title='Pyre Python PNG reading and writing module'>PyPNG</a> and <a href='https://dnyarri.github.io/pypnm.html' title='Pyre Python PPM and PGM reading and writing module'>PyPNM</a>, both of them being pure Python modules; filter preview is based on PyPNM and Tkinter, and, surprisingly, all this works with reasonable speed.</p>
         </div>
-        <p class='lightbg justborder'>Now it's time to <a href='https://github.com/Dnyarri/POVthread' class='git'>download POV&#8209;Ray&nbsp;Thread from GitHub</a> and start building your own textile scenes.</p>
+        <p class='lightbg justborder'>Now it's time to <a href='https://github.com/Dnyarri/POVthread' class='git'>download &laquo;POV&#8209;Ray&nbsp;Thread&raquo; from GitHub</a> and start building your own textile scenes.</p>
         <br>
-        <p class='right'><span class='lightbg justborder'>...or Move back to <a href='https://dnyarri.github.io'>main page</a>.</span></p>
+        <p class='right'><span class='lightbg justborder'>...or Move back to <a href='https://dnyarri.github.io' title='Python freeware for POV-Ray and other 3D, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support and batch processing'>Dnyarri`s Python freeware main page</a>.</span></p>
     </div> <!-- Content block end -->
 </body>
 </html>
