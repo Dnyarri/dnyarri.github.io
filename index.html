@@ -6,14 +6,14 @@
     <link rel='canonical' href='https://dnyarri.github.io/index.html'/>
     <meta charset='utf-8' />
     <meta name='author' content='Ilyich the Toad'>
-    <meta name='description' content='Python freeware for POV-Ray, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support and batch processing'>
+    <meta name='description' content='Python freeware for POV-Ray, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, barycentric image interpolation, batch processing with LibreOffice, ffmpeg, etc.'>
     <meta name='keywords' content='Python, POVRay, Wavefront, Autodesk, stereolithography, Scale2x, Scale3x, Scale2xSFX, Scale3xSFX, AdvMAME2x, AdvMAME3x, batch, 3D, image, convert, freeware, 3D-print, conversion, LibreOffice, optivorbis'>
     <meta name='robots' content='all'>
     <meta name='google-site-verification' content='QktvPQafCXPocfm38M5eBb3bniwuaJJh6Bx7YDE4AgU' />
     <meta name='yandex-verification' content='54351d4014245630' />
     <link rel='stylesheet' href='toc.css' type='text/css'>
     <link rel='stylesheet' href='content.css' type='text/css'>
-    <title>The Toad's Slimy Mudhole: Python freeware for Scale2x, Scale3x, PPM, PGM, POV-Ray etc.</title>
+    <title>The Toad's Slimy Mudhole: Python freeware for Scale2x, Scale3x, PPM, PGM, barycentric image interpolation, POV-Ray etc.</title>
 </head>
 <body>
     <div class='leftarea'> <!-- Nav holder begin -->
@@ -24,13 +24,13 @@
         <h2 class='lightbg'>where The Toad intercourses Python</h2>
         <h3 class='darkbg'>Preamble</h3>
         <div class='lightbg justborder cols2'>
-            <p>After closing <b>AmphiSoft plugins</b> project long ago in a universe far away The Toad of Great Mental Powers made a decision to implement some of spontaneous ideas, developed or implied, into something potentially easy to understand and hopefully simple to use by humans.</p><p>As an &laquo;easy to understand&raquo; mean of production Python was chosen (that was probably an unrecoverable mistake. Or may be not), as ideas regular ones like &laquo;what happens if we map image signal to something else&raquo; were used.</p><p>As a result, some Python projects described hereby were created and <a href='https://github.com/Dnyarri/'>shared on <span class='git'>GitHub</span></a>.</p>
+            <p>After closing <b>AmphiSoft plugins</b> project long ago in a universe far away The Toad of Great Mental Powers made a decision to implement some of spontaneous ideas, developed or implied, into something potentially easy to understand and hopefully simple to use by humans.</p><p>As an &laquo;easy to understand&raquo; mean of production Python was chosen (that was probably an unrecoverable mistake. Or may be not), as ideas regular ones like &laquo;what happens if we map image signal to something else&raquo; were used.</p><p>As a result, some Python projects described hereby were created and <a href='https://github.com/Dnyarri/'>shared on GitHub</a>.</p>
             <p>All programs are completely free to download, use, and even modify in case you feel like improving them. Sharing your results is welcome; admiring, adoring and hailing The Toad of Great Mental Powers obligatory.</p>
         </div>
         <h3 class='darkbg'>Amble, i.e., the projects:</h3>
         <h4 class='darkbg'>POV&#8209;Ray img2mesh</h4>
         <div class='lightbg justborder' style='min-height: 254px;'><a href='img2mesh.html' title='Program for bitmap heigh field to 3D triangle mesh conversion'><img src='imgmesh/320/img2mesh.png' width='250' height='250' class='floatleft' alt='img2mesh' title='Example of img2mesh output rendering'></a>
-            <p>Python program <a href='img2mesh.html' title='Program for bitmap heigh field to 3D triangle mesh conversion'>img2mesh</a> developed for converting images into 3D&nbsp;mesh, primarily in <a href='https://www.povray.org/' title='POV-Ray high quality free 3D renderer' target='_blank'>POV&#8209;Ray</a> format (although OBJ, STL and DXF are supported as well), so that bright pixels turns into high peaks on resulting 3D landscape - the brighter source image pixel, the higher 3D&nbsp;mesh node point is.</p>
+            <p>Python program <a href='img2mesh.html' title='Program for bitmap heigh field to 3D triangle mesh conversion' class='git'>img2mesh</a> developed for converting images into 3D&nbsp;mesh, primarily in <a href='https://www.povray.org/' title='POV-Ray high quality free 3D renderer' target='_blank'>POV&#8209;Ray</a> format (although OBJ, STL and DXF are supported as well), so that bright pixels turns into high peaks on resulting 3D landscape - the brighter source image pixel, the higher 3D&nbsp;mesh node point is.</p>
             <table title='Proceed to imp2mesh bitmap to 3D mesh converter page' cols='3' class='justborder lighter nobreak center floatright' style='cursor: pointer;'  onclick="document.location='img2mesh.html'">
                 <caption style='caption-side: bottom; font-size: 10pt;'>Comparison of different geometry rendering</caption>
                 <thead style='display: table-header-group'>
@@ -55,7 +55,7 @@
         <div class='lightbg justborder' style='min-height: 134px;'>
             <a href='pov3zaika.html'><img src='3z/l.png' width='250' height='134' class='floatleft' alt='POV-Ray Mosaic' title='Example of 6³-Mosaic output rendering'></a>
             <a href='pov4zaika.html'><img src='4z/r.png' width='246' height='134' class='floatright' alt='POV-Ray Mosaic' title='Example of 4⁴-Mosaic output rendering'></a>
-            <p>Currently project <a href='povzaika.html' title='Program converting 2D image into mosaic of 3D objects in POV-Ray format'>POV&#8209;Ray&nbsp;Mosaic</a> includes Python programs converting PNG or PPM image into <a href='https://www.povray.org/' title='POV-Ray high quality free 3D renderer' target='_blank'>POV&#8209;Ray</a> mosaic scene, consisting of various objects - spheres, cylinders, boxes, prisms, <i>etc.</i> - colored after source image pixels.</p>
+            <p>Currently project <a href='povzaika.html' title='Program converting 2D image into mosaic of 3D objects in POV-Ray format' class='git'>POV&#8209;Ray&nbsp;Mosaic</a> includes Python programs converting PNG or PPM image into <a href='https://www.povray.org/' title='POV-Ray high quality free 3D renderer' target='_blank'>POV&#8209;Ray</a> mosaic scene, consisting of various objects - spheres, cylinders, boxes, prisms, <i>etc.</i> - colored after source image pixels.</p>
             <p>POV&#8209;Ray Mosaic provide well structured output to simplify bulk object and attributes change.</p>
             <p>Rendered images are suitable for scrapbooks, posters, and other creative ways to entertain and/or annoy people.</p>
             <p><span class='red'><b>Update:</b></span> In version&nbsp;1.19.5.19 <span class='pre'>filter</span> and <span class='pre'>transmit</span> turned from constants to functions, enabling more interesting transparency tricks. <a href='povzaika.html' title='Program converting 2D image into mosaic of 3D objects in POV-Ray format'>🔽<i>Read more...</i></a></p>
@@ -64,14 +64,14 @@
         <div class='lightbg justborder' style='min-height: 134px;'>
             <a href='povthread.html'><img src='thread/l.png' width='246' height='130' class='floatleft' alt='POV-Ray Thread' title='Example of Linen output rendering'></a>
             <a href='povthread.html'><img src='thread/r.png' width='247' height='130' class='floatright' alt='POV-Ray Thread' title='Example of Linen output rendering'></a>
-            <p><a href='povthread.html'>&laquo;Linen&raquo; and &laquo;Stitch&raquo;</a> are programs, which read pixels of source image and convert them into a complex 3D structure, simulating something textile and thread related, in <a href='https://www.povray.org/' title='POV-Ray high quality free 3D renderer' target='_blank'>POV&#8209;Ray</a> format.</p>
+            <p><a href='povthread.html' class='git' title='POV-Ray Thread simulator'>&laquo;Linen&raquo; and &laquo;Stitch&raquo;</a> are programs, which read pixels of source image and convert them into a complex 3D structure, simulating something textile and thread related, in <a href='https://www.povray.org/' title='POV-Ray high quality free 3D renderer' target='_blank'>POV&#8209;Ray</a> format.</p>
             <p>Currently tabby/linen plain weave, and cross-stitching simulations are provided. Exported 3D structures are configurable regarding thread appearance and pattern distortions.</p>
             <p><span class='red'><b>Update:</b></span> in ver.&nbsp;1.20.7.14 filter module substantially rewritten to support different color modes and process alpha. <a href='povthread.html'>🔽<i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>Scale2x, Scale3x, Scale2xSFX and Scale3xSFX in pure Python</h4>
         <div class='lightbg justborder' style='display: flow-root;'>
             <a href='scalenx.html'><img src='imgscalenx/vissmall.png' height='200' width='257' alt='Visual ScaleNx rescaler' title='Visual ScaleNx rescaler running Scale3xSFX twice' class='floatright'></a>
-            <p><a href='scalenx.html'>ScaleNx</a> is a pure Python implementation of several <a href='https://en.wikipedia.org/wiki/Pixel-art_scaling_algorithms' target='_blank'>pixel art image scaling</a> algorithms, <i>viz.</i> <b>Scale2x</b>, <b>Scale3x</b>, <b>Scale2xSFX</b> and <b>Scale3xSFX</b>. </p>
+            <p><a href='scalenx.html' class='git' title='Scale2x, Scale3x, Scale2xSFX and Scale3xSFX image rescaling in pure Python'>ScaleNx</a> is a pure Python implementation of several <a href='https://en.wikipedia.org/wiki/Pixel-art_scaling_algorithms' target='_blank'>pixel art image scaling</a> algorithms, <i>viz.</i> <b>Scale2x</b>, <b>Scale3x</b>, <b>Scale2xSFX</b> and <b>Scale3xSFX</b>. </p>
             <p>Main program for both single file and batch folder processing with suitable GUI is available, free and open source.</p>
             <p><span class='red'><b>Update:</b></span> in ScaleNx version&nbsp;25.11.15.1 visual shell VisualNxGUI.py added to main branch. </p>
             <p>Main ScaleNxGUI.py shell update involves further GUI legibility improvements and minor main module speed-up. <a href='scalenx.html'>🔽<i>Read more...</i></a></p>
@@ -79,17 +79,17 @@
         <h4 class='darkbg'>PGM and PPM image files handling in pure Python</h4>
         <div class='lightbg justborder'>
             <a href='pypnm.html'  title='Pyre Python PPM and PGM reading, displaying, and writing module'><img src='pypnm/alpha.png' width='137' height='192' class='floatright' alt='PyPNM' title='Example of simulating transparency display with PyPNM'></a>
-            <p><a href='pypnm.html'  title='Pyre Python PPM and PGM reading, displaying, and writing module'>PyPNM</a> is a pure Python implementation of read/write functions for <b>Portable Gray Map</b> (<a href='https://netpbm.sourceforge.net/doc/pgm.html' target='_blank'>.pgm</a>) and <b>Portable Pixel Map</b> (<a href='https://netpbm.sourceforge.net/doc/ppm.html' target='_blank'>.ppm</a>) image formats. Well, due to format specifications <i>fluid</i> nature it's hard to say that PyPNM is fully compliant, but it was tested side by side with different software, and found to understand even 16-bit per channel PGM and PPM produced by Adobe&nbsp;Photoshop (which uses somewhat, err, unique header).</p>
+            <p><a href='pypnm.html'  title='Pyre Python PPM and PGM reading, displaying, and writing module' class='git'>PyPNM</a> is a pure Python implementation of read/write functions for <b>Portable Gray Map</b> (<a href='https://netpbm.sourceforge.net/doc/pgm.html' target='_blank'>.pgm</a>) and <b>Portable Pixel Map</b> (<a href='https://netpbm.sourceforge.net/doc/ppm.html' target='_blank'>.ppm</a>) image formats. Well, due to format specifications <i>fluid</i> nature it's hard to say that PyPNM is fully compliant, but it was tested side by side with different software, and found to understand even 16-bit per channel PGM and PPM produced by Adobe&nbsp;Photoshop (which uses somewhat, err, unique header).</p>
             <p>Beside reading and writing PNM files, PyPNM provides a suitable facility for viewing image-like data by converting it on the fly to in-memory PNM bytes and serving it to Tkinter (see usage example on the right). For image data with transparency, PyPNM simulates a preview over chessboard pattern (like Photoshop and GIMP).</p>
             <p><span class='red'><b>Update:</b></span> Major update to new, resource saving PyPNM version&nbsp;2. Since ver.&nbsp;2.23.23.23 developers are supposed to be happy with more detailed docs. <a href='pypnm.html'  title='Pyre Python PPM and PGM reading, displaying, and writing module'>🔽<i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>Barycentric and bilinear image interpolation in pure Python</h4>
         <div class='lightbg justborder'>
-            <p><a href='imin.html'  title='Barycentric and bilinear image interpolation in pure Python'>ImIn</a> (standing for "Image Interpolation", and not to be confused with imines, imides, and "I'm in!") is a pure Python implementation of barycentric and bilinear image interpolation in general, and rescaling in particular. Note that all this code was initially developed for my personal use, therefore, so far, it works (and works quite well), but is absolutely undocumented (except stupid yet prolific docstrings).</p>
+            <p><a href='imin.html'  title='Barycentric and bilinear image interpolation in pure Python' class='git'>ImIn</a> (standing for "Image Interpolation", and not to be confused with imines, imides, and "I'm in!") is a pure Python implementation of barycentric and bilinear image interpolation in general, and rescaling in particular. Note that all this code was initially developed for my personal use, therefore, so far, it works (and works quite well), but is absolutely undocumented (except stupid yet prolific docstrings). <a href='imin.html'  title='Pyre Python barycentric and bilinear image interpolation and rescaling'>🔽<i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>Python batch files</h4>
         <div class='lightbg justborder'>
-            <p><a href='batch.html'>Some batch processing scripts</a> made for my personal regular use. May appear to be useful to others. <a href='batch.html'>🔽<i>Read more...</i></a>
+            <p><a href='batch.html' title='Python scripts for ffmpeg, optivorbis, LibreOffice, folder NTFS compression, etc.'>Some batch processing scripts</a> made for my personal regular use. May appear to be useful to others. <a href='batch.html' title='Python scripts for ffmpeg, optivorbis, LibreOffice, folder NTFS compression, etc.'>🔽<i>Read more...</i></a>
             </p>
         </div>
     </div> <!-- Content block end -->
