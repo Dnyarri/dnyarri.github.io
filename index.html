@@ -55,8 +55,8 @@
         <div class='lightbg justborder' style='min-height: 134px;'>
             <a href='pov3zaika.html'><img src='3z/l.png' width='250' height='134' class='floatleft' alt='POV-Ray Mosaic' title='Example of 6³-Mosaic output rendering'></a>
             <a href='pov4zaika.html'><img src='4z/r.png' width='246' height='134' class='floatright' alt='POV-Ray Mosaic' title='Example of 4⁴-Mosaic output rendering'></a>
-            <p>Currently project <a href='povzaika.html' title='Program converting 2D image into mosaic of 3D objects in POV-Ray format' class='git'>POV&#8209;Ray&nbsp;Mosaic</a> includes Python programs converting PNG or PPM image into <a href='https://www.povray.org/' title='POV-Ray high quality free 3D renderer' target='_blank'>POV&#8209;Ray</a> mosaic scene, consisting of various objects - spheres, cylinders, boxes, prisms, <i>etc.</i> - colored after source image pixels.</p>
-            <p>POV&#8209;Ray Mosaic provide well structured output to simplify bulk object and attributes change.</p>
+            <p>Currently project <a href='povzaika.html' title='Program converting 2D image into mosaic of 3D objects in POV-Ray format' class='git'>POV&#8209;Ray&nbsp;Mosaic</a> includes Python programs converting PNG or PPM image into <a href='https://www.povray.org/' title='POV-Ray high quality free 3D renderer' target='_blank'>POV&#8209;Ray</a> mosaic scene, containing main mosaic object, consisting of various objects - spheres, cylinders, boxes, prisms, <i>etc.</i> - colored after source image pixels.</p>
+            <p>POV&#8209;Ray Mosaic provide well structured output to simplify both whole mosaic object and component mosaic elements attributes change.</p>
             <p>Rendered images are suitable for scrapbooks, posters, and other creative ways to entertain and/or annoy people.</p>
             <p><span class='red'><b>Update:</b></span> In version&nbsp;1.19.5.19 <span class='pre'>filter</span> and <span class='pre'>transmit</span> turned from constants to functions, enabling more interesting transparency tricks. <a href='povzaika.html' title='Program converting 2D image into mosaic of 3D objects in POV-Ray format'>🔽<i>Read more...</i></a></p>
         </div>
@@ -78,14 +78,36 @@
         </div>
         <h4 class='darkbg'>PGM and PPM image files handling in pure Python</h4>
         <div class='lightbg justborder'>
-            <a href='pypnm.html'  title='Pyre Python PPM and PGM reading, displaying, and writing module'><img src='pypnm/alpha.png' width='137' height='192' class='floatright' alt='PyPNM' title='Example of simulating transparency display with PyPNM'></a>
-            <p><a href='pypnm.html'  title='Pyre Python PPM and PGM reading, displaying, and writing module' class='git'>PyPNM</a> is a pure Python implementation of read/write functions for <b>Portable Gray Map</b> (<a href='https://netpbm.sourceforge.net/doc/pgm.html' target='_blank'>.pgm</a>) and <b>Portable Pixel Map</b> (<a href='https://netpbm.sourceforge.net/doc/ppm.html' target='_blank'>.ppm</a>) image formats. Well, due to format specifications <i>fluid</i> nature it's hard to say that PyPNM is fully compliant, but it was tested side by side with different software, and found to understand even 16-bit per channel PGM and PPM produced by Adobe&nbsp;Photoshop (which uses somewhat, err, unique header).</p>
+            <a href='pypnm.html'  title='Pure Python PPM and PGM reading, displaying, and writing module'><img src='pypnm/alpha.png' width='137' height='192' class='floatright' alt='PyPNM' title='Example of simulating transparency display with PyPNM'></a>
+            <p><a href='pypnm.html'  title='Pure Python PPM and PGM reading, displaying, and writing module' class='git'>PyPNM</a> is a pure Python implementation of read/write functions for <b>Portable Gray Map</b> (<a href='https://netpbm.sourceforge.net/doc/pgm.html' target='_blank'>.pgm</a>) and <b>Portable Pixel Map</b> (<a href='https://netpbm.sourceforge.net/doc/ppm.html' target='_blank'>.ppm</a>) image formats. Well, due to format specifications <i>fluid</i> nature it's hard to say that PyPNM is fully compliant, but it was tested side by side with different software, and found to understand even 16-bit per channel PGM and PPM produced by Adobe&nbsp;Photoshop (which uses somewhat, err, unique header).</p>
             <p>Beside reading and writing PNM files, PyPNM provides a suitable facility for viewing image-like data by converting it on the fly to in-memory PNM bytes and serving it to Tkinter (see usage example on the right). For image data with transparency, PyPNM simulates a preview over chessboard pattern (like Photoshop and GIMP).</p>
-            <p><span class='red'><b>Update:</b></span> Major update to new, resource saving PyPNM version&nbsp;2. Since ver.&nbsp;2.23.23.23 developers are supposed to be happy with more detailed docs. <a href='pypnm.html'  title='Pyre Python PPM and PGM reading, displaying, and writing module'>🔽<i>Read more...</i></a></p>
+            <p><span class='red'><b>Update:</b></span> Major update to new, resource saving PyPNM version&nbsp;2. Since ver.&nbsp;2.23.23.23 developers are supposed to be happy with more detailed docs. <a href='pypnm.html'  title='Pure Python PPM and PGM reading, displaying, and writing module'>🔽<i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>Barycentric and bilinear image interpolation in pure Python</h4>
         <div class='lightbg justborder'>
-            <p><a href='imin.html'  title='Barycentric and bilinear image interpolation in pure Python' class='git'>ImIn</a> (standing for "Image Interpolation", and not to be confused with imines, imides, and "I'm in!") is a pure Python implementation of barycentric and bilinear image interpolation in general, and rescaling in particular. Note that all this code was initially developed for my personal use, therefore, so far, it works (and works quite well), but is absolutely undocumented (except stupid yet prolific docstrings). <a href='imin.html'  title='Pyre Python barycentric and bilinear image interpolation and rescaling'>🔽<i>Read more...</i></a></p>
+            <table title='Proceed to bilinear and barycentric image interpolation page' cols='2' class='justborder lighter nobreak center floatright' style='cursor: pointer;'  onclick="document.location='imin.html'">
+                <caption style='caption-side: bottom; font-size: 10pt;'>Comparison of bilinear and barycentric single pixel upscaling</caption>
+                <thead style='display: table-header-group'>
+                <tr style='vertical-align: top;'>
+                    <th scope='col'><p class='small center'>Bilinear</p></th>
+                    <th scope='col'><p class='small center'>Barycentric</p></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr style='vertical-align: center;'>
+                    <td><img src='imin/peak3bil.png' width='60' height='60' alt='Bilinear interpolation of a single black pixel over white background' title='Bilinear interpolation of a single black pixel over white background'></td>
+                    <td><img src='imin/peak3bar.png' width='60' height='60' alt='Barycentric interpolation of a single black pixel over white background' title='Barycentric interpolation of a single black pixel over white background'></td>
+                </tr>
+                </tbody>
+            </table>
+            <p><a href='imin.html'  title='Barycentric and bilinear image interpolation in pure Python' class='git'>ImIn</a> (standing for "Image Interpolation", and not to be confused with imines, imides, and "I'm in!") is a pure Python implementation of bilinear and barycentric image interpolation in general, and rescaling in particular.</p>
+            <p>Main purposes of module creation were:</p>
+            <ul>
+                <li>testing barycentric image interpolation, which is missing in image editing programs like Photoshop;</li>
+                <li>and finally stop copying my code for bilinear interpolation from one program to another, and start copying a module.</li>
+            </ul>
+            <p>Since results of barycentric interpolation appeared to be interesting, and interpolation itself liable to speed optimization, the decision was made to share it with humans and lesser species as "request for comments" of a kind.</p>
+            <p>Note that this code is under development, and therefore subject to change if changes appear to result in improvement. <a href='imin.html'  title='Pure Python barycentric and bilinear image interpolation and rescaling'>🔽<i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>Python batch files</h4>
         <div class='lightbg justborder'>

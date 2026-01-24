@@ -21,14 +21,68 @@
         <h2 class='lightbg'>Barycentric and bilinear image interpolation and transformation in pure Python</h2>
         <div class='lightbg justborder cols2'>
             <h3>Overview</h3>
-            <p><a href='https://github.com/Dnyarri/imin' class='git' title='Barycentric and bilinear image interpolation and transformation in pure Python at Github'>ImIn (Image Interpolation)</a> module contains Python code for <a href='https://en.wikipedia.org/wiki/Bilinear_interpolation' target='_blank'>bilinear image interpolation</a> and <a href='https://en.wikipedia.org/wiki/Barycentric_coordinate_system' target='_blank'>barycentric image interpolation</a> in general and rescaling in particular. That is, it contains functions for for reading one pixel at float coordinates, interpolated from real pixels (having integer coordinates), as well as functions for transforming whole image (rescaling, rotating, <i>etc.</i>) using interpolation methods above.</p>
-            <p>It is well known that image interpolation authors tend to increase image analysis area size. With bilinear interpolation, pixel is considered as square, and interpolation takes place between four corners. With bicubic interpolation, more neighbour pixels are added to analysis. This is good for smooth gradients but what about some sharp edges? Why not to try using just half a pixel? For example, split a pixel square ■ diagonally into two triangles like ◤◢ or ◣◥, and use analysis within one half of a pixel using three corners?</p>
-            <p>Since I appeared to be unable to find such a triangular interpolation in any big programs like Photoshop or GIMP, I decided to write corresponding algorithm myself and see how it works.</p>
-            <p>It appears that the best coordinate system for triangles is <a href='https://en.wikipedia.org/wiki/Barycentric_coordinate_system'>barycentric coordinate system</a>, which is widely used in science, in 3D graphics, sometimes used in 2D vector gradients, but, for unclear reasons, not used in regular 2D image processing.</p>
-            <p>So, I wrote my own barycentric interpolation code, and, after a long debugging of simple school math, it appeared to give rather interesting results when used for image rescaling, so I even tend to prefer using it for my images in some cases, regardless of the fact that Python code is always slower than optimized machine code in Photoshop.</p>
-            <p>At the same time I got bored by copying my own code for bilinear image interpolation from one program to another (yes, there is an interpolation in, say, <a href='pov3zaika.html'>POV-Ray 6³&nbsp;Mosaic</a> or <a href='img2mesh.html'>img2mesh</a>).</p>
-            <p>So, I decided to join my code for bilinear and barycentric image interpolation in some sort of a single module, which can be easily plugged into different image processing Python programs. So, here it goes.</p>
-            <p>Ladies and gentlemen! <span lang='fr'>Mesdames et messieurs!</span> <span lang='ru-Cyrl'>Товарищи и товарищи!</span> Let me introduce to you the one and only <a href='https://github.com/Dnyarri/imin' class='git' title='Barycentric and bilinear image interpolation and transformation in pure Python at Github'>Image Interpolation (imin) module</a>, combining simple yet carefully designed and even somewhat optimized bilinear and barycentric image interpolation in pure Python!</p>
+            <p><a href='https://github.com/Dnyarri/imin' class='git' title='Barycentric and bilinear image interpolation and transformation in pure Python at Github'>ImIn (Image Interpolation)</a> module contains Python code for <a href='https://en.wikipedia.org/wiki/Bilinear_interpolation' target='_blank'>bilinear image interpolation</a> and <a href='https://en.wikipedia.org/wiki/Barycentric_coordinate_system' target='_blank'>barycentric image interpolation</a>, working in any color modes from 8&nbsp;bit&nbsp;L to 16&nbsp;bit&nbsp;RGBA (presumably it works in other color modes as well but I can't read and write CMYK files to perform testing). That is, it contains functions for reading single pixel at float coordinates, interpolated from real pixels (having integer coordinates), as well as functions for transforming whole image (scaling, rotating, deforming <i>etc.</i>) using interpolation methods above.</p>
+            <p>It is well known that image interpolation authors tend to increase image analysis area size. With bilinear interpolation, pixel is considered as square, and interpolation takes place between four corners. With bicubic interpolation, more neighbour pixels are added to analysis. This is good for smooth gradients but what about some sharp edges? What happens if, instead of adding more and more pixels, we try to use <i>less</i> than one pixel for interpolation? Why not to try using just half a pixel? For example, split a pixel square ■ diagonally into two triangles like ◤◢ or ◣◥, and use analysis within one half of a pixel using three corners?</p>
+            <p>Since I appeared to be unable to find such a triangular interpolation in any big programs like Photoshop or GIMP, I decided to write corresponding algorithm myself and see what happens.</p>
+            <p>It appears that the best coordinate system for triangles is <a href='https://en.wikipedia.org/wiki/Barycentric_coordinate_system' target='_blank'>barycentric coordinate system</a>, which is widely used in science, in 3D graphics, sometimes used in 2D vector gradients, but, for unclear reasons, not used in regular 2D bitmap image processing.</p>
+            <p>So, as a result of enormous efforts to recall school math like rightangled triangle area I wrote my own barycentric interpolation code, which, after tedious debugging and implementing obvious optimization, appeared to give rather interesting results when used, for example, for image rescaling (I even tend to prefer it to Photoshop under some circumstances, regardless of the fact that Python code is always slower than optimized machine code in Photoshop).</p>
+            <p>At the same time I got bored by copying my own code for bilinear image interpolation from one program to another (yes, there is an interpolation in, say, <a href='pov3zaika.html' title='Program converting 2D image into mosaic of 3D objects in POV-Ray format'>POV-Ray 6³&nbsp;Mosaic</a> or <a href='img2mesh.html' title='Program for bitmap heigh field to 3D triangle mesh conversion'>img2mesh</a>).</p>
+            <p>Finally, I decided to join my code for bilinear and barycentric image interpolation in some sort of a single module, which can be easily plugged into different image processing Python programs. And here it goes.</p>
+            <p><span lang='ru-Cyrl'>Дамы и господа!</span> <span lang='en-GB'>Ladies and gentlemen!</span> <span lang='fr'>Mesdames et messieurs!</span> <span lang='es'>Señores y señoritas!</span> <span lang='ru-Cyrl'>Товарищи!</span></p>
+            <p>Let me introduce to you the one and only <a href='https://github.com/Dnyarri/imin' class='git' title='Barycentric and bilinear image interpolation and transformation in pure Python at Github'>Image Interpolation (imin) module</a>, combining simple yet carefully designed and even somewhat optimized bilinear and barycentric image interpolation in pure Python!</p>
+        </div>
+        <div class='lightbg justborder cols2'>
+            <table title='Comparison of bilinear and barycentric image interpolation using imin module' cols='3' class='justborder lighter nobreak center' style='margin: auto'>
+                <caption style='caption-side: top; font-size: 14pt;'>Table&nbsp;1. Comparison of bilinear and barycentric image interpolation</caption>
+                <thead style='display: table-header-group'>
+                <tr style='vertical-align: top;'> <!-- Header row -->
+                    <th scope='col' style='max-width: 160px;'><p class='small center'>Source</p></th>
+                    <th scope='col' style='max-width: 160px;'><p class='small center'>Bilinear</p></th>
+                    <th scope='col' style='max-width: 160px;'><p class='small center'>Barycentric</p></th></tr>
+                </thead>
+                <tbody>
+                <tr style='vertical-align: center;'> <!-- Row 1 -->
+                    <td class='justborder' style='max-width: 160px;'><img src='imin/peak3.png' width='3' height='3' alt='Source image' title='Source image' class='justborder'>
+                        <p class='small center'>3x3&nbsp;px (black pixel over white background)</p>
+                    </td>
+                    <td class='justborder' style='max-width: 160px;'><img src='imin/peak3bil.png' width='60' height='60' alt='Bilinear interpolation' title='Bilinear interpolation' class='justborder'>
+                        <p class='small center'>x20&nbsp;times</p>
+                    </td>
+                    <td class='justborder' style='max-width: 160px;'><img src='imin/peak3bar.png' width='60' height='60' alt='Barycentric interpolation' title='Barycentric interpolation' class='justborder'>
+                        <p class='small center'>x20&nbsp;times</p>
+                    </td>
+                </tr>
+                <tr style='vertical-align: center;'> <!-- Row 2 -->
+                    <td class='justborder' style='max-width: 160px;'><img src='imin/chess15.png' width='15' height='15' alt='Source image' title='Source image' class='justborder'>
+                        <p class='small center'>15x15&nbsp;px (2x2&nbsp;px chessboard pattern)</p>
+                    </td>
+                    <td class='justborder' style='max-width: 160px;'><img src='imin/chess15bil.png' width='45' height='45' alt='Bilinear interpolation' title='Bilinear interpolation' class='justborder'>
+                        <p class='small center'>x3&nbsp;times</p>
+                    </td>
+                    <td class='justborder' style='max-width: 160px;'><img src='imin/chess15bar.png' width='45' height='45' alt='Barycentric interpolation' title='Barycentric interpolation' class='justborder'>
+                        <p class='small center'>x3&nbsp;times</p>
+                    </td>
+                </tr>
+                <tr style='vertical-align: center;'> <!-- Row 3 -->
+                    <td class='justborder' style='max-width: 160px;'><img src='imin/eye16.png' width='22' height='16' alt='Source image' title='Source image' class='justborder'>
+                        <p class='small center'>22x16&nbsp;px</p>
+                    </td>
+                    <td class='justborder' style='max-width: 160px;'><img src='imin/eye16bil.png' width='110' height='80' alt='Bilinear interpolation' title='Bilinear interpolation' class='justborder'>
+                        <p class='small center'>x5&nbsp;times</p>
+                    </td>
+                    <td class='justborder' style='max-width: 160px;'><img src='imin/eye16bar.png' width='110' height='80' alt='Barycentric interpolation' title='Barycentric interpolation' class='justborder'>
+                        <p class='small center'>x5&nbsp;times</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <p>Let's perform a visual comparison of bilinear and barycentric image interpolation used for upscaling images of different nature.</p>
+            <p>Table&nbsp;1 in this section contains various test cases. Obviously, bigger images like photos would be more interesting, but, unfortunately, to clearly see interpolation artifacts I should use at least x3 upscaling, so, if I use a photo that barely fits a screen as a source, result will not fit this web page.</p>
+            <p>In the first row, you may see a result of upscaling single black pixel over white background. Resulting images clearly show the difference between bilinear and barycentric interpolation.</p>
+            <p>In the second row, you see a problem case: a chessboard pattern. It's a problem for any interpolation: it's unclear what to find in there. Noise over flat color? A pattern?</p>
+            <p>As you can see, while bilinear interpolation simply blurs everything, barycentric interpolation tries to find diagonals. Most likely, it's not what you want, but, on the other hand, a chessboard <i>actually</i> is a set of diagonals; any bishop, whether he's black or white, will confirm this.</p>
+            <p>(Needless to say, if you want a pixel-sized black and white chessboard to be treated as black and white, you better resort to <a href='scalenx.html' title='Scale2x, Scale3x, Scale2xSFX and Scale3xSFX image scaling in pure Python'>ScaleNx image rescaling</a>.)</p>
+            <p>In the third row, you see a small fragment of a photo. It seems like barycentric interpolation gives clearer appearance of overall eye outline shape; rhomb-shaped pupil, however, looks a bit weird. But well, it's a single pixel in original, so you the same rhomb as in the first row.</p>
         </div>
         <div class='lightbg justborder cols2'>
             <h3>Module and example programs</h3>
@@ -42,14 +96,37 @@
             <p>Detailed functions description and parameters for developers are given in a rather prolific docstrings.</p>
             <p>Surely, during development module needs testing. Therefore some GUI shell programs were created for testing and illustration purposes:</p>
             <ul>
-                <li><b><span class='pre'>distorter.py</span></b>: the main part of demo. Distorter provides examples of general purpose image displacer (<span class='pre'>displace.py</span> above) usage. Currently demo includes only two functions: linear skewing and wave-like deformation with sine function;</li>
+                <li><b><span class='pre'>distorter.py</span></b>: the main part of demo. Distorter provides examples of general purpose image displacer (<span class='pre'>displace.py</span> above) usage. Currently demo includes just a few functions:
+                <ul>
+                    <li>skewing (tangent based);</li>
+                    <li>wavy distortion (sine based);</li>
+                    <li>a couple of toothy distortions (both based on modulo).</li>
+                </ul>
+                </li>
                 <li><b><span class='pre'>mdbiggener.py</span></b>: image rescaler; provides a demo for <span class='pre'>rescale.py</span>;</li>
                 <li><b><span class='pre'>revolver.py</span></b>: image rotation program. Based entirely on <span class='pre'>displace.py</span>, and separated as specific program just because rotation GUI should take only one argument (i.e. angle), while displacement currently takes two (one for x and other for y). To avoid making a general program with only half of GUI being functional, this particular example program was created.</li>
             </ul>
         </div>
+        <div class='lightbg justborder'>
+            <img src='imin/anigui.png' alt='Distorter GUI animation' title='Distorter performing wavy deformation' class='floatright'>
+            <p>All the final public functions, included into <b>imin</b> module and intended for actual use, have a rather generalized access scheme. For example, a single interpolated pixel with float x and y coordinates may be acquired like this:</p>
+            <p class='pre'><b>pixel_value = pixel(source_image, x, y, edge, method)</b></p>
+            <p>where:</p>
+            <ul>
+                <li><span class='pre'><b>pixel_value</b></span>: pixel as list of channel values, <i>e.g.</i> [R, G, B];</li>
+                <li><span class='pre'><b>source_image</b></span>: source image as nested 3D list (<i>e.g.</i>, obtained by reading PPM file using <a href='pypnm.html' title='Pure Python PPM and PGM reading, displaying, and writing module'>PyPNM</a>);</li>
+                <li><span class='pre'><b>x</b></span>, <span class='pre'><b>y</b></span>: pixel coordinates (not surprisingly);</li>
+                <li><span class='pre'><b>edge</b></span>: edge extrapolation mode, either repeat edge (like Photoshop in most cases), or filling with zeroes (like Photoshop in least cases), or wrap around processing (which is good for seamless textures and which Photoshop, for unknown reason, practically do not support);</li>
+                <li><span class='pre'><b>method</b></span>: interpolation method, either bilinear or barycentric.</li>
+            </ul>
+            <p>Such a generalized syntax simplifies using <b>imin</b> module for writing image editing programs.</p>
+            <p>Note, however, that, while "Wrap around" mode is present in sample programs GUI, it does't always work as one may expect.</p>
+            <p>Imagine simple horizontal skewing, when top and bottom edges move against each other, and right and left ones become sort of diagonals. Assume that the source image is seamless pattern. With "Wrap" mode enabled, <b><span class='pre'>distorter.py</span></b> keeps the horizontal part seamless, that is, the triangular part of image that goes away at the right side will appear at the left. What as to vertical part, since top and bottom edges move against each other, their match gets broken and seam formed.</p>
+            <p>However, if you switch from skewing to sine wave distortion, result of deforming a seamless pattern will be seamless. That's because I use exactly one wave cycle for a displacing function, making ends meet (literally). Well, actually, even with non-seamless sources, in case of sufficient deformations this function deforms edges so much that they become unrecognizable, and image turns into seamless-like (is this a real word?).</p>
+        </div>
         <br>
         <div class='lightbg justborder'>
-        <p>Now it's time to either step forward to <a href='https://github.com/Dnyarri/imin' class='git' title='Barycentric and Bilinear Image Interpolation repository at GitHub'>Image Interpolation repository at GitHub</a> for downloads...</p>
+        <p>Now it's time to either step forward to <a href='https://github.com/Dnyarri/imin' class='git' title='Barycentric and Bilinear Image Interpolation repository at GitHub'>Bilinear and barycentric image interpolation code repository at GitHub</a> for downloads...</p>
         <p class='right'>...or Move back to <a href='https://dnyarri.github.io' title='Python freeware for POV-Ray and other 3D, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, bilinear and barycentric image interpolation, and batch processing'>Dnyarri`s Python freeware main page</a>.</p>
         </div>
     </div> <!-- Content block end -->
