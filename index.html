@@ -6,14 +6,14 @@
     <link rel='canonical' href='https://dnyarri.github.io/index.html'/>
     <meta charset='utf-8' />
     <meta name='author' content='Ilyich the Toad'>
-    <meta name='description' content='Python freeware for POV-Ray, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, barycentric image interpolation, batch processing with LibreOffice, ffmpeg, etc.'>
+    <meta name='description' content='Python freeware for POV-Ray, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX; PPM and PGM image support; barycentric image interpolation; batch processing with LibreOffice, ffmpeg, etc.'>
     <meta name='keywords' content='Python, POVRay, Wavefront, Autodesk, stereolithography, Scale2x, Scale3x, Scale2xSFX, Scale3xSFX, AdvMAME2x, AdvMAME3x, batch, 3D, image, convert, freeware, 3D-print, conversion, LibreOffice, optivorbis'>
     <meta name='robots' content='all'>
     <meta name='google-site-verification' content='QktvPQafCXPocfm38M5eBb3bniwuaJJh6Bx7YDE4AgU' />
     <meta name='yandex-verification' content='54351d4014245630' />
     <link rel='stylesheet' href='toc.css' type='text/css'>
     <link rel='stylesheet' href='content.css' type='text/css'>
-    <title>The Toad's Slimy Mudhole: Python freeware for Scale2x, Scale3x, PPM, PGM, barycentric image interpolation, POV-Ray etc.</title>
+    <title>The Toad's Slimy Mudhole: Python freeware for Scale2x and Scale3x; PPM and PGM support; barycentric image interpolation; POV-Ray etc.</title>
 </head>
 <body>
     <div class='leftarea'> <!-- Nav holder begin -->
@@ -71,9 +71,9 @@
         <h4 class='darkbg'>Scale2x, Scale3x, Scale2xSFX and Scale3xSFX in pure Python</h4>
         <div class='lightbg justborder' style='display: flow-root;'>
             <a href='scalenx.html'><img src='imgscalenx/vissmall.png' height='200' width='257' alt='Visual ScaleNx rescaler' title='Visual ScaleNx rescaler running Scale3xSFX twice' class='floatright'></a>
-            <p><a href='scalenx.html' class='git' title='Scale2x, Scale3x, Scale2xSFX and Scale3xSFX image rescaling in pure Python'>ScaleNx</a> is a pure Python implementation of several <a href='https://en.wikipedia.org/wiki/Pixel-art_scaling_algorithms' target='_blank'>pixel art image scaling</a> algorithms, <i>viz.</i> <b>Scale2x</b>, <b>Scale3x</b>, <b>Scale2xSFX</b> and <b>Scale3xSFX</b>. </p>
+            <p><a href='scalenx.html' class='git' title='Scale2x, Scale3x, Scale2xSFX and Scale3xSFX image rescaling in pure Python'>ScaleNx</a> is a pure Python implementation of several <a href='https://en.wikipedia.org/wiki/Pixel-art_scaling_algorithms' target='_blank'>pixel art image scaling</a> algorithms, both widely used <b>Scale2x</b> and <b>Scale3x</b>, and rare but efficient <b>Scale2xSFX</b> and <b>Scale3xSFX</b>.</p>
             <p>Main program for both single file and batch folder processing with suitable GUI is available, free and open source.</p>
-            <p><span class='red'><b>Update:</b></span> in ScaleNx version&nbsp;25.11.15.1 visual shell VisualNxGUI.py added to main branch. </p>
+            <p><span class='red'><b>Update:</b></span> in ScaleNx version&nbsp;25.11.15.1 visual shell VisualNxGUI.py added to main branch.</p>
             <p>Main ScaleNxGUI.py shell update involves further GUI legibility improvements and minor main module speed-up. <a href='scalenx.html'>🔽<i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>PGM and PPM image files handling in pure Python</h4>
@@ -100,19 +100,19 @@
                 </tr>
                 </tbody>
             </table>
-            <p><a href='imin.html'  title='Barycentric and bilinear image interpolation in pure Python' class='git'>ImIn</a> (standing for "Image Interpolation", and not to be confused with imines, imides, and "I'm in!") is a pure Python implementation of bilinear and barycentric image interpolation in general, and rescaling in particular.</p>
+            <p><a href='imin.html'  title='Barycentric and bilinear image interpolation in pure Python' class='git'>ImIn</a> (standing for "<b>Im</b>age&nbsp;<b>In</b>terpolation", and not to be confused with imines or "I'm in!") is a pure Python implementation of bilinear and barycentric image interpolation in general, illustrated with some sample applications for image rescaling, rotation, or arbitrary distortions using these interpolation algorithms.</p>
             <p>Main purposes of module creation were:</p>
             <ul>
                 <li>testing barycentric image interpolation, which is missing in image editing programs like Photoshop;</li>
                 <li>and finally stop copying my code for bilinear interpolation from one program to another, and start copying a module.</li>
             </ul>
             <p>Since results of barycentric interpolation appeared to be interesting, and interpolation itself liable to speed optimization, the decision was made to share it with humans and lesser species as "request for comments" of a kind.</p>
-            <p>Note that this code is under development, and therefore subject to change if changes appear to result in improvement. <a href='imin.html'  title='Pure Python barycentric and bilinear image interpolation and rescaling'>🔽<i>Read more...</i></a></p>
+            <p>Note that this code is under development, and therefore subject to change if changes appear to result in improvement.</p>
+            <p><span class='red'><b>Update:</b></span> version 26.2.10.4 considered to be robust enough to deserve a release. <a href='imin.html'  title='Pure Python barycentric and bilinear image interpolation and rescaling'>🔽<i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>Python batch files</h4>
         <div class='lightbg justborder'>
-            <p><a href='batch.html' title='Python scripts for ffmpeg, optivorbis, LibreOffice, folder NTFS compression, etc.'>Some batch processing scripts</a> made for my personal regular use. May appear to be useful to others. <a href='batch.html' title='Python scripts for ffmpeg, optivorbis, LibreOffice, folder NTFS compression, etc.'>🔽<i>Read more...</i></a>
-            </p>
+            <p><a href='batch.html' title='Python scripts for ffmpeg, optivorbis, LibreOffice, folder NTFS compression, etc.'>Some batch processing scripts</a> made for my personal regular use, like batch converting .RTFs to .DOCX, or .flac to .ogg, or something. May appear to be useful to others. <a href='batch.html' title='Python scripts for ffmpeg, optivorbis, LibreOffice, folder NTFS compression, etc.'>🔽<i>Read more...</i></a></p>
         </div>
     </div> <!-- Content block end -->
 </body>
