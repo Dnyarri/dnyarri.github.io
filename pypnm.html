@@ -63,18 +63,18 @@
             </table>
             <div class='cols512 justborder lighter'>
             <h3>Recent updates</h3>
-            <p><span class='red'><b>Update:</b></span> <span class='git'><a href='https://github.com/Dnyarri/PyPNM' title='Pure Python PPM and PGM reading and writing module'><b>PyPNM updated to version&nbsp;2.26.22.34</b></a></span>. Importing significantly simplified.</p>
-            <p>Previously on PyPNM: PyPNM updated to version&nbsp;2 (3&nbsp;Sep&nbsp;2025 &laquo;Victory&nbsp;II&raquo;)</p>
+            <p><span class='red'><b>Update:</b></span> <span class='git'><a href='https://github.com/Dnyarri/PyPNM' title='Pure Python PPM and PGM reading and writing module'><b>PyPNM updated to version&nbsp;2.26.27.312 (main) / version&nbsp;2.26.22.34 (Python 3.4 compliant)</b></a></span>. Importing significantly simplified.</p>
+            <p><span class='red'><b>Previously on PyPNM:</b></span> PyPNM updated to version&nbsp;2 (3&nbsp;Sep&nbsp;2025 &laquo;Victory&nbsp;II&raquo;)</p>
             <p>This major update includes numerous measures focused on reducing resource usage:</p>
             <ul>
                 <li>using <span class='pre'>mmap</span> instead of direct file reading;</li>
                 <li>using generators instead of intermediate lists wherever possible.</li>
             </ul>
             <p>Note that although module was completely rewritten, input and output types and data structure remain the same, so versions 2.21.3.* &laquo;Victory&nbsp;II&raquo; are completely interchangeable with 1.17.9.* &laquo;Victory&raquo;.</p>
-            <p><span class='red'><b>Previously on PyPNM:</b></span> In <b>ver.&nbsp;1.17.9.34 &laquo;Victory&raquo;</b> (maximum compatibility) forced 8&nbsp;bit preview for 16&nbsp;bit images implemented when running under old Python versions (prior 3.11).</p>
+            <p>In <b>ver.&nbsp;1.17.9.34 &laquo;Victory&raquo;</b> (maximum compatibility) forced 8&nbsp;bit preview for 16&nbsp;bit images implemented when running under old Python versions (prior 3.11).</p>
             <p>In ver.&nbsp;1.17.1.1 PNM export functions restructured to provide easy format switch (binary⇄ASCII). Backward compatibility maintained.</p>
             <p>In ver.&nbsp;1.15.1.1 image viewing function updated to show LA and RGBA images over chessboard background (like Photoshop and GIMP). This mode requires enabling newly added option, which, in turn, requires you to <a href='https://dnyarri.github.io/pypnm/pypnm.pdf' title='PyPNM documentation in PDF' target='_blank'>📘RTFM</a>.</p>
-            <p>In ver.&nbsp;1.14.8.19 memory usage for writing PPM and PGM files greatly reduced. Binary files (P6 and P5 correspondingly) are written per image row (which is considered as reasonable tradeoff between memory usage and disk thrashing), ASCII files (P3 and P2) are written per sample (which is minimal memory using scenario).</p>
+            <p>In ver.&nbsp;1.14.8.19 memory usage for writing PPM and PGM files greatly reduced. Binary files (P6 and P5 correspondingly) are written per image row (which is considered as reasonable tradeoff between memory usage and disk thrashing); ASCII files (P3 and P2) are written per sample (which is minimal memory using scenario).</p>
             </div>
         </div>
         <h3 class='lightbg' style='max-width: 300pt;'>Format compatibility</h3>
@@ -111,9 +111,7 @@
             <ul>
                 <li><b>pnm2list</b> - reading binary or ascii RGB PPM or L PGM file and returning image data as ints and nested list;</li>
                 <li><b>list2bin</b> - getting image data as nested list of ints and creating binary PPM (P6) or PGM (P5) data structure in memory. Suitable for generating data to display with Tkinter;</li>
-                <li><b>list2pnmbin</b> - getting image data as nested list of ints and writing binary PPM (P6) or PGM (P5) to file;</li>
-                <li><b>list2pnmascii</b> - alternative function to write ASCII PPM (P3) or PGM (P2) files;</li>
-                <li><b>list2pnm</b> - switch between list2pnmbin and list2pnmascii, controlled with bool argument; simplifies writing "Save As..." GUI function - you only need one function for all sorts of PNM, and send arguments via lambda to it.</li>
+                <li><b>list2pnm</b> - getting image data as nested list of ints and writing either binary or ASCII PNM image file, depending on "bin" switch.</li>
                 <li><b>create_image</b> - creating empty nested 3D list for image representation. Not used within this particular module but often needed by programs this module is supposed to be used with.</li>
             </ul>
             <p>Functions arguments description is provided in docstrings, but in general looks as simple as that - you feed the function with your image data list and a filename, and get PNM file written; or you feed it to another function and get your image displayed.</p>
@@ -138,7 +136,7 @@ preview_button = Button(main_window, text='Example\n(click to exit)',
 preview_button.pack()
 main_window.mainloop()
             </pre>
-            <p>Yes, above is an illustration of all functions of PyPNM in action: opening file as image list, saving image list as binary file, saving image list as text file, showing image list as image with Tkinter. With addition of just some 10-12&nbsp;kb of widgets and event handling it turns into a good-looking fully functional viewer and converter below.</p>
+            <p>Yes, above is an illustration of all functions of PyPNM in action: opening file as image list, saving image list as binary file, saving image list as ASCII file, showing image list as image with Tkinter. With addition of just some 10-12&nbsp;kb of widgets and event handling it turns into a good-looking fully functional viewer and converter below.</p>
         </div>
         <h3 class='lightbg' style='max-width: 300pt;'>Viewer.py</h3>
         <div class='lightbg justborder'>
