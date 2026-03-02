@@ -45,45 +45,54 @@
         </div>
         <div class='lightbg justborder cols2'>
             <p>Let us perform a visual comparison of bilinear and barycentric image interpolation used for upscaling images of different nature.</p>
-            <table title='Comparison of bilinear and barycentric image interpolation using imin module' cols='3' class='justborder lighter nobreak center' style='margin: auto'>
+            <table title='Comparison of bilinear and barycentric image interpolation using imin module' cols='3' class='compare'>
                 <caption style='caption-side: top; font-size: 14pt;'>Table&nbsp;1. Comparison of bilinear and barycentric image interpolation</caption>
                 <thead style='display: table-header-group'>
-                <tr style='vertical-align: top;'> <!-- Header row -->
+                <tr class='compare'> <!-- Header row -->
                     <th scope='col' style='max-width: 160px;'><p class='small center'>Source</p></th>
                     <th scope='col' style='max-width: 160px;'><p class='small center'>Bilinear</p></th>
                     <th scope='col' style='max-width: 160px;'><p class='small center'>Barycentric</p></th></tr>
                 </thead>
                 <tbody>
                 <tr style='vertical-align: center;'> <!-- Row 1 -->
-                    <td class='justborder' style='max-width: 160px;'><img src='imin/peak3.png' width='3' height='3' alt='Source image' title='Source image' class='justborder'>
+                    <td class='justborder' style='max-width: 160px;'>
+                        <div class='center'><img src='imin/peak3.png' width='3' height='3' alt='Source image' title='Source image' class='justborder'></div>
                         <p class='small center'>3x3&nbsp;px (black pixel over white background)</p>
                     </td>
-                    <td class='justborder' style='max-width: 160px;'><img src='imin/peak3bil.png' width='60' height='60' alt='Bilinear interpolation' title='Bilinear interpolation' class='justborder'>
+                    <td class='justborder' style='max-width: 160px;'>
+                        <div class='center'><img src='imin/peak3bil.png' width='60' height='60' alt='Bilinear interpolation' title='Bilinear interpolation' class='justborder'></div>
                         <p class='small center'>x20&nbsp;times</p>
                     </td>
-                    <td class='justborder' style='max-width: 160px;'><img src='imin/peak3bar.png' width='60' height='60' alt='Barycentric interpolation' title='Barycentric interpolation' class='justborder'>
+                    <td class='justborder' style='max-width: 160px;'>
+                        <div class='center'><img src='imin/peak3bar.png' width='60' height='60' alt='Barycentric interpolation' title='Barycentric interpolation' class='justborder'></div>
                         <p class='small center'>x20&nbsp;times</p>
                     </td>
                 </tr>
                 <tr style='vertical-align: center;'> <!-- Row 2 -->
-                    <td class='justborder' style='max-width: 160px;'><img src='imin/chess15.png' width='15' height='15' alt='Source image' title='Source image' class='justborder'>
+                    <td class='justborder' style='max-width: 160px;'>
+                        <div class='center'><img src='imin/chess15.png' width='15' height='15' alt='Source image' title='Source image' class='justborder'></div>
                         <p class='small center'>15x15&nbsp;px (2x2&nbsp;px chessboard pattern)</p>
                     </td>
-                    <td class='justborder' style='max-width: 160px;'><img src='imin/chess15bil.png' width='45' height='45' alt='Bilinear interpolation' title='Bilinear interpolation' class='justborder'>
+                    <td class='justborder' style='max-width: 160px;'>
+                        <div class='center'><img src='imin/chess15bil.png' width='45' height='45' alt='Bilinear interpolation' title='Bilinear interpolation' class='justborder'></div>
                         <p class='small center'>x3&nbsp;times</p>
                     </td>
-                    <td class='justborder' style='max-width: 160px;'><img src='imin/chess15bar.png' width='45' height='45' alt='Barycentric interpolation' title='Barycentric interpolation' class='justborder'>
+                    <td class='justborder' style='max-width: 160px;'>
+                        <div class='center'><img src='imin/chess15bar.png' width='45' height='45' alt='Barycentric interpolation' title='Barycentric interpolation' class='justborder'></div>
                         <p class='small center'>x3&nbsp;times</p>
                     </td>
                 </tr>
                 <tr style='vertical-align: center;'> <!-- Row 3 -->
-                    <td class='justborder' style='max-width: 160px;'><img src='imin/eye16.png' width='22' height='16' alt='Source image' title='Source image' class='justborder'>
+                    <td class='justborder' style='max-width: 160px;'>
+                        <div class='center'><img src='imin/eye16.png' width='22' height='16' alt='Source image' title='Source image' class='justborder'></div>
                         <p class='small center'>22x16&nbsp;px</p>
                     </td>
-                    <td class='justborder' style='max-width: 160px;'><img src='imin/eye16bil.png' width='110' height='80' alt='Bilinear interpolation' title='Bilinear interpolation' class='justborder'>
+                    <td class='justborder' style='max-width: 160px;'>
+                        <div class='center'><img src='imin/eye16bil.png' width='110' height='80' alt='Bilinear interpolation' title='Bilinear interpolation' class='justborder'></div>
                         <p class='small center'>x5&nbsp;times</p>
                     </td>
-                    <td class='justborder' style='max-width: 160px;'><img src='imin/eye16bar.png' width='110' height='80' alt='Barycentric interpolation' title='Barycentric interpolation' class='justborder'>
+                    <td class='justborder' style='max-width: 160px;'>
+                        <div class='center'><img src='imin/eye16bar.png' width='110' height='80' alt='Barycentric interpolation' title='Barycentric interpolation' class='justborder'></div>
                         <p class='small center'>x5&nbsp;times</p>
                     </td>
                 </tr>

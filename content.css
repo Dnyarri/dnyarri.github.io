@@ -25,7 +25,9 @@ ul {
     margin: 8pt 32pt 8pt 24pt;
 }
 
-.content {margin: 0px 0px 0px 146px;}
+.content {
+    margin: 0px 0px 0px 146px;
+}
 
 h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -91,18 +93,26 @@ a {
     text-decoration: none;
 }
 
-a:visited {color: #000088;}
+a:visited {
+    color: #000088;
+}
 
 a:hover {
     color: #0044ff;
     text-decoration: underline wavy;
 }
 
-.nobreak {break-inside: avoid-column;}
+.nobreak {
+    break-inside: avoid-column;
+}
 
-.dark {color: #333333;}
+.dark {
+    color: #333333;
+}
 
-.light {color: #cccccc;}
+.light {
+    color: #cccccc;
+}
 
 .darkbg {
     background-color: #333333;
@@ -116,13 +126,21 @@ a:hover {
     color: #333333;
 }
 
-.lighter {background-color: rgba(255, 255, 255, 0.5);}
+.lighter {
+    background-color: rgba(255, 255, 255, 0.5);
+}
 
-.chess {background-image: url('c16.png');}
+.chess {
+    background-image: url('c16.png');
+}
 
-.chessd {background-image: url('cd16.png');}
+.chessd {
+    background-image: url('cd16.png');
+}
 
-.chessdd {background-image: url('cdd16.png');}
+.chessdd {
+    background-image: url('cdd16.png');
+}
 
 .justborder {
     border: thin solid #7c7c7c;
@@ -152,13 +170,26 @@ a:hover {
     margin: 2px 2px 2px 12pt;
 }
 
-.center {text-align: center; justify-content: center;}
+.left {
+    text-align: left;
+}
 
-.right {text-align: right;}
+.center {
+    text-align: center;
+    justify-content: center;
+}
 
-.small {font-size: 10pt;}
+.right {
+    text-align: right;
+}
 
-.pre {font-family: 'Courier New', Courier, monospace;}
+.small {
+    font-size: 10pt;
+}
+
+.pre {
+    font-family: 'Courier New', Courier, monospace;
+}
 
 .red {
     border: thin solid rgba(255, 0, 0, 0.5);
@@ -171,5 +202,37 @@ a:hover {
     border: thin solid rgba(0, 0, 255, 0.2);
     padding: auto 2pt;
     background-color: rgba(0, 0, 255, 0.1);
+    border-radius: 6px;
+}
+
+table.version {
+    margin: 12pt 24pt 24pt;
+    border: thin solid #7c7c7c;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+tr.version {
+    vertical-align: top;
+}
+
+td.version {
+    border-top: 4px double #00000080;
+}
+
+table.compare {
+    break-inside: avoid-column;
+    margin: auto;
+    border: thin solid #7c7c7c;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+tr.compare {
+    vertical-align: top;
+}
+
+td.compare {
+    border: thin solid #7c7c7c;
     border-radius: 6px;
 }

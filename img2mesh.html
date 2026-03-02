@@ -28,19 +28,22 @@
             <p><a href='https://github.com/Dnyarri/img2mesh' class='git' title='img2mesh repository at GitHub'>Img2mesh is available at GitHub for download</a>. All non-standard modules included into distribution, so program is supposed to work right out of the box with any standard installation of Python&nbsp;3.11 and above.</p>
             <p><span class='red'><b>Update:</b></span> in version 3.21.21.21. mesh geometry upgraded from ver. 3 to 3+. While geometry №3 was better in general case as compared to older №1 and №2, new "plus" upgrade adds improved support for a specific cases like sharp diagonal transitions (sharp vertical and horizontal transitions were fine from the very beginning).</p>
             <p>Later on, in version 3.22.3.7 output for new geometry №3+ was accelerated <i>ca.</i>&nbsp;20% due to more reasonable buffering control.</p>
-            <table title='Comparison of Geometry №3 and Geometry №3+ rendering' cols='3' class='justborder lighter nobreak center' style='margin: auto'>
+            <table title='Comparison of Geometry №3 and Geometry №3+ rendering' cols='3' class='compare'>
                 <caption style='caption-side: bottom; font-size: 10pt;'>Comparison of different geometry rendering</caption>
                 <thead style='display: table-header-group'>
-                <tr style='vertical-align: top;'>
+                <tr class='compare'>
                     <th scope='col'><p class='small center' style='min-width: 100px;'>Source</p></th>
                     <th scope='col'><p class='small center' style='min-width: 100px;'>Geometry №3</p></th>
                     <th scope='col'><p class='small center' style='min-width: 100px;'>Geometry №3+</p></th></tr>
                 </thead>
                 <tbody>
                 <tr style='vertical-align: center;'>
-                    <td><img src='imgmesh/3.png' width='64' height='64' alt='Source height map' title='Source height map'></td>
-                    <td><img src='imgmesh/30big.png' width='168' height='204' alt='Example of old 3.0 geometry' title='Example of 3.0 geometry'></td>
-                    <td><img src='imgmesh/31big.png' width='168' height='204' alt='Example of new 3.+ geometry' title='Example of new 3.+ geometry'></td>
+                    <td>
+                        <div class='center'><img src='imgmesh/3.png' width='64' height='64' alt='Source height map' title='Source height map'></div></td>
+                    <td>
+                        <div class='center'><img src='imgmesh/30big.png' width='168' height='204' alt='Example of old 3.0 geometry' title='Example of 3.0 geometry'></div></td>
+                    <td>
+                        <div class='center'><img src='imgmesh/31big.png' width='168' height='204' alt='Example of new 3.+ geometry' title='Example of new 3.+ geometry'></div></td>
                 </tr>
                 </tbody>
             </table>
@@ -57,12 +60,12 @@
             <p>Currently <b>img2mesh</b> support a variety of common input and output formats, briefly summarized below:</p>
             <table title='img2mesh input and output formats' cols='2' class='justborder lighter nobreak' style='margin: 12pt 24pt 24pt;'>
                 <thead style='display: table-header-group'>
-                <tr style='vertical-align: top;'><th scope='col'><p>Input format</p></th><th scope='col'><p>Output format</p></th></tr>
+                <tr class='compare'><th scope='col'><p>Input format</p></th><th scope='col'><p>Output format</p></th></tr>
                 </thead>
                 <tbody>
-                <tr style='vertical-align: top;'>
-                    <td><p style='text-align: left;'>8&nbsp;bpc and 16&nbsp;bpc PNG, binary&nbsp;PGM, ASCII&nbsp;PGM, binary&nbsp;PPM, ASCII&nbsp;PPM</p></td>
-                    <td><p style='text-align: left;'>POV&#8209;Ray, Wavefront&nbsp;OBJ, stereolithography ASCII&nbsp;STL, ASCII Autodesk&nbsp;DXF</p></td>
+                <tr class='compare'>
+                    <td><p class='left'>8&nbsp;bpc and 16&nbsp;bpc PNG, binary&nbsp;PGM, ASCII&nbsp;PGM, binary&nbsp;PPM, ASCII&nbsp;PPM</p></td>
+                    <td><p class='left'>POV&#8209;Ray, Wavefront&nbsp;OBJ, stereolithography ASCII&nbsp;STL, ASCII Autodesk&nbsp;DXF</p></td>
                 </tr>
                 </tbody>
             </table>
@@ -89,19 +92,22 @@
         }
     #declare map = function(c) {Curve(c).u}</pre>
             <p>First column contain input values, second column contain corresponding output values (third column currently is not used for anything good, just leave it alone). By default, input=output, that is, map does not change anything. However, you can edit it.</p>
-            <table title='Illustration of map influence on final rendering' cols='3' class='justborder lighter nobreak center' style='margin: auto'>
+            <table title='Illustration of map influence on final rendering' cols='3' class='compare'>
                 <caption style='caption-side: bottom; font-size: 10pt;'>Left to right: source image, rendered result (default map), rendered result (map changed from <span class='pre'>0.25,  &lt;0.25,  0&gt; 0.75,  &lt;0.75,  0&gt;</span> to <span class='pre'>0.75,  &lt;0.25,  0&gt; 0.75,  &lt;0.25,  0&gt;</span>, i.e. the area between 1/4 and 3/4 of range was inverted (negative)).</caption>
                 <thead style='display: table-header-group'>
-                <tr style='vertical-align: top;'>
+                <tr class='compare'>
                     <th scope='col' style='min-width: 150px;'><p class='small center'>Source</p></th>
                     <th scope='col' style='min-width: 150px;'><p class='small center'>Default curve</p></th>
                     <th scope='col' style='min-width: 150px;'><p class='small center'>Edited curve</p></th></tr>
                 </thead>
                 <tbody>
                 <tr style='vertical-align: center;'>
-                    <td><img src='imgmesh/02.png' width='64' height='64' alt='source elevation map' title='Source elevation map'></td>
-                    <td><img src='imgmesh/02def.png' width='128' height='122' alt='img2mesh rendering' title='Rendering of img2mesh output'></td>
-                    <td><img src='imgmesh/02map.png' width='128' height='122' alt='img2mesh rendering' title='Rendering of img2mesh output'></td>
+                    <td>
+                        <div class='center'><img src='imgmesh/02.png' width='64' height='64' alt='source elevation map' title='Source elevation map'></div></td>
+                    <td>
+                        <div class='center'><img src='imgmesh/02def.png' width='128' height='122' alt='img2mesh rendering' title='Rendering of img2mesh output'></div></td>
+                    <td>
+                        <div class='center'><img src='imgmesh/02map.png' width='128' height='122' alt='img2mesh rendering' title='Rendering of img2mesh output'></div></td>
                 </tr>
                 </tbody>
             </table>
