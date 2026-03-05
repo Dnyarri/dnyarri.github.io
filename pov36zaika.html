@@ -21,11 +21,9 @@
         <h2 class='lightbg'>Converting 2D image into mosaic of 3D objects</h2>
         <div class='lightbg justborder'>
             <p><a href='povzaika.html' title='Program converting 2D image into mosaic of 3D objects in POV-Ray format'>POV&#8209;Ray&nbsp;Mosaic</a> is a set of programs, which read every pixel of source image and convert it into a virtual 3D object, packed side by side with objects created from other pixels, thus creating something like 3D-mosaic in <a href='https://www.povray.org/' title='POV-Ray high quality free 3D renderer' target='_blank'>POV&#8209;Ray</a> format. You can <a href='https://github.com/Dnyarri/POVmosaic' title='POV-Ray Mosaic repository at GitHub' class='git'>download POV&#8209;Ray&nbsp;Mosaic from GitHub</a> and use it for free. All non-standard modules included into distribution, so program is supposed to work right out of the box with any standard installation of Python&nbsp;3.11 and above.</p>
-            <p><b>36Zaika</b> is a part of POV&#8209;Ray&nbsp;Mosaic package, covering 3<sup>6</sup> <a href='https://en.wikipedia.org/wiki/List_of_regular_polytopes#Euclidean_tilings' title='Euclidean tiling explanation at Wiki' target='_blank'>Euclidean tiling</a>.</p>
-            <p><span class='red'><b>Update:</b></span> In version&nbsp;1.22.01.09 scene output was accelerated due to more reasonable buffering control.</p>
-            <p><span class='red'><b>Previously on POV&#8209;Ray&nbsp;Mosaic:</b></span> In version&nbsp;1.19.5.19 mosaic element transparency (both filter and transmit) are changed from global constants to functions of source pixel brightness and alpha, thus enabling more interesting handling of glass and similar materials.</p>
-            <p>In version&nbsp;1.19.1.7 rendering autofocus and scene legibility were improved.</p>
-            <p> In version&nbsp;1.11.1.1 texture syntax changed to fully blown texture, thus providing a capability to build layered textures.</p>
+            <div class='justborder lighter'>
+                <p><b>36Zaika</b> is a part of POV&#8209;Ray&nbsp;Mosaic package, covering 3<sup>6</sup> <a href='https://en.wikipedia.org/wiki/List_of_regular_polytopes#Euclidean_tilings' title='Euclidean tiling explanation at Wiki' target='_blank'>Euclidean tiling</a>.</p>
+            </div>
         </div>
         <div class='lightbg justborder cols512'>
             <p>Regular plane partition 3<sup>6</sup> have only one problem: I can imagine only one type of object to fill it.</p>
@@ -45,9 +43,10 @@
             <p>Not surprisingly, triangle normal pattern perfectly fit triangle object pattern.</p>
             <p>Surely 36zaika have a lot of control options, like surface editing and mapping, characteristic for POV&#8209;Ray&nbsp;Mosaic programs in general and <a href='pov3zaika.html'>described previously</a>.</p>
         </div>
-        <p class='lightbg justborder'>Assuming you scrolled that far, I remind you that you can <a href='https://github.com/Dnyarri/POVmosaic' title='POV-Ray Mosaic repository at GitHub' class='git'>download POV&#8209;Ray&nbsp;Mosaic from GitHub</a>.</p>
-        <br>
-        <p class='right'><span class='lightbg justborder'>...or Move back to <a href='https://dnyarri.github.io' title='Python freeware for POV-Ray and other 3D, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, bilinear and barycentric image interpolation, and batch processing'>Dnyarri`s Python freeware main page</a>.</span></p>
+        <div class='lightbg justborder'>  <!-- Плашка туда-сюда -->
+            <p style='margin: 24pt 6pt'><span class='lighter justborder' style='padding: 16pt 24pt;'>Now it's time to <a href='https://github.com/Dnyarri/POVmosaic' title='POV-Ray Mosaic repository at GitHub' class='git'>download POV&#8209;Ray&nbsp;Mosaic from GitHub</a>...</span></p>
+            <p class='right' style='margin: 40pt 6pt 24pt'><span class='lighter justborder' style='padding: 16pt 24pt;'>...or Move back to <a href='https://dnyarri.github.io' title='Python freeware for POV-Ray and other 3D, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, bilinear and barycentric image interpolation, and batch processing'>Dnyarri`s Python freeware main page</a>.</span></p>
+        </div>
     </div> <!-- Content block end -->
 </body>
 </html>

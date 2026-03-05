@@ -21,12 +21,12 @@
         <h2 class='lightbg'>Converting greyscale PNG and PNM into POV, OBJ, DXF and STL 3D mesh</h2>
         <div class='lightbg justborder'>
             <p>Old yet still sentient beings may potentially remember Cybermesh Photoshop export plugin by John&nbsp;Knoll, allowing one to sort of extrude greyscale 2D images and save the result as DXF 3D mesh file. Unfortunately, it was Mac only, and gone together with MacOS Classic.</p>
-            <p>But since progress is always in progress, now you may have some other software for extruding logos, drawings and height fields as 3D meshes, completely free and rather cross-platform. Yes, I'm talking of <b>img2mesh</b> Python program.</p>
+            <p>But since progress is always in progress, now you may have some other software for extruding logos, drawings and height fields as 3D meshes, completely free and rather cross-platform. Yes, I'm talking of this very Python program, called <b>img2mesh</b>.</p>
         </div>
         <div class='lightbg justborder cols512'>
             <p><b>Img2mesh</b> is a pretty simple (well, it was initially) program that reads regular bitmap image, and writes 3D triangle mesh, using pixel X and Y coordinates for &laquo;east&raquo; and &laquo;south&raquo; position of 3D triangle mesh nodes, and, most important, pixel brightness as Z, that is, height of the node, thus converting image into sort of 3D landscape.</p>
             <p><a href='https://github.com/Dnyarri/img2mesh' class='git' title='img2mesh repository at GitHub'>Img2mesh is available at GitHub for download</a>. All non-standard modules included into distribution, so program is supposed to work right out of the box with any standard installation of Python&nbsp;3.11 and above.</p>
-            <p><span class='red'><b>Update:</b></span> in version 3.21.21.21. mesh geometry upgraded from ver. 3 to 3+. While geometry №3 was better in general case as compared to older №1 and №2, new "plus" upgrade adds improved support for a specific cases like sharp diagonal transitions (sharp vertical and horizontal transitions were fine from the very beginning).</p>
+            <p><span class='red'><b>Update:</b></span> in version 3.21.21.21 mesh geometry upgraded from ver. 3 to 3+. While geometry №3 was better in general case as compared to older №1 and №2, new "plus" upgrade adds improved support for a specific cases like sharp diagonal transitions (sharp vertical and horizontal transitions were fine from the very beginning).</p>
             <p>Later on, in version 3.22.3.7 output for new geometry №3+ was accelerated <i>ca.</i>&nbsp;20% due to more reasonable buffering control.</p>
             <table title='Comparison of Geometry №3 and Geometry №3+ rendering' cols='3' class='compare'>
                 <caption style='caption-side: bottom; font-size: 10pt;'>Comparison of different geometry rendering</caption>
@@ -130,10 +130,51 @@
             <p>For other platforms, use Python sources - program is rather self-contained, all non-standard modules like <a href='https://dnyarri.github.io/pypnm.html' title='Pure Python PPM and PGM reading, displaying, and writing module'>PyPNM</a> and <a href='https://gitlab.com/drj11/pypng' target='_blank' title='Pure Python PNG reading and writing module'>PyPNG</a> are omnicompatible pure Python and enclosed to download; in case downloaded program does not work right out of the box, you will be provided with replacement copy at no extra charge.</p>
             <p>For developers: <b>img2mesh</b> currently restructured as image import modules and 3D export module; the latter may be freely used by other software developers.</p>
             <br>
-            <p>Step forward to <a href='https://github.com/Dnyarri/img2mesh' class='git' title='img2mesh repository at GitHub'>img2mesh repository at GitHub</a> for downloads.</p>
             </div>
-            <br>
-            <p class='right'>...or Move back to <a href='https://dnyarri.github.io' title='Python freeware for POV-Ray and other 3D, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, bilinear and barycentric image interpolation, and batch processing'>Dnyarri`s Python freeware main page</a>.</p>
+<div class='justborder lighter'>  <!-- Плашка с таблицей обновлений -->
+<h4>History (in compacted form)</h4>
+
+<table cols='2' class='version'>
+    <thead style='display: table-header-group'>
+    <tr class='version'>
+        <th scope='col'><p>Version</p></th>
+        <th scope='col'><p>Reason for release</p></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class='version'>
+        <td class='version'><p class='left small'>3.21.21.21</p></td>
+        <td class='version'><p class='small'>New mesh geometry №&nbsp;3+ introduced, combining smooth areas from №&nbsp;3 with sharp transitions for contrast peaks.</p></td>
+    </tr>
+    <tr class='version'>
+        <td class='version'><p class='left small'>3.14.15.1</p></td>
+        <td class='version'><p class='small'>Mesh geometry completely changed to №&nbsp;3, providing significant rendering quality improvement.</p></td>
+    </tr>
+    <tr class='version'>
+        <td class='version'><p class='left small'>2.14.14.2</p></td>
+        <td class='version'><p class='small'>Last release of geometry №&nbsp;2. Rewritten from standalone converters to module.</p></td>
+    </tr>
+    <tr class='version'>
+        <td class='version'><p class='left small'>2.9.1.0</p></td>
+        <td class='version'>
+        <p class='small'>STL and OBJ support added 14 Apr 2024, DXF support added 23 Aug 2024, everything harmonized in this 1 Sep 2024 release.</p>
+        <p class='small'>Total rewrite to remove all general transforms from POV-Ray made rendering speed to increase more than expected. Internal brightness map transfer function added.</p></td>
+    </tr>
+    <tr class='version'>
+        <td class='version'><p class='left small'>0.0.2.0</p></td>
+        <td class='version'><p class='small'>Switched to 1x4 pyramid mesh, Jan 2024.</p></td>
+    </tr>
+    <tr class='version'>
+        <td class='version'><p class='left small'>0.0.1.0</p></td>
+        <td class='version'><p class='small'>Initial standalone img2mesh version with 2x2 folding mesh, Dec 2023.</p></td>
+    </tr>
+    </tbody>
+</table>
+</div>  <!-- Плашка с таблицей обновлений -->
+        </div>
+        <div class='lightbg justborder'>  <!-- Плашка туда-сюда -->
+            <p style='margin: 24pt 6pt'><span class='lighter justborder' style='padding: 16pt 24pt;'> Now it's time to step forward to <a href='https://github.com/Dnyarri/img2mesh' class='git' title='img2mesh repository at GitHub'>img2mesh repository at GitHub</a> for downloads... </span></p>
+            <p class='right' style='margin: 40pt 6pt 24pt'><span class='lighter justborder' style='padding: 16pt 24pt;'>...or Move back to <a href='https://dnyarri.github.io' title='Python freeware for POV-Ray and other 3D, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, bilinear and barycentric image interpolation, and batch processing'>Dnyarri`s Python freeware main page</a>.</span></p>
         </div>
     </div> <!-- Content block end -->
 </body>

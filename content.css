@@ -185,6 +185,7 @@ a:hover {
 
 .small {
     font-size: 10pt;
+    line-height: 10pt;
 }
 
 .pre {
@@ -208,7 +209,7 @@ a:hover {
 table.version {
     margin: 12pt 24pt 24pt;
     border: thin solid #7c7c7c;
-    border-radius: 6px;
+    border-collapse: collapse;
     background-color: rgba(255, 255, 255, 0.5);
 }
 

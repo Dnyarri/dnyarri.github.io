@@ -19,64 +19,124 @@
     <div class='content'> <!-- Content block begin -->
         <h1 class='darkbg'>PyPNM - Pythonic Portable Any Map image files reading, displaying and writing</h1>
         <h3 class='lightbg' style='max-width: 300pt;'>Introduction</h3>
-        <div class='lightbg justborder'>
-            <p><b>PyPNM</b> is a Python module for reading PPM and PGM image files (both 8 and 16 bits per channel color depth) to image 3D integer lists for further editing, displaying 3D lists obtained by converting to Tkinter-compatible data in memory, and subsequent writing edited image 3D lists to disk as PPM or PGM files, either binary or ASCII.</p>
-            <p><a href='https://netpbm.sourceforge.net/doc/ppm.html' target='_blank' title='PPM specification at Netpbm'>Portable Pixel Map (PPM)</a> and <a href='https://netpbm.sourceforge.net/doc/pgm.html' target='_blank' title='PGM specification at Netpbm'>Portable Gray Map (PGM)</a> (particular cases of <a href='https://netpbm.sourceforge.net/doc/pnm.html' target='_blank' title='PNM at Netpbm'>PNM format</a> group) are simplest file formats for RGB and L images, correspondingly. In theory, you may import ASCII PGM even in Excel, turning Excel into image editor. Unfortunately, this simplicity lead to adverse consequences:</p>
-            <ul>
-                <li>lack of strict official specification. Instead, you may find words like "usual" in format description. Surely, there is always someone who implement this part of image format in unprohibited, yet a totally unusual way;</li>
-                <li>unwillingness of many software developers to provide any good support for simple and open format. It took years for almighty Adobe Photoshop developers to include PNM module in distribution rather than count on third-party developers, and surely (see above) they took their chance to implement their own header scheme nobody else uses. What as to PNM support in Python, say, Pillow... sorry, I promised not to discuss Pillow anywhere ladies and children are allowed to read it.</li>
-            </ul>
-            <p>As a result, novice Python user (like me) may find it difficult to get reliable input/output modules for PPM and PGM image formats; therefore current PyPNM package was developed, combining input/output functions for 8-bits and 16-bits per channel binary and ascii PGM and PPM files, <i>i.e.</i> P2, P5, P3 and P6 PNM file types. P1 and P4 (1&nbsp;bit) PBM formats are supported only for reading.</p>
-            <p><span class='red'><b>PyPNM key functionality</b></span> comprise:</p>
-            <ul>
-                <li><span class='red'><b>previewing</b></span> image being edited by converting it into PNM-like byte structure to be displayed using Tkinter <span class='pre'>PhotoImage(data=...)</span> method;</li>
-                <li><span class='red'><b>reading</b></span> PPM, PGM and PBM files from disk into image representation as 3D nested list;</li>
-                <li><span class='red'><b>writing</b></span> image representation as 3D nested list to PPM or PGM file on disk.</li>
-            </ul>
-            <p>So, in general, main goal of PyPNM is to simplify writing <b>image editing</b> applications in Python, be it a prototype or a fully blown application.</p>
-            <p style='font-size: 10pt; margin: 6pt 24pt;'><i>(Interlude start)</i> Actually what I needed was small and simple facility for displaying image-like data for image editing/filtering applications like <a href='povthread.html#averager' title='PyPNM usage example'>&laquo;Averager&raquo;</a>. Yes, I want to be able to write image filter in Python and view result without huge extra packages, full of useless features for a price of lack of needed ones. Using Tkinter with PPM/PGM looked like simplest solution, so I created some module for turning nested 3D lists to PPM-like bytes structures in memory. Since it required learning PNM specs anyway, I decided to add PPM/PGM files reading and writing on top of that. <i>Etc.</i>, as Kurt Vonnegut kept saying. <i>(Interlude end)</i></p>
-            <p>You may easily acquire PyPNM module either from GitHub or from PyPI and use it absolutely free.</p>
-            <table cols='3' class='version'>
-                <thead style='display: table-header-group'>
-                <tr class='version'>
-                    <th scope='col'><p>PyPNM version</p></th>
-                    <th scope='col'><p>Download site</p></th>
-                    <th scope='col'><p>Download content</p></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class='version'>
-                    <td class='version'><p class='left'>Current version<br>(Python&nbsp;3.11 and above) <br><b>2.26.23.23</b></p></td>
-                    <td class='version'><p class='left'><a href='https://github.com/Dnyarri/PyPNM' class='git' title='PPM and PGM reading and writing module for Python 3.11 and above, and main application sample'>PyPNM main at GitHub</a></p></td>
-                    <td class='version'><p>PyPNM module and sample viewer application, <br>illustrating all reading, displaying and writing functions in action.</p></td>
-                </tr>
-                <tr class='version'>
-                    <td rowspan='2' style='border-top: 4px double #00000080;'><p class='left'>Python&nbsp;3.4 compatible<br>(tested under Windows&nbsp;XP) <br><b>2.26.22.34</b></p></td>
-                    <td class='version'><p class='left'><a href='https://github.com/Dnyarri/PyPNM/tree/py34/' class='git' title='PPM and PGM reading and writing module for Python 3.4 and above, and main application sample'>PyPNM py34 at GitHub</a></p></td>
-                    <td class='version'><p>PyPNM module and sample viewer application, <br>illustrating all reading, displaying and writing functions in action (backward compatibility version for Python&nbsp;3.4). Viewer in .34 version include <a href='https://gitlab.com/drj11/pypng' target='_blank' title='Pure Python PNG module'>PNG</a> support which is not a part of PyPNM and included here just because it's a rare case of PNG format support for Python&nbsp;3.4.</p></td>
-                </tr>
-                <tr class='version'>
-                    <td><p class='left'><a href='https://pypi.org/project/PyPNM/' class='git' title='PPM and PGM reading and writing module for Python 3.4 and above' target='_blank'>PyPNM py34 at PyPI</a></p></td>
-                    <td><p>PyPNM module only, for Python&nbsp;3.4 and above.</p></td>
-                </tr>
-                </tbody>
-            </table>
-            <div class='cols512 justborder lighter'>
-            <h3>Recent updates</h3>
-            <p><span class='red'><b>Update:</b></span> <span class='git'><a href='https://github.com/Dnyarri/PyPNM' title='Pure Python PPM and PGM reading and writing module'><b>PyPNM updated to version&nbsp;2.26.27.312 (main) / version&nbsp;2.26.22.34 (Python 3.4 compliant)</b></a></span>. Importing significantly simplified.</p>
-            <p><span class='red'><b>Previously on PyPNM:</b></span> PyPNM updated to version&nbsp;2 (3&nbsp;Sep&nbsp;2025 &laquo;Victory&nbsp;II&raquo;)</p>
-            <p>This major update includes numerous measures focused on reducing resource usage:</p>
-            <ul>
-                <li>using <span class='pre'>mmap</span> instead of direct file reading;</li>
-                <li>using generators instead of intermediate lists wherever possible.</li>
-            </ul>
-            <p>Note that although module was completely rewritten, input and output types and data structure remain the same, so versions 2.21.3.* &laquo;Victory&nbsp;II&raquo; are completely interchangeable with 1.17.9.* &laquo;Victory&raquo;.</p>
-            <p>In <b>ver.&nbsp;1.17.9.34 &laquo;Victory&raquo;</b> (maximum compatibility) forced 8&nbsp;bit preview for 16&nbsp;bit images implemented when running under old Python versions (prior 3.11).</p>
-            <p>In ver.&nbsp;1.17.1.1 PNM export functions restructured to provide easy format switch (binary⇄ASCII). Backward compatibility maintained.</p>
-            <p>In ver.&nbsp;1.15.1.1 image viewing function updated to show LA and RGBA images over chessboard background (like Photoshop and GIMP). This mode requires enabling newly added option, which, in turn, requires you to <a href='https://dnyarri.github.io/pypnm/pypnm.pdf' title='PyPNM documentation in PDF' target='_blank'>📘RTFM</a>.</p>
-            <p>In ver.&nbsp;1.14.8.19 memory usage for writing PPM and PGM files greatly reduced. Binary files (P6 and P5 correspondingly) are written per image row (which is considered as reasonable tradeoff between memory usage and disk thrashing); ASCII files (P3 and P2) are written per sample (which is minimal memory using scenario).</p>
-            </div>
-        </div>
+<div class='lightbg justborder'>  <!-- Текстовый блок с самого начала -->
+    <p><b>PyPNM</b> is a Python module for reading PPM and PGM image files (both 8 and 16 bits per channel color depth) to image 3D integer lists for further editing, displaying 3D lists obtained by converting to Tkinter-compatible data in memory, and subsequent writing edited image 3D lists to disk as PPM or PGM files, either binary or ASCII.</p>
+    <p><a href='https://netpbm.sourceforge.net/doc/ppm.html' target='_blank' title='PPM specification at Netpbm'>Portable Pixel Map (PPM)</a> and <a href='https://netpbm.sourceforge.net/doc/pgm.html' target='_blank' title='PGM specification at Netpbm'>Portable Gray Map (PGM)</a> (particular cases of <a href='https://netpbm.sourceforge.net/doc/pnm.html' target='_blank' title='PNM at Netpbm'>PNM format</a> group) are simplest file formats for RGB and L images, correspondingly. In theory, you may import ASCII PGM even in Excel, turning Excel into image editor. Unfortunately, this simplicity lead to adverse consequences:</p>
+    <ul>
+        <li>lack of strict official specification. Instead, you may find words like "usual" in format description. Surely, there is always someone who implement this part of image format in unprohibited, yet a totally unusual way;</li>
+        <li>unwillingness of many software developers to provide any good support for simple and open format. It took years for almighty Adobe Photoshop developers to include PNM module in distribution rather than count on third-party developers, and surely (see above) they took their chance to implement their own header scheme nobody else uses. What as to PNM support in Python, say, Pillow... sorry, I promised not to discuss Pillow anywhere ladies and children are allowed to read it.</li>
+    </ul>
+    <p>As a result, novice Python user (like me) may find it difficult to get reliable input/output modules for PPM and PGM image formats; therefore current PyPNM package was developed, combining input/output functions for 8-bits and 16-bits per channel binary and ascii PGM and PPM files, <i>i.e.</i> P2, P5, P3 and P6 PNM file types. P1 and P4 (1&nbsp;bit) PBM formats are supported only for reading.</p>
+    <p><span class='red'><b>PyPNM key functionality</b></span> comprise:</p>
+    <ul>
+        <li><span class='red'><b>previewing</b></span> image being edited by converting it into PNM-like byte structure to be displayed using Tkinter <span class='pre'>PhotoImage(data=...)</span> method;</li>
+        <li><span class='red'><b>reading</b></span> PPM, PGM and PBM files from disk into image representation as 3D nested list;</li>
+        <li><span class='red'><b>writing</b></span> image representation as 3D nested list to PPM or PGM file on disk.</li>
+    </ul>
+    <p>So, in general, main goal of PyPNM is to simplify writing <b>image editing</b> applications in Python, be it a prototype or a fully blown application.</p>
+    <p style='font-size: 10pt; margin: 6pt 24pt;'><i>(Interlude start)</i> Actually what I needed was small and simple facility for displaying image-like data for image editing/filtering applications like <a href='povthread.html#averager' title='PyPNM usage example'>&laquo;Averager&raquo;</a>. Yes, I want to be able to write image filter in Python and view result without huge extra packages, full of useless features for a price of lack of needed ones. Using Tkinter with PPM/PGM looked like simplest solution, so I created some module for turning nested 3D lists to PPM-like bytes structures in memory. Since it required learning PNM specs anyway, I decided to add PPM/PGM files reading and writing on top of that. <i>Etc.</i>, as Kurt Vonnegut kept saying. <i>(Interlude end)</i></p>
+    <p>You may easily acquire PyPNM module either from GitHub or from PyPI and use it absolutely free.</p>
+    <table cols='3' class='version'>
+        <thead style='display: table-header-group'>
+        <tr class='version'>
+            <th scope='col'><p>PyPNM version</p></th>
+            <th scope='col'><p>Download site</p></th>
+            <th scope='col'><p>Download content</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class='version'>
+            <td class='version'><p class='left'>Current version<br>(Python&nbsp;3.11 and above) <br><b>2.26.23.23</b></p></td>
+            <td class='version'><p class='left'><a href='https://github.com/Dnyarri/PyPNM' class='git' title='PPM and PGM reading and writing module for Python 3.11 and above, and main application sample'>PyPNM main at GitHub</a></p></td>
+            <td class='version'><p>PyPNM module and sample viewer application, <br>illustrating all reading, displaying and writing functions in action.</p></td>
+        </tr>
+        <tr class='version'>
+            <td rowspan='2' class='version'><p class='left'>Python&nbsp;3.4 compatible<br>(tested under Windows&nbsp;XP) <br><b>2.26.22.34</b></p></td>
+            <td class='version'><p class='left'><a href='https://github.com/Dnyarri/PyPNM/tree/py34/' class='git' title='PPM and PGM reading and writing module for Python 3.4 and above, and main application sample'>PyPNM py34 at GitHub</a></p></td>
+            <td class='version'><p>PyPNM module and sample viewer application, <br>illustrating all reading, displaying and writing functions in action (backward compatibility version for Python&nbsp;3.4). Viewer in .34 version include <a href='https://gitlab.com/drj11/pypng' target='_blank' title='Pure Python PNG module'>PNG</a> support which is not a part of PyPNM and included here just because it's a rare case of PNG format support for Python&nbsp;3.4.</p></td>
+        </tr>
+        <tr class='version'>
+            <td><p class='left'><a href='https://pypi.org/project/PyPNM/' class='git' title='PPM and PGM reading and writing module for Python 3.4 and above' target='_blank'>PyPNM py34 at PyPI</a></p></td>
+            <td><p>PyPNM module only, for Python&nbsp;3.4 and above.</p></td>
+        </tr>
+        </tbody>
+    </table>
+<div class='cols512 justborder lighter'>  <!-- Плашка с таблицей обновлений -->
+<h3 style='column-span: all;'>History</h3>
+<table cols='2' class='version' style='margin: 0pt 24pt 24pt;'>
+    <thead style='display: table-header-group'>
+        <tr class='version'>
+            <th scope='col'>
+                <p>Version</p>
+            </th>
+            <th scope='col'>
+                <p>Reason for release</p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class='version'>
+            <td class='version'>
+                <p class='left git'><a href='https://github.com/Dnyarri/PyPNM' title='Pure Python PPM and PGM reading and writing module'>2.26.27.312 (main) / 2.26.22.34 (py34)</a></p>
+            </td>
+            <td class='version'>
+                <p>Importing significantly simplified.</p>
+                <p class='small'>Distribution build system changed from setup.py to pyproject.toml, included into repository, so you may build custom version yourself.</p>
+            </td>
+        </tr>
+        <tr class='version'>
+            <td class='version'>
+                <p class='left small'>Version&nbsp;2 &laquo;Victory&nbsp;II&raquo;<br>(3&nbsp;Sep&nbsp;2025)</p>
+            </td>
+            <td class='version'>
+                <p class='small'>This major update includes numerous measures focused on reducing resource usage:</p>
+                <ul class='small'>
+                    <li>using <span class='pre'>mmap</span> instead of direct file reading;</li>
+                    <li>using generators instead of intermediate lists wherever possible.</li>
+                </ul>
+                <p class='small'>Note that although module was completely rewritten, input and output types and data structure remain the same, so versions 2.21.3.* &laquo;Victory&nbsp;II&raquo; are completely interchangeable with 1.17.9.* &laquo;Victory&raquo;.</p>
+            </td>
+        </tr>
+        <tr class='version'>
+            <td class='version'>
+                <p class='left small'>1.17.9.34 &laquo;Victory&raquo;<br>(9&nbsp;May&nbsp;2025)</p>
+            </td>
+            <td class='version'>
+                <p class='small'>Forced 8&nbsp;bit preview for 16&nbsp;bit images implemented when running under old Python versions (prior 3.11).</p>
+            </td>
+        </tr>
+        <tr class='version'>
+            <td class='version'>
+                <p class='left small'>1.17.1.1 &laquo;Mayday&raquo;</p>
+            </td>
+            <td class='version'>
+                <p class='small'>PNM export functions restructured to provide easy format switch (binary⇄ASCII).</p>
+                <p class='small'>Backward compatibility maintained.</p>
+            </td>
+        </tr>
+        <tr class='version'>
+            <td class='version'>
+                <p class='left small'>1.15.1.1</p>
+            </td>
+            <td class='version'>
+                <p class='small'>Image viewing function updated to show LA and RGBA images over chessboard background (like Photoshop and GIMP).</p>
+                <p class='small'>This mode requires enabling newly added option, which, in turn, requires you to <a href='https://dnyarri.github.io/pypnm/pypnm.pdf' title='PyPNM documentation in PDF' target='_blank'>📘RTFM</a>.</p>
+            </td>
+        </tr>
+        <tr class='version'>
+            <td class='version'>
+                <p class='left small'>1.14.8.19</p>
+            </td>
+            <td class='version'>
+                <p class='small'>Memory usage for writing PPM and PGM files greatly reduced.</p>
+                <p class='small'>Binary files (P6 and P5 correspondingly) are written per image row (which is considered as reasonable tradeoff between memory usage and disk thrashing); ASCII files (P3 and P2) are written per sample (which is minimal memory using scenario).</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style='column-span: all;'><b>Prehistory:</b> <i>26 Nov 2024:</i> Initial working version.</p>
+  </div>  <!-- Плашка с таблицей обновлений -->
+</div>  <!-- Текстовый блок с самого начала -->
         <h3 class='lightbg' style='max-width: 300pt;'>Format compatibility</h3>
         <div class='lightbg justborder' style='max-width: 420pt;'>
             <table cols='4'>
@@ -146,11 +206,10 @@ main_window.mainloop()
             <p>All this means that you may use PyPNM and Tkinter to visualize any data that can be represented as greyscale or RGB without huge external packages and writing files on disk; all you need is Tkinter, included into standard CPython distributions, and highly compatible pure Python <i>pnmlpnm.py</i> taking only 20&nbsp;kbytes.</p>
         </div>
         <br>
-        <div class='lightbg justborder'>
-            <p>Now when you have initial understanding of what PyPNM module is and how it may be used to work with images in general and PGM and PPM files in particular, it's time to <a href='https://github.com/Dnyarri/PyPNM' class='git' title='PyPNM repository at GitHub'>pull PyPNM from GitHub</a> and start working with images yourself.</p>
+        <div class='lightbg justborder'>  <!-- Плашка туда-сюда -->
+            <p style='margin: 24pt 6pt'><span class='lighter justborder' style='padding: 16pt 24pt;'>Now it's time to <a href='https://github.com/Dnyarri/PyPNM' class='git' title='PyPNM repository at GitHub'>pull PyPNM from GitHub</a> and start working with images yourself...</span></p>
+            <p class='right' style='margin: 40pt 6pt 24pt'><span class='lighter justborder' style='padding: 16pt 24pt;'>...or Move back to <a href='https://dnyarri.github.io' title='Python freeware for POV-Ray and other 3D, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, bilinear and barycentric image interpolation, and batch processing'>Dnyarri`s Python freeware main page</a>.</span></p>
         </div>
-            <br>
-            <p class='right'><span class='lightbg justborder'>...or move back to <a href='https://dnyarri.github.io' title='Python freeware for POV-Ray and other 3D, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, bilinear and barycentric image interpolation, and batch processing'>Dnyarri`s Python freeware main page</a>.</span></p>
     </div> <!-- Content block end -->
 </body>
 </html>
