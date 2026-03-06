@@ -50,8 +50,8 @@
                 <thead style='display: table-header-group'>
                 <tr class='compare'> <!-- Header row -->
                     <th scope='col' style='max-width: 160px;'><p class='small center'>Source</p></th>
-                    <th scope='col' style='max-width: 160px;'><p class='small center'>Bilinear</p></th>
-                    <th scope='col' style='max-width: 160px;'><p class='small center'>Barycentric</p></th></tr>
+                    <th scope='col'><p class='small center'>Bilinear</p></th>
+                    <th scope='col'><p class='small center'>Barycentric</p></th></tr>
                 </thead>
                 <tbody>
                 <tr style='vertical-align: center;'> <!-- Row 1 -->
@@ -59,51 +59,34 @@
                         <div class='center'><img src='imin/peak3.png' width='3' height='3' alt='Source image' title='Source image' class='justborder'></div>
                         <p class='small center'>3x3&nbsp;px (black pixel over white background)</p>
                     </td>
-                    <td class='justborder' style='max-width: 160px;'>
+                    <td class='justborder'>
                         <div class='center'><img src='imin/peak3bil.png' width='60' height='60' alt='Bilinear interpolation' title='Bilinear interpolation' class='justborder'></div>
                         <p class='small center'>x20&nbsp;times</p>
                     </td>
-                    <td class='justborder' style='max-width: 160px;'>
+                    <td class='justborder'>
                         <div class='center'><img src='imin/peak3bar.png' width='60' height='60' alt='Barycentric interpolation' title='Barycentric interpolation' class='justborder'></div>
                         <p class='small center'>x20&nbsp;times</p>
                     </td>
                 </tr>
                 <tr style='vertical-align: center;'> <!-- Row 2 -->
-                    <td class='justborder' style='max-width: 160px;'>
-                        <div class='center'><img src='imin/chess15.png' width='15' height='15' alt='Source image' title='Source image' class='justborder'></div>
-                        <p class='small center'>15x15&nbsp;px (2x2&nbsp;px chessboard pattern)</p>
-                    </td>
-                    <td class='justborder' style='max-width: 160px;'>
-                        <div class='center'><img src='imin/chess15bil.png' width='45' height='45' alt='Bilinear interpolation' title='Bilinear interpolation' class='justborder'></div>
-                        <p class='small center'>x3&nbsp;times</p>
-                    </td>
-                    <td class='justborder' style='max-width: 160px;'>
-                        <div class='center'><img src='imin/chess15bar.png' width='45' height='45' alt='Barycentric interpolation' title='Barycentric interpolation' class='justborder'></div>
-                        <p class='small center'>x3&nbsp;times</p>
-                    </td>
-                </tr>
-                <tr style='vertical-align: center;'> <!-- Row 3 -->
-                    <td class='justborder' style='max-width: 160px;'>
+                    <td class='justborder'>
                         <div class='center'><img src='imin/eye16.png' width='22' height='16' alt='Source image' title='Source image' class='justborder'></div>
                         <p class='small center'>22x16&nbsp;px</p>
                     </td>
-                    <td class='justborder' style='max-width: 160px;'>
-                        <div class='center'><img src='imin/eye16bil.png' width='110' height='80' alt='Bilinear interpolation' title='Bilinear interpolation' class='justborder'></div>
-                        <p class='small center'>x5&nbsp;times</p>
+                    <td class='justborder' style='max-width: 240px;'>
+                        <div class='center'><img src='imin/eye16bil7.png' width='154' height='112' alt='Bilinear interpolation' title='Bilinear interpolation' class='justborder'></div>
+                        <p class='small center'>x7&nbsp;times</p>
                     </td>
-                    <td class='justborder' style='max-width: 160px;'>
-                        <div class='center'><img src='imin/eye16bar.png' width='110' height='80' alt='Barycentric interpolation' title='Barycentric interpolation' class='justborder'></div>
-                        <p class='small center'>x5&nbsp;times</p>
+                    <td class='justborder' style='max-width: 240px;'>
+                        <div class='center'><img src='imin/eye16bar7.png' width='154' height='112' alt='Barycentric interpolation' title='Barycentric interpolation' class='justborder'></div>
+                        <p class='small center'>x7&nbsp;times</p>
                     </td>
                 </tr>
                 </tbody>
             </table>
             <p>Table&nbsp;1 in this section contains various test cases. Obviously, bigger images like photos would be more interesting, but, unfortunately, to clearly see interpolation artifacts I should use at least x3 upscaling, so, if I use a photo that barely fits a screen as a source, result will not fit this web page.</p>
             <p>In the first row, you may see a result of upscaling single black pixel over white background. Resulting images clearly show the difference between bilinear and barycentric interpolation.</p>
-            <p>In the second row, you see a potential problem case: a chessboard pattern. It's a problem for any interpolation: it's unclear what to find in there. Noise over flat color? A pattern? Should it be kept, suppressed, or emphasized?</p>
-            <p>As you can see, while bilinear interpolation simply blurs everything, barycentric interpolation tries to find diagonals. Quite likely, it's not what you want, but, on the other hand, a chessboard <i>actually</i> is a set of diagonals; any bishop, whether he's black or white, will confirm this.</p>
-            <p>(Needless to say, if you want a pixel-sized black and white chessboard to be treated as black and white chessboard, you better resort to <a href='scalenx.html' title='Scale2x, Scale3x, Scale2xSFX and Scale3xSFX image scaling in pure Python'>ScaleNx image rescaling</a>.)</p>
-            <p>In the third row, you see a small fragment of a photo. It seems like barycentric interpolation gives clearer appearance of overall eye outline shape; rhomb-shaped pupil, however, looks a bit weird. But well, pupil occupies just one pixel in original, so result looks similar to a rhomb in the first row example.</p>
+            <p>In the second row, you see a small fragment of a photo. It seems like barycentric interpolation gives clearer appearance of overall eye outline shape; rhomb-shaped pupil, however, looks a bit weird. But well, pupil occupies just one pixel in original, so result looks similar to a rhomb in the first row example.</p>
         </div>
         <div class='lightbg justborder cols2'>
             <h3>Module and example programs</h3>
