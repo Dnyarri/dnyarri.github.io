@@ -33,7 +33,8 @@
             <p>With that in mind I created general purpose (<i>i.e.</i> working with any image of any color mode) pure Python implementation of ScaleNx algorithms. By saying &laquo;pure Python&raquo; I mean it - it doesn't even use bytearrays, only lists of lists of lists. Consider it an exacting spiritual practice or whatever. Anyway, pure Python nature allows current ScaleNx implementation to be run under Windows, Linux, MacOS, or practically anything you can find a Python for.</p>
             <p>You can <a href='https://github.com/Dnyarri/PixelArtScaling' class='git' title='ScaleNx module and main program for single and batch PNG, PPM and PGM image rescaling'>download ScaleNx as fully functional application for single and batch images rescaling</a>, as well as <a href='https://pypi.org/project/ScaleNx/' title='ScaleNx module only, distributed via pypi.org' target='_blank'>pure ScaleNx module</a> to include it into your own software, or just to laugh at it.</p>
             <p>ScaleNx package includes suitable human-ready GUI shell, not surprisingly called ScaleNxGUI.py, providing easy launch of single PNG, PPM or PGM (PBM support is limited to reading only, result may be saved to another format like PNG) file rescaling procedure, or batch rescaling of all images (in forementioned formats) in chosen folder and subfolders. Note that batch processing uses asynchronous multiprocessing, greatly reducing run time for a price of devouring next to 100% of CPU power, taking RAM for several images simultaneously, and rendering GUI rather unresponsive, looking like it hung up. Don't worry, it can't hang up, it can only possibly crash when trying to process really huge images (although for most recent version, implementing some memory-saving tricks, I yet have to see it).</p>
-            <p>Needless to say, PNG support in ScaleNxGUI is provided with <a href='https://gitlab.com/drj11/pypng' target='_blank' title='Pure Python PNG reading and writing module'>PyPNG</a>, and PPM and PGM support with <a href='https://pypi.org/project/PyPNM/' title='Pure Python PPM and PGM reading, displaying, and writing module'>PyPNM</a>; both are pure Python modules, thus making the whole program quite cross-platform. There is even Python&nbsp;3.4-compatible build (see below), tested and proven to work under Windows&nbsp;XP 32-bit on a twenty years old notebook. Practically, the only problem with Windows&nbsp;XP 32-bit in the year 2025 appeared to be finding a web browser correctly displaying GitHub pages; <a href='https://win32subsystem.live/supermium/' title='Chromium for Windows XP 32-bit'>Supermium</a> appeared to be capable enough.</p>
+            <p>Needless to say, PNG support in ScaleNxGUI is provided with <a href='https://gitlab.com/drj11/pypng' target='_blank' title='Pure Python PNG reading and writing module'>PyPNG</a>, and PPM and PGM support with <a href='https://pypi.org/project/PyPNM/' title='Pure Python PPM and PGM reading, displaying, and writing module'>PyPNM</a>; both are pure Python modules, thus making the whole program quite cross-platform. There is even Python&nbsp;3.4-compatible build (see below), tested and proven to work under Windows&nbsp;XP 32&#8209;bit on a twenty years old notebook.</p>
+            <p class='small'>Practically, the only problem with version for Windows&nbsp;XP 32&#8209;bit in the year 2025 appeared to be finding a web browser correctly displaying GitHub pages; <a href='https://win32subsystem.live/supermium/' title='Chromium for Windows XP 32-bit'>Supermium</a> appeared to be capable enough.</p>
             <table title='ScaleNx versions and download options' cols='3' class='version'>
                 <thead style='display: table-header-group'>
                 <tr class='version'>
@@ -45,21 +46,24 @@
                 <tbody>
                 <tr class='version'>
                     <td class='version'><p class='left'>Current version<br>(Python&nbsp;3.10 and above)</p></td>
-                    <td class='version'><p class='left'><a href='https://github.com/Dnyarri/PixelArtScaling' class='git' title='ScaleNx module and main program for single image and batch image rescaling'>ScaleNx main at GitHub</a></p></td>
+                    <td class='version'><p class='left'><a href='https://github.com/Dnyarri/PixelArtScaling' title='ScaleNx module and main program for single image and batch image rescaling'><span class='git'>ScaleNx main</span> at GitHub</a></p></td>
                     <td class='version'><p>ScaleNx module and user-friendly application for single file or batch image rescaling, for Python&nbsp;3.10 and above.</p></td>
                 </tr>
                 <tr class='version'>
                     <td rowspan='2' class='version'><p class='left'>Python&nbsp;3.4 compatible<br>(tested under Windows&nbsp;XP)</p></td>
-                    <td class='version'><p class='left'><a href='https://github.com/Dnyarri/PixelArtScaling/tree/py34' class='git' title='ScaleNx module and main program for single image and batch image rescaling for Python 3.4'>ScaleNx py34 at GitHub</a></p></td>
+                    <td class='version'><p class='left'><a href='https://github.com/Dnyarri/PixelArtScaling/tree/py34' title='ScaleNx module and main program for single image and batch image rescaling for Python 3.4'><span class='git'>ScaleNx py34</span> at GitHub</a></p></td>
                     <td class='version'><p>ScaleNx module and user-friendly application for single file or batch image rescaling, for Python&nbsp;3.4 and above.</p></td>
                 </tr>
                 <tr class='version'>
-                    <td><p class='left'><a href='https://pypi.org/project/ScaleNx/' class='git' title='ScaleNx module for Python 3.4 and above'>ScaleNx py34 at PyPI</a></p></td>
+                    <td><p class='left'><a href='https://pypi.org/project/ScaleNx/' title='ScaleNx module for Python 3.4 and above'><span class='git'>ScaleNx py34</span> at PyPI</a></p></td>
                     <td><p>ScaleNx module only, for Python&nbsp;3.4 and above.</p></td>
                 </tr>
                 </tbody>
             </table>
         </div>
+    <div class='justborder lightbg'>
+        <p><b>For Windows users</b>, <a href='https://github.com/Dnyarri/PixelArtScaling/releases/latest' title='ScaleNx module and main program for single image and batch image rescaling, latest release, including compiled .exe files'>compiled <span class='git'>ScaleNxGUI64.exe</span> for Windows&nbsp;10 64&#8209;bit and <span class='git'>ScaleNxGUI32.exe</span> for Windows&nbsp;XP 32&#8209;bit are available for download at newest release page</a>; what as to other platforms, since the program is pure Python and quite self-contained, release source is supposed to work with any current canonic Python installation right out of the box.</p>
+    </div>
 <div class='lightbg justborder cols512'>  <!-- Плашка с таблицей обновлений -->
 <h3 style='column-span: all;'>History</h3>
 <table cols='2' class='version'>
@@ -72,8 +76,7 @@
     <tbody>
     <tr class='version'>
         <td class='version'><p class='left'><a href='https://github.com/Dnyarri/PixelArtScaling/releases/tag/26.2.16.16' title='ScaleNx 26.2.16.16 download'>26.2.16.16</a></p></td>
-        <td class='version'><p>In main version (and corresponding Python&nbsp;3.4 compliant version) export/import scheme generalized to make developers life easier.</p>
-        <p class='left small'><b>For Windows users</b>, compiled <a href='https://github.com/Dnyarri/PixelArtScaling/releases/latest' class='git' title='ScaleNx module and main program for single image and batch image rescaling, latest release, including compiled .exe files'>ScaleNxGUI32.exe for Windows&nbsp;XP 32&nbsp;bit and  ScaleNxGUI64.exe for Windows&nbsp;10 64&nbsp;bit are available for download at newest release page</a>, what as to other platforms, since the program is pure Python and quite self-contained, release source is supposed to work with any current canonic Python installation right out of the box.</p></td>
+        <td class='version'><p>In main version (and corresponding Python&nbsp;3.4 compliant version) export/import scheme generalized to make developers life easier.</p></td>
     </tr>
     <tr class='version'>
         <td class='version'><p class='left'>25.11.15.1</p></td>
