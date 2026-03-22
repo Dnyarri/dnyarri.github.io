@@ -29,7 +29,7 @@
             <p><span class='red'><b>Update:</b></span> in version 3.21.21.21 mesh geometry upgraded from ver. 3 to 3+. While geometry №3 was better in general case as compared to older №1 and №2, new "plus" upgrade adds improved support for a specific cases like sharp diagonal transitions (sharp vertical and horizontal transitions were fine from the very beginning).</p>
             <p>Later on, in version 3.22.3.7 output for new geometry №3+ was accelerated <i>ca.</i>&nbsp;20% due to more reasonable buffering control.</p>
             <table title='Comparison of Geometry №3 and Geometry №3+ rendering' cols='3' class='compare'>
-                <caption style='caption-side: bottom; font-size: 10pt;'>Comparison of different geometry rendering</caption>
+                <caption class='justborder lighter' style='caption-side: bottom; font-size: 10pt;'>Comparison of different geometry rendering</caption>
                 <thead style='display: table-header-group'>
                 <tr class='compare'>
                     <th scope='col'><p class='small center' style='min-width: 100px;'>Source</p></th>
@@ -77,11 +77,11 @@
             </ul>
             <div class='center' style='break-inside: avoid;'>
                 <img src='imgmesh/printscreen.png' width='504' height='360' alt='Preview of img2mesh output in Windows Explorer' title='Preview of img2mesh output in Windows Explorer' class='center'>
-                <p class='small center'>Screenshot of Windows Explorer window with test source PNG map and resulting output files preview side by side.</p>
+                <p class='small center justborder lighter'>Screenshot of Windows Explorer window with test source PNG map and resulting output files preview side by side.</p>
             </div>
             <p><a href='https://www.povray.org/' title='POV-Ray high quality free renderer' target='_blank'>POV&#8209;Ray</a> export provides most flexibility. One of the features of POV export is mapping. Maps are transfer functions z value is passed through. Result is similar to Photoshop or GIMP "Curves" applied to source heightfield image, except for that with <b>img2mesh</b> map is nondestructively applied to mesh within POV&#8209;Ray, so you can change map and affect mesh rendering without changing the mesh itself.</p>
             <p>Currently maps are represented by generalized linear spline curve. Descriptive part in the beginning of POV file generated look like this:</p>
-            <pre class='lighter' style='break-inside: avoid;'>
+            <pre class='justborder lighter' style='break-inside: avoid;'>
     #declare Curve = function {
         spline { linear_spline
             0.0,   &lt;0.0,   0&gt;,
@@ -118,11 +118,10 @@
             <p>Surely POV&#8209;Ray can import PNG and use them as &laquo;heightfields&raquo; directly, but <b>img2mesh</b> uses rather unusual &laquo;pyramid&raquo; conversion algorithm, providing extra quality for small elevation maps (you can see it by smooth shiny surface without defect reflections in example above).</p>
             <p>Default export to POV file suggests camera autofocus on object, object scaling to fit 1,&nbsp;1,&nbsp;1&nbsp;cube, and suitable scene structuring for easy editing later.</p>
             <p>Exported .POV file may be included intact as .INC into another scene, by setting a flag in the main scene file:</p>
-                <pre>
+                <pre class='justborder lighter'>
   <b>#declare Main = 1;</b>
   #include "<i>generated.pov</i>"
-  object {thething}
-                </pre>
+  object {thething}</pre>
             <p>&laquo;Main&raquo; variable in master file turns off camera, light and texture in "<i>generated.pov</i>" file, allowing master file to take over.</p>
             <div class='justborder'>
                 <div class='justborder lighter'>
@@ -135,7 +134,7 @@
             <br>
             </div>
 <div class='justborder lighter'>  <!-- Плашка с таблицей обновлений -->
-<h4>History (in compacted form)</h4>
+<h4 class='lighter'>History (in compacted form)</h4>
 
 <table cols='2' class='version'>
     <thead style='display: table-header-group'>
