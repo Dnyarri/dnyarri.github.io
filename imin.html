@@ -24,15 +24,15 @@
             <p><a href='https://github.com/Dnyarri/imin' class='git' title='Barycentric and bilinear image interpolation and transformation in pure Python at Github'>ImIn (Image Interpolation)</a> module contains Python code for <a href='https://en.wikipedia.org/wiki/Bilinear_interpolation' target='_blank'>bilinear image interpolation</a> and <a href='https://en.wikipedia.org/wiki/Barycentric_coordinate_system' target='_blank'>barycentric image interpolation</a>, working in any color modes from 8&nbsp;bit&nbsp;L to 16&nbsp;bit&nbsp;RGBA (presumably it works in other color modes as well but I can't read and write CMYK files to perform testing). That is, it contains functions for reading single pixel at float coordinates, interpolated from real pixels (having integer coordinates), as well as functions for transforming whole image (scaling, rotating, deforming <i>etc.</i>) using interpolation methods above.</p>
             <p>It is well known that image interpolation authors tend to increase image analysis area size. With bilinear interpolation, pixel is considered as square, and interpolation takes place between four corners. With bicubic interpolation, more neighbour pixels are added to analysis. This is good for smooth gradients but what about some sharp edges? What happens if, instead of adding more and more pixels, we try to use <i>less</i> than one pixel for interpolation? Why not to try using just half a pixel? For example, split a pixel square ⬛ diagonally into two triangles like ◤◢ or ◣◥, and use analysis within one half of a pixel using three corners?</p>
             <p>Since I appeared to be unable to find such a triangular interpolation in any big programs like Photoshop or GIMP, I decided to write corresponding algorithm myself and see what happens.</p>
-            <p>It seems like the best coordinate system for triangles is <a href='https://en.wikipedia.org/wiki/Barycentric_coordinate_system' target='_blank'>barycentric coordinate system</a>, which is widely used in science, in 3D graphics, sometimes used in 2D vector gradients, but, for unclear reasons, not used in regular 2D bitmap image processing.</p>
+            <p>It seems like the best coordinate system for triangles is <a href='https://en.wikipedia.org/wiki/Barycentric_coordinate_system' target='_blank'>barycentric coordinate system</a>, which is widely used in science, in 3D graphics, sometimes used in 2D vector gradients, but, for absolutely unclear reasons, practically not used in regular 2D bitmap image processing.</p>
             <p>It is easy to imagine barycentric interpolation within a triangle in some sort of perverted way:</p>
             <ul>
-                <li>in a linear interpolation along a line, when calculating the value of fictional sample somewhere between two actual samples, the weight of actual sample is the higher the closer fictional sample is to that actual sample. Which, in turn, means that the weight of actual sample is the higher the farther apart from another actual sample our interpolated sample is, that is, the longer is the arm opposed to actual sample under discussion;</li>
+                <li>in a linear interpolation along a line, when calculating the value (say, brightness) of fictional sample (say, pixel) somewhere between two actual samples, the weight (say, impact, influence) of actual sample is the higher the closer fictional sample is to that actual sample. Which, in turn, means that the weight of actual sample is the higher the farther apart from another actual sample our interpolated sample is, that is, the longer is the arm opposed to actual sample under discussion;</li>
                 <li>similarly, in a bilinear interpolation within a square, the weight of any corner pixel is proportional to the area of rectangle, opposing this corner;</li>
-                <li>so, similarly, in a barycentric interpolation within a triangle, the weight of any corner pixel is proportional to the area of triangle, opposing this corner. That is, in some strange way, pixel impact is proportional to area of something right against that pixel. Sounds weird, but it works.</li>
+                <li>so, similarly, in a barycentric interpolation within a triangle, the weight of any corner pixel is proportional to the area of triangle, opposing this corner. That means, in a some strange way, pixel impact is proportional to area of something right against that pixel. Sounds weird, but it works.</li>
             </ul>
-            <p>As a result of enormous efforts to recall school math like rightangled triangle area I wrote my own barycentric interpolation code, which, after tedious debugging and implementing obvious optimization, appeared to give rather interesting results when used, for example, for image rescaling (I even tend to prefer it to Photoshop under some circumstances, regardless of the fact that Python code, even being optimized, and having caching (which, in my case, almost doubles the speed) on the top of it, is always slower than machine code in Photoshop).</p>
-            <p class='small'>Speaking of speed, on my not too new notebook barycentric upscaling of 1024×1024&nbsp;px RGBA image ×5&nbsp;times bigger (<i>i.e.</i>, up to 5120×5120&nbsp;px) takes <i>ca.</i>&nbsp;3&nbsp;minutes, which may be considered slow, until you take into account the fact that even at 300&nbsp;ppi resolution (which means pretty good print quality must be assured to take any visible advantage of such a high resolution) resulting image will be noticeably larger than A3 paper sheet, that is, you are unlikely to need images of that size every day. Another fact to be taken into consideration is that Pythonic list representation of such an image simply ate all the RAM of my poor old notebook, making it use slow virtual one. So, on second though, <b>imin</b> implementation of interpolation algorithms is actually quite fast for a pure Python module.</p>
+            <p>As a result of enormous efforts to recall school math like rightangled triangle area I wrote my own barycentric interpolation code, which, after tedious debugging and implementing obvious optimization, appeared to give rather interesting results when used, for example, for image rescaling (I even tend to prefer it to Photoshop under some circumstances, regardless of the fact that Python code, even being optimized, and having caching (which, in my case, almost doubles the speed) on the top of it, is always slower than well optimized machine code in Photoshop).</p>
+            <p class='small'>Speaking of speed, on my not too new notebook barycentric upscaling of 1024×1024&nbsp;px RGBA image ×5&nbsp;times bigger (<i>i.e.</i>, up to 5120×5120&nbsp;px) takes <i>ca.</i>&nbsp;3&nbsp;minutes, which may be considered slow, until you take into account the fact that even at 300&nbsp;ppi resolution (which means pretty good print quality must be assured to take any visible advantage of such a high resolution) resulting image will be noticeably larger than A3 paper sheet, that is, you are unlikely to need images of that size every day. Another fact to be taken into consideration is that Pythonic list representation of such an image simply ate all the RAM of my poor old notebook, making it use slow virtual memory. So, on second though, <b>imin</b> implementation of interpolation algorithms is not so bad, and actually quite fast for a pure Python module.</p>
             <p>At the same time I got bored by copying my own code for bilinear image interpolation from one program to another (yes, there is an interpolation in, say, <a href='pov3zaika.html' title='Program converting 2D image into mosaic of 3D objects in POV-Ray format'>POV-Ray 6³&nbsp;Mosaic</a> or <a href='img2mesh.html' title='Program for bitmap heigh field to 3D triangle mesh conversion'>img2mesh</a>).</p>
             <p>Finally, I decided to join my code for bilinear and barycentric image interpolation in some sort of a single module, which can be easily plugged into different image processing Python programs. And here it goes.</p>
             <div class='justborder lighter'>
@@ -126,13 +126,60 @@
             <p>Such a generalized syntax simplifies using <b>imin</b> module for writing image editing programs.</p>
             <p>Note, however, that, while "Wrap around" mode is present in sample programs GUI, it does't always work as one may expect.</p>
             <p>Imagine simple horizontal skewing, when top and bottom edges move against each other, and right and left ones become sort of diagonals. Assume that the source image is seamless pattern. With "Wrap" mode enabled, <b><span class='pre'>distorter.py</span></b> keeps the horizontal part seamless, that is, the triangular part of image that goes away at the right side will appear at the left. What as to vertical part, since top and bottom edges move against each other, their match gets broken and seam formed.</p>
-            <p>However, if you switch from skewing to sine wave distortion, result of deforming a seamless pattern will be seamless. That's because I use exactly one wave cycle for a displacing function, making ends meet (literally). Well, actually, even with non-seamless sources, in case of sufficient deformations this function deforms edges so much that they become unrecognizable, and image turns into seamless-like (is this a real word?).</p>
+            <p>However, if you switch from skewing to sine wave distortion, result of deforming a seamless pattern will be seamless. That's because I use exactly one wave cycle for a displacing function, making ends meet (literally). Frankly, even with non-seamless sources, in case of sufficient deformations this function deforms edges so much that they become unrecognizable, and image turns into seamless-like (is this a real word?).</p>
         </div>
-        <br>
-        <div class='lightbg justborder'>  <!-- Плашка туда-сюда -->
-            <p style='margin: 24pt 6pt'><span class='lighter justborder' style='padding: 16pt 24pt;'>Now it's time to either step forward to <a href='https://github.com/Dnyarri/imin' class='git' title='Barycentric and Bilinear Image Interpolation repository at GitHub'>Bilinear and barycentric image interpolation code repository at GitHub</a> for downloads...</span></p>
-            <p class='right' style='margin: 40pt 6pt 24pt'><span class='lighter justborder' style='padding: 16pt 24pt;'>...or Move back to <a href='https://dnyarri.github.io' title='Python freeware for POV-Ray and other 3D, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, bilinear and barycentric image interpolation, and batch processing'>Dnyarri`s Python freeware main page</a>.</span></p>
-        </div>
+
+<div class='cols512 justborder lighter'>  <!-- Плашка с таблицей обновлений -->
+<h3 style='column-span: all;'>History</h3>
+<table cols='2' class='version' style='margin: 0pt 24pt 24pt;'>
+    <thead style='display: table-header-group'>
+        <tr class='version'>
+            <th scope='col'>
+                <p>Version</p>
+            </th>
+            <th scope='col'>
+                <p>Reason for release</p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class='version'>
+            <td class='version'>
+                <p class='left small git'><a href='https://github.com/Dnyarri/imin/releases' title='Barycentric and bilinear image interpolation in pure Python'>26.4.10.10</a></p>
+            </td>
+            <td class='version'>
+                <p class='small'>Internal optimizations; this release accumulates previous fixes for "black edge" transparency artifacts <i>etc</i>.</p>
+            </td>
+        </tr>
+        <tr class='version'>
+            <td class='version'>
+                <p class='left small'>26.3.29.16</p>
+            </td>
+            <td class='version'>
+                <p>The Coming of the Hybrid</p>
+                <p class='small'>There is a common problem in finding optimal square diagonal for splitting square into triangles for further barycentric interpolation: sometimes <i>both</i> diagonals satisfy criteria, that is, all the directions are best, equally. Arbitrary choosing one may lead to artifacts, for example, chessboard pattern turns into diagonal lines.</p>
+                <p class='small'>Since 26.3.29.16 version, problem is fixed by using a hybrid of two interpolation methods: when barycentric method can't make a reasonable choice (i.e., local pixel picture is very symmetric), bilinear method kicks in, since symmetry is it's main drawback.</p>
+            </td>
+        </tr>
+        <tr class='version'>
+            <td class='version'>
+                <p class='left small'>26.2.10.4</p>
+            </td>
+            <td class='version'>
+                <p>Functional</p>
+                <p class='small'>Well, "Functional" branch is considered to be functional enough for a release.</p>
+                <p class='small'>Those who hunger and thirst for barycentric and bilinear interpolation in pure Python shall be filled.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style='column-span: all;'><b>Prehistory:</b> <i>26 Nov 2024:</i> Initial working version.</p>
+</div>  <!-- Плашка с таблицей обновлений -->
+<br>
+<div class='lightbg justborder'>  <!-- Плашка туда-сюда -->
+    <p style='margin: 24pt 6pt'><span class='lighter justborder' style='padding: 16pt 24pt;'>Now it's time to either step forward to <a href='https://github.com/Dnyarri/imin' class='git' title='Barycentric and Bilinear Image Interpolation repository at GitHub'>Bilinear and barycentric image interpolation code repository at GitHub</a> for downloads...</span></p>
+    <p class='right' style='margin: 40pt 6pt 24pt'><span class='lighter justborder' style='padding: 16pt 24pt;'>...or Move back to <a href='https://dnyarri.github.io' title='Python freeware for POV-Ray and other 3D, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, bilinear and barycentric image interpolation, and batch processing'>Dnyarri`s Python freeware main page</a>.</span></p>
+</div>
     </div> <!-- Content block end -->
 </body>
 </html>

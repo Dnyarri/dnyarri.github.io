@@ -25,6 +25,10 @@ ul {
     margin: 8pt 32pt 8pt 24pt;
 }
 
+li {
+    break-inside: avoid-column;
+}
+
 .content {
     margin: 0px 0px 0px 146px;
 }
