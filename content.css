@@ -31,12 +31,19 @@ li {
 
 summary {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 14pt;
+    font-size: 16pt;
     color: #333333;
     border: thin solid rgba(0, 0, 255, 0);
     padding: auto 2pt;
     background: linear-gradient(90deg, rgba(0, 0, 255, 0.2), 30%, rgba(0, 0, 255, 0));
-    border-radius: 6px;
+    border-radius: 6px 6px 0px 0px;
+}
+
+.detail {   /* Should visually match "summary" above it */
+    border: thin solid rgba(0, 0, 255, 0);
+    padding: auto 2pt;
+    background: linear-gradient(90deg, rgba(0, 0, 255, 0.2), 30%, rgba(0, 0, 255, 0));
+    border-radius: 0px 0px 6px 6px;
 }
 
 .content {

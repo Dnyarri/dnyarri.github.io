@@ -24,10 +24,10 @@
         <div class='justborder lighter'>
             <p><span class='red'>Good news everyone:</span> new program added, named <b>Sanctifier</b>. As can be easily guessed from its name, this program is intended for converting a set of PNG files into a single Windows Icon (.ICO) file containing multiple icons of different sizes.</p>
             <details>
-            <summary><b>PNG Sanctifier</b>: a PNG to multisize ICO converter <i>(click for details)</i></summary>
+            <summary><b>PNG Sanctifier</b>: a PNG to multisize ICO converter <i>(click for details)</i></summary><div class='detail'>
             <p>Surely you can use GIMP to open a bunch of PNGs as layers, then export resulting image as an icon. Unfortunately, that means that GIMP really opens an image, and then saves it, using GIMP general purpose compression library, which is definitely not the best in terms of compression efficiency.</p>
             <p>The main idea, and a sole reason for <b>Sanctifier</b> development, is that this program does not open images at all. Instead, it transfers PNG data, already compressed, into Windows ICO skeleton <i>"as is"</i>. This allows using efficient PNG optimizers before assembling icons, and then building icons that retain the best compression possible.</p>
-            <p>In my experiments, creating source images with an image editor (I still prefer ancient yet elegant Macromedia Fireworks for that), saving as PNGs, then passing the latter through PNG optimizer (I strongly recommend <a href='https://github.com/oxipng/oxipng'>oxipng</a>), and then feeding optimized PNGs to <b>Sanctifier</b> gives <i>ca.</i>&nbsp;10% size reduction as compared to using either regular icon editors or general purpose image editors with ICO export modules.</p>
+            <p>In my experiments, creating source images with an image editor (I still prefer ancient yet elegant Macromedia Fireworks for that), saving as PNGs, then passing the latter through PNG optimizer (I strongly recommend <a href='https://github.com/oxipng/oxipng'>oxipng</a>), and then feeding optimized PNGs to <b>Sanctifier</b> gives <i>ca.</i>&nbsp;10% size reduction as compared to using either regular icon editors or general purpose image editors with ICO export modules.</p></div>
             </details>
         </div>
         <p>Ok, that's the end of our scientists report. Let's go back to old frequently used and thoroughly checked scripts.</p>
