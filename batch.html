@@ -6,21 +6,32 @@
     <link rel='canonical' href='https://dnyarri.github.io/batch.html'/>
     <meta charset='utf-8' />
     <meta name='author' content='Ilyich the Toad'>
-    <meta name='description' content='Python scripts for automated batch processing of documents (LibreOffice), audio (ffmpeg and optivorbis), files and filesystem compression (compact.exe), as well as reverse file name transliteration etc.'>
+    <meta name='description' content='Python scripts for automated batch processing of documents (LibreOffice), audio (ffmpeg and optivorbis), files and filesystem compression (compact.exe), PNG to ICO conversion, as well as reverse file name transliteration etc.'>
     <meta name='keywords' content='Python, compression, conversion, LibreOffice, ffmpeg, optivorbis'>
     <link rel='stylesheet' href='toc.css' type='text/css'>
     <link rel='stylesheet' href='content.css' type='text/css'>
-    <title>Python scripts for batch processing documents, audio, filenames and filesystem</title>
+    <title>Python scripts for batch processing documents, audio, etc.</title>
 </head>
 <body>
     <div class='leftarea'> <!-- Nav holder begin -->
         <object data='toc.html' class='leftbar'></object>
     </div>
     <div class='content'> <!-- Content block begin -->
-    <h1 class='darkbg'>Batch processing</h1>
+    <h1 class='darkbg'>The Toad's Batchroom</h1>
     <h2 class='lightbg'>Useful Python scripts for every day</h2>
     <div class='lightbg justborder'>
-        <p><a href='https://github.com/Dnyarri/batchfiles' title='Dnyarry`s Batchroom at GitHub'>Batch files repository</a> includes various Python scripts for batch processing. Total number of files varies over time. Most suitable seem to be:</p>
+        <p><a href='https://github.com/Dnyarri/batchfiles' title='Dnyarry`s Batchroom at GitHub'>The Toad's Batchroom repository</a> includes various Python scripts for batch processing. Total number of files varies over time.</p>
+        <div class='justborder lighter'>
+            <p><span class='red'>Good news everyone:</span> new program added, named <b>Sanctifier</b>. As can be easily guessed from its name, this program is intended for converting a set of PNG files into a single Windows Icon (.ICO) file containing multiple icons of different sizes.</p>
+            <details>
+            <summary><b>PNG Sanctifier</b>: a PNG to multisize ICO converter <i>(click for details)</i></summary>
+            <p>Surely you can use GIMP to open a bunch of PNGs as layers, then export resulting image as an icon. Unfortunately, that means that GIMP really opens an image, and then saves it, using GIMP general purpose compression library, which is definitely not the best in terms of compression efficiency.</p>
+            <p>The main idea, and a sole reason for <b>Sanctifier</b> development, is that this program does not open images at all. Instead, it transfers PNG data, already compressed, into Windows ICO skeleton <i>"as is"</i>. This allows using efficient PNG optimizers before assembling icons, and then building icons that retain the best compression possible.</p>
+            <p>In my experiments, creating source images with an image editor (I still prefer ancient yet elegant Macromedia Fireworks for that), saving as PNGs, then passing the latter through PNG optimizer (I strongly recommend <a href='https://github.com/oxipng/oxipng'>oxipng</a>), and then feeding optimized PNGs to <b>Sanctifier</b> gives <i>ca.</i>&nbsp;10% size reduction as compared to using either regular icon editors or general purpose image editors with ICO export modules.</p>
+            </details>
+        </div>
+        <p>Ok, that's the end of our scientists report. Let's go back to old frequently used and thoroughly checked scripts.</p>
+        <p>Most useful ones appeared to be:</p>
         <ul class='dark'>
             <li><b>dir LibreOffice rtf2docx</b> - batch conversion of .rtf, .doc, .odt and .fb2 files to .docx using <a href='https://www.libreoffice.org/'>LibreOffice</a>. Overcomes clumsy LibreOffice ideas like starting several instances, or exporting all files into one dir, or something. Surely may be modified for batch conversion of not only rtf to docx (that was it's initial purpose) but also anything LibreOffice can read into anything it can write, like doc to PDF etc.</li>
             <li><b>dir ffmpeg flac2ogg 48</b> - converts all .flac within dir and subdirs to .ogg 48&nbsp;kHz, using <a href='https://github.com/BtbN/FFmpeg-Builds/'>FFMPEG</a>; removes junk like preview and &laquo;Zdes' byl Vasya&raquo; comments.</li>
