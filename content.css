@@ -37,6 +37,7 @@ summary {
     padding: auto 2pt;
     background: linear-gradient(90deg, rgba(0, 0, 255, 0.2), 30%, rgba(0, 0, 255, 0));
     border-radius: 6px 6px 0px 0px;
+    cursor: pointer;
 }
 
 .detail {   /* Should visually match "summary" above it */
