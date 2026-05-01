@@ -232,14 +232,15 @@ table.version {
     margin: 12pt 24pt 24pt;
     border: thin solid #7c7c7c;
     border-collapse: collapse;
-    background-color: rgba(255, 255, 255, 0.5);
 }
 
 tr.version {
     vertical-align: top;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 td.version {
+    break-inside: avoid-column;
     border-top: 4px double #00000080;
 }
 

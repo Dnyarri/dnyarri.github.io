@@ -26,19 +26,21 @@
             <details>
             <summary title='(click to expand details)'><b>PNG Sanctifier</b>: a PNG to multisize ICO converter <i>(click for details)</i></summary><div class='detail'>
             <p>Surely you can use GIMP to open a bunch of PNGs as layers, then export resulting image as an icon. Unfortunately, it means that GIMP <i>really</i> opens an image, and then saves it, that is, first decompresses, then compresses image using GIMP general purpose compression library, which is definitely not the best in terms of compression efficiency.</p>
-            <p>The main idea, and a sole reason for <b>Sanctifier</b> development, is that this program does not open images at all. Instead, it transfers PNG data, already compressed, into Windows ICO skeleton <i>"as is"</i>. This allows using efficient PNG optimizers before assembling icons, and then building icons that retain the best compression possible.</p>
+            <p id='sanctifier'>The main idea, and a sole reason for <b>Sanctifier</b> development, is that this program does not open images at all. Instead, it transfers PNG data, already compressed, into Windows ICO skeleton <i>"as is"</i>. This allows using efficient PNG optimizers before assembling icons, and then building icons that retain the best compression possible.</p>
             <p>Suggested workflow is as following:</p>
             <ul>
                 <li>Create a set of images (according to Microsoft <a href='https://learn.microsoft.com/en-us/windows/win32/uxguide/vis-icons#size-requirements' target='_blank' title='Microsoft recommendations on icons'>"Icons (Design basics): Size requirements"</a>, 16, 32, 48 and 256&nbsp;pixel sizes seem to form a minimal set, although adding 20, 24, 40, 64 and 96&nbsp;px is often recommended), and save a copies of your images as PNG files <b>in one folder</b>.</li>
                 <li>Run a PNG optimizer on these files (I personally recommend <a href='https://github.com/oxipng/oxipng' target='_blank' title='Fast yet efficient PNG optimizer'>oxipng</a>).</li>
-                <li>Start <b>Sanctifier.py</b>. Immediately a file <i>"Open"</i> dialog, allowing multiple file selection, will pop up. Browse for a folder above and select all PNG files intended to be used for icon construction at once.</li>
+                <li>Start <b>Sanctifier.py</b>. Immediately a file <i>"Open"</i> dialog, allowing multiple file selection, will pop up. Browse for a folder above and select <b>all</b> PNG files intended to be used for icon construction at once.
+                <br>
+                <img src='batch/sanctifier.png' alt='Sanctifier GUI screenshot' title='Sanctifier GUI screenshot'></li>
                 <li>If necessary, change icon images order by changing file order in file list by selecting a file name and pressing <i>Ctrl+Up</i> or <i>Ctrl+Down</i> to move selected item up or down; <i>Ctrl+I</i> fully inverts the list order.</li>
                 <li>Once satisfied with file list order, press <i>Enter</i>; standard file <i>"Save as"</i> dialog will pop up. Use it to save your icon.</li>
                 <li>If you feel like assembling one more icon, press <i>Ctrl+O</i> to open new file list.</li>
                 <li>Once finished, don't forget to prevent global warming and exit Sanctifier by pressing <i>Ctrl+Q</i> or <i>Ctrl+W</i>.</li>
             </ul>
             <p>According to my test results, <a href='https://github.com/oxipng/oxipng' target='_blank' title='Fast yet efficient PNG optimizer'>oxipng</a> gives up to 10% savings for photo-like 256×256&nbsp;px PNGs; for geometrical drawings savings are unpredictable because PNG compression is especially efficient.</p>
-            <p>For a small images, like 16×16&nbsp;px, compression benefit is expected to be smaller, but total benefit of <i>ca.</i>&nbsp;5% may be counted on.</p>
+            <p>For a small images, like 16×16&nbsp;px, compression benefit is expected to be smaller, but total size benefit of <i>ca.</i>&nbsp;5% for a whole .ICO file may be counted on.</p>
         </div>
             </details>
         </div>

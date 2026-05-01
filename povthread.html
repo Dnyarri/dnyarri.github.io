@@ -57,15 +57,21 @@
             <p>Currently both programs are relinked with PyPNM version&nbsp;2, which is of special interest for &laquo;Averager&raquo; since new module provides more resource saving way of working with large images.</p>
             <p><span class='red'><b>Update:</b></span> version&nbsp;3.26.20.8 of the filter module provides <i>c.a.</i>&nbsp;20% filtering speed increase. Previously, filter version&nbsp;3.22.18.8 provided major result quality improvements.</p>
             <p><i>It's getting better all the time,<br>Better, better, better!</i></p>
-            <p><span class='red'><b>Previously on POV&#8209;Ray Thread:</b></span> in release ver.&nbsp;1.20.7.14, filter module was substantially rewritten (module version&nbsp;3.20.7.14) to correctly support all color modes from L to RGBA. Wrap around processing of seamless patterns added to &laquo;Averager&raquo;; default behaviour for &laquo;Averager&raquo; is filtering alpha channel, for &laquo;POV&#8209;Ray&nbsp;Thread&raquo; - keeping source alpha. Since ver.&nbsp;1.16.20.20 both POVRayThread.py and Averager.py support zooming in/out with mouse clicks on preview. In general, click reaction is as follows:</p>
+            <p><span class='red'><b>Previously on POV&#8209;Ray Thread:</b></span> in release ver.&nbsp;1.20.7.14, filter module was substantially rewritten (module version&nbsp;3.20.7.14) to correctly support all color modes from L to RGBA. Wrap around processing of seamless patterns added to &laquo;Averager&raquo;; default behaviour for &laquo;Averager&raquo; is filtering alpha channel, for &laquo;POV&#8209;Ray&nbsp;Thread&raquo; - keeping source alpha.</p>
+            <p>Since ver.&nbsp;1.16.20.20 both POVRayThread.py and Averager.py try to mimic shortcuts and keyboard modifiers of Photoshop.</p>
+        <details>
+            <summary title='(click to expand details)'><b>UI click reactions</b> in general are similar to Photoshop <i>(click to expand)</i>:</summary>
+        <div class='detail'>
             <ul style='break-before: avoid; break-inside: avoid;'>
-                <li>After starting program double click on preview area (or Ctrl+O) is equal to "Open...", right click (or Alt+F) brings general "File..." menu;</li>
-                <li>After opening an image Ctrl+click is "zoom&nbsp;in", Alt+click is "zoom&nbsp;out", similar to Photoshop;</li>
+                <li>After starting program double click on preview area (or <i>Ctrl+O</i>) is equal to <i>"Open..."</i>, right click (or <i>Alt+F</i>) brings general <i>"File..."</i> menu;</li>
+                <li>After opening an image <i>Ctrl+click</i> is "zoom&nbsp;in", <i>Alt+click</i> is "zoom&nbsp;out", similar to Photoshop;</li>
                 <li>Unlike Photoshop, mouse wheel also works for zooming in and out;</li>
-                <li>Keyboard shortcuts represent a hybrid: while Ctrl+"+" and Ctrl+"-" work for zooming like ones in Photoshop, while "Ctrl+1" copies Macromedia Fireworks for "Zoom 1:1".</li>
-                <li>"Enter" runs filter, after that filter result is shown;</li>
-                <li>After filtering, left click switches before/after images. Be patient though, since double click still works as "Open...".</li>
+                <li>Keyboard shortcuts represent a hybrid: <i>Ctrl+"+"</i> and <i>Ctrl+"-"</i> work for zooming like ones in Photoshop, while <i>"Ctrl+1"</i> copies Macromedia Fireworks for "Zoom 1:1".</li>
+                <li><i>"Enter"</i> runs filter, after that filter result is shown;</li>
+                <li>After filtering, left click and hold switches before/after images. Be patient though, since double click still works as <i>"Open..."</i>.</li>
             </ul>
+        </div>
+        </details>
             <p>Since ver.&nbsp;1.16.6.18 POV&#8209;Ray&nbsp;Thread, beside easy to use GUI, got adaptive averaging filter linked, so now it is capable to perform image filtering on its own; therefore additional &laquo;Averager&raquo; utility became obsolete. However, updated version of &laquo;Averager&raquo; remains included into this package as a good example, illustrating a possibility of writing fully functional image filtering application using pure Python - filtering module itself is written in Python; image files reading and writing is based on <a href='https://gitlab.com/drj11/pypng' target='_blank' title='Pure Python PNG reading and writing module'>PyPNG</a> and <a href='https://dnyarri.github.io/pypnm.html' title='Pure Python PPM and PGM reading, displaying, and writing module'>PyPNM</a>, both of them being pure Python modules; filter preview is based on PyPNM and Tkinter, and, surprisingly, all this works at reasonable speed!</p>
         </div>
         <br>

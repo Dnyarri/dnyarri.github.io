@@ -64,8 +64,22 @@
     <div class='justborder lightbg'>
         <p><b>For Windows users</b>, <a href='https://github.com/Dnyarri/PixelArtScaling/releases/latest' title='ScaleNx module and main program for single image and batch image rescaling, latest release, including compiled .exe files'>compiled <span class='git'>ScaleNxGUI64.exe</span> for Windows&nbsp;10 64&#8209;bit and <span class='git'>ScaleNxGUI32.exe</span> for Windows&nbsp;XP 32&#8209;bit are available for download at newest release page</a>; what as to other platforms, since the program is pure Python and quite self-contained, release source is supposed to work with any current canonic Python installation right out of the box.</p>
     </div>
-<div class='lightbg justborder cols512'>  <!-- Плашка с таблицей обновлений -->
-<h3 style='column-span: all;'>History</h3>
+        <div class='lightbg justborder'>
+            <p>Below is the illustration of Scale3xSFX interpolation of small black and white text, twice.</p><div class='center'>
+                <img src='imgscalenx\scale3x3x3.png' width='603' height='237' class='justborder center' style='padding: 1px;'
+                    alt='Scale3xSFX example' title='Example of Scale3xSFX run two times'>
+            </div>
+            <p>As you can see, Scale3xSFX interpolation is quite unusual and absolutely different from ones you know from Photoshop or GIMP - unlike bilinear and bicubic it keeps image sharp, and unlike nearest neighbour it pays attention to diagonals.</p>
+            <div class='center'><img src='imgscalenx\mu3sfx.png' width='468' height='411' class='justborder center' style='padding: 1px;'
+                alt='Scale3xSFX example' title='Example of Scale3xSFX run one time'>
+                <p class='center'>Example of "M.U." image upscaling from screen to printable size</p>
+            </div>
+            <p>As a side note, it's worth mentioning that, when working with PNG, ScaleNxGUI.py changes PNG resolution (if present) so that image print size remains unchanged. You may consider using this fact for batch increasing resolution for documents with linked images (or, with some manual intervention, for container documents).</p>
+        </div>
+<div class='lightbg justborder'>  <!-- Плашка с таблицей обновлений -->
+<details>
+<summary title='(click to expand details)'><b>ScaleNx</b> history <i>(click to expand)</i></summary>
+<div class='detail cols512'>
 <table cols='2' class='version'>
     <thead style='display: table-header-group'>
     <tr class='version'>
@@ -75,7 +89,7 @@
     </thead>
     <tbody>
     <tr class='version'>
-        <td class='version'><p class='left'><a href='https://github.com/Dnyarri/PixelArtScaling/releases/tag/26.2.16.16' title='ScaleNx 26.2.16.16 download'>26.2.16.16</a></p></td>
+        <td class='version'><p class='left'><a href='https://github.com/Dnyarri/PixelArtScaling/' class='git' 'Current version of ScaleNx'>26.2.16.16</a></p></td>
         <td class='version'><p>In main version (and corresponding Python&nbsp;3.4 compliant version) export/import scheme generalized to make developers life easier.</p></td>
     </tr>
     <tr class='version'>
@@ -109,19 +123,9 @@
     </tbody>
 </table>
 <p style='column-span: all;'><b>Prehistory:</b> <i>14 Feb 2024:</i> Initial public commit of satandalone versions.</p>
+</div>
+</details>
 </div>  <!-- Плашка с таблицей обновлений -->
-        <div class='lightbg justborder'>
-            <p>Below is the illustration of Scale3xSFX interpolation of small black and white text, twice.</p><div class='center'>
-                <img src='imgscalenx\scale3x3x3.png' width='603' height='237' class='justborder center' style='padding: 1px;'
-                    alt='Scale3xSFX example' title='Example of Scale3xSFX run two times'>
-            </div>
-            <p>As you can see, Scale3xSFX interpolation is quite unusual and absolutely different from ones you know from Photoshop or GIMP - unlike bilinear and bicubic it keeps image sharp, and unlike nearest neighbour it pays attention to diagonals.</p>
-            <div class='center'><img src='imgscalenx\mu3sfx.png' width='468' height='411' class='justborder center' style='padding: 1px;'
-                alt='Scale3xSFX example' title='Example of Scale3xSFX run one time'>
-                <p class='center'>Example of "M.U." image upscaling from screen to printable size</p>
-            </div>
-            <p>As a side note, it's worth mentioning that, when working with PNG, ScaleNxGUI.py changes PNG resolution (if present) so that image print size remains unchanged. You may consider using this fact for batch increasing resolution for documents with linked images (or, with some manual intervention, for container documents).</p>
-        </div>
         <div class='lightbg justborder'>  <!-- Плашка туда-сюда -->
             <p style='margin: 24pt 6pt'><span class='lighter justborder' style='padding: 16pt 24pt;'>Now you are prepared to proceed to <a href='https://github.com/Dnyarri/PixelArtScaling' class='git' title='ScaleNx module and main program for single image and batch image rescaling'>ScaleNx at GitHub</a> for downloads. For developers: <a href='https://pypi.org/project/ScaleNx/' class='git' title='ScaleNx module at PyPI'>ScaleNx at PyPI</a>...</span></p>
             <p class='right' style='margin: 40pt 6pt 24pt'><span class='lighter justborder' style='padding: 16pt 24pt;'>...or Move back to <a href='https://dnyarri.github.io' title='Python freeware for POV-Ray and other 3D, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, bilinear and barycentric image interpolation, and batch processing'>Dnyarri`s Python freeware main page</a>.</span></p>

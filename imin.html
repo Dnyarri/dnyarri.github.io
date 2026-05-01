@@ -20,7 +20,7 @@
         <h1 class='darkbg'>ImIn (Image interpolation)</h1>
         <h2 class='lightbg'>Barycentric and bilinear image interpolation and transformation in pure Python</h2>
         <div class='lightbg justborder cols2'>
-            <h3>Overview</h3>
+            <h3 class='lighter'>Overview</h3>
             <p><a href='https://github.com/Dnyarri/imin' class='git' title='Barycentric and bilinear image interpolation and transformation in pure Python at Github'>ImIn (Image Interpolation)</a> module contains Python code for <a href='https://en.wikipedia.org/wiki/Bilinear_interpolation' target='_blank'>bilinear image interpolation</a> and <a href='https://en.wikipedia.org/wiki/Barycentric_coordinate_system' target='_blank'>barycentric image interpolation</a>, working in any color modes from 8&nbsp;bit&nbsp;L to 16&nbsp;bit&nbsp;RGBA (presumably it works in other color modes as well but I can't read and write CMYK files to perform testing). That is, it contains functions for reading single pixel at float coordinates, interpolated from real pixels (having integer coordinates), as well as functions for transforming whole image (scaling, rotating, deforming <i>etc.</i>) using interpolation methods above.</p>
             <p>It is well known that image interpolation authors tend to increase image analysis area size. With bilinear interpolation, pixel is considered as square, and interpolation takes place between four corners. With bicubic interpolation, more neighbour pixels are added to analysis. This is good for smooth gradients but what about some sharp edges? What happens if, instead of adding more and more pixels, we try to use <i>less</i> than one pixel for interpolation? Why not to try using just half a pixel? For example, split a pixel square ⬛ diagonally into two triangles like ◤◢ or ◣◥, and use analysis within one half of a pixel using three corners?</p>
             <p>Since I appeared to be unable to find such a triangular interpolation in any big programs like Photoshop or GIMP, I decided to write corresponding algorithm myself and see what happens.</p>
@@ -89,7 +89,7 @@
             <p>In the second row, you see a small fragment of a photo. It seems like barycentric interpolation gives clearer appearance of overall eye outline shape; rhomb-shaped pupil, however, looks a bit weird. But well, pupil occupies just one pixel in original, so result looks similar to a rhomb in the first row example.</p>
         </div>
         <div class='lightbg justborder cols2'>
-            <h3>Module and example programs</h3>
+            <h3 class='lighter'>Module and example programs</h3>
             <p>Currently default branch is <a href='https://github.com/Dnyarri/imin/tree/functional' class='git' title='Barycentric and bilinear image interpolation and transformation in pure Python at Github, functional version'>"Functional"</a>, bearing this name because it is supposed to be used as functions, not a class. Corresponding class equivalent is under development, and supposed to be published later.</p>
             <p>Module content is briefly summarized below.</p>
             <ul>
@@ -129,8 +129,10 @@
             <p>However, if you switch from skewing to sine wave distortion, result of deforming a seamless pattern will be seamless. That's because I use exactly one wave cycle for a displacing function, making ends meet (literally). Frankly, even with non-seamless sources, in case of sufficient deformations this function deforms edges so much that they become unrecognizable, and image turns into seamless-like (is this a real word?).</p>
         </div>
 
-<div class='cols512 justborder lighter'>  <!-- Плашка с таблицей обновлений -->
-<h3 style='column-span: all;'>History</h3>
+<div class='justborder lightbg'>  <!-- Плашка с таблицей обновлений -->
+<details>
+<summary title='(click to expand details)'><b>ImIn</b> history <i>(click to expand)</i>:</summary>
+<div class='cols512 detail'>
 <table cols='2' class='version' style='margin: 0pt 24pt 24pt;'>
     <thead style='display: table-header-group'>
         <tr class='version'>
@@ -172,7 +174,8 @@
             </td>
         </tr>
     </tbody>
-</table>
+</table></div>
+</details>
 </div>  <!-- Плашка с таблицей обновлений -->
 <br>
 <div class='lightbg justborder'>  <!-- Плашка туда-сюда -->

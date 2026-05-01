@@ -130,8 +130,10 @@ main_window.mainloop()
             <p><i>Fun fact</i>: Icon in <b>Viewer.py</b> is not the icon, but bytes of PPM produced with <b>pnmlpnm.py</b> and then hardcoded into viewer as byte string. It's 2x2 pixels of basic colors, so when rescaling Tkinter turns it into a four-point gradient (oh well, with Python&nbsp;3.4 under Windows&nbsp;XP it uses nearest neighbour, so you see perfect squares of pure colors).</p>
             <p>All this means that you may use PyPNM and Tkinter to visualize any data that can be represented as greyscale or RGB without huge external packages and writing files on disk; all you need is Tkinter, included into standard CPython distributions, and highly compatible pure Python <i>pnmlpnm.py</i> taking only 20&nbsp;kbytes.</p>
         </div>
-<div class='cols512 justborder lighter'>  <!-- Плашка с таблицей обновлений -->
-<h3 style='column-span: all;'>History</h3>
+<div class='justborder lighter'>  <!-- Плашка с таблицей обновлений -->
+<details>
+<summary title='(click to expand details)'><b>PyPNM</b> history <i>(click to expand)</i></summary>
+<div class='detail cols512'>
 <table cols='2' class='version' style='margin: 0pt 24pt 24pt;'>
     <thead style='display: table-header-group'>
         <tr class='version'>
@@ -204,6 +206,8 @@ main_window.mainloop()
     </tbody>
 </table>
 <p style='column-span: all;'><b>Prehistory:</b> <i>26 Nov 2024:</i> Initial working version.</p>
+</div>
+</details>
 </div>  <!-- Плашка с таблицей обновлений -->
 <br>
 <div class='lightbg justborder'>  <!-- Плашка туда-сюда -->
