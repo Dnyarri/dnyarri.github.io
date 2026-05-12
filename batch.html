@@ -30,7 +30,7 @@
             <p>Suggested workflow is as following:</p>
             <ul>
                 <li>Create a set of images (according to Microsoft <a href='https://learn.microsoft.com/en-us/windows/win32/uxguide/vis-icons#size-requirements' target='_blank' title='Microsoft recommendations on icons'>"Icons (Design basics): Size requirements"</a>, 16, 32, 48 and 256&nbsp;pixel sizes seem to form a minimal set, although adding 20, 24, 40, 64 and 96&nbsp;px is often recommended), and save a copies of your images as PNG files <b>in one folder</b>.</li>
-                <li>Run a PNG optimizer on these files (I personally recommend <a href='https://github.com/oxipng/oxipng' target='_blank' title='Fast yet efficient PNG optimizer'>oxipng</a>).</li>
+                <li>Run a PNG optimizer on these files (I personally recommend <a href='https://github.com/oxipng/oxipng' target='_blank' title='Fast yet efficient PNG optimizer'>oxipng</a>. Something like <span class='pre'>"oxipng --opt max --strip all --filters 9 --nx --zopfli --zi 150 *.png"</span> gives excellent compression without any attempts to be smarter than me and somehow change my images that many other optimizers try to perform).</li>
                 <li>Start <b>Sanctifier.py</b>. Immediately a file <i>"Open"</i> dialog, allowing multiple file selection, will pop up. Browse for a folder above and select <b>all</b> PNG files intended to be used for icon construction at once.
                 <br>
                 <img src='batch/sanctifier.png' alt='Sanctifier GUI screenshot' title='Sanctifier GUI screenshot'></li>
