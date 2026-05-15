@@ -27,7 +27,7 @@
 </url>
 <url>
   <loc>https://dnyarri.github.io/img2mesh.html</loc>
-  <lastmod>2026-05-01</lastmod>
+  <lastmod>2026-05-15</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -63,6 +63,11 @@
 <url>
   <loc>https://dnyarri.github.io/pypnm/pypnm.pdf</loc>
   <lastmod>2026-02-23</lastmod>
+  <priority>0.60</priority>
+</url>
+<url>
+  <loc>https://dnyarri.github.io/lostandfound/reboot.html</loc>
+  <lastmod>2026-05-15</lastmod>
   <priority>0.60</priority>
 </url>
 </urlset>

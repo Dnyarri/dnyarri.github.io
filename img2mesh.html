@@ -92,12 +92,7 @@
         }
     #declare map = function(c) {Curve(c).u}</pre>
             <p>First column contain input values, and second column contain corresponding output values (third column currently is not used for anything good, yet required to fit POV&#8209;Ray vector specs, so just leave it alone). By default, input=output, that is, map does not change anything. However, you can edit it.</p>
-            <p>Table below illustrates map influence on object shape. Source image is the same 64x64&nbsp;px conic gradient image, as above. This image is a good test sample for several reasons:</p>
-            <ul>
-                <li>It covers full input range from 0 to 65535.</li>
-                <li>It contains both smooth and sharp transitions.</li>
-                <li>It's chiral. When converted to a height field, it produces some sort of spiral 3D object. <a href='https://en.wikipedia.org/wiki/Chirality' target='_blank' title='Chirality definition at Wiki'>"Chirality"</a> means the object may exist in two forms, "right" and "left", and surely you know that screws and other spirals comply this definition. This is a good property for a test object because when the developer screws coordinates up, it immediately becomes obvious (for example, one well known 3D print application for a long time was flipping imported images because nobody came up with idea to test it on chiral objects. Now they are trying to be on the right track, so I will not call their names. Let us consider stupid puns about "leaving left track" a sufficient punishment for their unwarranted arrogance).</li>
-            </ul>
+            <p>Table below illustrates map influence on object shape.</p>
             <table title='Illustration of map influence on final rendering' cols='3' class='compare'>
                 <caption class='justborder lighter' style='caption-side: bottom; font-size: 10pt;'>Illustration of height map influence on final object appearance.</caption>
                 <thead style='display: table-header-group'>
@@ -118,6 +113,13 @@
                 </tr>
                 </tbody>
             </table>
+            <p>Source image is the same 64x64&nbsp;px conic gradient image as above.</p>
+            <p>This image is a good test sample for several reasons:</p>
+            <ul>
+                <li>It covers full input range from 0 to 65535.</li>
+                <li>It contains both smooth and sharp transitions.</li>
+                <li>It's chiral. When converted to a height field, it produces some sort of spiral 3D object. <a href='https://en.wikipedia.org/wiki/Chirality' target='_blank' title='Chirality definition at Wiki'>"Chirality"</a> means the object may exist in two forms, "right" and "left", and surely you know that screws and other spirals comply this definition. This is a good property for a test object because when the developer screws coordinates up, it immediately becomes obvious (for example, one well known 3D print application for a long time was flipping imported images because nobody came up with idea to test it on chiral objects. Now they are trying to be on the right track, so I will not call their names. Let us consider stupid puns about "leaving left track" a sufficient punishment for their unwarranted arrogance).</li>
+            </ul>
             <p>Left image is rendered with default map, <span class='pre'>[0.0→0.0, 1.0→1.0]</span>. We see a left-handed screw-like spiral, which perfectly correspond to our test sample.</p>
             <p>Middle image is rendered with inverse map, <span class='pre'>[0.0→1.0, 1.0→0.0]</span>, that is, sort of "Colors→Negative" in Photoshop. Interestingly enough, with our chiral test sample applying height inversion visually looks like horizontal mirroring: our left screw become right. Note, that mesh itself actually have not changed: map transfer function is added on top of it, and applied by POV&#8209;Ray when rendering, so to mirror a spiral, I din't have to draw another one and reexport it with <b>img2mesh</b>.</p>
             <p>Right image illustrates rather wild sawtooth map, <span class='pre'>[0.0→-0.25, 0.25→0.75, 0.5→-0.25, 0.75→1.0, 1.0→-0.25]</span>. As you can see, negative areas get clipped off by bounding box (you can change or remove clipping if you want), but what's really important - despite of such a wild range extension with local inversion, resulting object still looks smooth and solid, which means that mesh does not contain holes or triangle edge mismatch.</p>
