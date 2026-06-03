@@ -108,13 +108,13 @@
                 </ul>
                 </li>
                 <li><b><span class='pre'>mdbiggener.py</span></b>: image rescaler; provides a demo for <span class='pre'>rescale.py</span>;</li>
-                <li><b><span class='pre'>revolver.py</span></b>: image rotation program. Based entirely on <span class='pre'>displace.py</span>, and separated as specific program just because rotation GUI should take only one argument (i.e. angle), while displacement currently takes two (one for x and other for y). To avoid making a general program with only half of GUI being functional, this particular example program was created.</li>
+                <li><b><span class='pre'>revolver.py</span></b>: image rotation program. Based entirely on <span class='pre'>displace.py</span>, and separated as specific program just because rotation GUI should take only one argument (<i>i.e.</i> angle), while displacement currently takes two (one for x and other for y). To avoid making a general program with only half of GUI being functional, this particular example program was created.</li>
             </ul>
         </div>
         <div class='lightbg justborder'>
             <img src='imin/anigui.png' alt='Distorter GUI animation' title='Distorter performing wavy deformation' class='floatright'>
             <p>All the final public functions, included into <b>imin</b> module and intended for actual use, have a rather generalized access scheme. For example, a single interpolated pixel with float x and y coordinates may be acquired like this:</p>
-            <p class='pre'><b>pixel_value = pixel(source_image, x, y, edge, method)</b></p>
+            <p class='pre-nobr'><b>pixel_value = pixel(source_image, x, y, edge, method)</b></p>
             <p>where:</p>
             <ul>
                 <li><span class='pre'><b>pixel_value</b></span>: pixel as list of channel values, <i>e.g.</i> [R, G, B];</li>
@@ -160,7 +160,7 @@
             <td class='version'>
                 <p>The Coming of the Hybrid</p>
                 <p class='small'>There is a common problem in finding optimal square diagonal for splitting square into triangles for further barycentric interpolation: sometimes <i>both</i> diagonals satisfy criteria, that is, all the directions are best, equally. Arbitrary choosing one may lead to artifacts, for example, chessboard pattern turns into diagonal lines.</p>
-                <p class='small'>Since 26.3.29.16 version, problem is fixed by using a hybrid of two interpolation methods: when barycentric method can't make a reasonable choice (i.e., local pixel picture is very symmetric), bilinear method kicks in, since symmetry is it's main drawback.</p>
+                <p class='small'>Since 26.3.29.16 version, problem is fixed by using a hybrid of two interpolation methods: when barycentric method can't make a reasonable choice (<i>i.e.</i>, local pixel picture is very symmetric), bilinear method kicks in, since symmetry is it's main drawback.</p>
             </td>
         </tr>
         <tr class='version'>

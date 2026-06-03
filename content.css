@@ -214,6 +214,10 @@ a:hover {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.pre-nobr {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+}
 .red {
     border: thin solid rgba(255, 0, 0, 0.5);
     padding: 1px 4pt;
