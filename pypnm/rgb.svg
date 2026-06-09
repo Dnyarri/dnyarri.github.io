@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.1"
-   height="189.99973"
+   height="190"
    width="256"
-   viewBox="0 0 192 142.49979"
+   viewBox="0 0 192 142.5"
    id="svg15"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
@@ -90,7 +90,7 @@
          id="path12" />
       <text
          xml:space="preserve"
-         style="font-size:16.9115px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';stroke-width:0.264242"
+         style="font-size:;line-height:1.25;font-family:Arial, Helvetica, sans-serif"
          x="199.82228"
          y="180.26233"
          id="text26"
@@ -101,7 +101,7 @@
            style="stroke-width:0.264242">X</tspan></text>
       <text
          xml:space="preserve"
-         style="font-size:16.9115px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';stroke-width:0.264242"
+         style="font-size:;line-height:1.25;font-family:Arial, Helvetica, sans-serif"
          x="42.166451"
          y="255.66295"
          id="text27"
@@ -112,7 +112,7 @@
            style="stroke-width:0.264242">Y</tspan></text>
       <text
          xml:space="preserve"
-         style="font-size:16.9115px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';stroke-width:0.264242"
+         style="font-size:;line-height:1.25;font-family:Arial, Helvetica, sans-serif"
          x="81.424629"
          y="159.69853"
          id="text28"
