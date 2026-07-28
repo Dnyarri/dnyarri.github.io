@@ -18,7 +18,7 @@
     </div>
     <div class='content'> <!-- Content block begin -->
         <h1 class='darkbg'>PyPNM - Pythonic Portable Any Map image files reading, displaying and writing</h1>
-        <h3 class='lightbg' style='max-width: 300pt;'>Introduction</h3>
+        <h3 class='lightbg'>Introduction</h3>
 <div class='lightbg justborder'>  <!-- Текстовый блок с самого начала -->
     <p><b>PyPNM</b> is a Python module for reading PPM and PGM image files (both 8 and 16 bits per channel color depth) to image 3D integer lists for further editing, displaying 3D lists obtained by converting to Tkinter-compatible data in memory, and subsequent writing edited image 3D lists to disk as PPM or PGM files, either binary or ASCII.</p>
     <p><a href='https://netpbm.sourceforge.net/doc/ppm.html' target='_blank' title='PPM specification at Netpbm'>Portable Pixel Map (PPM)</a> and <a href='https://netpbm.sourceforge.net/doc/pgm.html' target='_blank' title='PGM specification at Netpbm'>Portable Gray Map (PGM)</a> (particular cases of <a href='https://netpbm.sourceforge.net/doc/pnm.html' target='_blank' title='PNM at Netpbm'>PNM format</a> group) are simplest file formats for RGB and L images, correspondingly. In theory, you may import ASCII PGM even in Excel, turning Excel into image editor. Unfortunately, this simplicity lead to adverse consequences:</p>
@@ -66,7 +66,7 @@
         </tbody>
     </table>
 </div>  <!-- Текстовый блок с самого начала -->
-        <h3 class='lightbg' style='max-width: 300pt;'>Format compatibility</h3>
+        <h3 class='lightbg'>Format compatibility</h3>
         <div class='lightbg justborder' style='max-width: 420pt;'>
             <table cols='4'>
                 <thead style='display: table-header-group'>
@@ -86,7 +86,7 @@
                 </tbody>
             </table>
         </div>
-        <h3 class='lightbg' style='max-width: 300pt;'>Image representation</h3>
+        <h3 class='lightbg'>Image representation</h3>
         <div class='lightbg justborder'>
             <p>Is seems logical to represent an RGB image as nested 3D structure - X, Y-sized matrix of three-component RGB vectors. Since in Python list seem to be about the only variant for mutable structures like that, it is suitable to represent image as <span class='pre-nobr'>(list(list(list(int))))</span> structure (for example, this structure was used for <a href='scalenx.html' title='PyPNM usage example'>ScaleNx image resizer</a> and <a href='povthread.html#averager' title='PyPNM usage example'>Adaptive Average image filtering</a>, and worked well). Therefore, it would be convenient to have module read/write image data from/to such a common structure.</p>
             <div class='floatleft lighter justborder'><p class='center small'><img src='pypnm/rgb.svg' width='256' height='190' alt='RGB image coordinate system' title='RGB image coordinate system'><br>Coordinate system of RGB image.</p></div>
@@ -94,7 +94,7 @@
             <p>Note that for L images memory structure is still <span class='pre-nobr'>(list(list(list(int))))</span>, with innermost list having only one component, thus enabling further image editing with the same nested Y, X, Z loop regardless of color mode. I understand that this may sound surprising for professional image I/O programmers, but for normal people writing a loop once and for all is a sort of expected behaviour.</p>
             <p>Also, since this module is supposed to be used for image editing rather than just reading, when reading 1&nbsp;bit PBM files into image this module promotes data to 8&nbsp;bit L, inverting values and multiplying by 255, so that source 1 (ink on) is changed to 0 (black), and source 0 (ink off) is changed to 255 (white). For the same reason writing 1&nbsp;bit PBM files is not planned - 1&nbsp;bit images are next to useless for editing.</p>
         </div>
-        <h3 class='lightbg' style='max-width: 300pt;'>pnmlpnm.py</h3>
+        <h3 class='lightbg'>pnmlpnm.py</h3>
         <div class='lightbg justborder'>
             <p>File <b>pnmlpnm.py</b> is a core of PyPNM and contains 100% pure Python implementation of everything one may need to read/write from/to a variety of PGM and PPM files. I/O functions are written as functions/procedures, as simple as possible, and listed below:</p>
             <ul>
@@ -127,7 +127,7 @@ main_window.mainloop()
             </pre>
             <p>Yes, above is an illustration of all functions of PyPNM in action: opening file as image list, saving image list as binary file, saving image list as ASCII file, showing image list as image with Tkinter. With addition of just some 10-12&nbsp;kbytes of widgets and event handling it turns into a good-looking fully functional viewer and converter below.</p>
         </div>
-        <h3 class='lightbg' style='max-width: 300pt;'>Viewer.py</h3>
+        <h3 class='lightbg'>Viewer.py</h3>
         <div class='lightbg justborder'>
             <a href='https://github.com/Dnyarri/PyPNM' target='_blank'><img src='pypnm/viewer.png' width='256' height='317' alt='Test 16-bit PPM image opened in PyPNM viewer' title='PyPNM-based PPM/PGM Viewer/converter' class='floatright'></a>
             <p>Program <b>Viewer.py</b> is a minimal (<i>i.e.</i>, GUI is deliberately reduced to right-click menu, and stuff like Ctrl+click and Alt+click for zooming, familiar to Photoshop users) illustrative utility: using PyPNM package, it reads different flavours of PGM and PPM files, and allows saving them as different types of PGM/PPM, <i>e.g.</i> it can read ASCII PPM and write it as binary PPM or vs. Also this program shows image data using PyPNM and Tkinter. No, there is no mistake: it does not feed PPM files to Tkinter directly. Instead, it uses nested 3D list data loaded using PyPNM to generate in-memory bytes object of PNM structure using <span class='pre-nobr'>preview_data = pnmlpnm.list2bin(image3D, maxcolors)</span>, and then feeds this in-memory bytes object to Tkinter as <span class='pre-nobr'>preview = PhotoImage(data=preview_data)</span> (note using <span class='pre-nobr'>data=</span>, not <span class='pre-nobr'>file=</span>). This way it shows formats which Tkinter itself cannot handle, like ASCII PNM (example of 16-bit ASCII PPM being displayed by simple viewer based on PyPNM is shown at the right).</p>

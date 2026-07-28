@@ -65,14 +65,16 @@
             <ul style='break-before: avoid; break-inside: avoid;'>
                 <li>After starting program double click on preview area (or <i>Ctrl+O</i>) is equal to <i>"Open..."</i>, right click (or <i>Alt+F</i>) brings general <i>"File..."</i> menu;</li>
                 <li>After opening an image <i>Ctrl+click</i> is "zoom&nbsp;in", <i>Alt+click</i> is "zoom&nbsp;out", similar to Photoshop;</li>
-                <li>Unlike Photoshop, mouse wheel also works for zooming in and out;</li>
-                <li>Keyboard shortcuts represent a hybrid: <i>Ctrl+"+"</i> and <i>Ctrl+"-"</i> work for zooming like ones in Photoshop, while <i>"Ctrl+1"</i> copies Macromedia Fireworks for "Zoom 1:1".</li>
+                <li>Unlike Photoshop, mouse wheel also works for zooming in and out, but never for scrolling;</li>
+                <li>What as to scrolling, click and drag pans the image, if the latter doesn't fit the preview window.</li>
+                <li>Keyboard shortcuts represent a hybrid: <i>Ctrl+"+"</i> and <i>Ctrl+"-"</i> work for zooming like ones in Adobe Photoshop, while <i>"Ctrl+1"</i> copies Macromedia Fireworks for "Zoom 1:1".</li>
                 <li><i>"Enter"</i> runs filter, after that filter result is shown;</li>
                 <li>After filtering, left click and hold switches before/after images. Be patient though, since double click still works as <i>"Open..."</i>.</li>
+                <li>Obviously, <i>Ctrl+S</i> and <i>Ctrl+Shift+S</i> work as <i>"Save"</i> and <i>"Save as..."</i>, correspondingly.</li>
             </ul>
         </div>
         </details>
-            <p>Since ver.&nbsp;1.16.6.18 POV&#8209;Ray&nbsp;Thread, beside easy to use GUI, got adaptive averaging filter linked, so now it is capable to perform image filtering on its own; therefore additional &laquo;Averager&raquo; utility became obsolete. However, updated version of &laquo;Averager&raquo; remains included into this package as a good example, illustrating a possibility of writing fully functional image filtering application using pure Python - filtering module itself is written in Python; image files reading and writing is based on <a href='https://gitlab.com/drj11/pypng' target='_blank' title='Pure Python PNG reading and writing module'>PyPNG</a> and <a href='https://dnyarri.github.io/pypnm.html' title='Pure Python PPM and PGM reading, displaying, and writing module'>PyPNM</a>, both of them being pure Python modules; filter preview is based on PyPNM and Tkinter, and, surprisingly, all this works at reasonable speed!</p>
+            <p>Since ver.&nbsp;1.16.6.18 POV&#8209;Ray&nbsp;Thread, beside easy to use GUI, got adaptive averaging filter linked, so now it is capable to perform image filtering on its own; therefore additional &laquo;Averager&raquo; utility became obsolete. However, updated version of &laquo;Averager&raquo; remains included into this package as a good example, illustrating a possibility of writing fully functional image filtering application using pure Python - filtering module itself is written in Python; image files reading and writing is based on <a href='https://gitlab.com/drj11/pypng' target='_blank' title='Pure Python PNG reading and writing module'>PyPNG</a> and <a href='https://dnyarri.github.io/pypnm.html' title='Pure Python PPM and PGM reading, displaying, and writing module'>PyPNM</a>, both of them being pure Python modules; filter preview is based on PyPNM and Tkinter, and, surprisingly, all this works at a good speed!</p>
         </div>
         <br>
         <div class='lightbg justborder'>  <!-- Плашка туда-сюда -->

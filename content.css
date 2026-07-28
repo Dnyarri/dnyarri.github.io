@@ -67,7 +67,7 @@ h2 {
     font-size: 24pt;
     text-align: center;
     border: thin solid #7c7c7c;
-    border-radius: 6px;
+    border-radius: 6px / 50%;
     margin: 6px 0px 0px;
     break-inside: avoid;
     break-after: avoid;
@@ -78,9 +78,11 @@ h3 {
     font-size: 18pt;
     text-align: left;
     border: thin solid #7c7c7c;
-    border-radius: 6px;
+    border-radius: 6px / 50%;
     margin: 12pt 0pt 6pt 0pt;
     text-indent: 24pt;
+    min-width: 300px;
+    max-width: 75%;
     break-inside: avoid;
     break-after: avoid;
 }
@@ -91,8 +93,8 @@ h4 {
     text-align: left;
     width: 50%;
     border: thin solid #7c7c7c;
-    border-radius: 6px;
-    margin: 6pt 0pt 6pt 0pt;
+    border-radius: 6px / 50%;
+    margin: 12pt 0pt 2pt 0pt;
     text-indent: 12pt;
     break-inside: avoid;
     break-after: avoid;
