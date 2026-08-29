@@ -40,7 +40,8 @@ summary {
     cursor: pointer;
 }
 
-.detail {   /* Should visually match "summary" above it */
+.detail {
+    /* Should visually match "summary" above it */
     border: thin solid rgba(0, 0, 255, 0);
     padding: auto 2pt;
     background: linear-gradient(90deg, rgba(0, 0, 255, 0.2), 30%, rgba(0, 0, 255, 0));
@@ -172,6 +173,15 @@ a:hover {
     margin: 2pt 2pt 2pt 2pt;
 }
 
+.butt {
+    border: 1px solid rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 0px 1px;
+    background: linear-gradient(to bottom right,
+            rgba(192, 192, 192, 1.0),
+            rgba(128, 128, 128, 1.0));
+}
+
 .cols2 {
     column-count: 2;
     column-gap: 20px;
@@ -207,6 +217,10 @@ a:hover {
     text-align: right;
 }
 
+.margin-auto {
+    margin: auto;
+}
+
 .small {
     font-size: 10pt;
     line-height: 10pt;
@@ -220,6 +234,7 @@ a:hover {
     font-family: 'Courier New', Courier, monospace;
     white-space: nowrap;
 }
+
 .red {
     border: thin solid rgba(255, 0, 0, 0.5);
     padding: 1px 4pt;

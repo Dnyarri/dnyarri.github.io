@@ -26,8 +26,8 @@
         <div class='lightbg justborder cols512'>
             <p><b>Img2mesh</b> is a pretty simple (well, it was initially) program that reads regular bitmap image, and writes 3D triangle mesh, using pixel X and Y coordinates for &laquo;east&raquo; and &laquo;south&raquo; position of 3D triangle mesh nodes, and, most important, pixel brightness as Z, that is, height of the node, thus converting image into sort of 3D landscape.</p>
             <p><a href='https://github.com/Dnyarri/img2mesh' class='git' title='img2mesh repository at GitHub'>Img2mesh is available at GitHub for download</a>. All non-standard modules included into distribution, so program is supposed to work right out of the box with any standard installation of Python&nbsp;3.11 and above.</p>
-            <p><span class='red'><b>Update:</b></span> in version 4.28.1.8 Geometry&nbsp;№4 introduced. While visually it often looks like Geometry&nbsp;№3+, it involves mesh structure change eliminating glitches with sharp maps or non-manifold sides.</p>
-            <p><span class='red'>Previously on <b>img2mesh</b></span>: in version 3.21.21.21 mesh geometry upgraded from ver. 3 to 3+. While Geometry&nbsp;№3 was better in general case as compared to older №1 and №2, new "plus" upgrade adds improved support for a specific cases like sharp diagonal transitions (sharp vertical and horizontal transitions were fine from the very beginning). Later on, in version 3.22.3.7 output for new Geometry&nbsp;№3+ was accelerated <i>ca.</i>&nbsp;20% due to more reasonable buffering control.</p>
+            <p><span class='red'><b>Update:</b></span> in version 4.32.28.18 main GUI completely rewritten, providing geometry mask preview, updated as you change geometry threshold setting.</p>
+            <p><span class='red'>Previously on <b>img2mesh</b></span>: in version 4.28.1.8 Geometry&nbsp;№4 introduced. While visually it often looks like Geometry&nbsp;№3+, it involves mesh structure change eliminating glitches with sharp maps or non-manifold sides.</p>
             <table title='Comparison of Geometry №3 and Geometry №4 rendering' cols='3' class='compare'>
                 <caption class='justborder lighter' style='caption-side: bottom; font-size: 10pt;'>Comparison of different geometry rendering</caption>
                 <thead style='display: table-header-group'>
@@ -136,12 +136,25 @@
   object {thething}</pre>
             <p>&laquo;Main&raquo; variable in master file turns off camera, light and texture in "<i>generated.pov</i>" file, allowing master file to take over.</p>
             <div class='justborder'>
+            <h5>Download</h5>
                 <div class='justborder lighter'>
-            <p>For Windows users, compiled <a href='https://github.com/Dnyarri/img2mesh/releases/latest' class='git' title='img2mesh.exe download'>Windows&nbsp;64&#8209;bit img2mesh.exe</a> file is available for download in Release section of GitHub.</p>
+            <p>Obvious way to download <b>img2mesh</b> is proceeding to <a href='https://github.com/Dnyarri/img2mesh/releases/latest' class='git' title='img2mesh newest release download'>img2mesh newest release page</a> and using some of the download links there.</p>
                 </div>
-            <a href='https://github.com/Dnyarri/img2mesh/releases/latest' target='_blank'><img src='imgmesh/gui.png' width='384' height='288' alt='Proceed to GitHub' title='img2mesh in action' class='floatright'></a>
-            <p>For other platforms, Use the Source&trade; - program is rather self-contained, all non-standard modules like <a href='https://dnyarri.github.io/pypnm.html' title='Pure Python PPM and PGM reading, displaying, and writing module'>PyPNM</a> and <a href='https://gitlab.com/drj11/pypng' target='_blank' title='Pure Python PNG reading and writing module'>PyPNG</a> are omnicompatible pure Python ones and enclosed to download.</p>
-            <p>In case downloaded program does not work right out of the box, you will be provided with replacement copy at no extra charge.</p>
+            <p>For Windows users, compiled Windows&nbsp;64&#8209;bit img2mesh.exe file is provided.</p>
+            <p>For other platforms, Use the Source&trade; - this Python program is rather self-contained, all non-standard modules like <a href='https://dnyarri.github.io/pypnm.html' title='Pure Python PPM and PGM reading, displaying, and writing module'>PyPNM</a> and <a href='https://gitlab.com/drj11/pypng' target='_blank' title='Pure Python PNG reading and writing module'>PyPNG</a> are omnicompatible pure Python ones and enclosed to download.</p>
+            <p>Downloaded full Python source of <b>img2mesh</b> is intended to work right out of the box. In case it does not, you will be provided with replacement copy at no extra charge.</p>
+            <h5>Usage</h5>
+            <p><b>Img2mesh</b> is equipped with rather self-explanatory GUI.</p>
+            <p>Since GUI is rather Photoshop-like when it comes to image zooming, panning <i>etc.</i>, you are supposed to quickly forget and miss all the shortcuts and keyboard modifiers, as all the Photoshop users do. Therefore, first thing you'll see once you start <b>img2mesh</b> will be a list of shortcuts for GUI functions. Once you forgot it successfully, you can always refresh your memory by pressing <span class='pre butt'>F1</span>.</p>
+            <p style='margin: auto 24px auto 64px;'>Quoth Mandarax: <i>Everything gets refreshed with</i> <span class='pre butt'>F5</span> <i>but human memory. For refreshing human memory</i> <span class='pre butt'>F1</span> <i>is assigned.</i></p>
+            <p>After opening an image, you'll see image preview.</p>
+            <p>As mentioned above, <b>img2mesh</b> produces height map mesh combining two types of node geometry: №1 for sharp edges and №3 for smooth gradation (obviously, 1+3 gives us current Geometry&nbsp;№4, a combination of the above).</p>
+            <p>Choice between Geometry №1 and №3 is based on image local contrast (currently on difference between max and min for small window) - for areas with local contrast below user-defined threshold Geometry&nbsp;№3 is used, while №1 is used for a sharper areas.</p>
+            <p>Current version of <b>img2mesh</b> provides quick preview of the mask between Geometry&nbsp;№3 and Geometry&nbsp;№1 areas. Actually img2mesh calculates local contrast mask on image opening, that slows initial image file loading but significantly improves mask redraw speed on further threshold changes since img2mesh only recalculate threshold criterion, not a whole mask.</p>
+            <p>Switching between source image preview and geometry mask is performed by mouse click, or <span class='pre butt'>Space</span> press:</p>
+            <div class='center margin-auto'><a href='https://github.com/Dnyarri/img2mesh/releases/latest' target='_blank'><img src='imgmesh/gui.png' width='388' height='279' alt='Proceed to GitHub' title='img2mesh in action' class='center margin-sides'></a></div>
+            <p>With "Auto update" ON, mask preview is updated as you change "Threshold"; with "Auto update" OFF you need pressing "Rebuild mask" manually to update it.</p>
+            <p>Once you decide that geometry mask select sharp <i>vs.</i> smooth areas just as you want, you may press "File..." button or use a right-click for main menu, and choose appropriate export function.</p>
             <p>For developers: <b>img2mesh</b> currently restructured as image import modules and 3D export module; the latter may be freely used by other software developers.</p>
             <br>
             </div>
@@ -159,8 +172,13 @@
     </thead>
     <tbody>
     <tr class='version'>
+        <td class='version'><p class='left small'>4.32.28.18</p></td>
+        <td class='version'><p><a href='https://github.com/Dnyarri/img2mesh' target='_blank' title='img2mesh 2D image to 3D mesh converter'>Main img2mesh GUI completely rewritten</a>, introducing geometry mask preview.</p>
+        <p class='small'>For developers, export modules now have a controlled output precision (surprisingly, extra precision sometimes cause rendering glitches, while limiting output precision to decimals you may actually get from source helps to avoid it).</p></td>
+    </tr>
+    <tr class='version'>
         <td class='version'><p class='left small'>4.28.1.8</p></td>
-        <td class='version'><p><a href='https://github.com/Dnyarri/img2mesh' target='_blank' title='img2mesh 2D image to 3D mesh converter'>Geometry&nbsp;№4 introduced in main version</a>, eliminating glitches with sharp maps or non-manifold sides.</p>
+        <td class='version'><p>Geometry&nbsp;№4 introduced in main version, eliminating glitches with sharp maps or non-manifold sides.</p>
         <p class='small'>For archeologists, <a href='https://github.com/Dnyarri/img2mesh/tree/classic' target='_blank' title='img2mesh 2D image to 3D mesh converter, version 1'>Geometry&nbsp;№1 mothballed and encased in carbonite</a> as a separate branch.</p></td>
     </tr>
     <tr class='version'>
