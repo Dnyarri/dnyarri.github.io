@@ -112,9 +112,9 @@
             </ul>
         </div>
         <div class='lightbg justborder'>
-            <img src='imin/anigui.png' alt='Distorter GUI animation' title='Distorter performing wavy deformation' class='floatright'>
+            <img src='imin/distorter.webp' alt='Distorter GUI animation' title='Distorter performing wavy deformation' class='floatright'>
             <p>All the final public functions, included into <b>imin</b> module and intended for actual use, have a rather generalized access scheme. For example, a single interpolated pixel with float x and y coordinates may be acquired like this:</p>
-            <p class='pre-nobr'><b>pixel_value = pixel(source_image, x, y, edge, method)</b></p>
+            <p class='pre left'><b>pixel_value = pixel(source_image, x, y, edge, method)</b></p>
             <p>where:</p>
             <ul>
                 <li><span class='pre'><b>pixel_value</b></span>: pixel as list of channel values, <i>e.g.</i> [R, G, B];</li>
@@ -147,7 +147,17 @@
     <tbody>
         <tr class='version'>
             <td class='version'>
-                <p class='left small git'><a href='https://github.com/Dnyarri/imin/releases' title='Barycentric and bilinear image interpolation in pure Python'>26.4.10.10</a></p>
+                <p class='left small git'><a href='https://github.com/Dnyarri/imin/releases' title='Barycentric and bilinear image interpolation in pure Python'>26.11.3.3</a></p>
+            </td>
+            <td class='version'>
+                <p class='left'>Multithreading added for extra speed.</p>
+                <p class='small'>Multithreading support introduced to <b>imin</b> module, providing impressive speed increase when run under modern free-threaded (no-GIL) Python.</p>
+                <p class='small'>Also, GUI changed to new modular layout, taking less screen space.</p>
+            </td>
+        </tr>
+        <tr class='version'>
+            <td class='version'>
+                <p class='left small'>26.4.10.10</p>
             </td>
             <td class='version'>
                 <p class='small'>Internal optimizations; this release accumulates previous fixes for "black edge" transparency artifacts <i>etc</i>.</p>
