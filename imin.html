@@ -6,11 +6,11 @@
     <link rel='canonical' href='https://dnyarri.github.io/imin.html'/>
     <meta charset='utf-8' />
     <meta name='author' content='Ilyich the Toad'>
-    <meta name='description' content='Barycentric and bilinear image interpolation in pure Python'>
+    <meta name='description' content='Barycentric and bilinear image interpolation, scaling, rotation and other transforms in pure Python with multithreading'>
     <meta name='keywords' content='Python, barycentric, image, resize'>
     <link rel='stylesheet' href='toc.css' type='text/css'>
     <link rel='stylesheet' href='content.css' type='text/css'>
-    <title>Barycentric and bilinear image interpolation in pure Python</title>
+    <title>Barycentric and bilinear image interpolation in pure Python with multithreading</title>
 </head>
 <body>
     <div class='leftarea'> <!-- Nav holder begin -->
@@ -22,6 +22,7 @@
         <div class='lightbg justborder cols2'>
             <h3 class='lighter'>Overview</h3>
             <p><a href='https://github.com/Dnyarri/imin' class='git' title='Barycentric and bilinear image interpolation and transformation in pure Python at Github'>ImIn (Image Interpolation)</a> module contains Python code for <a href='https://en.wikipedia.org/wiki/Bilinear_interpolation' target='_blank'>bilinear image interpolation</a> and <a href='https://en.wikipedia.org/wiki/Barycentric_coordinate_system' target='_blank'>barycentric image interpolation</a>, working in any color modes from 8&nbsp;bit&nbsp;L to 16&nbsp;bit&nbsp;RGBA (presumably it works in other color modes as well but I can't read and write CMYK files to perform testing). That is, it contains functions for reading single pixel at float coordinates, interpolated from real pixels (having integer coordinates), as well as functions for transforming whole image (scaling, rotating, deforming <i>etc.</i>) using interpolation methods above.</p>
+            <p>Current version of scaling, rotating, and other displacement functions support multithreading, thus gaining the advantages of free-threaded (no-GIL) Python in terms of image processing speed. Surprisingly, nowadays Python may be used for image processing, not just as a pipeline between limited third-party libraries.</p>
             <p>It is well known that image interpolation authors tend to increase image analysis area size. With bilinear interpolation, pixel is considered as square, and interpolation takes place between four corners. With bicubic interpolation, more neighbour pixels are added to analysis. This is good for smooth gradients but what about some sharp edges? What happens if, instead of adding more and more pixels, we try to use <i>less</i> than one pixel for interpolation? Why not to try using just half a pixel? For example, split a pixel square ⬛ diagonally into two triangles like ◤◢ or ◣◥, and use analysis within one half of a pixel using three corners?</p>
             <p>Since I appeared to be unable to find such a triangular interpolation in any big programs like Photoshop or GIMP, I decided to write corresponding algorithm myself and see what happens.</p>
             <p>It seems like the best coordinate system for triangles is <a href='https://en.wikipedia.org/wiki/Barycentric_coordinate_system' target='_blank'>barycentric coordinate system</a>, which is widely used in science, in 3D graphics, sometimes used in 2D vector gradients, but, for absolutely unclear reasons, practically not used in regular 2D bitmap image processing.</p>
