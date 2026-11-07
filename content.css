@@ -221,6 +221,10 @@ a:hover {
     margin: auto;
 }
 
+.fit-content {
+    width: fit-content;
+}
+
 .small {
     font-size: 10pt;
     line-height: 10pt;
