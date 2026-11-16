@@ -330,7 +330,7 @@ id="metadata19">
 <cc:Work
 rdf:about="">
 <dc:title>A Finger of Jadeite</dc:title>
-<dc:description>Jadeite finger, Sailor Moon s1e11 frame 12488.</dc:description>
+<dc:description>Jadeite finger, Sailor Moon s1e11 frame 12488, used as SVG animation test case.</dc:description>
 <dc:subject>
 <rdf:Bag>
 <rdf:li>Jadeite</rdf:li>
@@ -340,11 +340,11 @@ rdf:about="">
 </dc:subject>
 <dc:creator>
 <cc:Agent>
-<dc:title>Ilyich the Toa</dc:title>
+<dc:title>Ilyich the Toad</dc:title>
 </cc:Agent>
 </dc:creator>
 <dc:source>Sailor Moon s1e11 frame 12488</dc:source>
-<dc:coverage>Kind suggestion to go consumate yourself</dc:coverage>
+<dc:coverage>Kind suggestion to go consummate yourself</dc:coverage>
 <dc:publisher>
 <cc:Agent>
 <dc:title>Ilyich the Toad</dc:title>
