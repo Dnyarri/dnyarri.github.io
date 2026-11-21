@@ -23,13 +23,13 @@
         <h1 class='darkbg' title='Python implementations of Scale2x, Scale3x, Scale2xSFX and Scale2xSFX; PPM and PGM image support; barycentric image interpolation; POV-Ray and other 3D; PNG to ICO converter, and other stuff'>The Toad's Slimy Mudhole</h1>
         <h2 class='lightbg'>where The Toad intercourses Python</h2>
         <h3 class='darkbg'>Preamble</h3>
-        <div class='lightbg justborder cols2'>
+        <div class='justborder lightbg cols2'>
             <p>After closing <b>AmphiSoft plugins</b> project long ago in a universe far away The Toad of Great Mental Powers made a decision to implement some of spontaneous ideas, developed or implied, into something potentially easy to understand and hopefully simple to use by humans and other lesser species.</p><p>As an &laquo;easy to understand&raquo; mean of production Python was chosen (that was probably an unrecoverable mistake. Or may be not), as ideas regular ones like &laquo;what happens if we map image signal to something else&raquo; were used.</p><p>As a result, some Python projects described hereby were created, <a href='https://github.com/Dnyarri/'>shared on GitHub</a>, and <a href='https://gitflic.ru/user/dnyarri'>mirrored on Gitflic</a>, just in case. You know, cases happen.</p>
             <p>All programs are completely free to download, use, and even modify in case you feel like improving them. Sharing your results is welcome; admiring, adoring and hailing The Toad of Great Mental Powers obligatory.</p>
         </div>
         <h3 class='darkbg'>Amble, i.e., the projects:</h3>
         <h4 class='darkbg'>POV&#8209;Ray img2mesh</h4>
-        <div class='lightbg justborder' style='min-height: 254px;'><a href='img2mesh.html' title='Program for bitmap heigh field to 3D triangle mesh conversion'><img src='imgmesh/320/img2mesh.png' width='250' height='250' class='floatleft' alt='img2mesh' title='Example of img2mesh output rendering'></a>
+        <div class='justborder lightbg' style='min-height: 254px;'><a href='img2mesh.html' title='Program for bitmap heigh field to 3D triangle mesh conversion'><img src='imgmesh/320/img2mesh.png' width='250' height='250' class='floatleft' alt='img2mesh' title='Example of img2mesh output rendering'></a>
             <p>Python program <a href='img2mesh.html' title='Program for bitmap heigh field to 3D triangle mesh conversion' class='git'>img2mesh</a> is developed for converting 2D&nbsp;images into 3D&nbsp;mesh, primarily in <a href='https://www.povray.org/' title='POV-Ray high quality free 3D renderer' target='_blank'>POV&#8209;Ray</a> format (although Wavefront&nbsp;OBJ, stereolithography&nbsp;STL and Autodesk&nbsp;DXF are supported as well), so that bright 2D source pixels turns into high peaks on resulting 3D landscape - the brighter source image pixel, the higher 3D&nbsp;mesh node point is.</p>
             <table title='Proceed to imp2mesh bitmap to 3D mesh converter page' cols='3' class='justborder lighter nobreak center floatright' style='cursor: pointer;'  onclick="document.location='img2mesh.html'">
                 <caption class='justborder lighter' style='caption-side: bottom; font-size: 10pt;'>Comparison of different geometry rendering</caption>
@@ -53,7 +53,7 @@
             <p><span class='red'>Previously on <b>img2mesh</b>:</span> In version 4.28.1.8 Geometry&nbsp;№4 introduced, eliminating glitches with sharp maps or non-manifold sides. <a href='img2mesh.html' title='Detailed description of img2mesh bitmap to 3D mesh converter'>🔽<i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>POV&#8209;Ray Mosaic</h4>
-        <div class='lightbg justborder' style='min-height: 134px;'>
+        <div class='justborder lightbg' style='min-height: 134px;'>
             <a href='pov3zaika.html'><img src='3z/l.png' width='250' height='134' class='floatleft' alt='POV-Ray Mosaic' title='Example of 6³-Mosaic output rendering'></a>
             <a href='pov4zaika.html'><img src='4z/r.png' width='246' height='134' class='floatright' alt='POV-Ray Mosaic' title='Example of 4⁴-Mosaic output rendering'></a>
             <p>Currently project <a href='povzaika.html' title='Program converting 2D image into mosaic of 3D objects in POV-Ray format' class='git'>POV&#8209;Ray&nbsp;Mosaic</a> includes Python programs converting PNG or PPM image into <a href='https://www.povray.org/' title='POV-Ray high quality free 3D renderer' target='_blank'>POV&#8209;Ray</a> mosaic scene, containing main mosaic object, consisting of various objects - spheres, cylinders, boxes, prisms, <i>etc.</i> - colored after source image pixels.</p>
@@ -62,7 +62,7 @@
             <p><span class='red'><b>Update:</b></span> Version&nbsp;1.33.29.9 includes numerous minor fixes and some GUI improvements. <a href='povzaika.html' title='Program converting 2D image into mosaic of 3D objects in POV-Ray format'>🔽<i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>POV&#8209;Ray Thread</h4>
-        <div class='lightbg justborder' style='min-height: 134px;'>
+        <div class='justborder lightbg' style='min-height: 134px;'>
             <a href='povthread.html'><img src='thread/l.png' width='246' height='130' class='floatleft' alt='POV-Ray Thread' title='Example of Linen output rendering'></a>
             <a href='povthread.html'><img src='thread/r.png' width='247' height='130' class='floatright' alt='POV-Ray Thread' title='Example of Linen output rendering'></a>
             <p><a href='povthread.html' class='git' title='POV-Ray Thread simulator'>&laquo;Linen&raquo; and &laquo;Stitch&raquo;</a> are programs, which read pixels of source image and convert them into a complex 3D structure, simulating something textile and thread related, in <a href='https://www.povray.org/' title='POV-Ray high quality free 3D renderer' target='_blank'>POV&#8209;Ray</a> format.</p>
@@ -70,14 +70,14 @@
             <p><span class='red'><b>Update:</b></span> release&nbsp;1.34.10.1 includes filter version 4.34.10.1 which supports <b>multithreading</b>. When used under free-threaded Python, this filters shows speed multiplication directly proportional to physical CPU cores number. <a href='povthread.html'>🔽<i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>PGM and PPM image files handling in pure Python</h4>
-        <div class='lightbg justborder'>
+        <div class='justborder lightbg'>
             <a href='pypnm.html'  title='Pure Python PPM and PGM reading, displaying, and writing module'><img src='pypnm/alpha.png' width='137' height='192' class='floatright' alt='PyPNM' title='Example of simulating transparency display with PyPNM'></a>
             <p><a href='pypnm.html'  title='Pure Python PPM and PGM reading, displaying, and writing module' class='git'>PyPNM</a> is a pure Python implementation of read/write functions for <b>Portable Gray Map</b> (<a href='https://netpbm.sourceforge.net/doc/pgm.html' target='_blank'>.pgm</a>) and <b>Portable Pixel Map</b> (<a href='https://netpbm.sourceforge.net/doc/ppm.html' target='_blank'>.ppm</a>) image formats. Well, due to format specifications <i>fluid</i> nature it's hard to say that PyPNM is fully compliant, but it was tested side by side with different software, and found to correctly read and understand even an edge cases. Needless to say that, unlike Pillow, it supports 16-bit PPMs and stuff.</p>
             <p>Beside reading and writing PNM files, PyPNM provides a suitable facility for viewing image-like data by converting it on the fly to in-memory PNM bytes and serving it to Tkinter (see usage example on the right). For image data with transparency, PyPNM simulates a preview over chessboard pattern (like Photoshop and GIMP).</p>
             <p><span class='red'><b>Update:</b></span> Versions 3.34.24.* include <b>multithreading support</b> for <span class='pre justborder lighter'>list2bin</span> function, providing speed proportional to number of CPUs when run under free-threaded Python. <a href='pypnm.html'  title='Pure Python PPM and PGM reading, displaying, and writing module'>🔽<i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>Scale2x, Scale3x, Scale2xSFX and Scale3xSFX in pure Python</h4>
-        <div class='lightbg justborder' style='display: flow-root;'>
+        <div class='justborder lightbg' style='display: flow-root;'>
             <a href='scalenx.html'><img src='imgscalenx/vissmall.png' height='200' width='257' alt='Visual ScaleNx rescaler' title='Visual ScaleNx rescaler running Scale3xSFX twice' class='floatright'></a>
             <p><a href='scalenx.html' class='git' title='Scale2x, Scale3x, Scale2xSFX and Scale3xSFX image rescaling in pure Python'>ScaleNx</a> is a pure Python implementation of several <a href='https://en.wikipedia.org/wiki/Pixel-art_scaling_algorithms' target='_blank'>pixel art image scaling</a> algorithms, both widely used <b>Scale2x</b> and <b>Scale3x</b>, and rare but efficient <b>Scale2xSFX</b> and <b>Scale3xSFX</b>.</p>
             <p>Main program for both single file and batch folder processing with suitable GUI is available, free and open source.</p>
@@ -85,7 +85,7 @@
             <p>Previously in ScaleNx: Versions 26.8.6.312&nbsp;(main) / 26.8.6.34&nbsp;(py34) result from further fine polishing of 2.30.12.312&nbsp;/&nbsp;2.30.12.34 which introduced speedup for low color images like scanned text. In ScaleNx version&nbsp;26.2.16.16 module export\import scheme generalized to facilitate even more ScaleNx usage for different software; in version&nbsp;25.11.15.1 one more visual shell VisualNxGUI.py was added to main branch; with 26.2.16.16 update its resource usage decreased and speed improved. <a href='scalenx.html'>🔽<i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>Barycentric and bilinear image interpolation in pure Python</h4>
-        <div class='lightbg justborder'>
+        <div class='justborder lightbg'>
             <table title='Proceed to bilinear and barycentric image interpolation page' cols='2' class='justborder lighter nobreak center floatright' style='cursor: pointer;'  onclick="document.location='imin.html'">
                 <caption class='justborder lighter' style='caption-side: bottom; font-size: 10pt;'>Comparison of bilinear and barycentric single pixel upscaling</caption>
                 <thead style='display: table-header-group'>
@@ -113,7 +113,7 @@
             <p>Previously, version 26.11.3.3 introduced <b>multithreading support</b>, providing dramatic speed increase under free-threaded (no-GIL) Python. <a href='imin.html'  title='Pure Python barycentric and bilinear image interpolation and transform (rescaling, rotation, displacement)'>🔽<i>Read more...</i></a></p>
         </div>
         <h4 class='darkbg'>Python batch files</h4>
-        <div class='lightbg justborder'>
+        <div class='justborder lightbg'>
             <div class='floatright justborder' style='padding: 4px;'><a href='batch.html'><img src='batch/hex00.png' alt='Sample icon preview; icon made with PNG Sanctifier' title='Sample ReBoot icon preview'></a></div>
             <p><a href='batch.html' title='Python scripts for ffmpeg, optivorbis, LibreOffice, folder NTFS compression, PNG to ICO conversion, etc.'>Some batch processing scripts</a> made for my personal regular use, like batch converting .RTFs to .DOCX, or .flac to .ogg, or something. May appear to be useful to others.</p>
             <p>Note that this script collection is updated without a warning; sometimes scripts I personally consider obsolete get removed. But look at the bright side: survived scripts are guaranteed to be useful!</p>

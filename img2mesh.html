@@ -19,11 +19,13 @@
     <div class='content'> <!-- Content block begin -->
         <h1 class='darkbg'>POV&#8209;Ray img2mesh</h1>
         <h2 class='lightbg'>Converting greyscale PNG and PNM into POV, OBJ, DXF and STL 3D&nbsp;mesh</h2>
-        <div class='lightbg justborder'>
+        <h3 class='lightbg'>Introduction</h3>
+        <div class='justborder lightbg'>
             <p>Old yet still sentient beings may potentially remember Cybermesh Photoshop export plugin by John&nbsp;Knoll, allowing one to sort of extrude greyscale 2D images and save the result as DXF 3D&nbsp;mesh file. Unfortunately, it was Mac only, and gone together with MacOS Classic.</p>
             <p>But since progress is always in progress, now you may have some other software for extruding logos, drawings and height fields as 3D&nbsp;meshes, completely free and rather cross-platform. Yes, I'm talking of this very Python program, called <b>img2mesh</b>.</p>
         </div>
-        <div class='lightbg justborder cols512'>
+        <h3 class='lightbg'>Overview</h3>
+        <div class='justborder lightbg cols512'>
             <p><b>Img2mesh</b> is a pretty simple (well, it was initially) program that reads regular bitmap image, and writes 3D triangle mesh, using pixel X and Y coordinates for &laquo;east&raquo; and &laquo;south&raquo; position of 3D triangle mesh nodes, and, most important, pixel brightness as Z, that is, height of the node, thus converting image into sort of 3D landscape.</p>
             <p><a href='https://github.com/Dnyarri/img2mesh' class='git' title='img2mesh repository at GitHub'>Img2mesh is available at GitHub for download</a>. All non-standard modules included into distribution, so program is supposed to work right out of the box with any standard installation of Python&nbsp;3.11 and above.</p>
             <p><span class='red'><b>Update:</b></span> in version 4.32.28.18 main GUI completely rewritten, providing geometry mask preview, updated as you change geometry threshold setting.</p>
@@ -50,8 +52,8 @@
             <p>Geometry type is chosen based on local contrast in source map, corresponding threshold control added to <b>img2mesh</b> GUI.</p>
             <p>Default threshold setting is based on both common sense and experimental results and therefore is subject to change.</p>
         </div>
-        <div class='lightbg justborder cols512' style='min-height: 470px;'>
-            <h5 id='overview'>Overview</h5>
+        <div class='justborder lightbg cols512' style='min-height: 470px;'>
+            <h5 id='overview' class='justborder lighter'>General principles</h5>
             <p><b>Img2mesh</b> treat source flat bitmap as an elevation map for 3D object.</p>
             <div class='justborder center lighter' style='break-inside: avoid; padding: 2px;'>
                 <img src='imgmesh/01.png' width='64' height='64' alt='Source gradient mage' title='Source gradient mage'>
@@ -136,14 +138,14 @@
   object {thething}</pre>
             <p>&laquo;Main&raquo; variable in master file turns off camera, light and texture in "<i>generated.pov</i>" file, allowing master file to take over.</p>
             <div class='justborder'>
-            <h5>Download</h5>
+            <h5 class='justborder lighter'>Download</h5>
                 <div class='justborder lighter'>
             <p>Obvious way to download <b>img2mesh</b> is proceeding to <a href='https://github.com/Dnyarri/img2mesh/releases/latest' class='git' title='img2mesh newest release download'>img2mesh newest release page</a> and using some of the download links there.</p>
                 </div>
             <p>For Windows users, compiled Windows&nbsp;64&#8209;bit img2mesh.exe file is provided.</p>
             <p>For other platforms, Use the Source&trade; - this Python program is rather self-contained, all non-standard modules like <a href='https://dnyarri.github.io/pypnm.html' title='Pure Python PPM and PGM reading, displaying, and writing module'>PyPNM</a> and <a href='https://gitlab.com/drj11/pypng' target='_blank' title='Pure Python PNG reading and writing module'>PyPNG</a> are omnicompatible pure Python ones and enclosed to download.</p>
             <p>Downloaded full Python source of <b>img2mesh</b> is intended to work right out of the box. In case it does not, you will be provided with replacement copy at no extra charge.</p>
-            <h5 id='usage'>Usage</h5>
+            <h5 id='usage' class='justborder lighter'>Usage</h5>
             <p><b>Img2mesh</b> is equipped with rather self-explanatory GUI.</p>
             <p>Since GUI is rather Photoshop-like when it comes to image zooming, panning <i>etc.</i>, you are supposed to quickly forget and miss all the shortcuts and keyboard modifiers, as all the Photoshop users do. Therefore, first thing you'll see once you start <b>img2mesh</b> will be a list of shortcuts for GUI functions. Once you forgot it successfully, you can always refresh your memory by pressing <span class='pre butt'>F1</span>.</p>
             <p style='margin: auto 24px auto 64px;'>Quoth Mandarax: <i>Everything gets refreshed with</i> <span class='pre butt'>F5</span> <i>but human memory. For refreshing human memory</i> <span class='pre butt'>F1</span> <i>is assigned.</i></p>
@@ -222,9 +224,9 @@
 </details>
 </div>  <!-- Плашка с таблицей обновлений -->
         </div>
-        <div class='lightbg justborder'>  <!-- Плашка туда-сюда -->
-            <p style='margin: 24pt 6pt'><span class='lighter justborder' style='padding: 16pt 24pt;'> Now it's time to step forward to <a href='https://github.com/Dnyarri/img2mesh' class='git' title='img2mesh repository at GitHub'>img2mesh repository at GitHub</a> for downloads... </span></p>
-            <p class='right' style='margin: 40pt 6pt 24pt'><span class='lighter justborder' style='padding: 16pt 24pt;'>...or Move back to <a href='https://dnyarri.github.io' title='Python freeware for POV-Ray and other 3D, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, bilinear and barycentric image interpolation, and batch processing'>Dnyarri`s Python freeware main page</a>.</span></p>
+        <div class='justborder lightbg'>  <!-- Плашка туда-сюда -->
+            <p style='margin: 24pt 6pt'><span class='justborder lighter' style='padding: 16pt 24pt;'> Now it's time to step forward to <a href='https://github.com/Dnyarri/img2mesh' class='git' title='img2mesh repository at GitHub'>img2mesh repository at GitHub</a> for downloads... </span></p>
+            <p class='right' style='margin: 40pt 6pt 24pt'><span class='justborder lighter' style='padding: 16pt 24pt;'>...or Move back to <a href='https://dnyarri.github.io' title='Python freeware for POV-Ray and other 3D, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, bilinear and barycentric image interpolation, and batch processing'>Dnyarri`s Python freeware main page</a>.</span></p>
         </div>
     </div> <!-- Content block end -->
 </body>

@@ -19,17 +19,17 @@
     <div class='content'> <!-- Content block begin -->
         <h1 class='darkbg'>PyPNM - Pythonic Portable Any Map image files reading, displaying and writing</h1>
         <h3 class='lightbg'>Introduction</h3>
-<div class='lightbg justborder'>  <!-- Текстовый блок с самого начала -->
+<div class='justborder lightbg'>  <!-- Текстовый блок с самого начала -->
     <p><b>PyPNM</b> is a Python module for reading PPM and PGM image files (both 8 and 16 bits per channel color depth) to image 3D integer lists for further editing, displaying 3D lists obtained by converting to Tkinter-compatible data in memory, and subsequent writing edited image 3D lists to disk as PPM or PGM files, either binary or ASCII.</p>
     <p><a href='https://netpbm.sourceforge.net/doc/ppm.html' target='_blank' title='PPM specification at Netpbm'>Portable Pixel Map (PPM)</a> and <a href='https://netpbm.sourceforge.net/doc/pgm.html' target='_blank' title='PGM specification at Netpbm'>Portable Gray Map (PGM)</a> (particular cases of <a href='https://netpbm.sourceforge.net/doc/pnm.html' target='_blank' title='PNM at Netpbm'>PNM format</a> group) are simplest file formats for RGB and L images, correspondingly. In theory, you may import ASCII PGM even in Excel, turning Excel into image editor. Unfortunately, this simplicity lead to adverse consequences:</p>
-    <div class='lighter justborder'>
+    <div class='justborder lighter'>
     <ul>
         <li>lack of strict official specification. Instead, you may find words like "usual" in format description. Surely, there is always someone who implement this part of image format in unprohibited, yet a totally unusual way;</li>
         <li>unwillingness of many software developers to provide any good support for simple and open format. It took years for almighty Adobe Photoshop developers to include PNM module in distribution rather than count on third-party developers, and surely (see above) they took their chance to implement their own header scheme nobody else uses. What as to PNM support in Python, say, Pillow... sorry, I promised not to discuss Pillow in general and it's 16-bpc image compatibility in particular anywhere ladies and children are allowed to read it.</li>
     </ul>
     </div>
     <p>As a result, novice Python user (like me) may find it difficult to get reliable input/output modules for PPM and PGM image formats; therefore current PyPNM package was developed, combining input/output functions for 8-bits and 16-bits per channel (bpc) binary and ASCII PGM and PPM files, <i>i.e.</i> P2, P5, P3 and P6 PNM file types. P1 and P4 (1&nbsp;bit) PBM formats are supported only for reading.</p>
-    <div class='lighter justborder'>
+    <div class='justborder lighter'>
     <p><span class='red'><b>PyPNM key functionality</b></span> comprise:</p>
     <ul style='line-height: 150%;'>
         <li><span class='red'><b>previewing</b></span> image being edited by converting it into PNM-like byte structure to be displayed using Tkinter <span class='pre-nobr'>PhotoImage(data=...)</span> method. Since Python eventually got free threading, <b>multithreading support</b> was added to PyPNM, providing dramatic preview rendering speed increase when run with no-GIL Python versions (such as <span class='pre-nobr'>python3.14.exe</span>);</li>
@@ -70,7 +70,7 @@
     </table>
 </div>  <!-- Текстовый блок с самого начала -->
         <h3 class='lightbg'>Format compatibility</h3>
-        <div class='lightbg justborder' style='max-width: 420pt;'>
+        <div class='justborder lightbg' style='max-width: 420pt;'>
             <table cols='4'>
                 <thead style='display: table-header-group'>
                 <tr><th scope='col'><p>Image format</p></th><th scope='col'><p>File format</p></th><th scope='col'><p>Read</p></th><th scope='col'><p>Write</p></th></tr>
@@ -90,15 +90,15 @@
             </table>
         </div>
         <h3 class='lightbg'>Image representation</h3>
-        <div class='lightbg justborder'>
+        <div class='justborder lightbg'>
             <p>Is seems logical to represent an RGB image as nested 3D structure - X, Y-sized matrix of three-component RGB vectors. Since in Python list seem to be about the only variant for mutable structures like that, it is suitable to represent image as <span class='pre-nobr'>(list(list(list(int))))</span> structure (for example, this structure was used for <a href='scalenx.html' title='PyPNM usage example'>ScaleNx image resizer</a> and <a href='povthread.html#averager' title='PyPNM usage example'>Adaptive Average image filtering</a>, and worked well). Therefore, it would be convenient to have module read/write image data from/to such a common structure.</p>
-            <div class='floatleft lighter justborder'><p class='center small'><img src='pypnm/rgb.svg' width='256' height='190' alt='RGB image coordinate system' title='RGB image coordinate system'><br>Coordinate system of RGB image.</p></div>
+            <div class='floatleft justborder lighter'><p class='center small'><img src='pypnm/rgb.svg' width='256' height='190' alt='RGB image coordinate system' title='RGB image coordinate system'><br>Coordinate system of RGB image.</p></div>
             <p>List index structure correspond to typical image coordinate system assumed for image editing software like Photoshop, GIMP, Paint Shop Pro <i>etc</i>, with [0, 0] origin at top left corner, and channel order R→G→B (so, say, R channel of the top left pixel is <span class='pre-nobr'>image[0][0][0]</span>).</p>
             <p>Note that for L images memory structure is still <span class='pre-nobr'>(list(list(list(int))))</span>, with innermost list having only one component, thus enabling further image editing with the same nested Y, X, Z loop regardless of color mode. I understand that this may sound surprising for professional image I/O programmers, but for normal people writing a loop once and for all is a sort of expected behaviour.</p>
             <p>Also, since this module is supposed to be used for image editing rather than just reading, when reading 1&nbsp;bit PBM files into image this module promotes data to 8&nbsp;bit L, inverting values and multiplying by 255, so that source 1 (ink on) is changed to 0 (black), and source 0 (ink off) is changed to 255 (white). For the same reason writing 1&nbsp;bit PBM files is not planned - 1&nbsp;bit images are next to useless for editing.</p>
         </div>
         <h3 class='lightbg'>PyPNM functions</h3>
-        <div class='lightbg justborder'>
+        <div class='justborder lightbg'>
             <p>PyPNM contains 100% pure Python implementation of everything one may need to read/write from/to a variety of PGM and PPM files. I/O functions are written as functions/procedures, as simple as possible, and listed below:</p>
             <ul>
                 <li><b>pnm2list</b> - reading binary or ASCII RGB PPM or L PGM file and returning image data as <span class='pre'>int</span>s nested list for easy editing;</li>
@@ -131,7 +131,7 @@ main_window.mainloop()
             <p>Yes, above is an illustration of all functions of PyPNM in action: opening file as image list, saving image list as binary file, saving image list as ASCII file, showing image list as image with Tkinter. With addition of just some 10-12&nbsp;kbytes of widgets and event handling it turns into a good-looking fully functional viewer and converter below.</p>
         </div>
         <h3 class='lightbg'>Viewer.py</h3>
-        <div class='lightbg justborder'>
+        <div class='justborder lightbg'>
             <a href='https://github.com/Dnyarri/PyPNM' target='_blank'><img src='pypnm/viewer.png' width='256' height='317' alt='Test 16-bit PPM image opened in PyPNM viewer' title='PyPNM-based PPM/PGM Viewer/converter' class='floatright'></a>
             <p>Program <b>Viewer.py</b> is a minimal (<i>i.e.</i>, GUI is deliberately reduced to right-click menu, and stuff like Ctrl+click and Alt+click for zooming, familiar to Photoshop users) illustrative utility: using PyPNM package, it reads different flavours of PGM and PPM files, and allows saving them as different types of PGM/PPM, <i>e.g.</i> it can read ASCII PPM and write it as binary PPM or vs. Also this program shows image data using PyPNM and Tkinter. No, there is no mistake: it does not feed PPM files to Tkinter directly. Instead, it uses nested 3D list data loaded using PyPNM to generate in-memory bytes object of PNM structure using <span class='pre-nobr'>preview_data = pypnm.list2bin(image3D, maxcolors)</span>, and then feeds this in-memory bytes object to Tkinter as <span class='pre-nobr'>preview = PhotoImage(data=preview_data)</span> (note using <span class='pre-nobr'>data=</span>, not <span class='pre-nobr'>file=</span>). This way it shows formats which Tkinter itself cannot handle, like ASCII PNM (example of 16-bit ASCII PPM being displayed by simple viewer based on PyPNM is shown at the right).</p>
             <p><i>Fun fact</i>: Icon in <b>Viewer.py</b> is not the icon, but bytes of PPM produced with PyPNM and then hardcoded into viewer as byte string. It's 2x2 pixels of basic colors, so when rescaling Tkinter turns it into a four-point gradient (oh well, with Python&nbsp;3.4 under Windows&nbsp;XP it uses nearest neighbour, so you see perfect squares of pure colors).</p>
@@ -256,9 +256,9 @@ main_window.mainloop()
 </details>
 </div>  <!-- Плашка с таблицей обновлений -->
 <br>
-<div class='lightbg justborder'>  <!-- Плашка туда-сюда -->
-    <p style='margin: 24pt 6pt'><span class='lighter justborder' style='padding: 16pt 24pt;'>Now it's time to <a href='https://github.com/Dnyarri/PyPNM' class='git' title='PyPNM repository at GitHub'>pull PyPNM from GitHub</a> and start working with images yourself...</span></p>
-    <p class='right' style='margin: 40pt 6pt 24pt'><span class='lighter justborder' style='padding: 16pt 24pt;'>...or Move back to <a href='https://dnyarri.github.io' title='Python freeware for POV-Ray and other 3D, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, bilinear and barycentric image interpolation, and batch processing'>Dnyarri`s Python freeware main page</a>.</span></p>
+<div class='justborder lightbg'>  <!-- Плашка туда-сюда -->
+    <p style='margin: 24pt 6pt'><span class='justborder lighter' style='padding: 16pt 24pt;'>Now it's time to <a href='https://github.com/Dnyarri/PyPNM' class='git' title='PyPNM repository at GitHub'>pull PyPNM from GitHub</a> and start working with images yourself...</span></p>
+    <p class='right' style='margin: 40pt 6pt 24pt'><span class='justborder lighter' style='padding: 16pt 24pt;'>...or Move back to <a href='https://dnyarri.github.io' title='Python freeware for POV-Ray and other 3D, Scale2x, Scale3x, Scale2xSFX, Scale2xSFX, PPM and PGM image support, bilinear and barycentric image interpolation, and batch processing'>Dnyarri`s Python freeware main page</a>.</span></p>
 </div>
     </div> <!-- Content block end -->
 </body>

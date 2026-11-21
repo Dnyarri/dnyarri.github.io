@@ -144,7 +144,11 @@
         </dc:creator>
         <dc:subject>
           <rdf:Bag>
-            <rdf:li>ReBoot; Hexadecimal; Number 7</rdf:li>
+            <rdf:li>ReBoot</rdf:li>
+            <rdf:li>Hexadecimal</rdf:li>
+            <rdf:li>Number 7</rdf:li>
+            <rdf:li>https://dnyarri.github.io</rdf:li>
+            <rdf:li>https://the-toad.livejournal.com</rdf:li>
           </rdf:Bag>
         </dc:subject>
         <dc:description>Hexadecimal from &quot;ReBoot&quot; series, season 3 episode 7 &quot;Number 7&quot;, frame 26969, completely redrawn manually.
